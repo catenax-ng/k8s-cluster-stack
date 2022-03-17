@@ -7,13 +7,12 @@ spec:
   - list:
       elements:
       - cluster: core
-        # must not be kubernetes.default.svc for automation IMHO
+        # must maybe not be kubernetes.default.svc for automation IMHO but url for core cluster?!
         url: https://kubernetes.default.svc
 #        namespace: tbd # TODO 16.03.2022 CARSLEN: Argo Namespace for CORE argo needs to be defined
-#      - cluster: hotel-budapest
-#        url: https://2.4.6.8
-#        apps_selector: default
-#        namespace: lala
+      - cluster: hotel-budapest
+        url: https://carslenhotelbudapest-dns-400eda84.hcp.germanywestcentral.azmk8s.io:443
+
   template:
     metadata:
       name: '{{cluster}}-argo'
