@@ -161,4 +161,9 @@ jobs:
           --file ./${{env.prefix}}-${{github.event.inputs.clustername}}-admin \
           --admin
           CONTEXTNAME=$(kubectl --kubeconfig=./${{env.prefix}}-${{github.event.inputs.clustername}}-admin config get-contexts -o name)
-          ./argocd cluster add $CONTEXTNAME --kubeconfig ./${{env.prefix}}-${{github.event.inputs.clustername}}-admin
+          if (./argocd cluster list --grpc-web | grep ${{env.prefix}}-${{github.event.inputs.clustername}}-aks-services-admin)
+          then
+            echo "${{env.prefix}}-${{github.event.inputs.clustername}}-aks-services is already registered in the central ArgoCD"
+          else
+            ./argocd cluster add $CONTEXTNAME --kubeconfig ./${{env.prefix}}-${{github.event.inputs.clustername}}-admin
+          fi
