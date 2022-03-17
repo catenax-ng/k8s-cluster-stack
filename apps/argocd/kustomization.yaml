@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: argocd
+
+resources:
+  - namespace.yaml
+  - https://raw.githubusercontent.com/argoproj/argo-cd/v2.3.1/manifests/ha/install.yaml
+
+
+# Configure rbac to grant catenax-ng:ArgoCDAdmins admin rights to argoCD
+patchesStrategicMerge:
+  - overlays/argocd-rbac-cm.yaml
