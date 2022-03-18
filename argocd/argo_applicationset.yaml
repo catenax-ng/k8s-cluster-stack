@@ -13,10 +13,10 @@ spec:
 #        valueFiles:
 #        - values.yaml
 #        - values-core.yaml
-#        namespace: tbd # TODO 16.03.2022 CARSLEN: Argo Namespace for CORE argo needs to be defined
-      - cluster: carslen-hotel-budapest
-        url: https://carslenhotelbudapest-dns-400eda84.hcp.germanywestcentral.azmk8s.io
-        overlay: overlays/hotel-budapest
+      # disabled for testing purpose
+#      - cluster: carslen-hotel-budapest
+#        url: https://carslenhotelbudapest-dns-400eda84.hcp.germanywestcentral.azmk8s.io
+#        overlay: overlays/hotel-budapest
 #        valueFiles:
 #        - values.yaml
 #        - values-carslen-hotel-budapest.yaml
