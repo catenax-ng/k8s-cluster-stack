@@ -13,10 +13,10 @@ spec:
 #        valueFiles:
 #        - values.yaml
 #        - values-core.yaml
-      # sundown a project argo instance by delete/comment cluster
-#      - cluster: carslen-hotel-budapest
-#        url: https://carslenhotelbudapest-dns-400eda84.hcp.germanywestcentral.azmk8s.io
-#        overlay: overlays/hotel-budapest
+      # onboard a project argo instance by adding a cluster
+      - cluster: carslen-hotel-budapest
+        url: https://carslenhotelbudapest-dns-400eda84.hcp.germanywestcentral.azmk8s.io
+        overlay: overlays/hotel-budapest
 #        valueFiles:
 #        - values.yaml
 #        - values-carslen-hotel-budapest.yaml
