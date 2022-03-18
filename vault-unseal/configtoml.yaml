@@ -1,0 +1,16 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: configtoml
+  namespace: vault
+spec:
+  encryptedData:
+    config.toml: AgAXhnyyTxPWjPxOZf7Ux+iQEhWEEMmXY6e3CUGZGS/j7N52TsaqsfZdlMparXdcCYkIXbp8RP1xAwFu3Ymr6Zac51wt9tyKJIBJRJfCo7EqZ1RwgdXwG6LydZOtDddov2wJV2O2wmiuKOwW/ztPgZA7l5YmKtnV+wg9cQv7g+VYz346o7QUKy0O8WgkZ/oSWYwoG2kDklmzekFS8fkJIQqIU1F20U4sxN82uzIIShp5JcOPhiJKDSrJOMKJyXspSLc9GFHfHeRlMDExyQ5q9hchBE5u1+W3dttGuHwl/CU4gSx5NaAe5d4cALJH0x5I8zow94ZtSF+iyuHVoj+xWOb1xTZN/k6v2d4WdU1qRKK0uCgMlJ/PcgDb2uu1LgWkYGAUIsUEW6fr0+C77rmAtLB5+6t43fOsVLv6XvsHhbD4uygAiL5UONL9HeD3Y+2Vr6WTpEEV0lZi9iJTDIT0Tkqp9FCvmTQmC4kzKOg3BbSzN1uKra6tpPZevyhBCQWY/D//BF9abXTAZrwVhV/3yqukprDlIDfbEaUOUs9psgohOAxwKG2CcfMGd1gFYYjGAMbTPy4KLjGIFGZXxoOJcnzfWbi0CUrzmqqGw0twv0Ab5kAcRrCBomaq8kZr+/+loE2mM3MdxGLEoF2RQR9Aj/Wef8d1G06mJ5T7olHGe2ztLFpFvNtvFFXIPRWRD4XD1SoTNwkV0qpGEe+XvRq0Kfvua6LyHMmI38Axm4+o1V4hUAIPKOdCEft+NwsTR3RbU1OIh04F6iDM36kczogHveVtHVdICFEm1o5+b66uLfHWquVlKJtWsRM5oodD5ClEn+WSG/1t2acOIK4BB7OZHRNnGobvFuLg/vj57kSLZjCATUW8E8RnVTK97rtr74FFDu7pQkqvLIsBSf1Q37iq7JrgmCrfHFQMtt3iTwfQhk/VG5BkdNREdABl9iIUClm5RwqZ8z+1ORGpJiepXfRz/zTTxlqPHF6y710owb5fA67tJdI1Zh+RPnfKSaTjFdINrnl6NrGs/zlVKZ0sycTL0CHJvPpPijwyCq+WrrwSS9mEhvJp4y60RohB5AGtIsvSQAZdUp4kLmfO8TcGujKDgPjzut5+Jrd+XQpapnCIfCQ5LK9wsYzXbXsCD86sGZrbD5ZXqF9eO8sJE6vpC/c/
+  template:
+    data: null
+    metadata:
+      creationTimestamp: null
+      name: configtoml
+      namespace: vault
+

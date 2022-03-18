@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: unsealer
+spec:
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: unsealer
+  template:
+    metadata:
+      labels:
+        app: unsealer
+    spec:
+      automountServiceAccountToken: false
+      containers:
+      - name: unsealer
+        image: ghcr.io/iot-devops-etc/unsealer:0.0.1-catx
+        imagePullPolicy: Always
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - NET_RAW
+            - ALL
+          seccompProfile:
+            type: RuntimeDefault
+          readOnlyRootFilesystem: false
+        volumeMounts:
+        - name: configtoml
+          readOnly: true
+          mountPath: "/opt/settings"
+      volumes:
+      - name: configtoml
+        secret:
+          secretName: configtoml
