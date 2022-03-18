@@ -10,4 +10,4 @@ bases:
 patchesStrategicMerge:
 #  - ../github-oauth.yaml
 #  - ../../base/argocd-rbac-cm.yaml
-  - argo-url.yaml
+  - argo-url-argocd-cm.yaml
