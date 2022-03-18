@@ -1,8 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-#namespace: argocd
-
 bases:
   - ../../base
 
@@ -11,6 +9,4 @@ resources:
 
 # Configure rbac to grant catenax-ng:ArgoCDAdmins admin rights to argoCD
 patchesStrategicMerge:
-#  - ../github-oauth.yaml
-#  - ../../base/argocd-rbac-cm.yaml
   - argo-url-argocd-cm.yaml

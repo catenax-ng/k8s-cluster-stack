@@ -4,6 +4,4 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-#  - ../apps/argocd/base
   - ../apps/argocd/overlays/core
-#  - ../apps/argocd/base/argo_applicationset.yaml
