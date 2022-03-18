@@ -6,4 +6,4 @@ namespace: argocd
 resources:
 #  - ../apps/argocd/base
   - ../apps/argocd/overlays/core
-  - argo_applicationset.yaml
+#  - ../apps/argocd/base/argo_applicationset.yaml

@@ -6,6 +6,9 @@ kind: Kustomization
 bases:
   - ../../base
 
+resources:
+  - argo_applicationset.yaml
+
 # Configure rbac to grant catenax-ng:ArgoCDAdmins admin rights to argoCD
 patchesStrategicMerge:
 #  - ../github-oauth.yaml
