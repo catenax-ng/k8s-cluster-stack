@@ -1,0 +1,46 @@
+name: Bootstrap AKS cluster
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment_tfvars_file_name:
+        description: "The name of the environment tfvars that live in /terraform/environments"
+        required: true
+        type: string
+
+jobs:
+  createAzureResources:
+    name: "Create Azure resources"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Azure login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Setup terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.1.7
+
+      - name: Checkout source
+        uses: actions/checkout@v2
+
+      - name: Terraform init
+        working-directory: ./terraform
+        run: |
+          terraform init
+          
+      - name: Terraform plan
+        working-directory: ./terraform
+        run: |
+          terraform plan -var-file ${{ github.event.inputs.environment_tfvars_file_name }}
+
+      - name: Terraform apply
+        working-directory: ./terraform
+        env:
+          TF_VAR_service_principal_client_id: ${{ secrets.SERVICE_PRINCIPAL_CLIENT_ID }}
+          TF_VAR_service_principal_client_secret: ${{ secrets.SERVICE_PRINCIPAL_CLIENT_SECRET }}
+        run: |
+          terraform apply

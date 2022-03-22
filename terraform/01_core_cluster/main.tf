@@ -1,11 +1,11 @@
 module "resource_group" {
-  source = "./modules/01_resource_group"
+  source = "../modules/resource_group"
 
   environment_name = var.environment_name
 }
 
 module "aks" {
-  source = "./modules/02_aks"
+  source = "../modules/aks_cluster"
 
   aks_cluster_name   = "cx-${var.environment_name}-aks"
   aks_location       = module.resource_group.resource_location
@@ -17,7 +17,7 @@ module "aks" {
 }
 
 module "public_ip" {
-  source = "./modules/03_public_ip"
+  source = "../modules/public_ip"
 
   public_ip_name      = "cx-${var.environment_name}-public-ip"
   resource_location   = module.resource_group.resource_location
