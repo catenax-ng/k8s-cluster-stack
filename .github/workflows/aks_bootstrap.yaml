@@ -4,9 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       environment_tfvars_file_name:
-        description: "The name of the environment tfvars that live in /terraform/environments"
+        description: "The name of the environment tfvars that live in /terraform/environments without extensions. i.e. 'core' for core.tfvars"
         required: true
         type: string
+
+
+env:
+  environment: ${{ github.event.inputs.environment_tfvars_file_name }}
 
 jobs:
   createAzureResources:
@@ -32,12 +36,7 @@ jobs:
         run: |
           terraform init
 
-      - name: Terraform plan
-        working-directory: ./terraform/01_core_cluster
-        run: |
-          terraform plan -var-file environments/${{ github.event.inputs.environment_tfvars_file_name }}
-
-      - name: Terraform apply
+      - name: Terraform plan & apply
         working-directory: ./terraform/01_core_cluster
         env:
           TF_VAR_service_principal_client_id: ${{ secrets.SERVICE_PRINCIPAL_CLIENT_ID }}
@@ -48,4 +47,5 @@ jobs:
           TF_VAR_azure_client_secret: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
           TF_VAR_azure_tenant_id: ${{ secrets.AZURE_TENANT_ID }}
         run: |
-          terraform apply
+          terraform plan -var-file environments/${{ env.environment }}.tfvars -out ${{ env.environment }}.tfplan
+          terraform apply ${{ env.environment }}.tfplan
