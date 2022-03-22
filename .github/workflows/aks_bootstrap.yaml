@@ -31,7 +31,7 @@ jobs:
         working-directory: ./terraform/01_core_cluster
         run: |
           terraform init
-          
+
       - name: Terraform plan
         working-directory: ./terraform/01_core_cluster
         run: |
@@ -42,5 +42,10 @@ jobs:
         env:
           TF_VAR_service_principal_client_id: ${{ secrets.SERVICE_PRINCIPAL_CLIENT_ID }}
           TF_VAR_service_principal_client_secret: ${{ secrets.SERVICE_PRINCIPAL_CLIENT_SECRET }}
+          # Azure provider secrets
+          TF_VAR_azure_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          TF_VAR_azure_client_id: ${{ secrets.AZURE_AD_CLIENT_ID }}
+          TF_VAR_azure_client_secret: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
+          TF_VAR_azure_tenant_id: ${{ secrets.AZURE_TENANT_ID }}
         run: |
           terraform apply
