@@ -1,7 +1,7 @@
 module "resource_group" {
   source = "../modules/resource_group"
 
-  environment_name = var.environment_name
+  resource_group_name = var.environment_name
 }
 
 module "aks" {

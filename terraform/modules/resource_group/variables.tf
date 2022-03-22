@@ -1,4 +1,4 @@
-variable "environment_name" {
+variable "resource_group_name" {
   description = "Name of the environment to create, i.e. 'core'. Will be used in several resource names"
   type        = string
 }
