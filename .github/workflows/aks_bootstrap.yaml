@@ -28,17 +28,17 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Terraform init
-        working-directory: ./terraform
+        working-directory: ./terraform/01_core_cluster
         run: |
           terraform init
           
       - name: Terraform plan
-        working-directory: ./terraform
+        working-directory: ./terraform/01_core_cluster
         run: |
-          terraform plan -var-file ${{ github.event.inputs.environment_tfvars_file_name }}
+          terraform plan -var-file environments/${{ github.event.inputs.environment_tfvars_file_name }}
 
       - name: Terraform apply
-        working-directory: ./terraform
+        working-directory: ./terraform/01_core_cluster
         env:
           TF_VAR_service_principal_client_id: ${{ secrets.SERVICE_PRINCIPAL_CLIENT_ID }}
           TF_VAR_service_principal_client_secret: ${{ secrets.SERVICE_PRINCIPAL_CLIENT_SECRET }}
