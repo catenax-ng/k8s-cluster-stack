@@ -13,11 +13,9 @@ variable "aks_resource_group" {
   type = string
 }
 
-
 variable "k8s_cluster_node_count" {
   description = "The number of kubernetes nodes to create for the k8s cluster"
   type        = number
-  default     = 3
 }
 
 variable "k8s_vm_size" {
