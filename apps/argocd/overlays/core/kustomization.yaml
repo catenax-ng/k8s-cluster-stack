@@ -6,6 +6,7 @@ bases:
 
 resources:
   - argo_applicationset.yaml
+  - ingress_applicationset.yaml
 
 # Configure rbac to grant catenax-ng:ArgoCDAdmins admin rights to argoCD
 patchesStrategicMerge:
