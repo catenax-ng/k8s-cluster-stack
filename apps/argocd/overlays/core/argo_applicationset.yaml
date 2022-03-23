@@ -20,7 +20,7 @@ spec:
       project: default
       source:
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
-        targetRevision: A1ODT-419-setup-default-apps
+        targetRevision: feature/A10DT-419-setup-default-apps
         path: apps/argocd/{{overlay}}
       destination:
         server: '{{url}}'
