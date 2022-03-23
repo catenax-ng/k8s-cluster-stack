@@ -14,11 +14,13 @@ spec:
   template:
     metadata:
       name: '{{cluster}}-argo'
+      labels:
+        app: argo
     spec:
       project: default
       source:
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
-        targetRevision: A1ODT-407_create_repo
+        targetRevision: A1ODT-419-setup-default-apps
         path: apps/argocd/{{overlay}}
       destination:
         server: '{{url}}'
