@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: default-applicationset
+  name: ingress-nginx-applicationset
 spec:
   generators:
   - list:
@@ -11,8 +11,7 @@ spec:
 
   template:
     metadata:
-      name: {{ cluster }}-ingress-nginx
-      namespace: argocd
+      name: '{{ cluster }}-ingress-nginx'
       labels:
         app: ingress-nginx
     spec:
@@ -26,5 +25,5 @@ spec:
         path: apps/ingress/ingress-nginx
 
       destination:
-        server: {{ url }}
+        server: '{{ url }}'
         namespace: default
