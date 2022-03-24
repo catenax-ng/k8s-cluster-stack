@@ -20,8 +20,10 @@ spec:
       project: default
       source:
         helm:
-          valueFiles:
-            - values.yaml
+          values: |
+            {{- toYaml .Values.ingress-nginx | nindent 8 }}
+#          valueFiles:
+#            - values.yaml
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
         targetRevision: feature/A10DT-419-setup-default-apps
         path: apps/ingress-nginx
