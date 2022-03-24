@@ -38,7 +38,7 @@ spec:
       ignoreDifferences: # https://github.com/argoproj/argo-cd/issues/4276#issuecomment-908455476
         - group: admissionregistration.k8s.io
           kind: ValidatingWebhookConfiguration
-          name: cert-manager-webhook
+          name: carslen-hotel-budapest-certmanager-webhook
           jsonPointers:
             - /webhooks/0/namespaceSelector/matchExpressions/2
       destination:
