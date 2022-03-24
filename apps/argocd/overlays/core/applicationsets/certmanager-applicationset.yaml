@@ -19,13 +19,15 @@ spec:
     spec:
       project: default
       source:
-        chart: certmanager
+        chart: cert-manager
         helm:
           valueFiles:
-            - values-certmanager.yaml
-        repoURL: https://github.com/catenax-ng/k8s-cluster-stack
-        targetRevision: feature/A10DT-419-setup-default-apps
-        path: apps/certmanager
+            - https://raw.githubusercontent.com/catenax-ng/k8s-cluster-stack/feature/A10DT-419-setup-default-apps/apps/certmanager/values-certmanager.yaml
+        repoURL: https://charts.jetstack.io
+        targetRevision: v1.7.2
+        #repoURL: https://github.com/catenax-ng/k8s-cluster-stack
+        #targetRevision: feature/A10DT-419-setup-default-apps
+        #path: apps/certmanager
 
 #      destination:
 #        server: '{{ url }}'
