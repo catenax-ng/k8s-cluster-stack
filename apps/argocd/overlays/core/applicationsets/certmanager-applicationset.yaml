@@ -15,7 +15,7 @@ spec:
     metadata:
       name: '{{ cluster }}-certmanager'
       labels:
-        app: certmanager
+        app: cert-manager-label
     spec:
       project: default
       source:
