@@ -26,14 +26,14 @@ spec:
         targetRevision: feature/A10DT-419-setup-default-apps
         path: apps/certmanager
 
-      destination:
-        server: '{{ url }}'
-        namespace: default
-
-# TODO 24.03.2022 CARSLEN: Might it be usefull to install to an own namespace, i.e. cert-manager, as docu suggests?
 #      destination:
 #        server: '{{ url }}'
-#        namespace: cert-manager
-#      syncPolicy:
-#        syncOptions:
-#          - CreateNamespace=true
+#        namespace: default
+
+# TODO 24.03.2022 CARSLEN: Might it be usefull to install to an own namespace, i.e. cert-manager, as docu suggests?
+      destination:
+        server: '{{ url }}'
+        namespace: cert-manager
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
