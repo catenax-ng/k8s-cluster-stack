@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: ingress-nginx-applicationset
+  name: certmanager-applicationset
 spec:
   generators:
   - list:
@@ -13,9 +13,9 @@ spec:
 
   template:
     metadata:
-      name: '{{ cluster }}-ingress-nginx'
+      name: '{{ cluster }}-certmanager'
       labels:
-        app: ingress-nginx
+        app: certmanager
     spec:
       project: default
       source:
@@ -24,7 +24,7 @@ spec:
             - values.yaml
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
         targetRevision: feature/A10DT-419-setup-default-apps
-        path: apps/ingress/ingress-nginx
+        path: apps/certmanager
 
       destination:
         server: '{{ url }}'
