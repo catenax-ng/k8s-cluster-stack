@@ -22,7 +22,7 @@ spec:
         chart: cert-manager
         helm:
           valueFiles:
-            - https://raw.githubusercontent.com/catenax-ng/k8s-cluster-stack/feature/A10DT-419-setup-default-apps/apps/certmanager/values-certmanager.yaml
+            - https://raw.githubusercontent.com/catenax-ng/k8s-cluster-stack/feature/A10DT-419-setup-default-apps/apps/certmanager/values.certmanager.yaml
         repoURL: https://charts.jetstack.io
         targetRevision: v1.7.2
         #repoURL: https://github.com/catenax-ng/k8s-cluster-stack
