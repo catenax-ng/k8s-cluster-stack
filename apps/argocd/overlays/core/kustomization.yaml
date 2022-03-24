@@ -6,7 +6,7 @@ bases:
 
 resources:
   - applicationsets/argo-applicationset.yaml
-#  - applicationsets/certmanager-applicationset.yaml
+  - applicationsets/certmanager-applicationset.yaml
 #  - applicationsets/ingress-applicationset.yaml
 
 # Configure rbac to grant catenax-ng:ArgoCDAdmins admin rights to argoCD
