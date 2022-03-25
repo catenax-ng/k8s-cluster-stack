@@ -1,5 +1,0 @@
-installCRDs: true
-bla: "YEA"
-BLUBA: "FUUUUU"
-#certmanager:
-#  installCRDs: true
