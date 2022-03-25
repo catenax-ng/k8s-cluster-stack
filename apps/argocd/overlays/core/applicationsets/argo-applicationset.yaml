@@ -28,7 +28,7 @@ spec:
         targetRevision: '{{ targetRevision }}'
         path: apps/argocd/{{overlay}}
       destination:
-        server: '{{ cluster }}'
+        server: '{{ url }}'
         namespace: argocd
       # Sync policy
       syncPolicy:

@@ -30,7 +30,7 @@ spec:
         path: apps/certmanager
 
       destination:
-        server: '{{ cluster }}'
+        server: '{{ url }}'
         namespace: cert-manager
       syncPolicy:
         syncOptions:
