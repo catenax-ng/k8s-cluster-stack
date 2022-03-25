@@ -5,10 +5,9 @@ bases:
   - ../../base
 
 resources:
-#  - argo_applicationset.yaml
-# ingress won't work until certmanagement not implemented
-#  - ingress-argocd.yaml
+# in case on remote cluster a argo app needs to be persisted, add appropiate applicationset file here
+#  - appname_applicationset.yaml
 
-# Configure rbac to grant catenax-ng:ArgoCDAdmins admin rights to argoCD
 patchesStrategicMerge:
+# TODO 25.03.2022 CARSLEN: Don't forget to apply correct FQDN to argo-url-argocd-cm.yaml
   - argo-url-argocd-cm.yaml

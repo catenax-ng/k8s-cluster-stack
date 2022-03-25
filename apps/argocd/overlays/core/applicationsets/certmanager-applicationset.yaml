@@ -6,12 +6,12 @@ spec:
   generators:
   - list:
       elements:
-#      - cluster: core
-#        cluster-name: in-cluster
-#        targetRevision: feature/A10DT-419-setup-default-apps
-      - cluster: hotel-budapest
-        cluster-name: carslen-hotel-budapest
+      - cluster: core
+        cluster-name: in-cluster
         targetRevision: feature/A10DT-419-setup-default-apps
+#      - cluster: example
+#        cluster-name: example-cluster
+#        targetRevision: HEAD
 
   template:
     metadata:
