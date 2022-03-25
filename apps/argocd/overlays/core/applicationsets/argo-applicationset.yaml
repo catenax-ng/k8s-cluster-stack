@@ -9,7 +9,7 @@ spec:
       - cluster: core
         cluster-name: in-cluster
         overlay: overlays/core
-        targetRevision: feature/A10DT-419-setup-default-apps
+        targetRevision: HEAD
 #      - cluster: example
 #        cluster-name: example-cluster
 #        overlay: overlays/example

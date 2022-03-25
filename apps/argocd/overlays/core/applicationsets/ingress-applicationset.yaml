@@ -8,7 +8,7 @@ spec:
       elements:
       - cluster: core
         cluster-name: in-cluster
-        targetRevision: feature/A10DT-419-setup-default-apps
+        targetRevision: HEAD
 #      - cluster: example
 #        cluster-name: example-cluster
 #        targetRevision: HEAD
