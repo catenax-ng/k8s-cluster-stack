@@ -7,11 +7,11 @@ spec:
   - list:
       elements:
       - cluster: core
-        name: in-cluster
+        cluster-name: in-cluster
         overlay: overlays/core
         targetRevision: feature/A10DT-419-setup-default-apps
       - cluster: hotel-budapest
-        name: carslen-hotel-budapest
+        cluster-name: carslen-hotel-budapest
         overlay: overlays/hotel-budapest
         targetRevision: feature/A10DT-419-setup-default-apps
 
@@ -27,7 +27,7 @@ spec:
         targetRevision: '{{ targetRevision }}'
         path: apps/argocd/{{overlay}}
       destination:
-        name: '{{ name }}'
+        name: '{{ cluster-name }}'
         namespace: argocd
         server: ''
       # Sync policy
