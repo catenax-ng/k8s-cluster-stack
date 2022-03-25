@@ -5,6 +5,8 @@ metadata:
   labels:
     app.kubernetes.io/part-of: argocd
 data:
-  policy.default: role:readonly
+  policy.default: role:none
+  scopes: '[groups, email]'
   policy.csv: |
+    p, role:none, *, *, */*, deny
     g, catenax-ng:ArgoCDAdmins, role:admin
