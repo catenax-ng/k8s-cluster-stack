@@ -10,10 +10,15 @@ After completing these steps the following resources will be created:
 
 ## Create an AKS cluster 
 
-To set up AKS, we are using terraform.
+To set up AKS, we are using terraform. 
+
+> __NOTE__: Applying terraform plans is done locally, since we do not expect a lot of clusters.
+Also, we'll use Gardener in foreseeable future and the whole setup will change.
 
 
 ### Create a service principal
+
+> __NOTE__: This Step is optional. You can also reuse existing ones
 
 To set up the AKS cluster, we need an Azure Service Principal Account. You can create it like follows:
 
@@ -23,21 +28,36 @@ az login --tenant catenax.onmicrosoft.com
 az ad sp create-for-rbac --skip-assignment
 ```
 
+The last command will print a json object with the service principal details. The two important properties are
+_appId_ and _password_, which will be used as credentials for the AKS cluster.
+
+### Create the necessary Azure resources
+
 ```shell
 terraform init
 
 # Set the service principle to use via environment
+# <sp client id> is the value of 'appId' from the service principal json output
+# <sp client secret> is the value of 'password' from the service principal json output
 export TF_VAR_service_principal_client_id=<sp client id>
 export TF_VAR_service_principal_client_secret=<sp client secret>
 
 terraform plan -var-file=environments/<environment>.tfvars -out <environment>.plan
+terraform apply <environment>.plan
 ```
 
 
 ## Install Core ArgoCD Cluster
 
-`kubect apply -k argocd`
-> Note: Execute twice to get ApplicationSet realy working.
+To install the initial ArgoCD instance you have to connect ```kubectl``` to the previously created AKS instance.
+Therefor open the AKS resource in [Azure portal](https://portal.azure.com/) and follow the _connect_ instructions.
+
+Once you are connected via ```kubectl```, you can use _kustomize_ to apply the necessary kubernetes resources.
+From the top level directory of this repository run:
+
+```kubect apply -k argocd```
+
+> Note: You may have to execute this twice, since we are using ArgoCD CRDs, which are not recognized on the first run.
 
 
 ## Environment provisioning via Core ArgoCD
