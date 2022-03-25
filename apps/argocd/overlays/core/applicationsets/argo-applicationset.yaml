@@ -10,10 +10,10 @@ spec:
         cluster-name: in-cluster
         overlay: overlays/core
         targetRevision: feature/A10DT-419-setup-default-apps
-      - cluster: hotel-budapest
-        cluster-name: carslen-hotel-budapest
-        overlay: overlays/hotel-budapest
-        targetRevision: feature/A10DT-419-setup-default-apps
+#      - cluster: example-cluster
+#        cluster-name: example
+#        overlay: overlays/example-cluster
+#        targetRevision: HEAD
 
   template:
     metadata:
