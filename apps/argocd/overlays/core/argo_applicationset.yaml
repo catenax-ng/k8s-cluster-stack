@@ -10,9 +10,6 @@ spec:
         # must maybe not be kubernetes.default.svc for automation IMHO but url for core cluster?!
         url: https://kubernetes.default.svc
         overlay: overlays/core
-      - cluster: remote
-        url: https://hote-budapest-kube-api
-        overlay: overlays/hotel-budapest
 
   template:
     metadata:
