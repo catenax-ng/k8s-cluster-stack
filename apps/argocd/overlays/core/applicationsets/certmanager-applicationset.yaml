@@ -21,7 +21,6 @@ spec:
     spec:
       project: default
       source:
-        chart: certmanager
         helm:
           valueFiles:
             - values-certmanager.yaml
