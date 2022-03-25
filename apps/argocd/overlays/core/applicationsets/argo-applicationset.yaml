@@ -12,7 +12,7 @@ spec:
         overlay: overlays/core
         targetRevision: feature/A10DT-419-setup-default-apps
       - cluster: carslen-hotel-budapest
-        url: https://carslendemobudapest-dns-9bd4168d.hcp.germanywestcentral.azmk8s.io
+        url: https://carslendemochild-dns-1511068f.hcp.germanywestcentral.azmk8s.io
         overlay: overlays/hotel-budapest
         targetRevision: feature/A10DT-419-setup-default-apps
 
@@ -28,7 +28,7 @@ spec:
         targetRevision: '{{ targetRevision }}'
         path: apps/argocd/{{overlay}}
       destination:
-        server: '{{url}}'
+        server: '{{ cluster }}'
         namespace: argocd
       # Sync policy
       syncPolicy:
