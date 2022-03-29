@@ -1,0 +1,13 @@
+issuer:
+  email: "yuanxun.gu@sap.com"
+  azure:
+    clientId: "48ab828d-7c2b-4895-8188-71603b4c0742"
+    hostedZoneName: "demo.catena-x.net"
+    resourceGroupName: "cxtsi-demo-shared-rg"
+    subscriptionID: "9ce17adc-8710-43fd-ab43-de2f418015bf"
+    tenantID: "495463c3-0991-4659-9cc5-94b4a3f7b1d6"
+    clientSecretSecretRef:
+      key: "client-secret"
+      name: "azuredns-config"
+certificate:
+  dnsZone: "core.demo.catena-x.net"

@@ -1,0 +1,23 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    server: "https://acme-v02.api.letsencrypt.org/directory"
+    #server: "https://acme-staging-v02.api.letsencrypt.org/directory"
+    email: {{ .Values.issuer.email}}
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    solvers:
+      - dns01:
+          azureDNS:
+            clientID: {{ .Values.issuer.azure.clientId}}
+            clientSecretSecretRef:
+            {{- toYaml .Values.issuer.azure.clientSecretSecretRef | nindent 14 }}
+            hostedZoneName: {{ .Values.issuer.azure.hostedZoneName }}
+            resourceGroupName: {{ .Values.issuer.azure.resourceGroupName }}
+            subscriptionID: {{ .Values.issuer.azure.subscriptionID }}
+            tenantID: {{ .Values.issuer.azure.tenantID }}
+
+

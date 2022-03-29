@@ -1,0 +1,19 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: le-crt
+  namespace: argocd
+spec:
+  secretName: tls-secret
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-prod
+  commonName: "*.{{ .Values.certificate.dnsZone }}"
+  dnsNames:
+    - "*.{{ .Values.certificate.dnsZone }}"
+  secretTemplate:
+    annotations:
+      reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
+      reflector.v1.k8s.emberstack.com/reflection-auto-enabled: "true" # Auto create reflection for matching namespaces
+
+
