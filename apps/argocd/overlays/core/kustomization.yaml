@@ -8,6 +8,7 @@ resources:
   - applicationsets/argo-applicationset.yaml
   - applicationsets/certmanager-applicationset.yaml
   - applicationsets/ingress-applicationset.yaml
+  - applicationsets/tls-applicationset.yaml
 
 patchesStrategicMerge:
 # TODO 25.03.2022 CARSLEN: Don't forget to apply correct FQDN to argo-url-argocd-cm.yaml
