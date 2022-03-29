@@ -9,7 +9,7 @@ spec:
       - cluster: core
         cluster-name: in-cluster
         overlay: overlays/core
-        targetRevision: feature/rico-add-ingress
+        targetRevision: HEAD
 #      - cluster: example
 #        cluster-name: example-cluster
 #        overlay: overlays/example
