@@ -8,7 +8,7 @@ spec:
       elements:
       - cluster: core
         cluster-name: in-cluster
-        targetRevision: HEAD
+        targetRevision: feature/rico-add-ingress
 #      - cluster: example
 #        cluster-name: example-cluster
 #        targetRevision: HEAD
