@@ -30,4 +30,4 @@ spec:
     - hosts:
         - argo.{{ .Values.certificate.dnsZone}}
       secretName: tls-secret
-
+{{- end}}

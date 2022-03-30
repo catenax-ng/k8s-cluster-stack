@@ -25,6 +25,7 @@ spec:
       source:
         helm:
           valueFiles:
+            - values.yaml
             - '{{ valueFile }}'
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
         targetRevision: '{{ targetRevision }}'
