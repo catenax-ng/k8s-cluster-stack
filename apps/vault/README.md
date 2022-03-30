@@ -1,5 +1,9 @@
+#Hashicorp vault
+
+##In case you don't have a service principla yet, create it with this command:
 az ad sp create-for-rbac --name "vault-sp" --role owner --scopes /subscriptions/899135fc-19c6-47cb-82f1-0230af7b99b5/resourceGroups/cx-vault-rg --sdk-auth
 
+##Copy the output of the previous command to either a secret for github actions workflow or declare a variable for manual run:
 AZURE_CREDENTIALS=$(cat <<-END
 {
   "clientId": "",
@@ -15,6 +19,8 @@ AZURE_CREDENTIALS=$(cat <<-END
 }
 END
 )
+
+##Create these variables as well (needed for the automatic unseal with Azure keyvault):
 AZURE_TENANT_ID=""
 AZURE_AD_CLIENT_ID=""
 AZURE_AD_CLIENT_SECRET=""
@@ -22,9 +28,11 @@ AZUREVAULTNAME=""
 AZUREVAULTKEYNAME=""
 AZURE_SUBSCRIPTION_ID=""
 
+##Get the kubeconfig from both central argocd and vault clusters:
 az aks get-credentials --resource-group cx-vault-rg --name cx-vault-aks-services --admin --file $HOME/.kube/cx-vault-admin
 az aks get-credentials --resource-group cx-core-rg --name cx-core-aks --admin --file $HOME/.kube/cx-core-admin
 
+##Deploy the argocd app to the central argocd cluster:
 helm --kubeconfig=$HOME/.kube/cx-core-admin upgrade vault . \
 --namespace argocd \
 --install \
@@ -37,6 +45,7 @@ helm --kubeconfig=$HOME/.kube/cx-core-admin upgrade vault . \
 --set vault.seal.azurevaultkeyname=${AZUREVAULTKEYNAME} \
 --set vault.seal.subscriptionid=${AZURE_SUBSCRIPTION_ID}
 
+##Unseal vault for the first time (azure keyvault cannot initialize vault, therefore manual action):
 kubectl --kubeconfig=$HOME/.kube/cx-vault-admin -n vault exec -it pod/vault-0 -- /bin/sh
 
 vault operator init
