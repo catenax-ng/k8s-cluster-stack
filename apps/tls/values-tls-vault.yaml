@@ -1,4 +1,4 @@
-cluster: "core"
+cluster: "vault"
 
 issuer:
   email: "yuanxun.gu@sap.com"
@@ -12,4 +12,4 @@ issuer:
       key: "client-secret"
       name: "azuredns-config"
 certificate:
-  dnsZone: "core.demo.catena-x.net"
+  dnsZone: "vault.demo.catena-x.net"

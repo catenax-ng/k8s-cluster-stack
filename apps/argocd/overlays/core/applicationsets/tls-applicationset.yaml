@@ -8,10 +8,12 @@ spec:
         elements:
           - cluster: core
             cluster-name: in-cluster
+            valueFile: values-tls.yaml
             targetRevision: feature/A1ODT-426-vault
-  #      - cluster: example
-  #        cluster-name: example-cluster
-  #        targetRevision: HEAD
+          - cluster: vault
+            cluster-name: cx-vault-aks-services-admin
+            valueFile: values-tls-vault.yaml
+            targetRevision: feature/A1ODT-426-vault
 
   template:
     metadata:
@@ -23,7 +25,7 @@ spec:
       source:
         helm:
           valueFiles:
-            - values-tls.yaml
+            - '{{ valueFile }}'
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
         targetRevision: '{{ targetRevision }}'
         path: apps/tls

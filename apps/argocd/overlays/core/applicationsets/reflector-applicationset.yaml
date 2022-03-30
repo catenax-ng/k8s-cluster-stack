@@ -9,9 +9,9 @@ spec:
           - cluster: core
             cluster-name: in-cluster
             targetRevision: 6.1.47
-  #      - cluster: example
-  #        cluster-name: example-cluster
-  #        targetRevision: HEAD
+          - cluster: vault
+            cluster-name: cx-vault-aks-services-admin
+            targetRevision: 6.1.47
 
   template:
     metadata:
