@@ -8,10 +8,10 @@ spec:
       elements:
       - cluster: core
         cluster-name: in-cluster
-        targetRevision: HEAD
-#      - cluster: example
-#        cluster-name: example-cluster
-#        targetRevision: HEAD
+        targetRevision: feature/A1ODT-426-vault
+      - cluster: vault
+        cluster-name: cx-vault-aks-services-admin
+        targetRevision: feature/A1ODT-426-vault
 
   template:
     metadata:

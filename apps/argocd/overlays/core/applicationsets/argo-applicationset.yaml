@@ -9,7 +9,7 @@ spec:
       - cluster: core
         cluster-name: in-cluster
         overlay: overlays/core
-        targetRevision: HEAD
+        targetRevision: feature/A1ODT-426-vault
 #      - cluster: example
 #        cluster-name: example-cluster
 #        overlay: overlays/example

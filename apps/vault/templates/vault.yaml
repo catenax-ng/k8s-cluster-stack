@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: {{.Values.vault.name}}
-  namespace: {{.Values.vault.namespace}}
+  namespace: argocd
   labels:
     app.kubernetes.io/managed-by: Helm
   annotations:
