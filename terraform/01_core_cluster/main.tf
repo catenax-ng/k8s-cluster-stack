@@ -26,3 +26,12 @@ module "public_ip" {
   resource_location   = module.resource_group.resource_location
   resource_group_name = module.resource_group.resource_group_name
 }
+
+module "a_record" {
+  source = "../modules/a_record"
+
+  record_name = "*.${var.environment_name}"
+  resource_group_name = module.resource_group.resource_group_name
+  target_resource_id = module.public_ip.id
+  zone_name = "demo.catena-x.net"
+}
