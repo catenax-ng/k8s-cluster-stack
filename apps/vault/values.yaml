@@ -1,0 +1,17 @@
+vault:
+  name: vault
+  namespace: argocd
+  destination:
+    server: https://cxvaultakssrv-122a5b8a.hcp.germanywestcentral.azmk8s.io:443
+    namespace: vault
+  source:
+    repourl: https://helm.releases.hashicorp.com
+    targetrevision: 0.19.0
+  project: vault
+  seal:
+    tenantid: passfromsecret
+    clientid: passfromsecret
+    clientsecret: passfromsecret
+    azurevaultname: passfromsecret
+    azurevaultkeyname: passfromsecret
+    subscriptionid: passfromsecret
