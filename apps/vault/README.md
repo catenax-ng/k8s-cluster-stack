@@ -1,6 +1,6 @@
 # Hashicorp vault
 
-## In case you don't have a service principla yet, create it with this command:
+## In case you don't have a service principal yet, create it with this command:
 az ad sp create-for-rbac --name "vault-sp" --role owner --scopes /subscriptions/899135fc-19c6-47cb-82f1-0230af7b99b5/resourceGroups/cx-vault-rg --sdk-auth
 
 ## Copy the output of the previous command to either a secret for github actions workflow or declare a variable for manual run:
