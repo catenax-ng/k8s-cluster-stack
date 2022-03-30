@@ -16,7 +16,7 @@ metadata:
     #nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   rules:
-    - host: vault.demo.catena-x.net
+    - host: vault.{{ .Values.certificate.dnsZone}}
       http:
         paths:
           - path: /
@@ -25,8 +25,8 @@ spec:
               service:
                 name: vault
                 port:
-                  number: 443
+                  number: 8200
   tls:
     - hosts:
-        - argo.{{ .Values.certificate.dnsZone}}
+        - vault.{{ .Values.certificate.dnsZone}}
       secretName: tls-secret
