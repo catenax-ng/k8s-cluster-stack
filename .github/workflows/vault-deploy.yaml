@@ -1,0 +1,30 @@
+name: Vault-deploy
+
+on: workflow_dispatch
+
+jobs:
+  vault-deploy:
+    name: Vault Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kubernetes Login (central argocd)
+        uses: azure/aks-set-context@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          resource-group: cx-core-rg
+          cluster-name: cx-core-aks
+      
+      - name: Deploy Vault
+        working-directory: apps/vault
+        run: |
+          helm upgrade vault . \
+          --namespace argocd \
+          --install \
+          --wait \
+          --atomic \
+          --set vault.seal.tenantid=${{secrets.AZURE_TENANT_ID}} \
+          --set vault.seal.clientid=${{secrets.AZURE_AD_CLIENT_ID}} \
+          --set vault.seal.clientsecret=${{secrets.AZURE_AD_CLIENT_SECRET}} \
+          --set vault.seal.azurevaultname=${{secrets.AZUREVAULTNAME}} \
+          --set vault.seal.azurevaultkeyname=${{secrets.AZUREVAULTKEYNAME}} \
+          --set vault.seal.subscriptionid=${{secrets.AZURE_SUBSCRIPTION_ID}}
