@@ -7,6 +7,9 @@ jobs:
     name: Vault Deploy
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
+
       - name: Kubernetes Login (central argocd)
         uses: azure/aks-set-context@v1
         with:
