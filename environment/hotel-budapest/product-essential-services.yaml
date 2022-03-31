@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-essential-services
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-essential-services
+  namespace: argocd
+spec:
+  description: Project for team essential services
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: product-essential-services
+      server: https://kubernetes.default.svc
+  # Deny all cluster-scoped resources from being created, except for Namespace
+  clusterResourceWhitelist:
+    - group: ''
+      kind: Namespace
+  # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
+  namespaceResourceBlacklist:
+    - group: ''
+      kind: ResourceQuota
+    - group: ''
+      kind: LimitRange
+    - group: ''
+      kind: NetworkPolicy
+  roles:
+    # A role which provides access to all applications in the project
+    - name: team-admin
+      description: All access to applications inside project-essential-services. Read only on project itself
+      policies:
+        - p, proj:project-essential-services:team-admin, applications, *, project-essential-services/*, allow
+        - p, proj:project-essential-services:team-admin, projects, get, project-essential-services, allow
+      groups:
+        - catenax-ng:product-essential-services, role:team-admin
