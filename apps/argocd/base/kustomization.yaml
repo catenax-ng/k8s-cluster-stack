@@ -8,4 +8,5 @@ resources:
 
 patchesStrategicMerge:
   - argocd-rbac-cm.yaml
+  - plugins/argo-vault-plugin.yaml
   - github-oauth-argocd-cm.yaml
