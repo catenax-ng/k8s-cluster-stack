@@ -13,7 +13,7 @@ jobs:
       - name: Kubernetes Login (central argocd)
         uses: azure/aks-set-context@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.VAULT_SP_CREDS }}
           resource-group: cx-core-rg
           cluster-name: cx-core-aks
       
@@ -25,9 +25,9 @@ jobs:
           --install \
           --wait \
           --atomic \
-          --set vault.seal.tenantid=${{secrets.AZURE_TENANT_ID}} \
-          --set vault.seal.clientid=${{secrets.AZURE_AD_CLIENT_ID}} \
-          --set vault.seal.clientsecret=${{secrets.AZURE_AD_CLIENT_SECRET}} \
-          --set vault.seal.azurevaultname=${{secrets.AZUREVAULTNAME}} \
-          --set vault.seal.azurevaultkeyname=${{secrets.AZUREVAULTKEYNAME}} \
+          --set vault.seal.tenantid=${{secrets.VAULT_SP_TENANT_ID}} \
+          --set vault.seal.clientid=${{secrets.VAULT_SP_CLIENT_ID}} \
+          --set vault.seal.clientsecret=${{secrets.VAULT_SP_CLIENT_SECRET}} \
+          --set vault.seal.azurevaultname=${{secrets.AZURE_VAULT_NAME}} \
+          --set vault.seal.azurevaultkeyname=${{secrets.AZURE_VAULT_KEY_NAME}} \
           --set vault.seal.subscriptionid=${{secrets.AZURE_SUBSCRIPTION_ID}}
