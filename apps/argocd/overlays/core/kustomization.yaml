@@ -10,6 +10,7 @@ resources:
   - applicationsets/ingress-applicationset.yaml
   - applicationsets/tls-applicationset.yaml
   - applicationsets/reflector-applicationset.yaml
+  - environments/*.yaml
 
 patchesStrategicMerge:
 # TODO 25.03.2022 CARSLEN: Don't forget to apply correct FQDN to argo-url-argocd-cm.yaml
