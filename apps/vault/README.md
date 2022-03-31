@@ -50,7 +50,8 @@ helm --kubeconfig=$HOME/.kube/cx-core-admin upgrade vault . \
 --set vault.seal.subscriptionid=${AZURE_SUBSCRIPTION_ID}
 ```
 
-## Unseal vault for the first time (azure keyvault cannot initialize vault, therefore manual action):
+## Initialize and unseal vault for the first time:
+### (azure keyvault cannot initialize vault, therefore manual action)
 ```
 kubectl --kubeconfig=$HOME/.kube/cx-vault-admin -n vault exec -it pod/vault-0 -- /bin/sh
 
@@ -70,3 +71,5 @@ kubectl --kubeconfig=$HOME/.kube/cx-vault-admin -n vault exec -it pod/vault-2 --
 vault operator raft join "http://vault-0.vault-internal:8200"
 exit
 ```
+# Alternatively, you can run the actions workflow for vault deployment
+### (still need to initialize manually)
