@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-edc
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: catenax-at-home
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-edc
+  namespace: argocd
+spec:
+  description: Project for team EDC
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: product-edc
+      server: https://kubernetes.default.svc
+    - namespace: catenax-at-home
+      server: https://kubernetes.default.svc
+  namespaceResourceBlacklist:
+    - group: ''
+      kind: ResourceQuota
+    - group: ''
+      kind: LimitRange
+    - group: ''
+      kind: NetworkPolicy
+  roles:
+    # A role which provides access to all applications in the project
+    - name: team-admin
+      description: All access to applications inside project-edc. Read only on project itself
+      policies:
+        - p, proj:project-edc:team-admin, applications, *, project-edc/*, allow
+        - p, proj:project-edc:team-admin, projects, get, project-edc, allow
+      groups:
+        - catenax-ng:product-edc, role:team-admin

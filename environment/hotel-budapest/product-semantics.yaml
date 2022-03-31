@@ -1,19 +1,19 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: product-material-pass
+  name: product-semantics
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: project-material-pass
+  name: project-semantics
   namespace: argocd
 spec:
-  description: Project for team Material Pass.
+  description: Project for team Semantics
   sourceRepos:
     - '*'
   destinations:
-    - namespace: product-material-pass
+    - namespace: product-semantics
       server: https://kubernetes.default.svc
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
   namespaceResourceBlacklist:
@@ -24,10 +24,11 @@ spec:
     - group: ''
       kind: NetworkPolicy
   roles:
+    # A role which provides access to all applications in the project
     - name: team-admin
-      description: All access to applications inside project-material-pass. Read only on project itself
+      description: All access to applications inside project-portal. Read only on project itself
       policies:
-        - p, proj:project-material-pass:team-admin, applications, *, project-material-pass/*, allow
-        - p, proj:project-material-pass:team-admin, projects, get, project-material-pass, allow
+        - p, proj:project-semantics:team-admin, applications, *, project-semantics/*, allow
+        - p, proj:project-semantics:team-admin, projects, get, project-semantics, allow
       groups:
-        - catenax-ng:product-material-pass, role:team-admin
+        - catenax-ng:product-semantics, role:team-admin

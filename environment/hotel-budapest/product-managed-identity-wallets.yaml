@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-managed-identity-wallets
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-managed-identity-wallets
+  namespace: argocd
+spec:
+  description: Project for team managed identity wallets.
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: product-managed-identity-wallets
+      server: https://kubernetes.default.svc
+  # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
+  namespaceResourceBlacklist:
+    - group: ''
+      kind: ResourceQuota
+    - group: ''
+      kind: LimitRange
+    - group: ''
+      kind: NetworkPolicy
+  roles:
+    # A role which provides access to all applications in the project
+    - name: team-admin
+      description: All access to applications inside project-managed-identity-wallets. Read only on project itself
+      policies:
+        - p, proj:project-managed-identity-wallets:team-admin, applications, *, project-managed-identity-wallets/*, allow
+        - p, proj:project-managed-identity-wallets:team-admin, projects, get, project-managed-identity-wallets, allow
+
+      groups:
+        - catenax-ng:product-managed-identity-wallets, role:team-admin
