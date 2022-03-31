@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+data:
+  configManagementPlugins: |
+    - name: general-avp
+      generate:
+        command: ["sh", "-c"]
+        args: ["argocd-vault-plugin generate -s ${AVP_SECRET} ./"]
