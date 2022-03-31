@@ -9,7 +9,11 @@ spec:
       - cluster: core
         cluster-name: in-cluster
         overlay: overlays/core
-        targetRevision: HEAD
+        targetRevision: feature/A1ODT-407_Setup_central_ArgoCD/A1ODT-461
+      - cluster: example
+        cluster-name: example-cluster
+        overlay: overlays/example
+        targetRevision: feature/A1ODT-407_Setup_central_ArgoCD/A1ODT-461
 #      - cluster: example
 #        cluster-name: example-cluster
 #        overlay: overlays/example

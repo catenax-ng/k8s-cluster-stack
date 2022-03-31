@@ -6,10 +6,11 @@ bases:
 
 resources:
   - applicationsets/argo-applicationset.yaml
-  - applicationsets/certmanager-applicationset.yaml
-  - applicationsets/ingress-applicationset.yaml
-  - applicationsets/tls-applicationset.yaml
-  - applicationsets/reflector-applicationset.yaml
+  # TODO 30.03.2022 CARSLEN: reenable before creating PR to main
+#  - applicationsets/certmanager-applicationset.yaml
+#  - applicationsets/ingress-applicationset.yaml
+#  - applicationsets/tls-applicationset.yaml
+#  - applicationsets/reflector-applicationset.yaml
 
 patchesStrategicMerge:
 # TODO 25.03.2022 CARSLEN: Don't forget to apply correct FQDN to argo-url-argocd-cm.yaml
