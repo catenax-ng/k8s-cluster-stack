@@ -9,11 +9,11 @@ spec:
       - cluster: core
         cluster-name: in-cluster
         overlay: overlays/core
-        targetRevision: feature/A1ODT-407_Setup_central_ArgoCD/A1ODT-461
+        targetRevision: feature/A1ODT-409_Secret_handling_with_Vault/A1ODT-423
       - cluster: example
         cluster-name: example-cluster
         overlay: overlays/example
-        targetRevision: feature/A1ODT-407_Setup_central_ArgoCD/A1ODT-461
+        targetRevision: feature/A1ODT-409_Secret_handling_with_Vault/A1ODT-423
 #      - cluster: example
 #        cluster-name: example-cluster
 #        overlay: overlays/example
