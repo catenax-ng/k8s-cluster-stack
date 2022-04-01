@@ -9,11 +9,11 @@ spec:
           - cluster: core
             cluster-name: in-cluster
             valueFile: values-tls-core.yaml
-            targetRevision: feature/A1ODT-426-vault
+            targetRevision: HEAD
           - cluster: vault
             cluster-name: vault-cluster
             valueFile: values-tls-vault.yaml
-            targetRevision: feature/A1ODT-426-vault
+            targetRevision: HEAD
 
   template:
     metadata:
