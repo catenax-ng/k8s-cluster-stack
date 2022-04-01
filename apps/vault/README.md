@@ -73,3 +73,95 @@ exit
 ```
 # Alternatively, you can run the actions workflow for vault deployment
 ### (still need to initialize manually)
+
+# APPROLE authentication
+
+## List approles:
+```
+curl \
+    --header "X-Vault-Token: " \
+    --request LIST \
+    http://localhost:8200/v1/auth/approle/role \
+	| jq '.'
+```
+## Create approle:
+
+### create.json:
+```
+{
+  "token_ttl": "10m",
+  "token_max_ttl": "15m",
+  "token_policies": ["default"],
+  "period": 0,
+  "bind_secret_id": true
+}
+```
+```
+curl \
+    --header "X-Vault-Token: " \
+    --request POST \
+    --data @create.json \
+    http://127.0.0.1:8200/v1/auth/approle/role/devsecops \
+	| jq '.'
+```
+## Show approle:
+```
+curl \
+    --header "X-Vault-Token: " \
+    http://127.0.0.1:8200/v1/auth/approle/role/devsecops \
+	| jq '.'
+```
+## Show approle role id:
+```
+curl \
+    --header "X-Vault-Token: " \
+    http://127.0.0.1:8200/v1/auth/approle/role/devsecops/role-id \
+	| jq '.data.role_id'
+```
+## Add secretid:
+```
+curl \
+    --header "X-Vault-Token: " \
+    --request POST \
+    http://127.0.0.1:8200/v1/auth/approle/role/devsecops/secret-id \
+	| jq '.'
+```
+## Show approle secret id:
+
+### secretid1.json:
+```
+{
+  "secret_id": "9ada82bf-7b8b-8d95-2cf3-2878e78c730d"
+}
+```
+```
+curl \
+    --header "X-Vault-Token: " \
+    --request POST \
+    --data @secretid1.json \
+    http://127.0.0.1:8200/v1/auth/approle/role/application1/secret-id/lookup
+```
+## List secret id accessors
+```
+curl \
+    --header "X-Vault-Token: " \
+    --request LIST \
+    http://127.0.0.1:8200/v1/auth/approle/role/devsecops/secret-id \
+	| jq '.'
+```
+## Login with approle
+
+### login.json:
+```
+{
+  "role_id": "",
+  "secret_id": ""
+}
+```
+```
+curl \
+    --request POST \
+    --data @login.json \
+    http://127.0.0.1:8200/v1/auth/approle/login \
+	| jq '.'
+```
