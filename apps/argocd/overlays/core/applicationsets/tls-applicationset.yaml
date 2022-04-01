@@ -11,7 +11,7 @@ spec:
             valueFile: values-tls-core.yaml
             targetRevision: feature/A1ODT-426-vault
           - cluster: vault
-            cluster-name: cx-vault-aks-services-admin
+            cluster-name: vault-cluster
             valueFile: values-tls-vault.yaml
             targetRevision: feature/A1ODT-426-vault
 

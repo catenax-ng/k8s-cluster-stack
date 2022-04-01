@@ -10,7 +10,7 @@ spec:
         cluster-name: in-cluster
         targetRevision: feature/A1ODT-426-vault
       - cluster: vault
-        cluster-name: cx-vault-aks-services-admin
+        cluster-name: vault-cluster
         targetRevision: feature/A1ODT-426-vault
 
   template:

@@ -10,7 +10,7 @@ spec:
             cluster-name: in-cluster
             targetRevision: 6.1.47
           - cluster: vault
-            cluster-name: cx-vault-aks-services-admin
+            cluster-name: vault-cluster
             targetRevision: 6.1.47
 
   template:
