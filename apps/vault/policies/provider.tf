@@ -1,4 +1,5 @@
 provider "vault" {
+  address = "https://vault.vault.demo.catena-x.net"
   auth_login {
     path = "auth/approle/login"
 

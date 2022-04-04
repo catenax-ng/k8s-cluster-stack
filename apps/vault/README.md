@@ -210,3 +210,8 @@ curl \
     http://127.0.0.1:8200/v1/auth/approle/login \
 	| jq '.'
 ```
+### Assign vault policy to approle (CLI)
+todo: look for api method or change all previous commands to cli equivalent
+```
+vault write auth/approle/role/devsecops policies=vault_admins
+```
