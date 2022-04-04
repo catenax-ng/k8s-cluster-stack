@@ -6,7 +6,7 @@ bases:
 
 resources:
   - applicationsets/argo-applicationset.yaml
-#  - example-cluster-secret.yaml
+  - example-cluster-secret.yaml
 # TODO 30.03.2022 CARSLEN: reenable before creating PR to main
 #  - applicationsets/certmanager-applicationset.yaml
 #  - applicationsets/ingress-applicationset.yaml
