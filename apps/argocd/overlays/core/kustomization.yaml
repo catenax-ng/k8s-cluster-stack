@@ -5,8 +5,7 @@ bases:
   - ../../base
 
 resources:
-  # enable avp to get secret with AVP configuration
-  - rbac-secret-access.yaml
+  - rbac-secret-access.yaml # grant avp access to secret with AVP configuration
   - applicationsets/argo-applicationset.yaml
   - example-cluster-secret.yaml
 # TODO 30.03.2022 CARSLEN: reenable before creating PR to main
