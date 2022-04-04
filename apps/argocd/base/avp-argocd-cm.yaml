@@ -11,8 +11,8 @@ data:
       - name: avp-kustomize
         generate:
           command: ["sh", "-c"]
-          args: ["kustomize build . | argocd-vault-plugin generate -s ${AVP_SECRET}"]
+          args: ["kustomize build . | argocd-vault-plugin generate -"]
       - name: avp-helm
         generate:
           command: ["bash", "-c"]
-          args: ['helm template "$ARGOCD_APP_NAME" -f <(echo "$HELM_VALUES") . | argocd-vault-plugin generate -s ${AVP_SECRET}']
+          args: ['helm template "$ARGOCD_APP_NAME" -f <(echo "$HELM_VALUES") . | argocd-vault-plugin generate -']
