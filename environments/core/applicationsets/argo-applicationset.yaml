@@ -33,12 +33,9 @@ spec:
         path: apps/argocd/{{overlay}}
         plugin:
           name: avp-kustomize
-        envFrom:
-          - secretRef:
-              name: '{{ AVP_SECRET }}'
-#          env:
-#            - name: AVP_SECRET
-#              value: '{{ AVP_SECRET }}'
+          env:
+            - name: AVP_SECRET
+              value: '{{ AVP_SECRET }}'
       destination:
         name: '{{ cluster-name }}'
         namespace: argocd
