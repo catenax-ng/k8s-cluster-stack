@@ -32,7 +32,7 @@ spec:
         targetRevision: '{{ targetRevision }}'
         path: apps/argocd/{{overlay}}
         plugin:
-          name: general-avp
+          name: argocd-vault-plugin-kustomize
           env:
             - name: AVP_SECRET
               value: '{{ AVP_SECRET }}'

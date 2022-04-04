@@ -8,3 +8,11 @@ data:
       generate:
         command: ["sh", "-c"]
         args: ["argocd-vault-plugin generate -s ${AVP_SECRET} ./"]
+      - name: argocd-vault-plugin-kustomize
+        generate:
+          command: ["sh", "-c"]
+          args: ["kustomize build . | argocd-vault-plugin generate -s ${AVP_SECRET}"]
+      - name: argocd-vault-plugin-helm
+        generate:
+          command: ["bash", "-c"]
+          args: ['helm template "$ARGOCD_APP_NAME" -f <(echo "$HELM_VALUES") . | argocd-vault-plugin generate -s ${AVP_SECRET}']
