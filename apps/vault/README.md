@@ -1,9 +1,11 @@
 # Hashicorp vault
 
-## In case you don't have a service principal yet, create it with this command:
+## Deployment
+
+### In case you don't have a service principal yet, create it with this command:
 `az ad sp create-for-rbac --name "vault-sp" --role owner --scopes /subscriptions/899135fc-19c6-47cb-82f1-0230af7b99b5/resourceGroups/cx-vault-rg --sdk-auth`
 
-## Copy the output of the previous command to either a secret for github actions workflow or declare a variable for manual run:
+### Copy the output of the previous command to either a secret for github actions workflow or declare a variable for manual run:
 ```
   AZURE_CREDENTIALS=$(cat <<-END
   {
@@ -21,7 +23,7 @@
   END
   )
 ```
-## Create these variables as well (needed for the automatic unseal with Azure keyvault):
+### Create these variables as well (needed for the automatic unseal with Azure keyvault):
 ```
 AZURE_TENANT_ID=""
 AZURE_AD_CLIENT_ID=""
@@ -31,11 +33,11 @@ AZUREVAULTKEYNAME=""
 AZURE_SUBSCRIPTION_ID=""
 ```
 
-## Get the kubeconfig from both central argocd and vault clusters:
+### Get the kubeconfig from both central argocd and vault clusters:
 `az aks get-credentials --resource-group cx-vault-rg --name cx-vault-aks-services --admin --file $HOME/.kube/cx-vault-admin`
 `az aks get-credentials --resource-group cx-core-rg --name cx-core-aks --admin --file $HOME/.kube/cx-core-admin`
 
-## Deploy the argocd app to the central argocd cluster:
+### Deploy the argocd app to the central argocd cluster:
 ```
 helm --kubeconfig=$HOME/.kube/cx-core-admin upgrade vault . \
 --namespace argocd \
@@ -50,8 +52,8 @@ helm --kubeconfig=$HOME/.kube/cx-core-admin upgrade vault . \
 --set vault.seal.subscriptionid=${AZURE_SUBSCRIPTION_ID}
 ```
 
-## Initialize and unseal vault for the first time:
-### (azure keyvault cannot initialize vault, therefore manual action)
+### Initialize and unseal vault for the first time:
+(azure keyvault cannot initialize vault, therefore manual action)
 ```
 kubectl --kubeconfig=$HOME/.kube/cx-vault-admin -n vault exec -it pod/vault-0 -- /bin/sh
 
@@ -71,11 +73,54 @@ kubectl --kubeconfig=$HOME/.kube/cx-vault-admin -n vault exec -it pod/vault-2 --
 vault operator raft join "http://vault-0.vault-internal:8200"
 exit
 ```
-# Alternatively, you can run the actions workflow for vault deployment
-### (still need to initialize manually)
+### Alternatively, you can run the actions workflow for vault deployment
+(still need to initialize manually)
 
-# APPROLE authentication
+## Configure GitHub authentication
 
+### Login to Azure and download kubeconfig
+```
+az login --tenant 495463c3-0991-4659-9cc5-94b4a3f7b1d6 --use-device-code
+az account set --subscription 899135fc-19c6-47cb-82f1-0230af7b99b5
+az aks get-credentials --resource-group cx-vault-rg --name cx-vault-aks-services --admin --file .kube/cx-vault-admin
+```
+### Get prompt to vault sevice
+```
+kubectl --kubeconfig=.kube/cx-vault-admin -n vault exec -it service/vault 8200:8200 -- /bin/sh
+```
+### Login to vault via cli
+```
+vault login
+```
+enter token when prompted
+
+### List current authentication providers
+```
+vault auth list
+```
+### Enable github authentication provider
+```
+vault auth enable github
+```
+### Configure github organization for authentication provider
+```
+vault write auth/github/config organization=catenax-ng
+```
+#### Create a vault policy with the desired access rights for the team
+#### https://www.vaultproject.io/docs/concepts/policies
+#### vault-admins policy:
+#### WARNING! this policy grants basically root access
+####path "*" {
+####  capabilities = ["create","read","update","delete","list"]
+####}
+
+### Map the vault policy to the github team
+```
+vault write auth/github/map/teams/argocdadmins value=vault_admins
+```
+
+# Configure APPROLE authentication
+Access API using kubectl port-forward to localhost in this example
 ## List approles:
 ```
 curl \

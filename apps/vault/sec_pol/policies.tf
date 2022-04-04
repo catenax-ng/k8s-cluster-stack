@@ -1,98 +1,98 @@
 resource "vault_policy" "project_bpdm" {
-  name = "default-secret"
+  name = "project_bpdm"
 
   policy = <<EOT
-path "secret/project-bpdm" {
+path "project-bpdm" {
   capabilities = ["update"]
 }
 EOT
 }
 
 resource "vault_policy" "project_data_format_transformer" {
-  name = "default-secret"
+  name = "project_data_format_transformer"
 
   policy = <<EOT
-path "secret/project-data-format-transformer" {
+path "project-data-format-transformer" {
   capabilities = ["update"]
 }
 EOT
 }
 
 resource "vault_policy" "project_data_integrity_demonstrator" {
-  name = "default-secret"
+  name = "project_data_integrity_demonstrator"
 
   policy = <<EOT
-path "secret/project-data-integrity-demonstrator" {
+path "project-data-integrity-demonstrator" {
   capabilities = ["update"]
 }
 EOT
 }
 
 resource "vault_policy" "project_edc" {
-  name = "default-secret"
+  name = "project_edc"
 
   policy = <<EOT
-path "secret/project-edc" {
+path "project-edc" {
   capabilities = ["update"]
 }
 EOT
 }
 
 resource "vault_policy" "project_essential_services" {
-  name = "default-secret"
+  name = "project_essential_services"
 
   policy = <<EOT
-path "secret/project-essential-services" {
+path "project-essential-services" {
   capabilities = ["update"]
 }
 EOT
 }
 
 resource "vault_policy" "project_managed_identity_wallets" {
-  name = "default-secret"
+  name = "project_managed_identity_wallets"
 
   policy = <<EOT
-path "secret/project-managed-identity-wallets" {
+path "project-managed-identity-wallets" {
   capabilities = ["update"]
 }
 EOT
 }
 
 resource "vault_policy" "project_material_pass" {
-  name = "default-secret"
+  name = "project_material_pass"
 
   policy = <<EOT
-path "secret/project-material-pass" {
+path "project-material-pass" {
   capabilities = ["update"]
 }
 EOT
 }
 
 resource "vault_policy" "project_portal" {
-  name = "default-secret"
+  name = "project_portal"
 
   policy = <<EOT
-path "secret/project-portal" {
+path "project-portal" {
   capabilities = ["update"]
 }
 EOT
 }
 
 resource "vault_policy" "project_semantics" {
-  name = "default-secret"
+  name = "project_semantics"
 
   policy = <<EOT
-path "secret/project-semantics" {
+path "project-semantics" {
   capabilities = ["update"]
 }
 EOT
 }
 
 resource "vault_policy" "project_traceability_irs" {
-  name = "default-secret"
+  name = "project_traceability_irs"
 
   policy = <<EOT
-path "secret/project-traceability-irs" {
+path "project-traceability-irs" {
   capabilities = ["update"]
 }
 EOT
