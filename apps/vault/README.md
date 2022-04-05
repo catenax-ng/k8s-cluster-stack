@@ -120,98 +120,61 @@ vault write auth/github/map/teams/argocdadmins value=vault_admins
 ```
 
 # Configure APPROLE authentication
-Access API using kubectl port-forward to localhost in this example
-## List approles:
-```
-curl \
-    --header "X-Vault-Token: " \
-    --request LIST \
-    http://localhost:8200/v1/auth/approle/role \
-	| jq '.'
-```
-## Create approle:
+# create approles for teams
 
-### create.json:
+### list approles
 ```
-{
-  "token_ttl": "10m",
-  "token_max_ttl": "15m",
-  "token_policies": ["default"],
-  "period": 0,
-  "bind_secret_id": true
-}
+vault list auth/approle/role
 ```
+### create approles
 ```
-curl \
-    --header "X-Vault-Token: " \
-    --request POST \
-    --data @create.json \
-    http://127.0.0.1:8200/v1/auth/approle/role/devsecops \
-	| jq '.'
+vault write auth/approle/role/bpdm secret_id_ttl=10m token_num_uses=10 token_ttl=20m token_max_ttl=30m secret_id_num_uses=40
+vault write auth/approle/role/data-format-transformer secret_id_ttl=10m token_num_uses=10 token_ttl=20m token_max_ttl=30m secret_id_num_uses=40
+vault write auth/approle/role/data-integrity-demonstrator secret_id_ttl=10m token_num_uses=10 token_ttl=20m token_max_ttl=30m secret_id_num_uses=40
+vault write auth/approle/role/edc secret_id_ttl=10m token_num_uses=10 token_ttl=20m token_max_ttl=30m secret_id_num_uses=40
+vault write auth/approle/role/essential-services secret_id_ttl=10m token_num_uses=10 token_ttl=20m token_max_ttl=30m secret_id_num_uses=40
+vault write auth/approle/role/managed-identity-wallets secret_id_ttl=10m token_num_uses=10 token_ttl=20m token_max_ttl=30m secret_id_num_uses=40
+vault write auth/approle/role/material-pass secret_id_ttl=10m token_num_uses=10 token_ttl=20m token_max_ttl=30m secret_id_num_uses=40
+vault write auth/approle/role/portal secret_id_ttl=10m token_num_uses=10 token_ttl=20m token_max_ttl=30m secret_id_num_uses=40
+vault write auth/approle/role/semantics secret_id_ttl=10m token_num_uses=10 token_ttl=20m token_max_ttl=30m secret_id_num_uses=40
+vault write auth/approle/role/traceablity-irs secret_id_ttl=10m token_num_uses=10 token_ttl=20m token_max_ttl=30m secret_id_num_uses=40
 ```
-## Show approle:
+### issue secret_id
 ```
-curl \
-    --header "X-Vault-Token: " \
-    http://127.0.0.1:8200/v1/auth/approle/role/devsecops \
-	| jq '.'
+vault write -f auth/approle/role/bpdm/secret-id
+vault write -f auth/approle/role/data-format-transformer/secret-id
+vault write -f auth/approle/role/data-integrity-demonstrator/secret-id
+vault write -f auth/approle/role/edc/secret-id
+vault write -f auth/approle/role/essential-services/secret-id
+vault write -f auth/approle/role/managed-identity-wallets/secret-id
+vault write -f auth/approle/role/material-pass/secret-id
+vault write -f auth/approle/role/portal/secret-id
+vault write -f auth/approle/role/semantics/secret-id
+vault write -f auth/approle/role/traceablity-irs/secret-id
 ```
-## Show approle role id:
+### read role ids
 ```
-curl \
-    --header "X-Vault-Token: " \
-    http://127.0.0.1:8200/v1/auth/approle/role/devsecops/role-id \
-	| jq '.data.role_id'
+vault read auth/approle/role/bpdm/role-id
+vault read auth/approle/role/data-format-transformer/role-id
+vault read auth/approle/role/data-integrity-demonstrator/role-id
+vault read auth/approle/role/edc/role-id
+vault read auth/approle/role/essential-services/role-id
+vault read auth/approle/role/managed-identity-wallets/role-id
+vault read auth/approle/role/material-pass/role-id
+vault read auth/approle/role/portal/role-id
+vault read auth/approle/role/semantics/role-id
+vault read auth/approle/role/traceablity-irs/role-id
 ```
-## Add secretid:
+### assign policies to approles
 ```
-curl \
-    --header "X-Vault-Token: " \
-    --request POST \
-    http://127.0.0.1:8200/v1/auth/approle/role/devsecops/secret-id \
-	| jq '.'
-```
-## Show approle secret id:
-
-### secretid1.json:
-```
-{
-  "secret_id": "9ada82bf-7b8b-8d95-2cf3-2878e78c730d"
-}
-```
-```
-curl \
-    --header "X-Vault-Token: " \
-    --request POST \
-    --data @secretid1.json \
-    http://127.0.0.1:8200/v1/auth/approle/role/application1/secret-id/lookup
-```
-## List secret id accessors
-```
-curl \
-    --header "X-Vault-Token: " \
-    --request LIST \
-    http://127.0.0.1:8200/v1/auth/approle/role/devsecops/secret-id \
-	| jq '.'
-```
-## Login with approle
-
-### login.json:
-```
-{
-  "role_id": "",
-  "secret_id": ""
-}
-```
-```
-curl \
-    --request POST \
-    --data @login.json \
-    http://127.0.0.1:8200/v1/auth/approle/login \
-	| jq '.'
-```
-### Assign vault policy to approle (CLI)
-todo: look for api method or change all previous commands to cli equivalent
-```
-vault write auth/approle/role/devsecops policies=vault_admins
+vault write auth/approle/role/bpdm policies=bpdm-ro
+vault write auth/approle/role/data-format-transformer policies=data-format-transformer-ro
+vault write auth/approle/role/data-integrity-demonstrator policies=data-integrity-demonstrator-ro
+vault write auth/approle/role/edc policies=edc-ro
+vault write auth/approle/role/essential-services policies=essential-services-ro
+vault write auth/approle/role/managed-identity-wallets policies=managed-identity-wallets-ro
+vault write auth/approle/role/material-pass policies=material-pass-ro
+vault write auth/approle/role/portal policies=portal-ro
+vault write auth/approle/role/semantics policies=semantics-ro
+vault write auth/approle/role/traceablity-irs policies=traceablity-irs-ro
 ```
