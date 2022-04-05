@@ -5,4 +5,4 @@ kind: ConfigMap
 metadata:
   name: argocd-cm
 data:
-  url: "https://example.net"
+  url: "https://argo.demo.catena-x.net"
