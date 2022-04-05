@@ -4,8 +4,8 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-  - applicationsets/*.yaml
   - avp-secrets/*.yaml
+  - applicationsets/*.yaml
   - cluster-secrets/*.yaml
 
 patchesStrategicMerge:
