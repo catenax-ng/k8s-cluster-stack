@@ -5,6 +5,7 @@ namespace: argocd
 
 resources:
   - applicationsets/*.yaml
+  - avp-secrets/*.yaml
   - cluster-secrets/*.yaml
 
 patchesStrategicMerge:
