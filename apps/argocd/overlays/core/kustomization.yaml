@@ -5,14 +5,12 @@ bases:
   - ../../base
 
 resources:
-  - rbac-secret-access.yaml # grant avp access to secret with AVP configuration
+
   - applicationsets/argo-applicationset.yaml
-  - example-cluster-secret.yaml
-# TODO 30.03.2022 CARSLEN: reenable before creating PR to main
-#  - applicationsets/certmanager-applicationset.yaml
-#  - applicationsets/ingress-applicationset.yaml
-#  - applicationsets/tls-applicationset.yaml
-#  - applicationsets/reflector-applicationset.yaml
+  - applicationsets/certmanager-applicationset.yaml
+  - applicationsets/ingress-applicationset.yaml
+  - applicationsets/tls-applicationset.yaml
+  - applicationsets/reflector-applicationset.yaml
 
 patchesStrategicMerge:
 # TODO 25.03.2022 CARSLEN: Don't forget to apply correct FQDN to argo-url-argocd-cm.yaml
