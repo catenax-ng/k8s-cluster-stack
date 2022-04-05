@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/catenax-ng/k8s-cluster-stack
-    targetRevision: feature/A10DT-466-manage-hotel-budapest-projects-from-core-argo
+    targetRevision: HEAD
     path: environments/core
 
   destination:
