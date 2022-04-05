@@ -1,0 +1,8 @@
+# Argo CD -> User management -> Dex: https://argo-cd.readthedocs.io/en/stable/operator-manual/user-management/#dex
+# Create OAuth App Client ID/Secret (e.g. https://github.com/organizations/catenax-ng/settings/applications)
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+data:
+  url: "https://argo.example.demo.catena-x.net"

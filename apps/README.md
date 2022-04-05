@@ -56,7 +56,7 @@ resources:
   - name-cluster-secret.yaml
 
 patchesStrategicMerge:
-  - argo-url-argocd-cm.yaml
+  - argo-url.yaml
 ```
 > Note:<br>
 > Don't do this right now, as long as vault isn't integrated! Instead use 

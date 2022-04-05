@@ -1,0 +1,5 @@
+resources:
+  - applicationsets/*.yaml
+
+patchesStrategicMerge:
+  - configmap/argo-url.yaml

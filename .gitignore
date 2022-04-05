@@ -2,4 +2,4 @@
 .vscode
 **/charts/*.tgz
 **/Chart.lock
-environment/core/secrets/
+environments/core/secrets/

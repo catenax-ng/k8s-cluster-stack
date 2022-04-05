@@ -3,12 +3,14 @@ kind: Application
 metadata:
   name: environment-hotel-budapest
   namespace: argocd
+  labels:
+    environment: hotel-budapest
 spec:
   project: default
   source:
     repoURL: https://github.com/catenax-ng/k8s-cluster-stack
     targetRevision: feature/A10DT-466-manage-hotel-budapest-projects-from-core-argo
-    path: environment/hotel-budapest
+    path: environments/hotel-budapest
 
   destination:
     name: hotel-budapest
