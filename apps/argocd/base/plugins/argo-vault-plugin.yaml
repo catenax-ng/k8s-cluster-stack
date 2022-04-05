@@ -12,11 +12,6 @@ spec:
           mountPath: /usr/local/bin/argocd-vault-plugin
           subPath: argocd-vault-plugin
 
-        # Note: AVP config (for the secret manager, etc) can be passed in several ways. This is just one example
-        # https://argocd-vault-plugin.readthedocs.io/en/stable/config/
-#        envFrom:
-#          - secretRef:
-#              name: argocd-vault-plugin-credentials
       volumes:
       - name: custom-tools
         emptyDir: {}
