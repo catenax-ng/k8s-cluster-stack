@@ -6,7 +6,7 @@ bases:
 
 resources:
   - environments/app-core.yaml
-#  - environments/example.yaml
+  - environments/example.yaml
 
 patchesStrategicMerge:
   - configmap/argo-url.yaml
