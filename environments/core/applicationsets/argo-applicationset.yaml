@@ -11,11 +11,11 @@ spec:
         overlay: overlays/core
         targetRevision: feature/A1ODT-409_Secret_handling_with_Vault/A1ODT-423
         AVP_SECRET: devsecops-team-vault-secret
-#      - cluster: example
-#        cluster-name: example-cluster-test
-#        overlay: overlays/example
-#        targetRevision: feature/A1ODT-409_Secret_handling_with_Vault/A1ODT-423
-#        AVP_SECRET: devsecops-team-vault-secret
+      - cluster: example
+        cluster-name: example-cluster-test
+        overlay: overlays/example
+        targetRevision: feature/A1ODT-409_Secret_handling_with_Vault/A1ODT-423
+        AVP_SECRET: devsecops-team-vault-secret
 
   template:
     metadata:
