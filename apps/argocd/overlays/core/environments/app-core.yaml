@@ -9,12 +9,13 @@ spec:
   project: default
   source:
     repoURL: https://github.com/catenax-ng/k8s-cluster-stack
-    targetRevision: HEAD
+    targetRevision: feature/A1ODT-409_Secret_handling_with_Vault/A1ODT-423
     path: environments/core
 
   destination:
     name: in-cluster
     namespace: argocd
+    server: ''
 
   syncPolicy:
     automated:
