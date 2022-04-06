@@ -5,6 +5,8 @@ namespace: argocd
 
 resources:
   - argo-projects/*.yaml
+  - avp-secrets/*.yaml
+
 
 patchesStrategicMerge:
   - configmap/argo-url.yaml
