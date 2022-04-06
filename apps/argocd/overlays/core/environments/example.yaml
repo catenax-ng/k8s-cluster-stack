@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: environment-example
+  namespace: argocd
+  labels:
+    environment: hotel-budapest
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/catenax-ng/k8s-cluster-stack
+    targetRevision: feature/A1ODT-409_Secret_handling_with_Vault/A1ODT-423
+    path: environments/example
+    plugin:
+      name: argocd-vault-plugin-kustomize
+      env:
+        - name: AVP_SECRET
+          value: devsecops-team-vault-secret
+
+  destination:
+    name: hotel-budapest
+    namespace: argocd
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false

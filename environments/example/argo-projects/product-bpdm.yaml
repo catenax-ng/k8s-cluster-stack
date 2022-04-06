@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-bpdm
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-bpdm
+  namespace: argocd
+spec:
+  description: Project for team BPDM
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: product-bpdm
+      server: https://kubernetes.default.svc
+  # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
+  namespaceResourceBlacklist:
+    - group: ''
+      kind: ResourceQuota
+    - group: ''
+      kind: LimitRange
+    - group: ''
+      kind: NetworkPolicy
+  roles:
+    - name: team-admin
+      description: All access to applications inside project-bpdm. Read only on project itself
+      policies:
+        - p, proj:project-bpdm:team-admin, applications, *, project-bpdm/*, allow
+        - p, proj:project-bpdm:team-admin, projects, get, project-bpdm, allow
+      groups:
+        - catenax-ng:product-bpdm, role:team-admin

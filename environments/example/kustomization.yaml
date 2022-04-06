@@ -1,13 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-bases:
-  - ../../base
-
 resources:
-# in case on remote cluster a argo app needs to be persisted, add appropiate applicationset file here
-#  - appname_applicationset.yaml
-
-patchesStrategicMerge:
-# TODO 25.03.2022 CARSLEN: Don't forget to apply correct FQDN to argo-url-argocd-cm.yaml
-  - argo-url.yaml
+  - argo-projects/product-bpdm.yaml
