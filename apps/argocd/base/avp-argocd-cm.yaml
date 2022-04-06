@@ -18,4 +18,4 @@ data:
     - name: argocd-vault-plugin-kustomize
       generate:
         command: ["sh", "-c"]
-        args: ["kustomize build . | argocd-vault-plugin generate - -s ${AVP_SECRET}"
+        args: ["kustomize build . | argocd-vault-plugin generate - -s ${AVP_SECRET}"]
