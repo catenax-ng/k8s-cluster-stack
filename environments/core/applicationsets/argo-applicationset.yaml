@@ -28,11 +28,11 @@ spec:
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
         targetRevision: '{{ targetRevision }}'
         path: apps/argocd/{{overlay}}
-        plugin:
-          name: argocd-vault-plugin-kustomize
-          env:
-            - name: AVP_SECRET
-              value: '{{ AVP_SECRET }}'
+#        plugin:
+#          name: argocd-vault-plugin-kustomize
+#          env:
+#            - name: AVP_SECRET
+#              value: '{{ AVP_SECRET }}'
       destination:
         name: '{{ cluster-name }}'
         namespace: argocd
