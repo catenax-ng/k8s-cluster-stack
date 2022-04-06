@@ -6,6 +6,6 @@ namespace: argocd
 resources:
   - applicationsets/argo-applicationset.yaml
   - cluster-secrets/example-cluster-secret.yaml
+  - configmap/argo-url.yaml
 
 patchesStrategicMerge:
-  - configmap/argo-url.yaml
