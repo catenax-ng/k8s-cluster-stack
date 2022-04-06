@@ -4,7 +4,7 @@ metadata:
   name: environment-example
   namespace: argocd
   labels:
-    environment: hotel-budapest
+    environment: example
 spec:
   project: default
   source:
@@ -18,7 +18,7 @@ spec:
           value: devsecops-team-vault-secret
 
   destination:
-    name: hotel-budapest
+    name: example-cluster-test
     namespace: argocd
 
   syncPolicy:
