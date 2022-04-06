@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - argo-projects/product-bpdm.yaml
+  - avp-secrets/bpdm-team-vault-secret.yaml
