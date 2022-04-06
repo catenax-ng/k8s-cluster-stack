@@ -11,6 +11,11 @@ spec:
     repoURL: https://github.com/catenax-ng/k8s-cluster-stack
     targetRevision: HEAD
     path: environments/hotel-budapest
+    plugin:
+      name: argocd-vault-plugin-kustomize
+      env:
+        - name: AVP_SECRET
+          value: devsecops-team-vault-secret
 
   destination:
     name: hotel-budapest
