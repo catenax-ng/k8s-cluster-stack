@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: argocd-cm
 data:
-  configManagementPlugins: |
+  configManagementPlugins: |-
     - name: argocd-vault-plugin
       generate:
         command: ["sh", "-c"]
