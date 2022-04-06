@@ -5,5 +5,5 @@ bases:
   - ../../base
 
 resources:
-  - environments/*.yaml
+  - environments/app-core.yaml
 
