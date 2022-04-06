@@ -4,8 +4,8 @@
 #    description = "Secret engine for DevSecOps team"
 #}
 
-resource "vault_mount" "bdpm" {
-    path        = "bdpm"
+resource "vault_mount" "bpdm" {
+    path        = "bpdm"
     type        = "kv-v2"
     description = "Secret engine for team BPDM"
 }
