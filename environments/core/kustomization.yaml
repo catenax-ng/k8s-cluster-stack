@@ -7,5 +7,3 @@ resources:
   - applicationsets/argo-applicationset.yaml
   - cluster-secrets/example-cluster-secret.yaml
 
-patchesStrategicMerge:
-  - configmap/argo-url.yaml

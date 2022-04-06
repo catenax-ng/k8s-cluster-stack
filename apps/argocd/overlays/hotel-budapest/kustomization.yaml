@@ -4,9 +4,6 @@ kind: Kustomization
 bases:
   - ../../base
 
-resources:
-  - environments/app-core.yaml
-
 patchesStrategicMerge:
   - configmap/argo-url.yaml
 
