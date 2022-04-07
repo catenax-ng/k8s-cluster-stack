@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: environment-hotel-budapest
+  name: hotel-budapest-config
   namespace: argocd
   labels:
     environment: hotel-budapest

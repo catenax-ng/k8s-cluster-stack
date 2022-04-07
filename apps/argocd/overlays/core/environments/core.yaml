@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: environment-core
+  name: core-config
   namespace: argocd
   labels:
     environment: core
@@ -20,7 +20,6 @@ spec:
   destination:
     name: in-cluster
     namespace: argocd
-    server: ''
 
   syncPolicy:
     automated:
