@@ -6,4 +6,4 @@ namespace: argocd
 resources:
   - applicationsets/argo-applicationset.yaml
   - cluster-secrets/example-cluster-secret.yaml
-  - cluster-secrets/hotel-budapest-secret.yaml
+#  - cluster-secrets/hotel-budapest-secret.yaml
