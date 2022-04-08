@@ -28,6 +28,5 @@ spec:
       description: All access to applications inside project-material-pass. Read only on project itself
       policies:
         - p, proj:project-material-pass:team-admin, applications, *, project-material-pass/*, allow
-        - p, proj:project-material-pass:team-admin, projects, get, project-material-pass, allow
       groups:
-        - catenax-ng:product-material-pass, role:team-admin
+        - catenax-ng:product-material-pass

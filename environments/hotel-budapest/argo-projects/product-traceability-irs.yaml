@@ -29,6 +29,5 @@ spec:
       description: All access to applications project-traceability-irs. Read only on project itself
       policies:
         - p, proj:project-traceability-irs:team-admin, applications, *, project-traceability-irs/*, allow
-        - p, proj:project-traceability-irs:team-admin, projects, get, project-traceability-irs, allow
       groups:
-        - catenax-ng:pproduct-traceability-irs, role:team-admin
+        - catenax-ng:pproduct-traceability-irs

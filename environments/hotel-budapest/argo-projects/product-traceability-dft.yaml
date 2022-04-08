@@ -29,6 +29,5 @@ spec:
       description: All access to applications inside project-traceability-dft. Read only on project itself
       policies:
         - p, proj:project-traceability-dft:team-admin, applications, *, project-traceability-dft/*, allow
-        - p, proj:project-traceability-dft:team-admin, projects, get, project-traceability-dft, allow
       groups:
-        - catenax-ng:product-traceability-dft, role:team-admin
+        - catenax-ng:product-traceability-dft

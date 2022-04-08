@@ -8,6 +8,11 @@ kind: Namespace
 metadata:
   name: product-portal
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-portal-dev
+---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
@@ -21,6 +26,8 @@ spec:
     - namespace: product-portal
       server: https://kubernetes.default.svc
     - namespace: product-iam
+      server: https://kubernetes.default.svc
+    - namespace: product-portal-dev
       server: https://kubernetes.default.svc
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
   namespaceResourceBlacklist:
@@ -36,6 +43,5 @@ spec:
       description: All access to applications inside project-portal. Read only on project itself
       policies:
         - p, proj:project-portal:team-admin, applications, *, project-portal/*, allow
-        - p, proj:project-portal:team-admin, projects, get, project-portal, allow
       groups:
-        - catenax-ng:product-portal, role:team-admin
+        - catenax-ng:product-portal

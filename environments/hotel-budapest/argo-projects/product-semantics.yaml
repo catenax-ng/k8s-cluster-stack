@@ -29,6 +29,5 @@ spec:
       description: All access to applications inside project-portal. Read only on project itself
       policies:
         - p, proj:project-semantics:team-admin, applications, *, project-semantics/*, allow
-        - p, proj:project-semantics:team-admin, projects, get, project-semantics, allow
       groups:
-        - catenax-ng:product-semantics, role:team-admin
+        - catenax-ng:product-semantics

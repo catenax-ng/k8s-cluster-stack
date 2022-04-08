@@ -28,6 +28,5 @@ spec:
       description: All access to applications inside project-bpdm. Read only on project itself
       policies:
         - p, proj:project-bpdm:team-admin, applications, *, project-bpdm/*, allow
-        - p, proj:project-bpdm:team-admin, projects, get, project-bpdm, allow
       groups:
-        - catenax-ng:product-bpdm, role:team-admin
+        - catenax-ng:product-bpdm

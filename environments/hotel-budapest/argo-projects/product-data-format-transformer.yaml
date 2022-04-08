@@ -28,6 +28,5 @@ spec:
       description: All access to applications inside project-data-format-transformer. Read only on project itself
       policies:
         - p, proj:project-data-format-transformer:team-admin, applications, *, project-data-format-transformer/*, allow
-        - p, proj:project-data-format-transformer:team-admin, projects, get, project-data-format-transformer, allow
       groups:
-        - catenax-ng:product-data-format-transformer, role:team-admin
+        - catenax-ng:product-data-format-transformer

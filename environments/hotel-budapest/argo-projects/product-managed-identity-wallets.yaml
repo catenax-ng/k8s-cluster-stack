@@ -29,7 +29,5 @@ spec:
       description: All access to applications inside project-managed-identity-wallets. Read only on project itself
       policies:
         - p, proj:project-managed-identity-wallets:team-admin, applications, *, project-managed-identity-wallets/*, allow
-        - p, proj:project-managed-identity-wallets:team-admin, projects, get, project-managed-identity-wallets, allow
-
       groups:
-        - catenax-ng:product-managed-identity-wallets, role:team-admin
+        - catenax-ng:product-managed-identity-wallets
