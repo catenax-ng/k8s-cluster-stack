@@ -6,7 +6,7 @@ bases:
 
 resources:
   - environments/core.yaml
-#  - environments/hotel-budapest.yaml
+  - environments/hotel-budapest.yaml
 #  - environments/example.yaml
 
 patchesStrategicMerge:

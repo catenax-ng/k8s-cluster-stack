@@ -10,10 +10,10 @@ spec:
             cluster-name: in-cluster
             valueFile: values-tls-core.yaml
             targetRevision: HEAD
-#          - cluster: vault
-#            cluster-name: vault-cluster
-#            valueFile: values-tls-vault.yaml
-#            targetRevision: HEAD
+          - cluster: vault
+            cluster-name: vault-cluster
+            valueFile: values-tls-vault.yaml
+            targetRevision: HEAD
 #          - cluster: hotel-budapest
 #            cluster-name: hotel-budapest
 #            valueFile: values-tls-vault.yaml
