@@ -32,7 +32,7 @@ resources:
   - avp-secrets/semantics-team-vault-secret.yaml
 
   - argo-projects/product-traceability-dft.yaml
-  - avp-secrets/
+  - avp-secrets/traceability-dft-team-vault-secret.yaml
 
   - argo-projects/product-traceability-irs.yaml
   - avp-secrets/traceablity-irs-team-vault-secret.yaml
