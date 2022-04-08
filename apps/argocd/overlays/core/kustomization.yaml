@@ -6,8 +6,8 @@ bases:
 
 resources:
   - environments/core.yaml
-  - environments/example.yaml
-#  - environments/hotel-budapest.yaml
+  - environments/hotel-budapest.yaml
+#  - environments/example.yaml
 
 patchesStrategicMerge:
   - configmap/argo-url.yaml

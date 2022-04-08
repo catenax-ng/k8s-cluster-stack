@@ -5,5 +5,7 @@ namespace: argocd
 
 resources:
   - applicationsets/argo-applicationset.yaml
-  - cluster-secrets/example-cluster-secret.yaml
+# TODO 08.04.2022 CARSLEN: after vault + hotel budapest cluster secret is available in vault, enable it here for deployment
 #  - cluster-secrets/hotel-budapest-secret.yaml
+#  - cluster-secrets/vault-cluster-secret.yaml
+#  - cluster-secrets/example-cluster-secret.yaml

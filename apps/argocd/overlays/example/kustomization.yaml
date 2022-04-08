@@ -6,4 +6,3 @@ bases:
 
 patchesStrategicMerge:
   - configmap/argo-url.yaml
-

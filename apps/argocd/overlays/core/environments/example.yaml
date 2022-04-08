@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/catenax-ng/k8s-cluster-stack
-    targetRevision: feature/A1ODT-409_Secret_handling_with_Vault/A1ODT-423
+    targetRevision: HEAD
     path: environments/example
     plugin:
       name: argocd-vault-plugin-kustomize
@@ -18,7 +18,7 @@ spec:
           value: devsecops-team-vault-secret
 
   destination:
-    name: example-cluster-test
+    name: example-cluster
     namespace: argocd
 
   syncPolicy:

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: product-bpdm
+  name: product-example
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
@@ -9,11 +9,11 @@ metadata:
   name: project-bpdm
   namespace: argocd
 spec:
-  description: Project for team BPDM
+  description: Project for team EXAMPLE
   sourceRepos:
     - '*'
   destinations:
-    - namespace: product-bpdm
+    - namespace: product-example
       server: https://kubernetes.default.svc
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
   namespaceResourceBlacklist:
@@ -30,4 +30,4 @@ spec:
         - p, proj:project-bpdm:team-admin, applications, *, project-bpdm/*, allow
         - p, proj:project-bpdm:team-admin, projects, get, project-bpdm, allow
       groups:
-        - catenax-ng:product-bpdm, role:team-admin
+        - catenax-ng:product-example, role:team-admin
