@@ -5,19 +5,14 @@ metadata:
   annotations:
     avp.kubernetes.io/path: "devsecops/data/clusters/example/github-oauth"
 data:
-  apiVersion: v1
-  kind: ConfigMap
-  metadata:
-    name: argocd-cm
-  data:
-    dex.config: |
-      connectors:
-        - type: github
-          id: github
-          name: GitHub
-          config:
-            clientID: '<oAuthClientId>'
-            clientSecret: '<oAuthClientSecret>'
-            orgs:
-            - name: catenax-ng
+  dex.config: |
+    connectors:
+      - type: github
+        id: github
+        name: GitHub
+        config:
+          clientID: '<oAuthClientId>'
+          clientSecret: '<oAuthClientSecret>'
+          orgs:
+          - name: catenax-ng
   url: "https://example.net"
