@@ -11,4 +11,3 @@ patchesStrategicMerge:
   - argocd-rbac-cm.yaml
   - plugins/argo-vault-plugin.yaml
   - avp-argocd-cm.yaml
-  - github-oauth-argocd-cm.yaml
