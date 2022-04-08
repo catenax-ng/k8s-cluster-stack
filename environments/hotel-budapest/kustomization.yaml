@@ -4,9 +4,37 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-  - argo-projects/*.yaml
-  - avp-secrets/*.yaml
+  - argo-projects/product-bpdm.yaml
+  - avp-secrets/bpdm-team-vault-secret.yaml
 
+  - argo-projects/product-data-format-transformer.yaml
+  - avp-secrets/data-format-transformer-team-vault-secret.yaml
 
-patchesStrategicMerge:
-  - configmap/argo-cm.yaml
+  - argo-projects/product-data-integritiy-demonstrator.yaml
+  - avp-secrets/data-integrity-demonstrator-team-vault-secret.yaml
+
+  - argo-projects/product-edc.yaml
+  - avp-secrets/edc-team-vault-secret.yaml
+
+  - argo-projects/product-essential-services.yaml
+  - avp-secrets/essential-services-team-vault-secret.yaml
+
+  - argo-projects/product-managed-identity-wallets.yaml
+  - avp-secrets/managed-identity-wallets-team-vault-secret.yaml
+
+  - argo-projects/product-material-pass.yaml
+  - avp-secrets/material-pass-team-vault-secret.yaml
+
+  - argo-projects/product-portal.yaml
+  - avp-secrets/portal-team-vault-secret.yaml
+
+  - argo-projects/product-semantics.yaml
+  - avp-secrets/semantics-team-vault-secret.yaml
+
+  - argo-projects/product-traceability-dft.yaml
+  - avp-secrets/
+
+  - argo-projects/product-traceability-irs.yaml
+  - avp-secrets/traceablity-irs-team-vault-secret.yaml
+
+  - avp-secrets/devsecops-team-vault-secret.yaml
