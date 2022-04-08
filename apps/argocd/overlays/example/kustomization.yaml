@@ -5,4 +5,4 @@ bases:
   - ../../base
 
 patchesStrategicMerge:
-  - configmap/argo-url.yaml
+  - configmap/argo-cm.yaml
