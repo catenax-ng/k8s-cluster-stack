@@ -1,0 +1,14 @@
+ingress-nginx:
+  controller:
+    service:
+      loadBalancerIP: 20.113.44.254
+    ingressClassResource:
+      default: true
+    watchIngressWithoutClass: true
+    config:
+      # @url: https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#enable-underscores-in-headers
+      enable-underscores-in-headers: "true"
+      #extraArgs:
+      #default-ssl-certificate: "default/www-tls"  # K8_NAMESPACE/K8_SECRET_NAME @url: https://kubernetes.github.io/ingress-nginx/user-guide/tls/#default-ssl-certificate
+  defaultBackend:
+    enabled: true
