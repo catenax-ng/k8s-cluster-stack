@@ -12,9 +12,9 @@ spec:
           - cluster: vault
             cluster-name: vault-cluster
             targetRevision: 6.1.47
-#          - cluster: hotel-budapest
-#            cluster-name: hotel-budapest
-#            targetRevision: 6.1.47
+          - cluster: hotel-budapest
+            cluster-name: hotel-budapest
+            targetRevision: 6.1.47
 
   template:
     metadata:
