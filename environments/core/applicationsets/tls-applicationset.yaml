@@ -14,10 +14,10 @@ spec:
             cluster-name: vault-cluster
             valueFile: values-tls-vault.yaml
             targetRevision: HEAD
-#          - cluster: hotel-budapest
-#            cluster-name: hotel-budapest
-#            valueFile: values-tls-vault.yaml
-#            targetRevision: HEAD
+          - cluster: hotel-budapest
+            cluster-name: hotel-budapest
+            valueFile: values-tls-vault.yaml
+            targetRevision: HEAD
 
   template:
     metadata:

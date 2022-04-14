@@ -11,11 +11,11 @@ spec:
         overlay: overlays/core
         targetRevision: HEAD
         AVP_SECRET: devsecops-team-vault-secret
-#      - cluster: hotel-budapest
-#        cluster-name: hotel-budapest
-#        overlay: overlays/hotel-budapest
-#        targetRevision: HEAD
-#        AVP_SECRET: devsecops-team-vault-secret
+      - cluster: hotel-budapest
+        cluster-name: hotel-budapest
+        overlay: overlays/hotel-budapest
+        targetRevision: HEAD
+        AVP_SECRET: devsecops-team-vault-secret
 #      - cluster: example
 #        cluster-name: example-cluster-test
 #        overlay: overlays/example
