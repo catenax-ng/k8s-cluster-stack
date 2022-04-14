@@ -24,14 +24,14 @@ module "public_ip" {
 
   public_ip_name      = "cx-${var.environment_name}-public-ip"
   resource_location   = module.resource_group.resource_location
-  resource_group_name = module.resource_group.resource_group_name
+  resource_group_name = module.aks.node_resource_group
 }
 
 module "a_record" {
   source = "../modules/a_record"
 
   record_name = "*.${var.environment_name}"
-  resource_group_name = module.resource_group.resource_group_name
   target_resource_id = module.public_ip.id
+  resource_group_name = "cxtsi-demo-shared-rg"
   zone_name = "demo.catena-x.net"
 }
