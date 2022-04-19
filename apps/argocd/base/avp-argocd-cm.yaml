@@ -14,14 +14,14 @@ data:
         args: ["helm dependency build"]
       generate:
         command: ["sh", "-c"]
-        args: ["helm template $ARGOCD_APP_NAME . --install-crds | argocd-vault-plugin generate - -s ${AVP_SECRET}"]
+        args: ["helm template $ARGOCD_APP_NAME . | argocd-vault-plugin generate - -s ${AVP_SECRET}"]
     - name: argocd-vault-plugin-helm-args
       init:
         command: [sh, -c]
         args: ["helm dependency build"]
       generate:
         command: ["sh", "-c"]
-        args: ["helm template $ARGOCD_APP_NAME ${helm_args} . --install-crds | argocd-vault-plugin generate - -s ${AVP_SECRET}"]
+        args: ["helm template $ARGOCD_APP_NAME ${helm_args} . | argocd-vault-plugin generate - -s ${AVP_SECRET}"]
     - name: argocd-vault-plugin-kustomize
       generate:
         command: ["sh", "-c"]
