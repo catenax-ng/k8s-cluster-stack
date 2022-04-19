@@ -9,7 +9,7 @@ spec:
           - cluster: core
             cluster-name: in-cluster
             valueFile: values-tls-core.yaml
-            targetRevision: feature/A1ODT-493-tls-cleanup
+            targetRevision: HEAD
           - cluster: vault
             cluster-name: vault-cluster
             valueFile: values-tls-vault.yaml
