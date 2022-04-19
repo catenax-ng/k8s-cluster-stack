@@ -10,17 +10,17 @@ spec:
         cluster-name: in-cluster
         overlay: overlays/core
         targetRevision: HEAD
-        AVP_SECRET: devsecops-team-vault-secret
+        AVP_SECRET: vault-secret
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         overlay: overlays/hotel-budapest
         targetRevision: HEAD
-        AVP_SECRET: devsecops-team-vault-secret
+        AVP_SECRET: vault-secret
 #      - cluster: example
 #        cluster-name: example-cluster-test
 #        overlay: overlays/example
 #        targetRevision: HEAD
-#        AVP_SECRET: devsecops-team-vault-secret
+#        AVP_SECRET: vault-secret
 
   template:
     metadata:
