@@ -30,4 +30,4 @@ spec:
       policies:
         - p, proj:project-traceability-irs:team-admin, applications, *, project-traceability-irs/*, allow
       groups:
-        - catenax-ng:pproduct-traceability-irs
+        - catenax-ng:product-traceability-irs
