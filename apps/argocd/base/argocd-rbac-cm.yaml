@@ -8,7 +8,7 @@ data:
   policy.default: role:minimal
   scopes: '[groups, email]'
   policy.csv: |
-    p, role:minimal, application, *, */*, deny
+    p, role:minimal, applications, *, */*, deny
     p, role:minimal, clusters, get, *, allow
     p, role:minimal, repositories, get, *, allow
     g, catenax-ng:ArgoCDAdmins, role:admin
