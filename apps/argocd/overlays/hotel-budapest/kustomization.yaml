@@ -4,6 +4,9 @@ kind: Kustomization
 bases:
   - ../../base
 
+resources:
+  - ingress/ingress-argocd.yaml
+
 patchesStrategicMerge:
   - configmap/argo-cm.yaml
 

@@ -8,6 +8,7 @@ resources:
   - environments/core.yaml
   - environments/hotel-budapest.yaml
 #  - environments/example.yaml
+  - ingress/ingress-argocd.yaml
 
 patchesStrategicMerge:
   - configmap/argo-cm.yaml
