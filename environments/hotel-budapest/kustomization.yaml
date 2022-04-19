@@ -37,4 +37,7 @@ resources:
   - argo-projects/product-traceability-irs.yaml
   - avp-secrets/traceablity-irs-team-vault-secret.yaml
 
+  - argo-projects/product-example.yaml
+  - avp-secrets/example-vault-secret.yaml
+
   - avp-secrets/devsecops-team-vault-secret.yaml
