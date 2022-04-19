@@ -8,7 +8,7 @@ spec:
       elements:
       - cluster: core
         cluster-name: in-cluster
-        targetRevision: feature/A1ODT-493-tls-cleanup
+        targetRevision: HEAD
       - cluster: vault
         cluster-name: vault-cluster
         targetRevision: HEAD
