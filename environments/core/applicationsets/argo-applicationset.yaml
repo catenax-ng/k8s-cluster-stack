@@ -9,7 +9,7 @@ spec:
       - cluster: core
         cluster-name: in-cluster
         overlay: overlays/core
-        targetRevision: HEAD
+        targetRevision: feature/A1ODT-493-tls-cleanup
         AVP_SECRET: vault-secret
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
