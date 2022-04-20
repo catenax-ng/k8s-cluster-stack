@@ -9,11 +9,14 @@ spec:
       - cluster: core
         cluster-name: in-cluster
         targetRevision: HEAD
-      - cluster: vault
-        cluster-name: vault-cluster
+      - cluster: dev
+        cluster-name: dev
         targetRevision: HEAD
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
+        targetRevision: HEAD
+      - cluster: vault
+        cluster-name: vault-cluster
         targetRevision: HEAD
 
   template:
