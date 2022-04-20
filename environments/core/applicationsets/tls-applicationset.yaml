@@ -9,7 +9,7 @@ spec:
           - cluster: core
             cluster-name: in-cluster
             valueFile: values-tls-core.yaml
-            targetRevision: HEAD
+            targetRevision: feature/azureDNS-secret-in-helm-chart
           - cluster: vault
             cluster-name: vault-cluster
             valueFile: values-tls-vault.yaml
