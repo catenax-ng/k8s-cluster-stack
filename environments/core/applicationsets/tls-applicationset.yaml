@@ -12,7 +12,7 @@ spec:
             targetRevision: HEAD
           - cluster: dev
             cluster-name: dev
-            valueFile: values-tls-core.yaml
+            valueFile: values-tls-dev.yaml
             targetRevision: HEAD
           - cluster: hotel-budapest
             cluster-name: hotel-budapest
