@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  annotations:
+    avp.kubernetes.io/path: "devsecops/data/clusters/dev/github-oauth"
+data:
+  dex.config: |
+    connectors:
+      - type: github
+        id: github
+        name: GitHub
+        config:
+          clientID: '<oAuthClientId>'
+          clientSecret: '<oAuthClientSecret>'
+          orgs:
+          - name: catenax-ng
+  url: "https://argo.dev.demo.catena-x.net"
