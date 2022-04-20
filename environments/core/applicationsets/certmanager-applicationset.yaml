@@ -30,6 +30,11 @@ spec:
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
         targetRevision: '{{ targetRevision }}'
         path: apps/certmanager
+        plugin:
+          name: argocd-vault-plugin-helm
+          env:
+            - name: AVP_SECRET
+              value: vault-secret
 
       destination:
         name: '{{ cluster-name }}'
