@@ -8,7 +8,7 @@ spec:
       elements:
       - cluster: core
         cluster-name: in-cluster
-        targetRevision: HEAD
+        targetRevision: feature/azureDNS-secret-in-helm-chart
       - cluster: vault
         cluster-name: vault-cluster
         targetRevision: HEAD
