@@ -11,7 +11,7 @@ spec:
         targetRevision: HEAD
       - cluster: dev
         cluster-name: dev
-        targetRevision: HEAD
+        targetRevision: feature/azureDNS-secret-in-helm-chart
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         targetRevision: HEAD
