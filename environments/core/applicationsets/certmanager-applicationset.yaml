@@ -8,10 +8,10 @@ spec:
       elements:
       - cluster: core
         cluster-name: in-cluster
-        targetRevision: feature/azureDNS-secret-in-helm-chart
+        targetRevision: HEAD
       - cluster: dev
         cluster-name: dev
-        targetRevision: feature/azureDNS-secret-in-helm-chart
+        targetRevision: HEAD
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         targetRevision: HEAD
