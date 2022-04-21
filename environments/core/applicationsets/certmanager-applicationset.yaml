@@ -28,7 +28,7 @@ spec:
       project: default
       source:
         plugin:
-          name: argocd-vault-plugin-helm
+          name: argocd-vault-plugin-helm-args
           env:
             - name: AVP_SECRET
               value: vault-secret
