@@ -16,11 +16,11 @@ spec:
         overlay: overlays/hotel-budapest
         targetRevision: HEAD
         AVP_SECRET: vault-secret
-#      - cluster: example
-#        cluster-name: example-cluster-test
-#        overlay: overlays/example
-#        targetRevision: HEAD
-#        AVP_SECRET: vault-secret
+      - cluster: dev
+        cluster-name: dev
+        overlay: overlays/dev
+        targetRevision: HEAD
+        AVP_SECRET: vault-secret
 
   template:
     metadata:

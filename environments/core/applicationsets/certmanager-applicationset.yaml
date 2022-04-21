@@ -8,12 +8,15 @@ spec:
       elements:
       - cluster: core
         cluster-name: in-cluster
-        targetRevision: feature/azureDNS-secret-in-helm-chart
-      - cluster: vault
-        cluster-name: vault-cluster
+        targetRevision: HEAD
+      - cluster: dev
+        cluster-name: dev
         targetRevision: HEAD
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
+        targetRevision: HEAD
+      - cluster: vault
+        cluster-name: vault-cluster
         targetRevision: HEAD
 
   template:

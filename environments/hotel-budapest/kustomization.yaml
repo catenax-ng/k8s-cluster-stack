@@ -30,6 +30,7 @@ resources:
 
   - argo-projects/product-semantics.yaml
   - avp-secrets/semantics-team-vault-secret.yaml
+  - argo-repos/product-semantics-repo.yaml
 
   - argo-projects/product-traceability-dft.yaml
   - avp-secrets/traceability-dft-team-vault-secret.yaml
