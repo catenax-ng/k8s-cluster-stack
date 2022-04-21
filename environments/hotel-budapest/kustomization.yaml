@@ -33,7 +33,6 @@ resources:
   - argo-repos/product-semantics-repo.yaml
 
   - argo-projects/product-test-data-generator.yaml
-  - argo-repos/product-test-data-generator-repo.yaml
   - avp-secrets/test-data-generator-team-vault-secret.yaml
 
   - argo-projects/product-traceability-dft.yaml
