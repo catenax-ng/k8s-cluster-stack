@@ -5,3 +5,4 @@ kind: Kustomization
 
 resources:
   - avp-secrets/devsecops-team-vault-secret.yaml
+  - argo-projects/product-example.yaml
