@@ -27,9 +27,6 @@ spec:
     spec:
       project: default
       source:
-        helm:
-          valueFiles:
-            - values-certmanager.yaml
         plugin:
           name: argocd-vault-plugin-helm
           env:
