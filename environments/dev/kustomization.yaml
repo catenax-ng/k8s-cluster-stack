@@ -3,17 +3,40 @@ kind: Kustomization
 
 resources:
   - argo-projects/product-bpdm.yaml
-  - argo-projects/product-catenax-at-home.yaml
-  - argo-projects/product-data-format-transformer.yaml
-  - argo-projects/product-data-integritiy-demonstrator.yaml
-  - argo-projects/product-edc.yaml
-  - argo-projects/product-essential-services.yaml
-  - argo-projects/product-managed-identity-wallets.yaml
-  - argo-projects/product-portal.yaml
-  - argo-projects/product-semantics.yaml
-  - argo-projects/product-test-data-generator.yaml
-  - argo-projects/product-traceability-dft.yaml
-  - argo-projects/product-traceability-irs.yaml
+  - avp-secrets/bpdm-team-vault-secret.yaml
 
-  - avp-secrets/devsecops-team-vault-secret.yaml
+  - argo-projects/product-catenax-at-home.yaml
+  - avp-secrets/catenax-at-home-team-vault-secret.yaml
+
+  - argo-projects/product-data-format-transformer.yaml
+  - avp-secrets/data-format-transformer-team-vault-secret.yaml
+
+  - argo-projects/product-data-integritiy-demonstrator.yaml
+  - avp-secrets/data-integrity-demonstrator-team-vault-secret.yaml
+
+  - argo-projects/product-edc.yaml
+  - avp-secrets/edc-team-vault-secret.yaml
+
+  - argo-projects/product-essential-services.yaml
+  - avp-secrets/essential-services-team-vault-secret.yaml
+
+  - argo-projects/product-managed-identity-wallets.yaml
+  - avp-secrets/managed-identity-wallets-team-vault-secret.yaml
+
+  - argo-projects/product-portal.yaml
+  - avp-secrets/portal-team-vault-secret.yaml
+
+  - argo-projects/product-semantics.yaml
+  - avp-secrets/semantics-team-vault-secret.yaml
+
+  - argo-projects/product-test-data-generator.yaml
+  - avp-secrets/test-data-generator-team-vault-secret.yaml
+
+  - argo-projects/product-traceability-dft.yaml
+  - avp-secrets/traceability-dft-team-vault-secret.yaml
+
+  - argo-projects/product-traceability-irs.yaml
+  - avp-secrets/traceablity-irs-team-vault-secret.yaml
+
   - argo-projects/product-example.yaml
+  - avp-secrets/devsecops-team-vault-secret.yaml

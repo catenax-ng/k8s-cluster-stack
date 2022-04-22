@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: catenax-at-home
+  name: product-catenax-at-home
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
