@@ -17,7 +17,7 @@ spec:
           - cluster: hotel-budapest
             cluster-name: hotel-budapest
             valueFile: values-tls-hotel-budapest.yaml
-            targetRevision: HEAD
+            targetRevision: fix/change-tls-certificate-hotel-budapest
           - cluster: vault
             cluster-name: vault-cluster
             valueFile: values-tls-vault.yaml
