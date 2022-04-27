@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: argocd-cm
   annotations:
-    avp.kubernetes.io/path: "devsecops/data/clusters/int/github-oauth"
+    avp.kubernetes.io/path: "devsecops/data/clusters/hotel-budapest/github-oauth"
 data:
   dex.config: |
     connectors:
@@ -15,4 +15,4 @@ data:
           clientSecret: '<oAuthClientSecret>'
           orgs:
           - name: catenax-ng
-  url: "https://argo.int.demo.catena-x.net"
+  url: "https://argo.demo.catena-x.net"
