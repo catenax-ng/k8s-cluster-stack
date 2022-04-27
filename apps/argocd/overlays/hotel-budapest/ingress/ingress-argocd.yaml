@@ -37,8 +37,8 @@ spec:
   tls:
     - hosts:
         - argo.int.demo.catena-x.net
-      secretName: tls-secret-new
+      secretName: tls-secret
     - hosts:
-        - argo..demo.catena-x.net
+        - argo.demo.catena-x.net
       secretName: tls-secret
 

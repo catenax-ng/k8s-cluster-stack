@@ -1,5 +1,4 @@
 cluster: "hotel-budapest"
 
 certificate:
-  dnsZone: "demo.catena-x.net"
-  dnsZoneNew: "int.demo.catena-x.net"
+  dnsZone: "int.demo.catena-x.net"
