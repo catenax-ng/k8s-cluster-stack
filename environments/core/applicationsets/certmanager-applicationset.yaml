@@ -14,7 +14,7 @@ spec:
         targetRevision: HEAD
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
-        targetRevision: fix/change-tls-certificate-hotel-budapest
+        targetRevision: HEAD
       - cluster: vault
         cluster-name: vault-cluster
         targetRevision: HEAD

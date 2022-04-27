@@ -14,7 +14,7 @@ spec:
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         overlay: overlays/hotel-budapest
-        targetRevision: fix/change-tls-certificate-hotel-budapest
+        targetRevision: HEAD
         AVP_SECRET: vault-secret
       - cluster: dev
         cluster-name: dev
