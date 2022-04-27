@@ -6,6 +6,7 @@ bases:
 
 resources:
   - ingress/ingress-argocd.yaml
+  - ingress/ingress-redirect.yaml
 
 patchesStrategicMerge:
   - configmap/argo-cm.yaml
