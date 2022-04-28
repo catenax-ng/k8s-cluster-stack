@@ -19,6 +19,7 @@ resources:
 
   - argo-projects/product-essential-services.yaml
   - avp-secrets/essential-services-team-vault-secret.yaml
+  - argo-repos/product-essential-services-repo.yaml
 
   - argo-projects/product-managed-identity-wallets.yaml
   - avp-secrets/managed-identity-wallets-team-vault-secret.yaml
@@ -31,7 +32,6 @@ resources:
   - argo-repos/product-semantics-repo.yaml
 
   - argo-projects/product-test-data-generator.yaml
-  - avp-secrets/test-data-generator-team-vault-secret.yaml
   - argo-repos/product-test-data-generator-repo.yaml
 
   - argo-projects/product-traceability-dft.yaml
