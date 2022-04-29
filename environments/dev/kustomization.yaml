@@ -42,3 +42,6 @@ resources:
 
   - argo-projects/product-example.yaml
   - avp-secrets/devsecops-team-vault-secret.yaml
+
+  - argo-projects/product-esc-backbone.yaml
+  - avp-secrets/esc-backbone-vault-secret.yaml
