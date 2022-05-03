@@ -1,19 +1,19 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: product-traceability-dft
+  name: product-dft
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: project-traceability-dft
+  name: product-dft
   namespace: argocd
 spec:
   description: Project for team traceability dft.
   sourceRepos:
     - '*'
   destinations:
-    - namespace: product-traceability-dft
+    - namespace: product-dft
       server: https://kubernetes.default.svc
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
   namespaceResourceBlacklist:
@@ -26,8 +26,8 @@ spec:
   roles:
     # A role which provides access to all applications in the project
     - name: team-admin
-      description: All access to applications inside project-traceability-dft. Read only on project itself
+      description: All access to applications inside product-dft. Read only on project itself
       policies:
-        - p, proj:project-traceability-dft:team-admin, applications, *, project-traceability-dft/*, allow
+        - p, proj:product-dft:team-admin, applications, *, product-dft/*, allow
       groups:
-        - catenax-ng:product-traceability-dft
+        - catenax-ng:product-dft
