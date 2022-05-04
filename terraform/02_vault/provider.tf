@@ -1,5 +1,14 @@
+terraform {
+  required_providers {
+    vault = {
+      source = "hashicorp/vault"
+      version = "3.5.0"
+    }
+  }
+}
+
 provider "vault" {
-  address = "https://vault.vault.demo.catena-x.net"
+  address = var.vault_address
   auth_login {
     path = "auth/approle/login"
 
