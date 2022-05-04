@@ -8,7 +8,7 @@ spec:
         elements:
           - cluster: dev
             cluster-name: dev
-            targetRevision: feature/,amager-vault-with-argocd
+            targetRevision: feature/manager-vault-with-argocd
 #          - cluster: vault
 #            cluster-name: vault-cluster
 #            targetRevision: HEAD
@@ -21,12 +21,11 @@ spec:
     spec:
       project: default
       source:
-        source:
-          plugin:
-            name: argocd-vault-plugin-helm
-            env:
-              - name: AVP_SECRET
-                value: vault-secret
+        plugin:
+          name: argocd-vault-plugin-helm
+          env:
+            - name: AVP_SECRET
+              value: vault-secret
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
         targetRevision: '{{ targetRevision }}'
         path: apps/vault
