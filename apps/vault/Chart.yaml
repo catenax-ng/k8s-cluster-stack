@@ -4,3 +4,9 @@ description: Hashicorp vault
 type: application
 version: 0.0.2
 appVersion: 0.1
+
+dependencies:
+- name: vault
+  alias: vault
+  version: 0.19.0
+  repository: https://helm.releases.hashicorp.com
