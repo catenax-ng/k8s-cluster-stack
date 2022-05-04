@@ -36,13 +36,19 @@ resources:
   - argo-projects/product-test-data-generator.yaml
   - avp-secrets/test-data-generator-team-vault-secret.yaml
 
-  - argo-projects/product-traceability-dft.yaml
-  - avp-secrets/traceability-dft-team-vault-secret.yaml
+  - argo-projects/product-dft.yaml
+  - avp-secrets/dft-team-vault-secret.yaml
+
+  - argo-projects/product-traceability-foss.yaml
+  - avp-secrets/traceability-foss-team-vault-secret.yaml
 
   - argo-projects/product-traceability-irs.yaml
   - avp-secrets/traceablity-irs-team-vault-secret.yaml
 
   - argo-projects/product-example.yaml
   - avp-secrets/example-vault-secret.yaml
+
+  - argo-projects/product-esc-backbone.yaml
+  - avp-secrets/esc-backbone-vault-secret.yaml
 
   - avp-secrets/devsecops-team-vault-secret.yaml

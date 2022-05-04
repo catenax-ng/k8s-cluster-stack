@@ -1,8 +1,47 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-#namespace: argocd
-
 resources:
-  - avp-secrets/devsecops-team-vault-secret.yaml
+  - argo-projects/product-bpdm.yaml
+  - avp-secrets/bpdm-team-vault-secret.yaml
+
+  - argo-projects/product-catenax-at-home.yaml
+  - avp-secrets/catenax-at-home-team-vault-secret.yaml
+
+  - argo-projects/product-data-format-transformer.yaml
+  - avp-secrets/data-format-transformer-team-vault-secret.yaml
+
+  - argo-projects/product-data-integritiy-demonstrator.yaml
+  - avp-secrets/data-integrity-demonstrator-team-vault-secret.yaml
+
+  - argo-projects/product-edc.yaml
+  - avp-secrets/edc-team-vault-secret.yaml
+
+  - argo-projects/product-essential-services.yaml
+  - avp-secrets/essential-services-team-vault-secret.yaml
+  - argo-repos/product-essential-services-repo.yaml
+
+  - argo-projects/product-managed-identity-wallets.yaml
+  - avp-secrets/managed-identity-wallets-team-vault-secret.yaml
+
+  - argo-projects/product-portal.yaml
+  - avp-secrets/portal-team-vault-secret.yaml
+
+  - argo-projects/product-semantics.yaml
+  - avp-secrets/semantics-team-vault-secret.yaml
+  - argo-repos/product-semantics-repo.yaml
+
+  - argo-projects/product-test-data-generator.yaml
+  - avp-secrets/test-data-generator-team-vault-secret.yaml
+
+  - argo-projects/product-dft.yaml
+  - avp-secrets/dft-team-vault-secret.yaml
+
+  - argo-projects/product-traceability-irs.yaml
+  - avp-secrets/traceablity-irs-team-vault-secret.yaml
+
   - argo-projects/product-example.yaml
+  - avp-secrets/devsecops-team-vault-secret.yaml
+
+  - argo-projects/product-esc-backbone.yaml
+  - avp-secrets/esc-backbone-vault-secret.yaml
