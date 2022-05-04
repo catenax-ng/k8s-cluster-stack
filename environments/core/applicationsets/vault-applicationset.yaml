@@ -8,9 +8,11 @@ spec:
         elements:
           - cluster: dev
             cluster-name: dev
+            valueFile: values-vault-dev.yaml
             targetRevision: feature/manager-vault-with-argocd
 #          - cluster: vault
 #            cluster-name: vault-cluster
+#            valueFile: values-vault-vault.yaml
 #            targetRevision: HEAD
 
   template:
@@ -26,6 +28,8 @@ spec:
           env:
             - name: AVP_SECRET
               value: vault-secret
+            - name: helm_args
+              value: -f values.yaml -f {{ valueFile }}
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
         targetRevision: '{{ targetRevision }}'
         path: apps/vault

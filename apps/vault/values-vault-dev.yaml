@@ -1,0 +1,4 @@
+cluster: "dev"
+
+certificate:
+  dnsZone: "dev.demo.catena-x.net"
