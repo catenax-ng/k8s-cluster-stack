@@ -20,7 +20,7 @@ spec:
             targetRevision: HEAD
           - cluster: vault
             cluster-name: vault-cluster
-            valueFile: values-vault-vault.yaml
+            valueFile: values-tls-vault.yaml
             targetRevision: HEAD
 
   template:
