@@ -16,7 +16,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: {{ .Values.cluster}}-vault
+                name: vault
                 port:
                   number: 8200
   tls:
