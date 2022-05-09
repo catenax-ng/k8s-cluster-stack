@@ -58,4 +58,9 @@ spec:
             duration: 5s # the amount to back off. Default unit is seconds, but could also be a duration (e.g. "2m", "1h")
             factor: 2 # a factor to multiply the base duration after each failed retry
             maxDuration: 3m # the maximum amount of time allowed for the backoff strategy
+        ignoreDifferences: # https://github.com/argoproj/argo-cd/issues/4276#issuecomment-908455476
+           - group: admissionregistration.k8s.io
+             kind: MutatingWebhookConfiguration
+             jqPathExpressions:
+              - .webhooks[]?.clientConfig.caBundle
 
