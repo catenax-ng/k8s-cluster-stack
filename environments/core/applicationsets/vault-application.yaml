@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vault-vault
+  name: vault
   namespace: argocd
   labels:
     environment: core
@@ -19,8 +19,9 @@ spec:
         - name: helm_args
           value: '-f values.yaml -f values-vault-dev.yaml'
   destination:
-    namespace: vault-cluster
-    name: vault
+    namespace: vault
+    name: vault-cluster
+    server: ''
   syncPolicy:
     syncOptions:
       - Validate=false
