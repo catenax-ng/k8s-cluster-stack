@@ -31,7 +31,7 @@ vault:
     extraEnvironmentVars:
       VAULT_SEAL_TYPE: "azurekeyvault"
       VAULT_AZUREKEYVAULT_VAULT_NAME: "cx-vault-unseal"
-      VAULT_AZUREKEYVAULT_KEY_NAME: "hashicorp-vault-key-rico"
+      VAULT_AZUREKEYVAULT_KEY_NAME: "hashicorp-vault-key"
       AZURE_TENANT_ID: "495463c3-0991-4659-9cc5-94b4a3f7b1d6"
       AZURE_CLIENT_ID: "eed491d9-d302-4f3a-93aa-973e3d3fe442"
     extraSecretEnvironmentVars:

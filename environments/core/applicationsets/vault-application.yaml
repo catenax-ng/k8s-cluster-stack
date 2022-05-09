@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vault-vault
+  namespace: argocd
+  labels:
+    environment: core
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/catenax-ng/k8s-cluster-stack'
+    path: apps/vault
+    targetRevision: feature/manager-vault-with-argocd
+    plugin:
+      name: argocd-vault-plugin-helm-args
+      env:
+        - name: AVP_SECRET
+          value: vault-secret
+        - name: helm_args
+          value: '-f values.yaml -f values-vault-dev.yaml'
+  destination:
+    namespace: vault
+    name: vault
+  syncPolicy:
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
