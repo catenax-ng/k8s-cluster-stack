@@ -12,7 +12,7 @@ spec:
             targetRevision: HEAD
           - cluster: dev
             cluster-name: dev
-            valueFile: values-vault-dev.yaml
+            valueFile: values-tls-dev.yaml
             targetRevision: HEAD
           - cluster: hotel-budapest
             cluster-name: hotel-budapest
@@ -20,7 +20,7 @@ spec:
             targetRevision: HEAD
           - cluster: vault
             cluster-name: vault-cluster
-            valueFile: values-vault-vault.yaml
+            valueFile: values-tls-vault.yaml
             targetRevision: HEAD
 
   template:
