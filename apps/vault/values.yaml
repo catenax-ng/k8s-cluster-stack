@@ -1,17 +1,41 @@
 vault:
-  name: vault
-  namespace: argocd
-  destination:
-    server: https://cxvaultakssrv-122a5b8a.hcp.germanywestcentral.azmk8s.io:443
-    namespace: vault
-  source:
-    repourl: https://helm.releases.hashicorp.com
-    targetrevision: 0.19.0
-  project: vault
-  seal:
-    tenantid: passfromsecret
-    clientid: passfromsecret
-    clientsecret: passfromsecret
-    azurevaultname: passfromsecret
-    azurevaultkeyname: passfromsecret
-    subscriptionid: passfromsecret
+  server:
+    ha:
+      config: |
+        ui = true
+        listener "tcp" {
+          tls_disable = 1
+          address = "[::]:8200"
+          cluster_address = "[::]:8201"
+        }
+        storage "raft" {
+          path = "/vault/data"
+        }
+        service_registration "kubernetes" {}
+        disable_mlock = true
+      enabled: true
+      raft:
+        enabled: true
+        config: |
+          ui = true
+          listener "tcp" {
+            tls_disable = 1
+            address = "[::]:8200"
+            cluster_address = "[::]:8201"
+          }
+          storage "raft" {
+            path = "/vault/data"
+          }
+          service_registration "kubernetes" {}
+          disable_mlock = true
+    extraEnvironmentVars:
+      VAULT_SEAL_TYPE: "azurekeyvault"
+      VAULT_AZUREKEYVAULT_VAULT_NAME: "cx-vault-unseal"
+      VAULT_AZUREKEYVAULT_KEY_NAME: "hashicorp-vault-key"
+      AZURE_TENANT_ID: "495463c3-0991-4659-9cc5-94b4a3f7b1d6"
+      AZURE_CLIENT_ID: "eed491d9-d302-4f3a-93aa-973e3d3fe442"
+    extraSecretEnvironmentVars:
+      - envName: AZURE_CLIENT_SECRET
+        secretName: azure-vault-secret
+        secretKey: client-secret
+

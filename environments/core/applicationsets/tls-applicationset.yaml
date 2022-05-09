@@ -12,7 +12,7 @@ spec:
             targetRevision: HEAD
           - cluster: dev
             cluster-name: dev
-            valueFile: values-tls-dev.yaml
+            valueFile: values-vault-dev.yaml
             targetRevision: HEAD
           - cluster: hotel-budapest
             cluster-name: hotel-budapest
@@ -20,7 +20,7 @@ spec:
             targetRevision: HEAD
           - cluster: vault
             cluster-name: vault-cluster
-            valueFile: values-tls-vault.yaml
+            valueFile: values-vault-vault.yaml
             targetRevision: HEAD
 
   template:
@@ -58,4 +58,5 @@ spec:
             duration: 5s # the amount to back off. Default unit is seconds, but could also be a duration (e.g. "2m", "1h")
             factor: 2 # a factor to multiply the base duration after each failed retry
             maxDuration: 3m # the maximum amount of time allowed for the backoff strategy
+
 

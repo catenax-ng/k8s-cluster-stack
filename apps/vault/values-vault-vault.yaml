@@ -1,0 +1,4 @@
+cluster: "vault"
+
+certificate:
+  dnsZone: "vault.demo.catena-x.net"

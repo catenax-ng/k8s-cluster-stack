@@ -9,6 +9,7 @@ resources:
   - applicationsets/certmanager-applicationset.yaml
   - applicationsets/tls-applicationset.yaml
   - applicationsets/reflector-applicationset.yaml
+  - applications/vault-application.yaml
   - cluster-secrets/hotel-budapest-secret.yaml
   - cluster-secrets/dev-cluster-secret.yaml
 # TODO 08.04.2022 CARSLEN: after vault cluster secret is available in vault, enable it here for deployment
