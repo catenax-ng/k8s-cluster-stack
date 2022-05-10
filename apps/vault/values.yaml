@@ -69,6 +69,7 @@ dex:
     - host: dex.vault.demo.catena-x.net
       paths:
         - path: /
+          pathType: Prefix
     tls:
     - hosts:
         - dex.vault.demo.catena-x.net
