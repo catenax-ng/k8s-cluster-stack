@@ -9,7 +9,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
 spec:
   rules:
-    - host: vault.{{ .Values.certificate.dnsZone}}
+    - host: vault.{{ .Values.domain}}
       http:
         paths:
           - path: /
@@ -21,6 +21,6 @@ spec:
                   number: 8200
   tls:
     - hosts:
-        - vault.{{ .Values.certificate.dnsZone}}
+        - vault.{{ .Values.domain}}
       secretName: tls-secret
 
