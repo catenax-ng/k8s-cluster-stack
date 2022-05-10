@@ -64,11 +64,12 @@ dex:
   ingress:
     enabled: true
     annotations:
-       kubernetes.io/ingress.class: nginx
+      kubernetes.io/ingress.class: nginx
     hosts:
-      - host: dex.vault.demo.catena-x.net
-        paths:
-          - path: /
+    - host: dex.vault.demo.catena-x.net
+      paths:
+        - path: /
+          pathType: Prefix
     tls:
     - hosts:
         - dex.vault.demo.catena-x.net
