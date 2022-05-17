@@ -32,6 +32,8 @@ spec:
   tls:
     - hosts:
         - vault.{{ .Values.domain}}
+      secretName: tls-secret
+    - hosts:
         - vault.vault.demo.catena-x.net
       secretName: tls-secret
 
