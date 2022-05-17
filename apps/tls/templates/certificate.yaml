@@ -10,7 +10,7 @@ spec:
     name: letsencrypt-prod
   commonName: "*.{{ .Values.certificate.dnsZone }}"
   dnsNames:
-    {{- if eq .Values.cluster "hotel-budapest" }}
+    {{- if or (eq .Values.cluster "hotel-budapest") (eq .Values.cluster "vault")}}
     - "*.demo.catena-x.net"
     {{- end}}
     - "*.{{ .Values.certificate.dnsZone }}"
