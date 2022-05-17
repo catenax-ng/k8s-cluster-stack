@@ -1,3 +1,4 @@
+domain: "demo.catena-x.net"
 vault:
   server:
     ha:
