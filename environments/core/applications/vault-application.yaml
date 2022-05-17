@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: 'https://github.com/catenax-ng/k8s-cluster-stack'
     path: apps/vault
-    targetRevision: 'feature/change-vault-domain'
+    targetRevision: 'HEAD'
     plugin:
       name: argocd-vault-plugin-helm-args
       env:

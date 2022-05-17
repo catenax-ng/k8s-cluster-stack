@@ -21,7 +21,7 @@ spec:
           - cluster: vault
             cluster-name: vault-cluster
             valueFile: values-tls-vault.yaml
-            targetRevision: feature/change-vault-domain
+            targetRevision: HEAD
 
   template:
     metadata:
