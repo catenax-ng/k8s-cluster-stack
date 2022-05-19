@@ -43,7 +43,7 @@ vault:
 dex:
   config:
     # Set it to a valid URL
-    issuer: http://dex.vault.demo.catena-x.net
+    issuer: https://dex.vault.demo.catena-x.net
 
     # See https://dexidp.io/docs/storage/ for more options
     storage:
