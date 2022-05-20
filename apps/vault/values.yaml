@@ -41,7 +41,7 @@ vault:
         secretKey: client-secret
 
 dex:
-  config:
+  config: # @url: https://github.com/dexidp/dex/blob/master/examples/config-dev.yaml
     # Set it to a valid URL
     issuer: https://dex.vault.demo.catena-x.net
 
@@ -51,17 +51,29 @@ dex:
 
     # Enable at least one connector
     # See https://dexidp.io/docs/connectors/ for more options
-    enablePasswordDB: true
+    enablePasswordDB: false
+    logger:
+      level: "debug"
+    url: "https://dex.vault.demo.catena-x.net"    
+
+    staticClients: # @url: https://dexidp.io/docs/getting-started/#running-a-client
+    - id: '<path:/devsecops/data/clusters/vault/github-oauth#oAuthClientId>'
+      redirectURIs:
+      - 'http://localhost:8250/oidc/callback'
+      - 'https://vault.vault.demo.catena-x.net/ui/vault/auth/oidc/oidc/callback'
+      name: 'Vault App'
+      secret: '<path:/devsecops/data/clusters/vault/github-oauth#oAuthClientSecret>'
     connectors:
     - type: github
       id: github
       name: GitHub
       config:
-        clientID: '<path:/devsecops/data/clusters/core/github-oauth#oAuthClientId>'
-        clientSecret: '<path:/devsecops/data/clusters/core/github-oauth#oAuthClientSecret>'
+        clientID: '<path:/devsecops/data/clusters/vault/github-oauth#oAuthClientId>'
+        clientSecret: '<path:/devsecops/data/clusters/vault/github-oauth#oAuthClientSecret>'
+        loadAllGroups: true
+        useLoginAsID: true
         orgs:
-        - name: catenax-ng
-    url: "https://dex.vault.demo.catena-x.net"    
+        - name: catenax-ng      
   ingress:
     enabled: true
     annotations:
