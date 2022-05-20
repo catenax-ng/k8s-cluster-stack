@@ -45,3 +45,4 @@ resources:
 
   - argo-projects/product-esc-backbone.yaml
   - avp-secrets/esc-backbone-vault-secret.yaml
+  - argo-repos/product-esc-backbone.yaml
