@@ -1,9 +1,21 @@
 terraform {
   required_providers {
     vault = {
-      source = "hashicorp/vault"
+      source  = "hashicorp/vault"
       version = "3.5.0"
     }
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = ">= 2.99.0"
+    }
+  }
+
+  backend "azurerm" {
+    resource_group_name  = "cx-devsecops-tfstates"
+    storage_account_name = "cxdevsecopstfstate"
+    container_name       = "vault-tfstate"
+    key                  = "terraform.tfstate"
+    access_key           = var.azure_storage_access_key
   }
 }
 
@@ -17,4 +29,8 @@ provider "vault" {
       secret_id = var.login_approle_secret_id
     }
   }
+}
+
+provider "azurerm" {
+  features {}
 }

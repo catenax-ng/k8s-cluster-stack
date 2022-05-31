@@ -1,7 +1,7 @@
 variable "vault_address" {
   description = "URL of the vault instance to configure"
   type        = string
-  default     = "https://vault.vault.catena-x.net"
+  default     = "https://vault.vault.demo.catena-x.net"
 }
 
 variable login_approle_role_id {
@@ -11,6 +11,11 @@ variable login_approle_role_id {
 
 variable login_approle_secret_id {
   description = "The secret_id of the approle, terraform uses to authenticate in vault"
+  type        = string
+}
+
+variable "azure_storage_access_key" {
+  description = "The access key for the Azure blob storage, where terraform will store the tfstate file"
   type        = string
 }
 
