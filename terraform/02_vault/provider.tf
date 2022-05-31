@@ -15,7 +15,6 @@ terraform {
     storage_account_name = "cxdevsecopstfstate"
     container_name       = "vault-tfstate"
     key                  = "terraform.tfstate"
-    access_key           = var.azure_storage_access_key
   }
 }
 

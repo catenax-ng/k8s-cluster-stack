@@ -27,9 +27,11 @@ terraform import vault_policy.product-team-policies product-team-example
 There is a terraform backend configured to store the state file. The state will be uploaded to an Azure storage account.
 The details are configured in the backend section of the provider config in [./provider.tf](provider.tf).
 In order to upload the state file to Azure, you need to specify the storage account access key.
-This can either be done, by specifying the variable `azure_storage_access_key` interactively while running terraform plan,
-or through setting the environment variable `TF_VAR_azure_storage_access_key`.
-You can query the value for storage access key with the following command: 
-`az storage account keys list --resource-group cx-devsecops-tfstates --account-name cxdevsecopstfstate --query '[0].value' -o tsv`
+
+You can query the value for storage access key and store it in an environment variable, that terraform will use
+with the following command: 
+`export ARM_ACCESS_KEY=$(az storage account keys list --resource-group cx-devsecops-tfstates --account-name cxdevsecopstfstate --query '[0].value' -o tsv)`
+
+If you did not yet initialize terraform, you'll also need the storage access key.
 
 ## Storing the updated terraform state
