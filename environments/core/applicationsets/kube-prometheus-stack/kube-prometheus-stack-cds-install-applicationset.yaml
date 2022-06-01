@@ -27,7 +27,7 @@ spec:
       finalizers:
         - resources-finalizer.argocd.argoproj.io
       labels:
-        app: kube-prometheus-stack-crd-install
+        app: kube-prometheus-stack
     spec:
       project: default
       source:
