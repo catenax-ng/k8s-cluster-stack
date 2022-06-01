@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   labels:
-    environment: app-of-apps
+    app-of-app:
 spec:
   project: default
   source:
