@@ -34,4 +34,20 @@ with the following command:
 
 If you did not yet initialize terraform, you'll also need the storage access key.
 
-## Storing the updated terraform state
+
+## 'Design' decisions
+
+Following are some minor decisions taken, while creating the vault terraform config.
+
+### Product team list in variable definition over local variables
+
+The list of product teams is defined inside the [./variables.tf](variables.tf) file. This approach was chosen over
+local variable definition inside [./main.tf](main.tf), because it provides us with better auto-completion.
+There is no way to define variable typing for local variables.
+
+### Product teams as list of objects instead of list of string
+
+The configuration was created during a time, when there were a lot of inconsistencies in the naming of GitHub teams,
+vault secret engines and vault policies. Specifying product teams as objects instead of strings, enabled more flexibility
+to handle the inconsistent definitions.
+
