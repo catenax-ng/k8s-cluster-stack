@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: AoA-kube-prom-stack
+  namespace: argocd
+  labels:
+    environment: core
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/catenax-ng/k8s-cluster-stack'
+    path: environments/core/applicationsets/kube-prometheus-stack
+    targetRevision: 'feature/A1ODT-329_kube-prometheus-stack'
+  destination:
+    namespace: kube-prometheus-stack
+    name: in-cluster
+    server: ''
+  syncPolicy:
+    syncOptions: # Sync options which modifies sync behavior
+      - CreateNamespace=true
