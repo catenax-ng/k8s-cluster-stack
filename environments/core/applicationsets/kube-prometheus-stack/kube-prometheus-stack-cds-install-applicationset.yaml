@@ -24,6 +24,8 @@ spec:
   template:
     metadata:
       name: '{{ cluster }}-kube-prometheus-stack-crd-install'
+      finalizers:
+        - resources-finalizer.argocd.argoproj.io
       labels:
         app: kube-prometheus-stack-crd-install
     spec:

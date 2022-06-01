@@ -1,10 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: AoA-kube-prom-stack
+  name: appbundle-kube-prom-stack
   namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
   labels:
-    environment: core
+    environment: app-of-apps
 spec:
   project: default
   source:

@@ -26,6 +26,8 @@ spec:
       name: '{{ cluster }}-kube-prometheus-stack'
       labels:
         app: kube-prometheus-stack
+      finalizers:
+        - resources-finalizer.argocd.argoproj.io
     spec:
       project: default
       source:
