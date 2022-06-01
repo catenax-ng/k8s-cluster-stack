@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: kube-prometheus-stack-crd-install-applicationset
+  namespace: argocd
 spec:
   generators:
     - list:
