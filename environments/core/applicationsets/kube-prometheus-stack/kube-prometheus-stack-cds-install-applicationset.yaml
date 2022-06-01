@@ -36,22 +36,20 @@ spec:
         targetRevision: 'kube-prometheus-stack-{{ targetRevision }}'
         directory:
           recurse: true
-
       destination:
         name: '{{ cluster-name }}'
         namespace: kube-prometheus-stack
         server: ''
-
-      # Sync policy
       syncPolicy:
-        syncOptions: # Sync options which modifies sync behavior
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
           - Replace=true
-          - CreateNamespace=true # Namespace Auto-Creation ensures that namespace specified as the application destination exists in the destination cluster.
-        # The retry feature is available since v1.7
         retry:
-          limit: 5 # number of failed sync attempt retries; unlimited number of attempts if less than 0
+          limit: 5
           backoff:
-            duration: 5s # the amount to back off. Default unit is seconds, but could also be a duration (e.g. "2m", "1h")
-            factor: 2 # a factor to multiply the base duration after each failed retry
-            maxDuration: 3m # the maximum amount of time allowed for the backoff strategy
+            duration: 5s
+            factor: 2
+            maxDuration: 3m
 

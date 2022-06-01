@@ -18,5 +18,8 @@ spec:
     name: in-cluster
     server: ''
   syncPolicy:
-    syncOptions: # Sync options which modifies sync behavior
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
       - CreateNamespace=true
