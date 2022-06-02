@@ -17,9 +17,12 @@ Here are some examples for secret engines and policies to import
 # The DevSecOps secret engine is created as separate resource definition in the terraform files
 terraform import vault_mount.devsecops-secret-engine devsecops
 
-# All the team secret engines are placed in the 'product-team-secret-engines' resource
-terraform import vault_mount.product-team-secret-engines product-team-example
-terraform import vault_policy.product-team-policies product-team-example
+# Importing resources with for_each loop in it is slightly different. Here you have to use an additional index
+# on the terraform resource at import. This then has to be quoted. 
+# Current approach: use the map key of product_teams variable as index and secret_engine_name as path
+# Examples: 
+terraform import 'vault_mount.product-team-secret-engines["example"]' product-team-example
+terraform import 'vault_mount.product-team-secret-engines["bpdm"]' bpdm
 ```
 
 ## Handling the tfstate
