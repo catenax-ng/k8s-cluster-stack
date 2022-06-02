@@ -10,17 +10,14 @@ spec:
         cluster-name: in-cluster
         overlay: overlays/core
         targetRevision: ArgoCD_v2.3.4
-        AVP_SECRET: vault-secret
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         overlay: overlays/hotel-budapest
         targetRevision: ArgoCD_v2.3.4
-        AVP_SECRET: vault-secret
       - cluster: dev
         cluster-name: dev
         overlay: overlays/dev
         targetRevision: ArgoCD_v2.3.4
-        AVP_SECRET: vault-secret
 
   template:
     metadata:
@@ -35,9 +32,6 @@ spec:
         path: apps/argocd/{{overlay}}
         plugin:
           name: argocd-vault-plugin-kustomize
-          env:
-            - name: AVP_SECRET
-              value: '{{ AVP_SECRET }}'
       destination:
         name: '{{ cluster-name }}'
         namespace: argocd
