@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-explorer
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-explorer
+  namespace: argocd
+spec:
+  description: Project for team explorer
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: product-explorer
+      server: https://kubernetes.default.svc
+  # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
+  namespaceResourceBlacklist:
+    - group: ''
+      kind: ResourceQuota
+    - group: ''
+      kind: LimitRange
+    - group: ''
+      kind: NetworkPolicy
+  roles:
+    - name: team-admin
+      description: All access to applications inside project-explorer. Read only on project itself
+      policies:
+        - p, proj:project-explorer:team-admin, applications, *, project-explorer/*, allow
+      groups:
+        - catenax-ng:product-explorer
