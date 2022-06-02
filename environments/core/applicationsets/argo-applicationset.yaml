@@ -9,15 +9,15 @@ spec:
       - cluster: core
         cluster-name: in-cluster
         overlay: overlays/core
-        targetRevision: ArgoCD_v2.3.4
+        targetRevision: ArgoCD_v2.3.4_updated_vault_plugin_cm
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         overlay: overlays/hotel-budapest
-        targetRevision: ArgoCD_v2.3.4
+        targetRevision: ArgoCD_v2.3.4_updated_vault_plugin_cm
       - cluster: dev
         cluster-name: dev
         overlay: overlays/dev
-        targetRevision: ArgoCD_v2.3.4
+        targetRevision: ArgoCD_v2.3.4_updated_vault_plugin_cm
 
   template:
     metadata:
