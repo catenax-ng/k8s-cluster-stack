@@ -27,8 +27,8 @@ EOT
 
 resource "vault_github_team" "dev-sec-ops" {
   backend  = vault_github_auth_backend.github_login.id
-  team = "argocdadmins"
-  policies = [ vault_policy.vault_admin_policy.name ]
+  team     = "argocdadmins"
+  policies = [vault_policy.vault_admin_policy.name]
 }
 
 
@@ -70,6 +70,6 @@ resource "vault_github_team" "github-product-teams" {
   for_each = var.product_teams
 
   backend  = vault_github_auth_backend.github_login.id
-  team = each.value.github_team
-  policies = [ each.value.ui_policy_name ]
+  team     = each.value.github_team
+  policies = [each.value.ui_policy_name]
 }

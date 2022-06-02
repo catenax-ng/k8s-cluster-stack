@@ -21,8 +21,17 @@ terraform import vault_mount.devsecops-secret-engine devsecops
 # on the terraform resource at import. This then has to be quoted. 
 # Current approach: use the map key of product_teams variable as index and secret_engine_name as path
 # Examples: 
+
+# Secret engines
 terraform import 'vault_mount.product-team-secret-engines["example"]' product-team-example
 terraform import 'vault_mount.product-team-secret-engines["bpdm"]' bpdm
+
+# policies
+terraform import 'vault_policy.product-team-policies["test-data-generator"]' test-data-generator
+terraform import 'vault_policy.product-approle-read-only-policies["test-data-generator"]' test-data-generator-ro
+
+# github team mappings
+terraform import 'vault_github_team.github-product-teams["bpdm"]' auth/github/map/teams/product-bpdm
 ```
 
 ## Handling the tfstate
