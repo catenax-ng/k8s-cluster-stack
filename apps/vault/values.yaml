@@ -54,8 +54,7 @@ dex:
     enablePasswordDB: false
     logger:
       level: "debug"
-    url: "https://dex.vault.demo.catena-x.net"    
-
+    url: "https://dex.vault.demo.catena-x.net"        
     staticClients: # @url: https://dexidp.io/docs/getting-started/#running-a-client
     - id: '<path:/devsecops/data/clusters/vault/github-oauth#oAuthClientId>'
       redirectURIs:
@@ -70,6 +69,7 @@ dex:
       config:
         clientID: '<path:/devsecops/data/clusters/vault/github-oauth#oAuthClientId>'
         clientSecret: '<path:/devsecops/data/clusters/vault/github-oauth#oAuthClientSecret>'
+        redirectURI: https://dex.vault.demo.catena-x.net/callback
         loadAllGroups: true
         useLoginAsID: true
         orgs:
