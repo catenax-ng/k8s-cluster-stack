@@ -60,6 +60,7 @@ dex:
       redirectURIs:
       - 'http://localhost:8250/oidc/callback'
       - 'https://vault.vault.demo.catena-x.net/ui/vault/auth/oidc/oidc/callback'
+      - 'https://vault.demo.catena-x.net/ui/vault/auth/oidc/oidc/callback'
       name: 'Vault App'
       secret: '<path:/devsecops/data/clusters/vault/github-oauth#oAuthClientSecret>'
     connectors:
