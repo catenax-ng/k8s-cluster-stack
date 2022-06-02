@@ -6,12 +6,13 @@ spec:
   generators:
   - list:
       elements:
-      - cluster: core
-        cluster-name: in-cluster
-        targetRevision: feature/A1ODT-329_kube-prometheus-stack
-#      - cluster: dev
-#        cluster-name: dev
+# TODO 02.06.2022 CARSLEN: other cluster will remain commented until stack is fully operational after testing on dev
+#      - cluster: core
+#        cluster-name: in-cluster
 #        targetRevision: HEAD
+      - cluster: dev
+        cluster-name: dev
+        targetRevision: feature/A1ODT-329_kube-prometheus-stack
 #      - cluster: hotel-budapest
 #        cluster-name: hotel-budapest
 #        targetRevision: HEAD
