@@ -672,7 +672,7 @@ kube-prometheus-stack:
     ##
     defaultDashboardsTimezone: utc
 
-    adminPassword: <path:devsecops/data/apps/prometheus-stack/core/grafana#adminPassword>
+    adminPassword: <path:devsecops/data/apps/prometheus-stack/int/grafana#adminPassword>
 
     rbac:
       ## If true, Grafana PSPs will be created
