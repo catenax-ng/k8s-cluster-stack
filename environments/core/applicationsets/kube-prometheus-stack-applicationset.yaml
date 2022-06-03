@@ -31,8 +31,6 @@ spec:
         plugin:
           name: argocd-vault-plugin-helm-args
           env:
-            - name: AVP_SECRET
-              value: vault-secret
             - name: helm_args
               value: '-f values-{{ cluster }}.yaml'
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
