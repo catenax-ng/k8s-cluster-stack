@@ -8,6 +8,11 @@ kind: Namespace
 metadata:
   name: product-portal
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-portal-pen
+---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
@@ -19,6 +24,8 @@ spec:
     - '*'
   destinations:
     - namespace: product-portal
+      server: https://kubernetes.default.svc
+    - namespace: product-portal-pen
       server: https://kubernetes.default.svc
     - namespace: product-iam
       server: https://kubernetes.default.svc
