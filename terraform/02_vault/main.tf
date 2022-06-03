@@ -73,3 +73,34 @@ resource "vault_github_team" "github-product-teams" {
   team     = each.value.github_team
   policies = [each.value.ui_policy_name]
 }
+
+##
+#   product team approles
+##
+
+resource "vault_auth_backend" "approle" {
+  type = "approle"
+}
+
+resource "vault_approle_auth_backend_role" "product-team-approles" {
+  for_each = var.product_teams
+
+  backend        = vault_auth_backend.approle.path
+  role_name      = "${each.value.name}-approle"
+  token_policies = [each.value.approle_policy_name]
+}
+
+resource "vault_approle_auth_backend_role_secret_id" "product-teams-approle-ids" {
+  for_each = var.product_teams
+
+  backend   = vault_auth_backend.approle.path
+  role_name = vault_approle_auth_backend_role.product-team-approles[each.key].role_name
+}
+
+resource "vault_approle_auth_backend_login" "approle-logins" {
+  for_each = var.product_teams
+
+  backend   = vault_auth_backend.approle.path
+  role_id   = vault_approle_auth_backend_role.product-team-approles[each.key].role_id
+  secret_id = vault_approle_auth_backend_role_secret_id.product-teams-approle-ids[each.key].secret_id
+}
