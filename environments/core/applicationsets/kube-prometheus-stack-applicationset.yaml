@@ -1,0 +1,55 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: kube-prometheus-stack-applicationset
+spec:
+  generators:
+  - list:
+      elements:
+# TODO 02.06.2022 CARSLEN: other cluster will remain commented until stack is fully operational after testing on dev
+#      - cluster: core
+#        cluster-name: in-cluster
+#        targetRevision: HEAD
+      - cluster: dev
+        cluster-name: dev
+        targetRevision: feature/A1ODT-329_kube-prometheus-stack
+#      - cluster: hotel-budapest
+#        cluster-name: hotel-budapest
+#        targetRevision: HEAD
+#      - cluster: vault
+#        cluster-name: vault-cluster
+#        targetRevision: HEAD
+
+  template:
+    metadata:
+      name: '{{ cluster }}-kube-prometheus-stack'
+      labels:
+        app: kube-prometheus-stack
+    spec:
+      project: default
+      source:
+        plugin:
+          name: argocd-vault-plugin-helm-args
+          env:
+            - name: AVP_SECRET
+              value: vault-secret
+            - name: helm_args
+              value: '-f values-{{ cluster }}.yaml'
+        repoURL: https://github.com/catenax-ng/k8s-cluster-stack
+        targetRevision: '{{ targetRevision }}'
+        path: apps/kube-prometheus-stack
+      destination:
+        name: '{{ cluster-name }}'
+        namespace: kube-prometheus-stack
+        server: ''
+      syncPolicy:
+        automated:
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+        retry:
+          limit: 5
+          backoff:
+            duration: 5s
+            factor: 2
+            maxDuration: 3m
