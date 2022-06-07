@@ -143,7 +143,7 @@ variable "product_teams" {
       ui_policy_name : "traceability-foss-backend-rw"
       approle_policy_name : "traceability-foss-backend-ro"
       github_team : "product-traceability-foss"
-    },
+    }
   }
 }
 # Weired config or missing teams configurations
@@ -162,3 +162,14 @@ variable "product_teams" {
 
 # unnecessary github team mappings
 # bpdm                           --> product-bpdm
+
+
+# unnecessary approles
+# traceablity-irs                 --> typo and duplicate
+# data-format-transformer         --> duplicate with dft and traceability-dft
+# traceability-dft                --> dft
+# traceablity-dft                 --> typo and duplicate
+
+# careful on approles
+# explorer -> imported with key explorer but approle name is product-explorer
+# traceability-foss -> imported with key traceability-foss but role name product-traceability-foss
