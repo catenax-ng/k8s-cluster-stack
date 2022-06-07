@@ -13,9 +13,6 @@ spec:
     path: environments/dev
     plugin:
       name: argocd-vault-plugin-kustomize
-      env:
-        - name: AVP_SECRET
-          value: vault-secret
 
   destination:
     name: dev
