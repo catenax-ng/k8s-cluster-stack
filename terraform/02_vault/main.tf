@@ -104,3 +104,16 @@ resource "vault_approle_auth_backend_login" "approle-logins" {
   role_id   = vault_approle_auth_backend_role.product-team-approles[each.key].role_id
   secret_id = vault_approle_auth_backend_role_secret_id.product-teams-approle-ids[each.key].secret_id
 }
+
+resource "vault_generic_secret" "product-team-avp-secrets" {
+  for_each = var.product_teams
+
+  path = "${vault_mount.devsecops-secret-engine.path}/avp-config/${each.value.name}"
+
+  data_json = <<EOT
+{
+  "role_id":   "${vault_approle_auth_backend_role.product-team-approles[each.key].role_id}",
+  "secret_id": "${vault_approle_auth_backend_role_secret_id.product-teams-approle-ids[each.key].secret_id}"
+}
+EOT
+}
