@@ -38,7 +38,7 @@ spec:
         path: apps/kube-prometheus-stack
       destination:
         name: '{{ cluster-name }}'
-        namespace: kube-prometheus-stack
+        namespace: monitoring
         server: ''
       syncPolicy:
         automated:
