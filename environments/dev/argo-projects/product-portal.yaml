@@ -35,7 +35,7 @@ spec:
     - namespace: product-iam
       server: https://kubernetes.default.svc
     - namespace: product-iam-pen
-        server: https://kubernetes.default.svc
+      server: https://kubernetes.default.svc
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
   namespaceResourceBlacklist:
     - group: ''
