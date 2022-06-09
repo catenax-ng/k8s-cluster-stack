@@ -2,6 +2,11 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 kube-prometheus-stack:
+  # https://github.com/prometheus-community/helm-charts/issues/479#issuecomment-752709725
+  prometheusOperator:
+    admissionWebhooks:
+      enabled: false
+
   ## Using default values from https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
   ##
   grafana:
