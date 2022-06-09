@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/catenax-ng/k8s-cluster-stack
-    targetRevision: HEAD
+    targetRevision: feature/defaultBackend
     path: environments/core
     plugin:
       name: argocd-vault-plugin-kustomize

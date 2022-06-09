@@ -11,7 +11,7 @@ spec:
         targetRevision: HEAD
       - cluster: dev
         cluster-name: dev
-        targetRevision: HEAD
+        targetRevision: feature/defaultBackend
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         targetRevision: HEAD
