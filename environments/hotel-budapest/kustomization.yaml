@@ -58,4 +58,7 @@ resources:
   - avp-secrets/esc-backbone-vault-secret.yaml
   - argo-repos/product-esc-backbone.yaml
 
+  - argo-projects/product-value-added-service.yaml
+  - avp-secrets/value-added-service-team-vault-secret.yaml
+
   - avp-secrets/devsecops-team-vault-secret.yaml

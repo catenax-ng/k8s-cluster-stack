@@ -43,6 +43,9 @@ resources:
   - argo-projects/product-dft.yaml
   - avp-secrets/dft-team-vault-secret.yaml
 
+  - argo-projects/product-traceability-foss.yaml
+  - avp-secrets/traceability-foss-team-vault-secret.yaml
+
   - argo-projects/product-traceability-irs.yaml
   - avp-secrets/traceablity-irs-team-vault-secret.yaml
 
@@ -52,3 +55,7 @@ resources:
   - argo-projects/product-esc-backbone.yaml
   - avp-secrets/esc-backbone-vault-secret.yaml
   - argo-repos/product-esc-backbone.yaml
+
+  - argo-projects/product-value-added-service.yaml
+  - avp-secrets/value-added-service-team-vault-secret.yaml
+

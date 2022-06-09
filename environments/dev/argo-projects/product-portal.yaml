@@ -6,6 +6,11 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
+  name: product-iam-pen
+---
+apiVersion: v1
+kind: Namespace
+metadata:
   name: product-portal
 ---
 apiVersion: v1
@@ -28,6 +33,8 @@ spec:
     - namespace: product-portal-pen
       server: https://kubernetes.default.svc
     - namespace: product-iam
+      server: https://kubernetes.default.svc
+    - namespace: product-iam-pen
       server: https://kubernetes.default.svc
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
   namespaceResourceBlacklist:
