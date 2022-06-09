@@ -8,5 +8,14 @@ ingress-nginx:
       enable-underscores-in-headers: "true"
     #extraArgs:
       #default-ssl-certificate: "default/www-tls"  # K8_NAMESPACE/K8_SECRET_NAME @url: https://kubernetes.github.io/ingress-nginx/user-guide/tls/#default-ssl-certificate
+    
+    ## Required only if defaultBackend.enabled = false
+    ## Must be <namespace>/<service_name>
+    ##
+    defaultBackendService: "default/k8s-helm-example"
+
   defaultBackend:
-    enabled: true
+
+    ## If false, controller.defaultBackendService must be provided
+    ##
+    enabled: false
