@@ -12,15 +12,20 @@ ingress-nginx:
       #default-ssl-certificate: "default/www-tls"  # K8_NAMESPACE/K8_SECRET_NAME @url: https://kubernetes.github.io/ingress-nginx/user-guide/tls/#default-ssl-certificate
   defaultBackend:
     enabled: true
-    name: custom-default-backend
     image:
-      repository: dvdblk/custom-default-backend
-      tag: "latest"
-      pullPolicy: Always
-    port: 8080
+      image: "catenax-ng/k8s-helm-example"
+      registry: "ghcr.io"
+      tag: "feature-smaller_values"
     extraVolumeMounts:
-      - name: tmp
-        mountPath: /tmp
+    - mountPath: /tmp
+      name: tmp
+    - mountPath: "/usr/share/nginx/html/config.json"
+      name: config-frontend-volume
+      readOnly: true
+      subPath: "config.json"
     extraVolumes:
-      - name: tmp
-        emptyDir: {}
+    - emptyDir: {}
+      name: tmp
+    - name: config-frontend-volume
+      configMap:
+        name: config-frontend
