@@ -9,15 +9,15 @@ spec:
       - cluster: core
         cluster-name: in-cluster
         overlay: overlays/core
-        targetRevision: ArgoCD_v2.3.4_updated_vault_plugin_cm
+        targetRevision: add-argo-vault-plugin-helm-kustomize
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         overlay: overlays/hotel-budapest
-        targetRevision: ArgoCD_v2.3.4_updated_vault_plugin_cm
+        targetRevision: add-argo-vault-plugin-helm-kustomize
       - cluster: dev
         cluster-name: dev
         overlay: overlays/dev
-        targetRevision: ArgoCD_v2.3.4_updated_vault_plugin_cm
+        targetRevision: add-argo-vault-plugin-helm-kustomize
 
   template:
     metadata:
