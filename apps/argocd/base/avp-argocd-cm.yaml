@@ -26,3 +26,7 @@ data:
       generate:
         command: ["sh", "-c"]
         args: ["kustomize build . | argocd-vault-plugin generate - -s vault-secret"]
+    - name: argocd-vault-plugin-kustomize-helm-args
+      generate:
+        command: ["sh", "-c"]
+        args: [""helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE ${helm_args} . > manifest.yaml | kustomize build . | argocd-vault-plugin generate - -s vault-secret"]
