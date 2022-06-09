@@ -2,6 +2,35 @@
 
 Following are some instructions and hints, when configuring Vault with terraform
 
+## How to run this terraforming
+
+To create a terraform plan and apply it to the vault instance you first have to initialize terraform.
+Since the stage is stored in an Azure storage account, you need to define credentials for read/write access to this 
+storage account. You need to set these credentials via a specific environment variable like this:
+
+`export ARM_ACCESS_KEY=$(az storage account keys list --resource-group cx-devsecops-tfstates --account-name cxdevsecopstfstate --query '[0].value' -o tsv)`
+
+For more details about the state, see one of the upcoming sections. 
+After you defined the storage account credentials, you can initialize terraform via `terraform init`.
+
+Besides the Azure storage account credentials, you also need to set the vault root token as a environment variable, that
+terraform can use to authenticate. We use the root token, since there may be remounts of vault resources, that need
+elevated permissions.
+You need to set the root token as follows:
+`export VAULT_TOKEN=<vault-root-token>`
+You can get the root token value from the cx-vault-unseal Azure key vault in the Azure portal. 
+
+To let terraform check, if there need to be config changes in vault, you first have to create a plan, that you can afterwards
+apply like this:
+
+```shell
+terraform plan -out tf.plan
+terraform apply "tf.plan"
+```
+
+After the `terraform plan` step, you'll see a listing of all the resources that will be created, changed or destroyed.
+Check that list carefully, to see if the proposed changes match your expectation.
+
 ## Importing existing Vault config
 
 Configuring an already existing vault resource, like secret-engines for example, is not possible.
