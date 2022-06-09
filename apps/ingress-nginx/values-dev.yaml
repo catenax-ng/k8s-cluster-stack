@@ -14,7 +14,10 @@ ingress-nginx:
     ## Required only if defaultBackend.enabled = false
     ## Must be <namespace>/<service_name>
     ##
-    defaultBackendService: "default/k8s-helm-example"
+    ## DEPRECATED but new extra Argument has been added.
+    ## IMPORTANT If <namespace>/<service_name> is not available, ingress controller will crash (all services are out) because it was designed to make your life miserable!
+    extraArgs:
+      default-backend-service: "default/k8s-helm-example"
 
   defaultBackend:
 
