@@ -97,10 +97,10 @@ resource "vault_approle_auth_backend_role" "product-team-approles" {
   token_policies = [each.value.approle_policy_name]
 
   # values taken from the existing resources, while initially importing to the tf state
-  secret_id_num_uses = 40
+  secret_id_num_uses = 0
   secret_id_ttl      = 600
   token_max_ttl      = 1800
-  token_num_uses     = 10
+  token_num_uses     = 0
   token_ttl          = 1200
 }
 
