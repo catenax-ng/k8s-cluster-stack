@@ -4,7 +4,7 @@ metadata:
   name: product-behaviour-twin-pilot-private
   namespace: argocd
   annotations:
-    avp.kubernetes.io/path: "product-behaviour-twin-pilot/data/deploy-key"
+    avp.kubernetes.io/path: "behaviour-twin-pilot/data/deploy-key"
   labels:
     argocd.argoproj.io/secret-type: repository
 stringData:
