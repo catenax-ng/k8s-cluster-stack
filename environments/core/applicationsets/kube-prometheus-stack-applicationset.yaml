@@ -32,7 +32,7 @@ spec:
           name: argocd-vault-plugin-kustomize-helm-args
           env:
             - name: helm_args
-              value: '-f values-{{ cluster }}.yaml'
+              value: '-f values.yaml -f values-{{ cluster }}.yaml'
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
         targetRevision: '{{ targetRevision }}'
         path: apps/kube-prometheus-stack
@@ -41,8 +41,6 @@ spec:
         namespace: monitoring
         server: ''
       syncPolicy:
-        automated:
-          selfHeal: true
         syncOptions:
           - CreateNamespace=true
           # https://github.com/prometheus-community/helm-charts/issues/1500#issuecomment-968892923

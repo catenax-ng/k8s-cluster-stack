@@ -1,0 +1,5 @@
+kube-prometheus-stack:
+  # https://github.com/prometheus-community/helm-charts/issues/479#issuecomment-752709725
+  prometheusOperator:
+    admissionWebhooks:
+      enabled: false
