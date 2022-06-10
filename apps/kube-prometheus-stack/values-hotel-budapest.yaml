@@ -13,3 +13,4 @@ kube-prometheus-stack:
     adminPassword: <path:devsecops/data/apps/prometheus-stack/int/grafana#adminPassword>
 
 domain: "int.demo.catena-x.net"
+cluster: "hotel-budapest"

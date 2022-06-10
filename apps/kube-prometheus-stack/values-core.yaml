@@ -13,3 +13,4 @@ kube-prometheus-stack:
     adminPassword: <path:devsecops/data/apps/prometheus-stack/core/grafana#adminPassword>
 
 domain: "core.demo.catena-x.net"
+cluster: "core"
