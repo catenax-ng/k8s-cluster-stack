@@ -133,3 +133,31 @@ resource "vault_generic_secret" "product-team-avp-secrets" {
 }
 EOT
 }
+
+## VAULT OIDC Config + Role mapping to Github Teams
+# @url: https://jira.catena-x.net/browse/A1ODT-518
+resource "vault_jwt_auth_backend" "oidc_auth_backend" {
+    oidc_discovery_url  = "https://dex.vault.demo.catena-x.net"
+    oidc_client_id      = var.vault_oidc_client_id
+    oidc_client_secret  = var.vault_oidc_client_secret
+    bound_issuer        = "https://dex.vault.demo.catena-x.net "
+    description         = "Vault Authen Method OIDC"
+    path                = "oidc"
+    type                = "oidc"
+    tune {
+        listing_visibility = "unauth"
+    }
+}
+resource "vault_jwt_auth_backend_role" "oidc_auth_roles" {
+  for_each = var.product_teams
+
+  backend               = vault_jwt_auth_backend.oidc.path
+  allowed_redirect_uris = ["http://localhost:8250/oidc/callback","https://vault.demo.catena-x.net/ui/vault/auth/oidc/oidc/callback"]
+  role_type             = "oidc"
+  user_claim            = "email"
+  token_ttl             = "1h"
+  oidc_scopes           = ["openid", "email", "groups"]
+  token_policies        = [each.value.ui_policy_name]
+  role_name             = each.value.github_team 
+  bound_claims          = {"groups":"catenax-ng:${each.value.github_team}"}  
+}
