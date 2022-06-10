@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: vault-ingress
+  name: grafana-ingress
   namespace: {{ .Release.Namespace}}
   annotations:
     kubernetes.io/ingress.class: nginx
