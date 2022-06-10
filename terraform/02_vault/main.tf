@@ -151,7 +151,7 @@ resource "vault_jwt_auth_backend" "oidc_auth_backend" {
 resource "vault_jwt_auth_backend_role" "oidc_auth_roles" {
   for_each = var.product_teams
 
-  backend         = vault_jwt_auth_backend.oidc.path
+  backend               = vault_jwt_auth_backend.oidc.path
   allowed_redirect_uris = ["http://localhost:8250/oidc/callback","https://vault.demo.catena-x.net/ui/vault/auth/oidc/oidc/callback"]
   role_type             = "oidc"
   user_claim            = "email"
