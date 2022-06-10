@@ -5,7 +5,7 @@ kube-prometheus-stack:
   ## Using default values from https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
   ##
   grafana:
-    adminPassword: <path:devsecops/data/apps/prometheus-stack/core/grafana#adminPassword>
+    adminPassword: <path:devsecops/data/apps/prometheus-stack/int/grafana#adminPassword>
 
-domain: "core.demo.catena-x.net"
-cluster: "core"
+domain: "int.demo.catena-x.net"
+cluster: "hotel-budapest"

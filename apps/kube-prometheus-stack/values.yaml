@@ -1,0 +1,8 @@
+kube-prometheus-stack:
+  # https://github.com/prometheus-community/helm-charts/issues/479#issuecomment-752709725
+  prometheusOperator:
+    # https://github.com/prometheus-community/helm-charts/issues/479#issuecomment-752709725
+    tls:
+      enabled: false
+    admissionWebhooks:
+      enabled: false

@@ -11,4 +11,4 @@ data:
     p, role:minimal, applications, *, */*, deny
     p, role:minimal, clusters, get, *, allow
     p, role:minimal, repositories, get, *, allow
-    g, catenax-ng:ArgoCDAdmins, role:admin
+    g, catenax-ng:argocdadmins, role:admin

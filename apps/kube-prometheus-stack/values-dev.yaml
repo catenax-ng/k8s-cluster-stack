@@ -2,49 +2,10 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 kube-prometheus-stack:
-  # https://github.com/prometheus-community/helm-charts/issues/479#issuecomment-752709725
-  prometheusOperator:
-    admissionWebhooks:
-      enabled: false
-
   ## Using default values from https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
   ##
   grafana:
-
     adminPassword: <path:devsecops/data/apps/prometheus-stack/dev/grafana#adminPassword>
 
-    ingress:
-      ## If true, Grafana Ingress will be created
-      ##
-      enabled: true
-
-      ## IngressClassName for Grafana Ingress.
-      ## Should be provided if Ingress is enabled.
-      ##
-      ingressClassName: nginx
-
-      ## Annotations for Grafana Ingress
-      ##
-      annotations:
-        kubernetes.io/ingress.class: nginx
-        nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-        # kubernetes.io/tls-acme: "true"
-
-      ## Hostnames.
-      ## Must be provided if Ingress is enabled.
-      ##
-      # hosts:
-      #   - grafana.domain.com
-      hosts:
-        - grafana.dev.demo.catena-x.net
-
-      ## Path for grafana ingress
-      path: /
-
-      ## TLS configuration for grafana Ingress
-      ## Secret must be manually created in the namespace
-      ##
-      tls:
-       - secretName: tls-secret
-         hosts:
-         - grafana.dev.demo.catena-x.net
+domain: "dev.demo.catena-x.net"
+cluster: "dev"
