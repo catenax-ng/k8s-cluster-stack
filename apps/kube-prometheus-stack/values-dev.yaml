@@ -7,6 +7,8 @@ kube-prometheus-stack:
   grafana:
     adminPassword: <path:devsecops/data/apps/prometheus-stack/dev/grafana#adminPassword>
     grafana.ini:
+      server:
+        root_url: https://grafana.dev.demo.catena-x.net
       auth.github:
           enabled: true
           allow_sign_up: true
