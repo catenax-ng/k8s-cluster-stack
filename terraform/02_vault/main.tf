@@ -17,6 +17,14 @@ resource "vault_auth_backend" "approle" {
   type = "approle"
 }
 
+resource "vault_auth_backend" "token-auth-backend" {
+  type        = "token"
+  description = "token based credentials"
+  tune {
+    listing_visibility = "unauth"
+  }
+}
+
 # VAULT OIDC Config + Role mapping to Github Teams
 # @url: https://jira.catena-x.net/browse/A1ODT-518
 resource "vault_jwt_auth_backend" "oidc_auth_backend" {
@@ -70,14 +78,13 @@ resource "vault_jwt_auth_backend_role" "dev-sec-ops-oidc-role" {
   allowed_redirect_uris = [
     "http://localhost:8250/oidc/callback", "https://vault.demo.catena-x.net/ui/vault/auth/oidc/oidc/callback"
   ]
-  role_type             = "oidc"
-  user_claim            = "email"
-  oidc_scopes           = ["openid", "email", "groups"]
-  token_policies        = [vault_policy.vault_admin_policy.name]
-  role_name             = "devsecops-admins"
-  bound_claims          = { "groups" : "catenax-ng:argocdadmins" }
+  role_type      = "oidc"
+  user_claim     = "email"
+  oidc_scopes    = ["openid", "email", "groups"]
+  token_policies = [vault_policy.vault_admin_policy.name]
+  role_name      = "devsecops-admins"
+  bound_claims   = { "groups" : "catenax-ng:argocdadmins" }
 }
-
 
 
 ##
@@ -184,10 +191,10 @@ resource "vault_jwt_auth_backend_role" "oidc_auth_roles" {
   allowed_redirect_uris = [
     "http://localhost:8250/oidc/callback", "https://vault.demo.catena-x.net/ui/vault/auth/oidc/oidc/callback"
   ]
-  role_type             = "oidc"
-  user_claim            = "email"
-  oidc_scopes           = ["openid", "email", "groups"]
-  token_policies        = [each.value.ui_policy_name]
-  role_name             = each.value.github_team
-  bound_claims          = { "groups" : "catenax-ng:${each.value.github_team}" }
+  role_type      = "oidc"
+  user_claim     = "email"
+  oidc_scopes    = ["openid", "email", "groups"]
+  token_policies = [each.value.ui_policy_name]
+  role_name      = each.value.github_team
+  bound_claims   = { "groups" : "catenax-ng:${each.value.github_team}" }
 }
