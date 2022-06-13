@@ -6,13 +6,12 @@ spec:
   generators:
   - list:
       elements:
-# TODO 02.06.2022 CARSLEN: other cluster will remain commented until stack is fully operational after testing on dev
       - cluster: core
         cluster-name: in-cluster
         targetRevision: HEAD
       - cluster: dev
         cluster-name: dev
-        targetRevision: HEAD
+        targetRevision: feature/monitoring_core_int
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         targetRevision: HEAD
