@@ -8,7 +8,7 @@ spec:
       elements:
       - cluster: core
         cluster-name: in-cluster
-        targetRevision: HEAD
+        targetRevision: feature/monitoring_core_int
       - cluster: dev
         cluster-name: dev
         targetRevision: HEAD
