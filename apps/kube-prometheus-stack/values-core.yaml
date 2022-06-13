@@ -18,7 +18,7 @@ kube-prometheus-stack:
         auth_url: https://github.com/login/oauth/authorize
         token_url: https://github.com/login/oauth/access_token
         api_url: https://api.github.com/user
-        team_ids: 5,765,033
+        team_ids: "5765033"
         allowed_organizations: catenax-ng
 
 domain: "core.demo.catena-x.net"
