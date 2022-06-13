@@ -193,29 +193,8 @@ variable "product_teams" {
 }
 
 # Weired config or missing teams configurations
-# catenax-at-home                --> no secret engine yet
 # traceability-irs               --> secret engine imported with product- prefix. The one without is not imported and has no secrets
-# "traceability-dft"             --> maybe duplicate, since team renamed to just 'dft' or 'data-format-transformer
 # traceability-foss-backend      --> in use, but no github team with that name. Mabe just traceability-foss
 
 # potentially unnecessary policies
-# product-idses-frontend-apps    --> no github team nor a secret engine
-# product-traceability-foss      --> should not have prefix
 # product-traceability-irs       --> should not have prefix
-# project-bpdm                   --> not needed. wrong prefix
-# terraform-test                 --> just a test
-# traceability-dft               --> duplicate. dft exists
-
-# unnecessary github team mappings
-# bpdm                           --> product-bpdm
-
-
-# unnecessary approles
-# traceablity-irs                 --> typo and duplicate
-# data-format-transformer         --> duplicate with dft and traceability-dft
-# traceability-dft                --> dft
-# traceablity-dft                 --> typo and duplicate
-
-# careful on approles
-# explorer -> imported with key explorer but approle name is product-explorer
-# traceability-foss -> imported with key traceability-foss but role name product-traceability-foss
