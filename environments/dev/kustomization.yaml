@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - argo-projects/product-behaviour-twin-pilot.yaml
   - avp-secrets/behaviour-twin-pilot-team-vault-secret.yaml
+  - argo-repos/product-behaviour-twin-pilot-private.yaml
 
   - argo-projects/product-bpdm.yaml
   - avp-secrets/bpdm-team-vault-secret.yaml
