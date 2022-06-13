@@ -6,7 +6,6 @@ spec:
   generators:
   - list:
       elements:
-# TODO 02.06.2022 CARSLEN: other cluster will remain commented until stack is fully operational after testing on dev
       - cluster: core
         cluster-name: in-cluster
         targetRevision: HEAD
