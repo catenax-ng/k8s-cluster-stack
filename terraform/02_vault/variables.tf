@@ -4,15 +4,15 @@ variable "vault_address" {
   default     = "https://vault.demo.catena-x.net"
 }
 
-#variable "vault_oidc_client_id" {
-#  description = "Vault OIDC Client ID for Dex"
-#  type        = string
-#}
-#
-#variable "vault_oidc_client_secret" {
-#  description = "Vault OIDC Client Secret for Dex"
-#  type        = string
-#}
+variable "vault_oidc_client_id" {
+  description = "Vault OIDC Client ID for Dex"
+  type        = string
+}
+
+variable "vault_oidc_client_secret" {
+  description = "Vault OIDC Client Secret for Dex"
+  type        = string
+}
 
 variable "product_teams" {
   description = "Variable definition for all product teams to use as local variable for policy and secret engine creation"
