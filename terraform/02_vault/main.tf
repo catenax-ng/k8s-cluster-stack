@@ -98,9 +98,9 @@ resource "vault_approle_auth_backend_role" "product-team-approles" {
 
   # values taken from the existing resources, while initially importing to the tf state
   secret_id_num_uses = 0
-  secret_id_ttl      = 600
+  secret_id_ttl      = 0
   token_max_ttl      = 1800
-  token_num_uses     = 0
+  token_num_uses     = 10
   token_ttl          = 1200
 }
 
@@ -110,6 +110,9 @@ resource "vault_approle_auth_backend_role_secret_id" "product-teams-approle-ids"
 
   backend   = vault_auth_backend.approle.path
   role_name = vault_approle_auth_backend_role.product-team-approles[each.key].role_name
+
+  # change will be done outside of terraform if not
+  cidr_list = []
 }
 
 # existing ones cannot be imported, so new ones will be created
@@ -136,28 +139,28 @@ EOT
 
 ## VAULT OIDC Config + Role mapping to Github Teams
 # @url: https://jira.catena-x.net/browse/A1ODT-518
-resource "vault_jwt_auth_backend" "oidc_auth_backend" {
-    oidc_discovery_url  = "https://dex.vault.demo.catena-x.net"
-    oidc_client_id      = var.vault_oidc_client_id
-    oidc_client_secret  = var.vault_oidc_client_secret
-    bound_issuer        = "https://dex.vault.demo.catena-x.net "
-    description         = "Vault Authen Method OIDC"
-    path                = "oidc"
-    type                = "oidc"
-    tune {
-        listing_visibility = "unauth"
-    }
-}
-resource "vault_jwt_auth_backend_role" "oidc_auth_roles" {
-  for_each = var.product_teams
-
-  backend               = vault_jwt_auth_backend.oidc.path
-  allowed_redirect_uris = ["http://localhost:8250/oidc/callback","https://vault.demo.catena-x.net/ui/vault/auth/oidc/oidc/callback"]
-  role_type             = "oidc"
-  user_claim            = "email"
-  token_ttl             = "1h"
-  oidc_scopes           = ["openid", "email", "groups"]
-  token_policies        = [each.value.ui_policy_name]
-  role_name             = each.value.github_team 
-  bound_claims          = {"groups":"catenax-ng:${each.value.github_team}"}  
-}
+#resource "vault_jwt_auth_backend" "oidc_auth_backend" {
+#    oidc_discovery_url  = "https://dex.vault.demo.catena-x.net"
+#    oidc_client_id      = var.vault_oidc_client_id
+#    oidc_client_secret  = var.vault_oidc_client_secret
+#    bound_issuer        = "https://dex.vault.demo.catena-x.net "
+#    description         = "Vault Authen Method OIDC"
+#    path                = "oidc"
+#    type                = "oidc"
+#    tune {
+#        listing_visibility = "unauth"
+#    }
+#}
+#resource "vault_jwt_auth_backend_role" "oidc_auth_roles" {
+#  for_each = var.product_teams
+#
+#  backend               = vault_jwt_auth_backend.oidc_auth_backend.path
+#  allowed_redirect_uris = ["http://localhost:8250/oidc/callback","https://vault.demo.catena-x.net/ui/vault/auth/oidc/oidc/callback"]
+#  role_type             = "oidc"
+#  user_claim            = "email"
+#  token_ttl             = "1h"
+#  oidc_scopes           = ["openid", "email", "groups"]
+#  token_policies        = [each.value.ui_policy_name]
+#  role_name             = each.value.github_team
+#  bound_claims          = {"groups":"catenax-ng:${each.value.github_team}"}
+#}
