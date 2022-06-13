@@ -7,6 +7,9 @@ resource "vault_github_auth_backend" "github_login" {
 
   tune {
     listing_visibility = "unauth"
+    token_type         = "default-service"
+    max_lease_ttl      = "768h"
+    default_lease_ttl  = "768h"
   }
 }
 
