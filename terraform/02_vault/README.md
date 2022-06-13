@@ -55,9 +55,15 @@ terraform import vault_mount.devsecops-secret-engine devsecops
 terraform import 'vault_mount.product-team-secret-engines["example"]' product-team-example
 terraform import 'vault_mount.product-team-secret-engines["bpdm"]' bpdm
 
+# AVP secrets
+terraform import 'vault_generic_secret.product-team-avp-secrets["managed-identity-wallets"]' devsecops/avp-config/managed-identity-wallets
+
 # policies
 terraform import 'vault_policy.product-team-policies["test-data-generator"]' test-data-generator
 terraform import 'vault_policy.product-approle-read-only-policies["test-data-generator"]' test-data-generator-ro
+
+# approles
+terraform import 'vault_approle_auth_backend_role.product-team-approles["explorer"]' auth/approle/role/product-explorer
 
 # github team mappings
 terraform import 'vault_github_team.github-product-teams["bpdm"]' auth/github/map/teams/product-bpdm
