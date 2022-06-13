@@ -6,7 +6,6 @@ spec:
   generators:
   - list:
       elements:
-# TODO 02.06.2022 CARSLEN: other cluster will remain commented until stack is fully operational after testing on dev
       - cluster: core
         cluster-name: in-cluster
         targetRevision: HEAD
@@ -42,8 +41,8 @@ spec:
         syncOptions:
           - CreateNamespace=true
           # https://github.com/prometheus-community/helm-charts/issues/1500#issuecomment-968892923
-          # sync of CRD must use replace
-          - Replace=true
+          # sync of CRD must use replace, also we default to ApplyOutOfSyncOnly
+          - ApplyOutOfSyncOnly=true
         retry:
           limit: 5
           backoff:

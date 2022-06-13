@@ -2,14 +2,24 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 kube-prometheus-stack:
-  # https://github.com/prometheus-community/helm-charts/issues/479#issuecomment-752709725
-  prometheusOperator:
-    admissionWebhooks:
-      enabled: false
-
   ## Using default values from https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
   ##
   grafana:
     adminPassword: <path:devsecops/data/apps/prometheus-stack/core/grafana#adminPassword>
+    grafana.ini:
+      server:
+        root_url: https://grafana.core.demo.catena-x.net
+      auth.github:
+        enabled: true
+        allow_sign_up: true
+        client_id: 7c70d9529ab77cd64329
+        client_secret: <path:devsecops/data/apps/prometheus-stack/core/github-oauth#client-secret>
+        scopes: user:email,read:org
+        auth_url: https://github.com/login/oauth/authorize
+        token_url: https://github.com/login/oauth/access_token
+        api_url: https://api.github.com/user
+        team_ids: 5765033
+        allowed_organizations: catenax-ng
 
 domain: "core.demo.catena-x.net"
+cluster: "core"
