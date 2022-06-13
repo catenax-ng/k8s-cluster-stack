@@ -169,20 +169,28 @@ variable "product_teams" {
       approle_name : "traceability-foss" # traceability-foss-backend also exists
       approle_policy_name : "traceability-foss-ro"
       github_team : "product-traceability-foss"
-      avp_secret_name: "traceability-foss" # product-traceability-foss also exists
+      avp_secret_name : "traceability-foss" # product-traceability-foss also exists
     },
+    "behaviour-twin-pilot" : {
+      name : "behaviour-twin-pilot"
+      secret_engine_name : "behaviour-twin-pilot"
+      ui_policy_name : "behaviour-twin-pilot-rw"
+      approle_name : "behaviour-twin-pilot"
+      approle_policy_name : "behaviour-twin-pilot-ro"
+      github_team : "product-behaviour-twin-pilot"
+      avp_secret_name : "behaviour-twin-pilot"
+    },
+    "value-added-service" : {
+      name : "value-added-service"
+      secret_engine_name : "value-added-service"
+      ui_policy_name : "value-added-service-rw"
+      approle_name : "value-added-service"
+      approle_policy_name : "value-added-service-ro"
+      github_team : "product-value-added-service"
+      avp_secret_name : "value-added-service"
+    }
   }
 }
-
-
-#    "traceability-foss-backend" : {
-#      name : "traceability-foss-backend",
-#      secret_engine_name : "traceability-foss-backend"
-#      ui_policy_name : "traceability-foss-backend-rw"
-#      approle_policy_name : "traceability-foss-backend-ro"
-#      github_team : "product-traceability-foss"
-#    }
-#  }
 
 # Weired config or missing teams configurations
 # catenax-at-home                --> no secret engine yet
