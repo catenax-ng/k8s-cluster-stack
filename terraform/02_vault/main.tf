@@ -86,6 +86,47 @@ resource "vault_jwt_auth_backend_role" "dev-sec-ops-oidc-role" {
   bound_claims   = { "groups" : "catenax-ng:argocdadmins" }
 }
 
+resource "vault_approle_auth_backend_role" "devsecops-approle" {
+  backend        = vault_auth_backend.approle.path
+  role_name      = "devsecops"
+  token_policies = [vault_policy.vault_admin_policy.name]
+
+  # values taken from the existing resources, while initially importing to the tf state
+  secret_id_num_uses = 0
+  secret_id_ttl      = 0
+  token_max_ttl      = 1800
+  token_num_uses     = 10
+  token_ttl          = 1200
+}
+
+# existing ones cannot be imported, so new ones will be created
+resource "vault_approle_auth_backend_role_secret_id" "devsecops-approle-secret-id" {
+  backend   = vault_auth_backend.approle.path
+  role_name = vault_approle_auth_backend_role.devsecops-approle.role_name
+
+  # change will be done outside of terraform if not
+  cidr_list = []
+}
+
+# existing ones cannot be imported, so new ones will be created
+resource "vault_approle_auth_backend_login" "devsecops-approle-login" {
+  backend   = vault_auth_backend.approle.path
+  role_id   = vault_approle_auth_backend_role.devsecops-approle.role_id
+  secret_id = vault_approle_auth_backend_role_secret_id.devsecops-approle-secret-id.secret_id
+}
+
+resource "vault_generic_secret" "devsecops-avp-secret" {
+  path = "${vault_mount.devsecops-secret-engine.path}/avp-config/devsecops"
+
+  data_json = <<EOT
+{
+  "role_id":   "${vault_approle_auth_backend_role.devsecops-approle.role_id}",
+  "secret_id": "${vault_approle_auth_backend_role_secret_id.devsecops-approle-secret-id.secret_id}"
+}
+EOT
+}
+
+
 
 ##
 #   product team related resources
