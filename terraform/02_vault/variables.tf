@@ -29,7 +29,7 @@ variable "product_teams" {
     "example" : {
       name : "product-team-example"
       secret_engine_name : "product-team-example"
-      ui_policy_name : "product-team-example"
+      ui_policy_name : "product-team-example-rw"
       approle_name : "product-team-example"
       approle_policy_name : "product-team-example-ro"
       avp_secret_name : "example"
@@ -38,7 +38,7 @@ variable "product_teams" {
     "edc" : {
       name : "edc",
       secret_engine_name : "edc"
-      ui_policy_name : "edc"
+      ui_policy_name : "edc-rw"
       approle_name : "edc"
       approle_policy_name : "edc-ro"
       avp_secret_name : "edc"
@@ -47,7 +47,7 @@ variable "product_teams" {
     "bpdm" : {
       name : "bpdm",
       secret_engine_name : "bpdm"
-      ui_policy_name : "bpdm"
+      ui_policy_name : "bpdm-rw"
       approle_name : "bpdm"
       approle_policy_name : "bpdm-ro"
       github_team : "product-bpdm"
@@ -56,7 +56,7 @@ variable "product_teams" {
     "catenax-at-home" : {
       name : "catenax-at-home"
       secret_engine_name : "catenax-at-home"
-      ui_policy_name : "catenax-at-home"
+      ui_policy_name : "catenax-at-home-rw"
       approle_name : "catenax-at-home"
       approle_policy_name : "catenax-at-home-ro"
       github_team : "product-catenax-at-home"
@@ -65,7 +65,7 @@ variable "product_teams" {
     "data-integrity-demonstrator" : {
       name : "data-integrity-demonstrator"
       secret_engine_name : "data-integrity-demonstrator"
-      ui_policy_name : "data-integrity-demonstrator"
+      ui_policy_name : "data-integrity-demonstrator-rw"
       approle_name : "data-integrity-demonstrator"
       approle_policy_name : "data-integrity-demonstrator-ro"
       github_team : "product-data-integrity-demonstrator"
@@ -73,7 +73,7 @@ variable "product_teams" {
     },
     "dft" : {
       name : "dft",
-      secret_engine_name : "dft"
+      secret_engine_name : "dft-rw"
       ui_policy_name : "dft"
       approle_name : "dft"
       approle_policy_name : "dft-ro"
@@ -83,7 +83,7 @@ variable "product_teams" {
     "esc-backbone" : {
       name : "esc-backbone",
       secret_engine_name : "esc-backbone"
-      ui_policy_name : "esc-backbone"
+      ui_policy_name : "esc-backbone-rw"
       approle_name : "esc-backbone"
       approle_policy_name : "esc-backbone-ro"
       github_team : "product-esc-backbone"
@@ -92,7 +92,7 @@ variable "product_teams" {
     "essential-services" : {
       name : "essential-services",
       secret_engine_name : "essential-services"
-      ui_policy_name : "essential-services"
+      ui_policy_name : "essential-services-rw"
       approle_name : "essential-services"
       approle_policy_name : "essential-services-ro"
       github_team : "product-essential-services"
@@ -101,7 +101,7 @@ variable "product_teams" {
     "explorer" : {
       name : "explorer",
       secret_engine_name : "explorer"
-      ui_policy_name : "explorer"
+      ui_policy_name : "explorer-rw"
       approle_name : "product-explorer"
       approle_policy_name : "explorer-ro"
       github_team : "product-explorer"
@@ -110,7 +110,7 @@ variable "product_teams" {
     "managed-identity-wallets" : {
       name : "managed-identity-wallets"
       secret_engine_name : "managed-identity-wallets"
-      ui_policy_name : "managed-identity-wallets"
+      ui_policy_name : "managed-identity-wallets-rw"
       approle_name : "managed-identity-wallets"
       approle_policy_name : "managed-identity-wallets-ro"
       github_team : "product-managed-identity-wallets"
@@ -119,7 +119,7 @@ variable "product_teams" {
     "material-pass" : {
       name : "material-pass",
       secret_engine_name : "material-pass"
-      ui_policy_name : "material-pass"
+      ui_policy_name : "material-pass-rw"
       approle_name : "material-pass"
       approle_policy_name : "material-pass-ro"
       github_team : "product-material-pass"
@@ -128,7 +128,7 @@ variable "product_teams" {
     "portal" : {
       name : "portal",
       secret_engine_name : "portal"
-      ui_policy_name : "portal"
+      ui_policy_name : "portal-rw"
       approle_name : "portal"
       approle_policy_name : "portal-ro"
       github_team : "product-portal"
@@ -138,16 +138,16 @@ variable "product_teams" {
       name : "traceability-irs",
       # product- prefix does not comply with naming convention but is already in use
       secret_engine_name : "product-traceability-irs" # traceability-irs also exists without any secret
-      ui_policy_name : "product-traceability-irs" # remove product- prefix
+      ui_policy_name : "traceability-irs-rw" # remove product- prefix
       approle_name : "traceability-irs"
-      approle_policy_name : "product-traceability-irs-ro"
+      approle_policy_name : "traceability-irs-ro"
       github_team : "product-traceability-irs"
       avp_secret_name : "traceablity-irs" # TYPO, but this is the secret that is used also in argo...
     },
     "semantics" : {
       name : "semantics",
       secret_engine_name : "semantics"
-      ui_policy_name : "semantics"
+      ui_policy_name : "semantics-rw"
       approle_name : "semantics"
       approle_policy_name : "semantics-ro"
       github_team : "product-semantics"
@@ -156,7 +156,7 @@ variable "product_teams" {
     "test-data-generator" : {
       name : "test-data-generator",
       secret_engine_name : "test-data-generator"
-      ui_policy_name : "test-data-generator"
+      ui_policy_name : "test-data-generator-rw"
       approle_name : "test-data-generator"
       approle_policy_name : "test-data-generator-ro"
       github_team : "product-test-data-generator"
