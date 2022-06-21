@@ -40,9 +40,6 @@ spec:
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
-          # https://github.com/prometheus-community/helm-charts/issues/1500#issuecomment-968892923
-          # sync of CRD must use replace, also we default to ApplyOutOfSyncOnly
-          - ApplyOutOfSyncOnly=true
         retry:
           limit: 5
           backoff:
