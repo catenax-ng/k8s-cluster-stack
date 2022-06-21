@@ -11,7 +11,7 @@ spec:
         targetRevision: HEAD
       - cluster: dev
         cluster-name: dev
-        targetRevision: feature/monitoring_core_int
+        targetRevision: HEAD
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         targetRevision: HEAD
