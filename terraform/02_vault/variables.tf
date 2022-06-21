@@ -188,6 +188,15 @@ variable "product_teams" {
       approle_policy_name : "value-added-service-ro"
       github_team : "product-value-added-service"
       avp_secret_name : "value-added-service"
+    },
+    "knowledge" : {
+      name : "knowledge",
+      secret_engine_name : "knowledge"
+      ui_policy_name : "knowledge-rw"
+      approle_name : "knowledge"
+      approle_policy_name : "knowledge-ro"
+      github_team : "product-knowledge"
+      avp_secret_name : "knowledge"
     }
   }
 }
