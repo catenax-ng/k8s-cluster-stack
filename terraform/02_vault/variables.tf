@@ -137,7 +137,7 @@ variable "product_teams" {
     "traceability-irs" : {
       name : "traceability-irs",
       # product- prefix does not comply with naming convention but is already in use
-      secret_engine_name : "product-traceability-irs" # traceability-irs also exists without any secret
+      secret_engine_name : "traceability-irs" # traceability-irs also exists without any secret
       ui_policy_name : "traceability-irs-rw" # remove product- prefix
       approle_name : "traceability-irs"
       approle_policy_name : "traceability-irs-ro"
