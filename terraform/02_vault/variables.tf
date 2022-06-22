@@ -73,8 +73,8 @@ variable "product_teams" {
     },
     "dft" : {
       name : "dft",
-      secret_engine_name : "dft-rw"
-      ui_policy_name : "dft"
+      secret_engine_name : "dft"
+      ui_policy_name : "dft-rw"
       approle_name : "dft"
       approle_policy_name : "dft-ro"
       github_team : "product-dft"
