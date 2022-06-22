@@ -73,8 +73,8 @@ variable "product_teams" {
     },
     "dft" : {
       name : "dft",
-      secret_engine_name : "dft-rw"
-      ui_policy_name : "dft"
+      secret_engine_name : "dft"
+      ui_policy_name : "dft-rw"
       approle_name : "dft"
       approle_policy_name : "dft-ro"
       github_team : "product-dft"
@@ -102,7 +102,7 @@ variable "product_teams" {
       name : "explorer",
       secret_engine_name : "explorer"
       ui_policy_name : "explorer-rw"
-      approle_name : "product-explorer"
+      approle_name : "explorer"
       approle_policy_name : "explorer-ro"
       github_team : "product-explorer"
       avp_secret_name : "product-explorer"
@@ -137,7 +137,7 @@ variable "product_teams" {
     "traceability-irs" : {
       name : "traceability-irs",
       # product- prefix does not comply with naming convention but is already in use
-      secret_engine_name : "product-traceability-irs" # traceability-irs also exists without any secret
+      secret_engine_name : "traceability-irs" # traceability-irs also exists without any secret
       ui_policy_name : "traceability-irs-rw" # remove product- prefix
       approle_name : "traceability-irs"
       approle_policy_name : "traceability-irs-ro"
