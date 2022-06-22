@@ -102,7 +102,7 @@ variable "product_teams" {
       name : "explorer",
       secret_engine_name : "explorer"
       ui_policy_name : "explorer-rw"
-      approle_name : "product-explorer"
+      approle_name : "explorer"
       approle_policy_name : "explorer-ro"
       github_team : "product-explorer"
       avp_secret_name : "product-explorer"
