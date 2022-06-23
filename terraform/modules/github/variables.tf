@@ -1,14 +1,3 @@
-
-variable "github_token" {
-  description = "The Github Token"
-  type        = string
-}
-
-variable "github_owner" {
-  description = "The Github Owner"
-  type        = string
-}
-
 variable "github_repositories" {
   description = "Github"
   type = map(object({

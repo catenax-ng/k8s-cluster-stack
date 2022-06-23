@@ -180,3 +180,7 @@ module "vault" {
     }
   }
 }
+
+module "github" {
+  source = "../modules/github"
+}
