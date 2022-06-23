@@ -2,7 +2,7 @@
 # @url: https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository
 resource "github_repository" "cx-github-repositories" {
   for_each = var.github_repositories
-  
+
   name        = each.value.name
   description = each.value.description
 
@@ -26,7 +26,7 @@ resource "github_team_repository" "cx-github-team-repository" {
   for_each = var.github_repositories
 
   team_id    = github_team.cx-github-teams[each.value.team_name].id
-  repository = each.value.name  
+  repository = each.value.name
   permission = "maintain"
 }
 #@url: https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_file
@@ -40,6 +40,6 @@ resource "github_team_repository" "cx-github-team-repository" {
 #   commit_email        = "terraform@example.com"
 #   overwrite_on_create = true
 # }
-data "github_organization" "catenax_ng" {
-  name = "catenax-ng"
+data "github_organization" "github_org" {
+  name = var.github_org
 }
