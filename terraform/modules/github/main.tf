@@ -6,14 +6,16 @@ resource "github_repository" "repositories" {
   name        = each.value.name
   description = each.value.description
 
-  has_issues             = each.value.has_issues
-  has_projects           = each.value.has_projects
-  has_wiki               = each.value.has_wiki
+  has_issues             = false
+  has_projects           = false
+  has_wiki               = false
   visibility             = each.value.visibility
   auto_init              = true
   has_downloads          = true
   vulnerability_alerts   = true
   delete_branch_on_merge = true
+  homepage_url           = each.value.homepage_url
+  topics                 = each.value.topics
 }
 
 # Define desired state of all teams to the organization

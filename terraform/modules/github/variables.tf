@@ -5,11 +5,10 @@ variable "github_repositories" {
   type        = map(object({
     name         = string
     description  = string
-    has_issues   = bool
-    has_projects = bool
-    has_wiki     = bool
     team_name    = string
     visibility   = string
+    homepage_url = string
+    topics       = set(string)
   }))
 }
 
