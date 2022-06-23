@@ -22,6 +22,7 @@ resource "github_team" "cx-github-teams" {
   description = each.value.description
   privacy     = "closed"
 }
+
 resource "github_team_repository" "cx-github-team-repository" {
   for_each = var.github_repositories
 
@@ -29,6 +30,7 @@ resource "github_team_repository" "cx-github-team-repository" {
   repository = each.value.name
   permission = "maintain"
 }
+
 #@url: https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_file
 # resource "github_repository_file" "foo" {
 #   repository          = github_repository.foo.name
@@ -40,6 +42,3 @@ resource "github_team_repository" "cx-github-team-repository" {
 #   commit_email        = "terraform@example.com"
 #   overwrite_on_create = true
 # }
-data "github_organization" "github_org" {
-  name = var.github_org
-}
