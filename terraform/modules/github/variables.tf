@@ -1,7 +1,4 @@
-variable "github_org" {
-  description = "Name of the GitHub organization, that should be managed"
-  type        = string
-}
+variable "github_token" {}
 
 variable "github_repositories" {
   description = "Description of the repositories that should exist in the organization. 'team_name' has to match one of the entries in 'github_teams' variable"
@@ -12,6 +9,7 @@ variable "github_repositories" {
     has_projects = bool
     has_wiki     = bool
     team_name    = string
+    visibility   = string
   }))
 }
 
