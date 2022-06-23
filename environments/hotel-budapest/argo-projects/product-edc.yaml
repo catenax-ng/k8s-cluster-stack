@@ -8,6 +8,11 @@ kind: Namespace
 metadata:
   name: catenax-at-home
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: int-product-edc
+---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
@@ -21,6 +26,8 @@ spec:
     - namespace: product-edc
       server: https://kubernetes.default.svc
     - namespace: catenax-at-home
+      server: https://kubernetes.default.svc
+    - namespace: int-product-edc
       server: https://kubernetes.default.svc
   namespaceResourceBlacklist:
     - group: ''

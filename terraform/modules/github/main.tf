@@ -2,7 +2,7 @@
 # @url: https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository
 resource "github_repository" "cx-github-repositories" {
   for_each = var.github_repositories
-  
+
   name        = each.value.name
   description = each.value.description
 
@@ -27,7 +27,7 @@ resource "github_team_repository" "cx-github-team-repository" {
   for_each = var.github_repositories
 
   team_id    = github_team.cx-github-teams[each.value.team_name].id
-  repository = each.value.name  
+  repository = each.value.name
   permission = "maintain"
 }
 # This resource allows you to configure branch protection for repositories in your organization. When applied, the branch will be protected from forced pushes and deletion. Additional constraints, such as required status checks or restrictions on users, teams, and apps, can also be configured.
@@ -64,7 +64,4 @@ resource "github_repository_file" "cx-github-repositroy-file-codeowners" {
   commit_author       = "Terraform User"
   commit_email        = "terraform@example.com"
   overwrite_on_create = false  
-}
-data "github_organization" "catenax_ng" {
-  name = "catenax-ng"
 }

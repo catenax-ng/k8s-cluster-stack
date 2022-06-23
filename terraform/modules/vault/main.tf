@@ -95,7 +95,7 @@ resource "vault_approle_auth_backend_role" "devsecops-approle" {
   secret_id_num_uses = 0
   secret_id_ttl      = 0
   token_max_ttl      = 1800
-  token_num_uses     = 10
+  token_num_uses     = 0
   token_ttl          = 1200
 }
 
@@ -106,13 +106,6 @@ resource "vault_approle_auth_backend_role_secret_id" "devsecops-approle-secret-i
 
   # change will be done outside of terraform if not
   cidr_list = []
-}
-
-# existing ones cannot be imported, so new ones will be created
-resource "vault_approle_auth_backend_login" "devsecops-approle-login" {
-  backend   = vault_auth_backend.approle.path
-  role_id   = vault_approle_auth_backend_role.devsecops-approle.role_id
-  secret_id = vault_approle_auth_backend_role_secret_id.devsecops-approle-secret-id.secret_id
 }
 
 resource "vault_generic_secret" "devsecops-avp-secret" {
@@ -188,7 +181,7 @@ resource "vault_approle_auth_backend_role" "product-team-approles" {
   secret_id_num_uses = 0
   secret_id_ttl      = 0
   token_max_ttl      = 1800
-  token_num_uses     = 10
+  token_num_uses     = 0
   token_ttl          = 1200
 }
 
@@ -201,15 +194,6 @@ resource "vault_approle_auth_backend_role_secret_id" "product-teams-approle-ids"
 
   # change will be done outside of terraform if not
   cidr_list = []
-}
-
-# existing ones cannot be imported, so new ones will be created
-resource "vault_approle_auth_backend_login" "approle-logins" {
-  for_each = var.product_teams
-
-  backend   = vault_auth_backend.approle.path
-  role_id   = vault_approle_auth_backend_role.product-team-approles[each.key].role_id
-  secret_id = vault_approle_auth_backend_role_secret_id.product-teams-approle-ids[each.key].secret_id
 }
 
 resource "vault_generic_secret" "product-team-avp-secrets" {

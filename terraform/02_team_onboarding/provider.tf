@@ -1,9 +1,5 @@
 terraform {
-  required_providers {
-    vault = {
-      source  = "hashicorp/vault"
-      version = "3.5.0"
-    }
+   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
       version = ">= 2.99.0"
@@ -24,4 +20,10 @@ provider "vault" {
 
 provider "azurerm" {
   features {}
+}
+
+# Configure the GitHub Provider
+provider "github" {
+  token = var.github_token
+  owner = var.github_org
 }
