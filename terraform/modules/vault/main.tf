@@ -95,7 +95,7 @@ resource "vault_approle_auth_backend_role" "devsecops-approle" {
   secret_id_num_uses = 0
   secret_id_ttl      = 0
   token_max_ttl      = 1800
-  token_num_uses     = 10
+  token_num_uses     = 0
   token_ttl          = 1200
 }
 
@@ -181,7 +181,7 @@ resource "vault_approle_auth_backend_role" "product-team-approles" {
   secret_id_num_uses = 0
   secret_id_ttl      = 0
   token_max_ttl      = 1800
-  token_num_uses     = 10
+  token_num_uses     = 0
   token_ttl          = 1200
 }
 
