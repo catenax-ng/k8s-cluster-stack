@@ -3,6 +3,11 @@ kind: Namespace
 metadata:
   name: product-edc
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev-product-edc
+---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
@@ -14,6 +19,8 @@ spec:
     - '*'
   destinations:
     - namespace: product-edc
+      server: https://kubernetes.default.svc
+    - namespace: dev-product-edc
       server: https://kubernetes.default.svc
   namespaceResourceBlacklist:
     - group: ''
