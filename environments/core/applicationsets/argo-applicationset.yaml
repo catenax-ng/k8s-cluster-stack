@@ -9,15 +9,15 @@ spec:
       - cluster: core
         cluster-name: in-cluster
         overlay: overlays/core
-        targetRevision: change-argocdadmins-group-name
+        targetRevision: new-product-edc-namespace
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         overlay: overlays/hotel-budapest
-        targetRevision: change-argocdadmins-group-name
+        targetRevision: new-product-edc-namespace
       - cluster: dev
         cluster-name: dev
         overlay: overlays/dev
-        targetRevision: change-argocdadmins-group-name
+        targetRevision: new-product-edc-namespace
 
   template:
     metadata:
