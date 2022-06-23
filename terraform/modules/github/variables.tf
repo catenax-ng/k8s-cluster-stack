@@ -23,7 +23,7 @@ variable "github_repositories" {
     "product-bpdm" : {
       "name" : "product-bpdm",
       "team_name" : "product-bpdm",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -31,7 +31,7 @@ variable "github_repositories" {
     "product-idses-frontend-apps" : {
       "name" : "product-idses-frontend-apps",
       "team_name" : "product-essential-services",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -47,7 +47,7 @@ variable "github_repositories" {
     "cluster-bootstrapping" : {
       "name" : "cluster-bootstrapping",
       "team_name" : "argocdadmins", # NO TEAM ASSIGNED
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -55,7 +55,7 @@ variable "github_repositories" {
     "devops-apps" : {
       "name" : "devops-apps",
       "team_name" : "argocdadmins", # NO TEAM ASSIGNED
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -63,7 +63,7 @@ variable "github_repositories" {
     "environment-documentation" : {
       "name" : "environment-documentation",
       "team_name" : "argocdadmins", # NO TEAM ASSIGNED
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -71,7 +71,7 @@ variable "github_repositories" {
     "product-semantics" : {
       "name" : "product-semantics",
       "team_name" : "product-semantics",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -95,7 +95,7 @@ variable "github_repositories" {
     "github" : {
       "name" : "github",
       "team_name" : "argocdadmins", # NO TEAM ASSIGNED
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -119,7 +119,7 @@ variable "github_repositories" {
     "product-portal-iam" : {
       "name" : "product-portal-iam",
       "team_name" : "product-portal",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -127,7 +127,7 @@ variable "github_repositories" {
     "product-portal-backend" : {
       "name" : "product-portal-backend",
       "team_name" : "product-portal",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -151,7 +151,7 @@ variable "github_repositories" {
     "product-data-integrity-demonstrator" : {
       "name" : "product-data-integrity-demonstrator",
       "team_name" : "product-data-integrity-demonstrator",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -159,7 +159,7 @@ variable "github_repositories" {
     "catenax-at-home" : {
       "name" : "catenax-at-home",
       "team_name" : "product-catenax-at-home",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -175,7 +175,7 @@ variable "github_repositories" {
     "product-traceability-dft-ui" : {
       "name" : "product-traceability-dft-ui",
       "team_name" : "argocdadmins", # NO TEAM ASSIGNED
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -183,7 +183,7 @@ variable "github_repositories" {
     "product-core-schemas" : {
       "name" : "product-core-schemas",
       "team_name" : "cx-core-schemas",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -199,7 +199,7 @@ variable "github_repositories" {
     "product-portal-cd" : {
       "name" : "product-portal-cd",
       "team_name" : "product-portal",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -223,7 +223,7 @@ variable "github_repositories" {
     "product-core-managed-identity-wallets" : {
       "name" : "product-core-managed-identity-wallets",
       "team_name" : "product-managed-identity-wallets",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -231,7 +231,7 @@ variable "github_repositories" {
     "product-dft-backend" : {
       "name" : "product-dft-backend",
       "team_name" : "product-dft",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -239,7 +239,7 @@ variable "github_repositories" {
     "product-dft-frontend" : {
       "name" : "product-dft-frontend",
       "team_name" : "product-dft",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -247,7 +247,7 @@ variable "github_repositories" {
     "product-sd-hub" : {
       "name" : "product-sd-hub",
       "team_name" : "product-essential-services",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -255,7 +255,7 @@ variable "github_repositories" {
     "product-omejdn-server" : {
       "name" : "product-omejdn-server",
       "team_name" : "product-essential-services",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -263,7 +263,7 @@ variable "github_repositories" {
     "product-DAPS" : {
       "name" : "product-DAPS",
       "team_name" : "product-essential-services",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -271,7 +271,7 @@ variable "github_repositories" {
     "product-item-relationship-service" : {
       "name" : "product-item-relationship-service",
       "team_name" : "product-traceability-irs",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -279,7 +279,7 @@ variable "github_repositories" {
     "IDS-Ess-FE" : {
       "name" : "IDS-Ess-FE",
       "team_name" : "argocdadmins", # NON TEAM ASSIGNED!
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -287,7 +287,7 @@ variable "github_repositories" {
     "product-testdata-2-edc" : {
       "name" : "product-testdata-2-edc",
       "team_name" : "product-data-integrity-demonstrator",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -295,7 +295,7 @@ variable "github_repositories" {
     "product-traceability-foss" : {
       "name" : "product-traceability-foss",
       "team_name" : "product-traceability-foss",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -303,7 +303,7 @@ variable "github_repositories" {
     "product-esc-backbone" : {
       "name" : "product-esc-backbone",
       "team_name" : "product-esc-backbone",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -327,7 +327,7 @@ variable "github_repositories" {
     "product-esc-backbone-code" : {
       "name" : "product-esc-backbone-code",
       "team_name" : "product-esc-backbone",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -335,7 +335,7 @@ variable "github_repositories" {
     "product-explorer" : {
       "name" : "product-explorer",
       "team_name" : "product-explorer",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -343,7 +343,7 @@ variable "github_repositories" {
     "product-core-managed-identity-wallets-cd" : {
       "name" : "product-core-managed-identity-wallets-cd",
       "team_name" : "product-managed-identity-wallets",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -359,7 +359,7 @@ variable "github_repositories" {
     "product-behaviour-twin-pilot-private" : {
       "name" : "product-behaviour-twin-pilot-private",
       "team_name" : "product-behaviour-twin-pilot",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -367,7 +367,7 @@ variable "github_repositories" {
     "product-value-added-service" : {
       "name" : "product-value-added-service",
       "team_name" : "product-value-added-service",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
@@ -375,7 +375,7 @@ variable "github_repositories" {
     "foss-example" : {
       "name" : "foss-example",
       "team_name" : "team-foss",
-      "description" : null,
+      "description" : "",
       "has_issues" : false,
       "has_projects" : false,
       "has_wiki" : false
