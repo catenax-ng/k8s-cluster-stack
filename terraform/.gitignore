@@ -33,4 +33,4 @@ terraform.rc
 # End of https://www.toptal.com/developers/gitignore/api/terraform
 
 sp_details.txt
-**.tfplan
+**/*.plan
