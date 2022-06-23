@@ -1,21 +1,23 @@
 # Define desired state of all repositories
 # @url: https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository
-resource "github_repository" "cx-github-repositories" {
+resource "github_repository" "repositories" {
   for_each = var.github_repositories
 
   name        = each.value.name
   description = each.value.description
 
-  has_issues   = each.value.has_issues
-  has_projects = each.value.has_projects
-  has_wiki     = each.value.has_wiki
-  visibility   = "public"
-  auto_init    = true
+  has_issues           = each.value.has_issues
+  has_projects         = each.value.has_projects
+  has_wiki             = each.value.has_wiki
+  visibility           = "public"
+  auto_init            = true
+  has_downloads        = true
+  vulnerability_alerts = true
 }
 
 # Define desired state of all teams to the organization
 # @url: https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team
-resource "github_team" "cx-github-teams" {
+resource "github_team" "teams" {
   for_each = var.github_teams
 
   name        = each.value.name
@@ -23,10 +25,10 @@ resource "github_team" "cx-github-teams" {
   privacy     = "closed"
 }
 
-resource "github_team_repository" "cx-github-team-repository" {
+resource "github_team_repository" "team-repository-access" {
   for_each = var.github_repositories
 
-  team_id    = github_team.cx-github-teams[each.value.team_name].id
+  team_id    = github_team.teams[each.value.team_name].id
   repository = each.value.name
   permission = "maintain"
 }
