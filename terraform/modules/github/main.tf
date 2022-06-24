@@ -78,6 +78,7 @@ resource "github_repository_file" "cx-github-repositroy-file-codeowners" {
 # You can use a CODEOWNERS file to define individuals or teams that are responsible for code in a repository.
 # Learn more about it: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 # Example of CODEOWNER file: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners#example-of-a-codeowners-file
+*        @catenax-ng/${each.value.team_name}
 EOT
   commit_message      = "Add CODEOWNERS file as default repository configuration"
   commit_author       = "Catena-X DevSecOps"

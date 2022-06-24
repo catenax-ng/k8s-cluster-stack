@@ -190,7 +190,7 @@ module "github" {
       team_name : "product-bpdm"
       repository : "product-bpdm"
       permission : "maintain"
-    },    
+    },
     "product-semantics" : {
       team_name : "product-semantics"
       repository : "product-semantics"
@@ -340,13 +340,14 @@ module "github" {
       team_name : "product-essential-services"
       repository : "product-idses-frontend-apps"
       permission : "maintain"
-    },
-    # "" : {      
-    #   team_name : ""
-    #   repository : ""
-    #   permission: "maintain"
-    # },
+    }
+    "k8s-cluster-stack-argocdadmins" : {
+      team_name : "argocdadmins"
+      repository : "k8s-cluster-stack"
+      permission : "admin"
+    }
   }
+
   github_teams = {
     "argocdadmins" : {
       "name" : "argocdadmins",
@@ -695,21 +696,20 @@ module "github" {
       homepage_url : ""
       topics : []
     }
+    "k8s-cluster-stack" : {
+      name : "k8s-cluster-stack"
+      team_name : "argocdadmins"
+      description : "Bootstrapping k8s clusters with ready to use ArgoCD for k8s management."
+      visibility : "public"
+      homepage_url : ""
+      topics : [ "internal" ]
+    },
     ### Repositories with GH pages or something else non-standard configured
     /*
     "product-test-data-generator" : {
       name : "product-test-data-generator",
       team_name : "product-test-data-generator",
       description : "Catena-X Testdata Generator",
-      has_issues : false,
-      has_projects : false,
-      has_wiki : false
-      visibility : "public"
-    },
-    "k8s-cluster-stack" : { # admin privileges, only squash merge
-      name : "k8s-cluster-stack",
-      team_name : "argocdadmins",
-      description : "Bootstrapping k8s clusters with ready to use ArgoCD for k8s management.",
       has_issues : false,
       has_projects : false,
       has_wiki : false
