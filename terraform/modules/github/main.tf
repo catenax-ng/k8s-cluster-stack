@@ -63,14 +63,6 @@ resource "github_team" "teams" {
   privacy     = "closed"
 }
 
-# resource "github_team_repository" "team-repository-access" {
-#   for_each = var.github_repositories
-
-#   team_id    = github_team.teams[each.value.team_name].id
-#   repository = each.value.name
-#   permission = "maintain"
-# }
-
 resource "github_team_repository" "team-repository-access" {
   for_each = var.github_repositories_teams
 

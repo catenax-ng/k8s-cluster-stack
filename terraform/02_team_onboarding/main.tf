@@ -746,92 +746,92 @@ module "github" {
       repository : "product-bpdm"
       permission : "maintain"
     },
-    "product-semantics" : {
+    "product-semantics-product-semantics" : {
       team_name : "product-semantics"
       repository : "product-semantics"
       permission : "maintain"
     },
-    "product-portal-frontend" : {
+    "product-portal-frontend-product-portal" : {
       team_name : "product-portal"
       repository : "product-portal-frontend"
       permission : "maintain"
     },
-    "product-portal-iam" : {
+    "product-portal-iam-product-portal" : {
       team_name : "product-portal"
       repository : "product-portal-iam"
       permission : "maintain"
     },
-    "product-portal-backend" : {
+    "product-portal-backend-product-portal" : {
       team_name : "product-portal"
       repository : "product-portal-backend"
       permission : "maintain"
     },
-    "product-data-integrity-demonstrator" : {
+    "product-data-integrity-demonstrator-product-data-integrity-demonstrator" : {
       team_name : "product-data-integrity-demonstrator"
       repository : "product-data-integrity-demonstrator"
       permission : "maintain"
     },
-    "catenax-at-home" : {
+    "catenax-at-home-catenax-at-home" : {
       team_name : "product-catenax-at-home"
       repository : "catenax-at-home"
       permission : "maintain"
     },
-    "product-core-schemas" : {
+    "product-core-schemas-cx-core-schemas" : {
       team_name : "cx-core-schemas"
       repository : "product-core-schemas"
       permission : "maintain"
     },
-    "product-portal-cd" : {
+    "product-portal-cd-product-portal" : {
       team_name : "product-portal"
       repository : "product-portal-cd"
       permission : "maintain"
     },
-    "DataSpaceConnector" : {
+    "DataSpaceConnector-product-managed-identity-wallets" : {
       team_name : "product-managed-identity-wallets"
       repository : "DataSpaceConnector"
       permission : "maintain"
     },
-    "product-portal-common-assets" : {
+    "product-portal-common-assets-product-portal" : {
       team_name : "product-portal"
       repository : "product-portal-common-assets"
       permission : "maintain"
     },
-    "product-core-managed-identity-wallets" : {
+    "product-core-managed-identity-wallets-product-managed-identity-wallets" : {
       team_name : "product-managed-identity-wallets"
       repository : "product-core-managed-identity-wallets"
       permission : "maintain"
     },
-    "product-dft-backend" : {
+    "product-dft-backend-product-dft" : {
       team_name : "product-dft"
       repository : "product-dft-backend"
       permission : "maintain"
     },
-    "product-dft-frontend" : {
+    "product-dft-frontend-product-dft" : {
       team_name : "product-dft"
       repository : "product-dft-frontend"
       permission : "maintain"
     },
-    "product-sd-hub" : {
+    "product-sd-hub-product-essential-services" : {
       team_name : "product-essential-services"
       repository : "product-sd-hub"
       permission : "maintain"
     },
-    "product-omejdn-server" : {
+    "product-omejdn-server-product-essential-services" : {
       team_name : "product-essential-services"
       repository : "product-omejdn-server"
       permission : "maintain"
     },
-    "product-DAPS" : {
+    "product-DAPS-product-essential-services" : {
       team_name : "product-essential-services"
       repository : "product-DAPS"
       permission : "maintain"
     },
-    "product-item-relationship-service" : {
+    "product-item-relationship-service-product-traceability-irs" : {
       team_name : "product-traceability-irs"
       repository : "product-item-relationship-service"
       permission : "maintain"
     },
-    "product-testdata-2-edc" : {
+    "product-testdata-2-edc-product-data-integrity-demonstrator" : {
       team_name : "product-data-integrity-demonstrator"
       repository : "product-testdata-2-edc"
       permission : "maintain"
@@ -841,57 +841,57 @@ module "github" {
       repository : "product-traceability-foss"
       permission : "maintain"
     },
-    "product-esc-backbone" : {
+    "product-esc-backbone-product-esc-backbone" : {
       team_name : "product-esc-backbone"
       repository : "product-esc-backbone"
       permission : "maintain"
     },
-    "product-traceability-foss-frontend" : {
+    "product-traceability-foss-frontend-product-traceability-foss" : {
       team_name : "product-traceability-foss"
       repository : "product-traceability-foss-frontend"
       permission : "maintain"
     },
-    "product-traceability-foss-backend" : {
+    "product-traceability-foss-backend-product-traceability-foss" : {
       team_name : "product-traceability-foss"
       repository : "product-traceability-foss-backend"
       permission : "maintain"
     },
-    "product-esc-backbone-code" : {
+    "product-esc-backbone-code-product-esc-backbone" : {
       team_name : "product-esc-backbone"
       repository : "product-esc-backbone-code"
       permission : "maintain"
     },
-    "product-explorer" : {
+    "product-explorer-product-explorer" : {
       team_name : "product-explorer"
       repository : "product-explorer"
       permission : "maintain"
     },
-    "product-core-managed-identity-wallets-cd" : {
+    "product-core-managed-identity-wallets-cd-product-managed-identity-wallets" : {
       team_name : "product-managed-identity-wallets"
       repository : "product-core-managed-identity-wallets-cd"
       permission : "maintain"
     },
-    "product-behaviour-twin-pilot" : {
+    "product-behaviour-twin-pilot-product-behaviour-twin-pilot" : {
       team_name : "product-behaviour-twin-pilot"
       repository : "product-behaviour-twin-pilot"
       permission : "maintain"
     },
-    "product-behaviour-twin-pilot-private" : {
+    "product-behaviour-twin-pilot-private-product-behaviour-twin-pilot" : {
       team_name : "product-behaviour-twin-pilot"
       repository : "product-behaviour-twin-pilot-private"
       permission : "maintain"
     },
-    "product-value-added-service" : {
+    "product-value-added-service-product-value-added-service" : {
       team_name : "product-value-added-service"
       repository : "product-value-added-service"
       permission : "maintain"
     },
-    "foss-example" : {
+    "foss-example-team-foss" : {
       team_name : "team-foss"
       repository : "foss-example"
       permission : "maintain"
     },
-    "product-idses-frontend-apps" : {
+    "product-idses-frontend-apps-product-essential-services" : {
       team_name : "product-essential-services"
       repository : "product-idses-frontend-apps"
       permission : "maintain"
@@ -912,5 +912,4 @@ module "github" {
       permission: "maintain"
     }
   }
-
 }
