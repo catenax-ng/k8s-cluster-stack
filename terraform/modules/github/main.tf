@@ -1,7 +1,19 @@
+locals {
+  repos_without_github_pages = {
+    for k, v in var.github_repositories : k => v
+    if !v.pages.enabled
+  }
+
+  repos_with_github_pages = {
+    for k, v in var.github_repositories : k => v
+    if v.pages.enabled
+  }
+}
+
 # Define desired state of all repositories
 # @url: https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository
 resource "github_repository" "repositories" {
-  for_each = var.github_repositories
+  for_each = local.repos_without_github_pages
 
   name        = each.value.name
   description = each.value.description
@@ -16,6 +28,29 @@ resource "github_repository" "repositories" {
   delete_branch_on_merge = true
   homepage_url           = each.value.homepage_url
   topics                 = each.value.topics
+}
+
+resource "github_repository" "repositories_with_github_pages" {
+  for_each = local.repos_with_github_pages
+
+  name        = each.value.name
+  description = each.value.description
+
+  has_issues             = false
+  has_projects           = false
+  has_wiki               = false
+  visibility             = each.value.visibility
+  auto_init              = true
+  has_downloads          = true
+  vulnerability_alerts   = true
+  delete_branch_on_merge = true
+  homepage_url           = each.value.homepage_url
+  topics                 = each.value.topics
+  pages {
+    source {
+      branch = "gh-pages"
+    }
+  }
 }
 
 # Define desired state of all teams to the organization

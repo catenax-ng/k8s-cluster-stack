@@ -186,7 +186,7 @@ module "github" {
   github_token = var.github_token
 
   github_repositories_teams = {
-    "product-bpdm" : {
+    "product-bpdm-product-bpdm" : {
       team_name : "product-bpdm"
       repository : "product-bpdm"
       permission : "maintain"
@@ -346,6 +346,11 @@ module "github" {
       repository : "k8s-cluster-stack"
       permission : "admin"
     }
+    "product-portal-frontend-registration-product-portal": {
+      team_name : "product-portal"
+      repository : "product-portal-frontend-registration"
+      permission : "maintain"
+    }
   }
 
   github_teams = {
@@ -455,6 +460,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-idses-frontend-apps" : {
       name : "product-idses-frontend-apps"
@@ -463,6 +471,9 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-semantics" : {
       name : "product-semantics"
@@ -471,6 +482,9 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-portal-frontend" : {
       name : "product-portal-frontend"
@@ -479,6 +493,9 @@ module "github" {
       visibility : "public"
       homepage_url : "https://portal.dev.demo.catena-x.net"
       topics : ["catena-x", "docker", "portal", "react", "typescript"]
+      pages: {
+        enabled: false
+      }
     },
     "product-portal-iam" : {
       name : "product-portal-iam"
@@ -487,6 +504,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-portal-backend" : {
       name : "product-portal-backend"
@@ -495,6 +515,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-data-integrity-demonstrator" : {
       name : "product-data-integrity-demonstrator"
@@ -503,6 +526,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "catenax-at-home" : {
       name : "catenax-at-home",
@@ -511,6 +537,9 @@ module "github" {
       visibility : "public"
       homepage_url : "https://catenax-ng.github.io/docs/catenax-at-home-getting-started-guide"
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-core-schemas" : {
       name : "product-core-schemas",
@@ -519,6 +548,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-portal-cd" : {
       name : "product-portal-cd"
@@ -527,6 +559,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "DataSpaceConnector" : {
       name : "DataSpaceConnector"
@@ -535,6 +570,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-portal-common-assets" : {
       name : "product-portal-common-assets"
@@ -543,6 +581,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-core-managed-identity-wallets" : {
       "name" : "product-core-managed-identity-wallets"
@@ -551,6 +592,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-dft-backend" : {
       name : "product-dft-backend"
@@ -559,6 +603,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-dft-frontend" : {
       name : "product-dft-frontend"
@@ -567,6 +614,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-sd-hub" : {
       name : "product-sd-hub"
@@ -575,6 +625,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-omejdn-server" : {
       name : "product-omejdn-server"
@@ -583,6 +636,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-DAPS" : {
       name : "product-DAPS"
@@ -591,6 +647,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-item-relationship-service" : {
       name : "product-item-relationship-service"
@@ -599,6 +658,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-testdata-2-edc" : {
       name : "product-testdata-2-edc"
@@ -607,6 +669,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-traceability-foss" : {
       name : "product-traceability-foss"
@@ -615,6 +680,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-esc-backbone" : {
       name : "product-esc-backbone"
@@ -623,6 +691,9 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-traceability-foss-frontend" : {
       name : "product-traceability-foss-frontend"
@@ -631,6 +702,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-traceability-foss-backend" : {
       name : "product-traceability-foss-backend"
@@ -639,6 +713,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-esc-backbone-code" : {
       name : "product-esc-backbone-code"
@@ -647,6 +724,9 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-explorer" : {
       name : "product-explorer"
@@ -655,6 +735,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-core-managed-identity-wallets-cd" : {
       name : "product-core-managed-identity-wallets-cd"
@@ -663,6 +746,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-behaviour-twin-pilot" : {
       name : "product-behaviour-twin-pilot"
@@ -671,6 +757,9 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-behaviour-twin-pilot-private" : {
       name : "product-behaviour-twin-pilot-private"
@@ -679,6 +768,9 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "product-value-added-service" : {
       name : "product-value-added-service"
@@ -687,6 +779,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     },
     "foss-example" : {
       name : "foss-example"
@@ -695,6 +790,9 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages: {
+        enabled: false
+      }
     }
     "k8s-cluster-stack" : {
       name : "k8s-cluster-stack"
@@ -703,6 +801,20 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : [ "internal" ]
+      pages: {
+        enabled: false
+      }
+    },
+    "product-edc" : {
+      name : "product-edc"
+      team_name : "product-edc"
+      description : "Repository for Catena-X specific eclipse dataspace connector apps"
+      visibility : "public"
+      homepage_url: ""
+      topics: []
+      pages: {
+        enabled: true
+      }
     },
     ### Repositories with GH pages or something else non-standard configured
     /*
@@ -715,17 +827,7 @@ module "github" {
       has_wiki : false
       visibility : "public"
     },
-    "product-edc" : {
-      "name" : "product-edc",
-      "team_name" : "product-edc",
-      "description" : "Repository for Catena-X specific eclipse dataspace connector apps",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
-      visibility : "public"
-      homepage_url: ""
-      topics: []
-    },
+
     "k8s-helm-example" : {
       name : "k8s-helm-example",
       team_name : "product-team-example",
@@ -759,16 +861,13 @@ module "github" {
       homepage_url : ""
       topics : []
     },
-    "product-portal-frontend-registration" : {
-      name : "product-portal-frontend-registration",
-      team_name : "product-portal",
-      description : "Catena-X Portal Frontend Registration",
-      has_issues : false,
-      has_projects : false,
-      has_wiki : false
+    "product-portal-frontend-registration" : {    # template
+      name : "product-portal-frontend-registration"
+      team_name : "product-portal"
+      description : "Catena-X Portal Frontend Registration"
       visibility : "public"
-      homepage_url : ""
-      topics : []
+      homepage_url : "https://portal.demo.catena-x.net/registration/"
+      topics : [ "catena-x", "frontend", "portal", "registration" ]
     },
     */
 

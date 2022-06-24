@@ -9,6 +9,9 @@ variable "github_repositories" {
     visibility   = string
     homepage_url = string
     topics       = set(string)
+    pages        = object({
+      enabled = bool
+    })
   }))
 }
 
