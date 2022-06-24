@@ -6,9 +6,8 @@ terraform {
     }
   }
 }
-
-# Configure the GitHub Provider
+#/terraform/modules/github/provider.tf
 provider "github" {
   token = var.github_token
-  owner = var.github_owner
+  owner = "catenax-ng"
 }

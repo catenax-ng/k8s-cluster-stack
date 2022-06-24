@@ -13,3 +13,14 @@ variable "vault_oidc_client_secret" {
   description = "Vault OIDC Client Secret for Dex"
   type        = string
 }
+
+variable "github_token" {
+  description = "The Github Token"
+  type        = string
+}
+
+variable "github_org" {
+  description = "The Github Owner"
+  type        = string
+  default     = "catenax-ng"
+}
