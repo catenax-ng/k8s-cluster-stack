@@ -469,71 +469,70 @@ module "github" {
       homepage_url : ""
       topics : []
     },
-    /*"product-traceability-foss-backend" : {
-      "name" : "product-traceability-foss-backend",
-      "team_name" : "product-traceability-foss",
-      "description" : "Repo for the Backend of the Traceability FOSS Application in Catena-X",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
+    "product-traceability-foss-backend" : {
+      name : "product-traceability-foss-backend"
+      team_name : "product-traceability-foss"
+      description : "Repo for the Backend of the Traceability FOSS Application in Catena-X"
+      visibility : "public"
+      homepage_url : ""
+      topics : []
     },
     "product-esc-backbone-code" : {
-      "name" : "product-esc-backbone-code",
-      "team_name" : "product-esc-backbone",
-      "description" : "",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
+      name : "product-esc-backbone-code"
+      team_name : "product-esc-backbone"
+      description : ""
+      visibility : "private"
+      homepage_url : ""
+      topics : []
     },
     "product-explorer" : {
-      "name" : "product-explorer",
-      "team_name" : "product-explorer",
-      "description" : "",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
+      name : "product-explorer"
+      team_name : "product-explorer"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
     },
     "product-core-managed-identity-wallets-cd" : {
-      "name" : "product-core-managed-identity-wallets-cd",
-      "team_name" : "product-managed-identity-wallets",
-      "description" : "",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
+      name : "product-core-managed-identity-wallets-cd"
+      team_name : "product-managed-identity-wallets"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
     },
     "product-behaviour-twin-pilot" : {
-      "name" : "product-behaviour-twin-pilot",
-      "team_name" : "product-behaviour-twin-pilot",
-      "description" : "PLEASE ADD DESCRIPTION",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
+      name : "product-behaviour-twin-pilot"
+      team_name : "product-behaviour-twin-pilot"
+      description : "PLEASE ADD DESCRIPTION"
+      visibility : "private"
+      homepage_url : ""
+      topics : []
     },
     "product-behaviour-twin-pilot-private" : {
-      "name" : "product-behaviour-twin-pilot-private",
-      "team_name" : "product-behaviour-twin-pilot",
-      "description" : "",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
+      name : "product-behaviour-twin-pilot-private"
+      team_name : "product-behaviour-twin-pilot"
+      description : ""
+      visibility : "private"
+      homepage_url : ""
+      topics : []
     },
     "product-value-added-service" : {
-      "name" : "product-value-added-service",
-      "team_name" : "product-value-added-service",
-      "description" : "",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
+      name : "product-value-added-service"
+      team_name : "product-value-added-service"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
     },
     "foss-example" : {
-      "name" : "foss-example",
-      "team_name" : "team-foss",
-      "description" : "",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
+      name : "foss-example"
+      team_name : "team-foss"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
     }
-    */
     ### Repositories with GH pages or something else non-standard configured
     /*
     "product-test-data-generator" : {
