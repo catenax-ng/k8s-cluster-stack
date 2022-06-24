@@ -19,3 +19,13 @@ variable "github_teams" {
     description = string
   }))
 }
+
+variable "github_repositories_teams" {
+  description = "Github repository access definition with its teams to use as local variable"
+  type        = map(object({
+    team_id    = string
+    team_name  = string
+    repository = string
+    permission = string
+  }))
+}

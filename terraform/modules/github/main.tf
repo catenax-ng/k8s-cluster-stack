@@ -28,12 +28,20 @@ resource "github_team" "teams" {
   privacy     = "closed"
 }
 
+# resource "github_team_repository" "team-repository-access" {
+#   for_each = var.github_repositories
+
+#   team_id    = github_team.teams[each.value.team_name].id
+#   repository = each.value.name
+#   permission = "maintain"
+# }
+
 resource "github_team_repository" "team-repository-access" {
-  for_each = var.github_repositories
+  for_each = var.github_repositories_teams
 
   team_id    = github_team.teams[each.value.team_name].id
-  repository = each.value.name
-  permission = "maintain"
+  repository = each.value.repository
+  permission = each.value.permission
 }
 /*
 # This resource allows you to configure branch protection for repositories in your organization. When applied, the branch will be protected from forced pushes and deletion. Additional constraints, such as required status checks or restrictions on users, teams, and apps, can also be configured.

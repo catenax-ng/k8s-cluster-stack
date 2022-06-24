@@ -184,7 +184,15 @@ module "github" {
   source = "../modules/github"
 
   github_token = var.github_token
-
+  
+  github_repositories_teams = {
+    "product-bpdm_product-bpdm" : {
+      team_id : "5788667",
+      "team_name" : "product-bpdm",
+      "repository" : "product-bpdm",
+      permission: "maintain"
+    },
+  }
   github_teams = {
     "argocdadmins" : {
       "name" : "argocdadmins",
