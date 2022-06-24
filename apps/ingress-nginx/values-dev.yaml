@@ -17,10 +17,15 @@ ingress-nginx:
     ## DEPRECATED but new extra Argument has been added.
     ## IMPORTANT If <namespace>/<service_name> is not available, ingress controller will crash (all services are out) because it was designed to make your life miserable!
     extraArgs:
-      default-backend-service: "default/k8s-helm-example"
+      default-backend-service: "{{ .Release.Namespace }}/k8s-helm-example"
 
   defaultBackend:
 
     ## If false, controller.defaultBackendService must be provided
     ##
     enabled: false
+landing-page:
+  ingress:
+    enabled: false
+  service:
+    environment: "DEV"
