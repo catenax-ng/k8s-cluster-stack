@@ -1,8 +1,3 @@
-locals {
-  repos_without_github_pages = {for k, v in var.github_repositories : k => v if !v.pages.enabled}
-  repos_with_github_pages    = {for k, v in var.github_repositories : k => v if v.pages.enabled}
-}
-
 # Define desired state of all repositories
 # @url: https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository
 resource "github_repository" "repositories" {
