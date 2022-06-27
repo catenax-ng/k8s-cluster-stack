@@ -295,7 +295,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-idses-frontend-apps" : {
       name : "product-idses-frontend-apps"
@@ -307,7 +309,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-semantics" : {
       name : "product-semantics"
@@ -319,7 +323,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-portal-frontend" : {
       name : "product-portal-frontend"
@@ -331,7 +337,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-portal-iam" : {
       name : "product-portal-iam"
@@ -343,7 +351,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-portal-backend" : {
       name : "product-portal-backend"
@@ -355,7 +365,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-data-integrity-demonstrator" : {
       name : "product-data-integrity-demonstrator"
@@ -367,7 +379,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "catenax-at-home" : {
       name : "catenax-at-home",
@@ -379,7 +393,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-core-schemas" : {
       name : "product-core-schemas",
@@ -391,7 +407,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-portal-cd" : {
       name : "product-portal-cd"
@@ -403,7 +421,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "DataSpaceConnector" : {
       name : "DataSpaceConnector"
@@ -415,7 +435,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-portal-common-assets" : {
       name : "product-portal-common-assets"
@@ -427,7 +449,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-core-managed-identity-wallets" : {
       "name" : "product-core-managed-identity-wallets"
@@ -439,7 +463,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-dft-backend" : {
       name : "product-dft-backend"
@@ -451,7 +477,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-dft-frontend" : {
       name : "product-dft-frontend"
@@ -463,7 +491,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-sd-hub" : {
       name : "product-sd-hub"
@@ -475,7 +505,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-omejdn-server" : {
       name : "product-omejdn-server"
@@ -487,7 +519,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-DAPS" : {
       name : "product-DAPS"
@@ -499,7 +533,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-item-relationship-service" : {
       name : "product-item-relationship-service"
@@ -511,7 +547,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-testdata-2-edc" : {
       name : "product-testdata-2-edc"
@@ -523,7 +561,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-traceability-foss" : {
       name : "product-traceability-foss"
@@ -535,7 +575,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-esc-backbone" : {
       name : "product-esc-backbone"
@@ -547,7 +589,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-traceability-foss-frontend" : {
       name : "product-traceability-foss-frontend"
@@ -559,7 +603,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-traceability-foss-backend" : {
       name : "product-traceability-foss-backend"
@@ -571,7 +617,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-esc-backbone-code" : {
       name : "product-esc-backbone-code"
@@ -583,7 +631,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-explorer" : {
       name : "product-explorer"
@@ -595,7 +645,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-core-managed-identity-wallets-cd" : {
       name : "product-core-managed-identity-wallets-cd"
@@ -607,7 +659,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-behaviour-twin-pilot" : {
       name : "product-behaviour-twin-pilot"
@@ -619,7 +673,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-behaviour-twin-pilot-private" : {
       name : "product-behaviour-twin-pilot-private"
@@ -631,7 +687,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-value-added-service" : {
       name : "product-value-added-service"
@@ -643,7 +701,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "foss-example" : {
       name : "foss-example"
@@ -655,7 +715,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     }
     "k8s-cluster-stack" : {
       name : "k8s-cluster-stack"
@@ -667,7 +729,9 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-edc" : {
       name : "product-edc"
@@ -679,7 +743,9 @@ module "github" {
       pages : {
         enabled : true
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     },
     "k8s-helm-example" : {
       name : "k8s-helm-example"
@@ -691,7 +757,9 @@ module "github" {
       pages : {
         enabled : true
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     }
     "catenax-ng.github.io" : {
       name : "catenax-ng.github.io"
@@ -703,7 +771,9 @@ module "github" {
       pages : {
         enabled : true
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     }
     "product-test-data-generator" : {
       name : "product-test-data-generator"
@@ -715,7 +785,9 @@ module "github" {
       pages : {
         enabled : true
       }
-      is_template: false
+      is_template : false
+      uses_template : false
+      template : null
     }
     "product-portal-hello-helm" : {
       name : "product-portal-hello-helm"
@@ -727,16 +799,28 @@ module "github" {
       pages : {
         enabled : false
       }
-      is_template: true
+      is_template : true
+      uses_template : false
+      template : null
     }
-    /* "product-portal-frontend-registration" : {    # template
-       name : "product-portal-frontend-registration"
-       team_name : "product-portal"
-       description : "Catena-X Portal Frontend Registration"
-       visibility : "public"
-       homepage_url : "https://portal.demo.catena-x.net/registration/"
-       topics : [ "catena-x", "frontend", "portal", "registration" ]
-     },*/
+    "product-portal-frontend-registration" : {
+      # template
+      name : "product-portal-frontend-registration"
+      team_name : "product-portal"
+      description : "Catena-X Portal Frontend Registration"
+      visibility : "public"
+      homepage_url : "https://portal.demo.catena-x.net/registration/"
+      topics : ["catena-x", "frontend", "portal", "registration"]
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : true
+      template : {
+        owner : "catenax-ng"
+        repository : "product-portal-hello-helm"
+      }
+    },
   }
 
   github_repositories_teams = {

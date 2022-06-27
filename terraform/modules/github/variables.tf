@@ -12,7 +12,12 @@ variable "github_repositories" {
     pages        = object({
       enabled = bool
     })
-    is_template = bool
+    is_template   = bool
+    uses_template = bool
+    template      = object({
+      owner      = string
+      repository = string
+    })
   }))
 }
 

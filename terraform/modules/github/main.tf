@@ -1,13 +1,6 @@
 locals {
-  repos_without_github_pages = {
-    for k, v in var.github_repositories : k => v
-    if !v.pages.enabled
-  }
-
-  repos_with_github_pages = {
-    for k, v in var.github_repositories : k => v
-    if v.pages.enabled
-  }
+  repos_without_github_pages = {for k, v in var.github_repositories : k => v if !v.pages.enabled}
+  repos_with_github_pages    = {for k, v in var.github_repositories : k => v if v.pages.enabled}
 }
 
 # Define desired state of all repositories
@@ -29,6 +22,14 @@ resource "github_repository" "repositories" {
   is_template            = each.value.is_template
   homepage_url           = each.value.homepage_url
   topics                 = each.value.topics
+
+  dynamic "template" {
+    for_each = each.value.uses_template ? [true] : []
+    content {
+      owner      = each.value.template.owner
+      repository = each.value.template.repository
+    }
+  }
 }
 
 resource "github_repository" "repositories_with_github_pages" {
