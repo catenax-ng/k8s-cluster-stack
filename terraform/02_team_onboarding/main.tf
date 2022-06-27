@@ -649,9 +649,9 @@ module "github" {
       }
     },
     "k8s-helm-example" : {
-      name : "k8s-helm-example",
-      team_name : "product-team-example",
-      description : "Example project for Argo CD integration and also landing pages for ArgoCD environments",
+      name : "k8s-helm-example"
+      team_name : "product-team-example"
+      description : "Example project for Argo CD integration and also landing pages for ArgoCD environments"
       visibility : "public"
       homepage_url : ""
       topics : ["ci-cd", "helm", "internal", "kubernetes"]
@@ -659,6 +659,17 @@ module "github" {
         enabled : true
       }
     }
+    "catenax-ng.github.io" : {
+      name : "catenax-ng.github.io"
+      team_name : "team-foss"
+      description : "https://catenax-ng.github.io"
+      visibility : "public"
+      homepage_url : "https://catenax-ng.github.io"
+      topics : ["internal"]
+      pages : {
+        enabled : true
+      }
+    },
     ### Repositories with GH pages or something else non-standard configured
     /*
     "product-test-data-generator" : {
@@ -669,17 +680,6 @@ module "github" {
       has_projects : false,
       has_wiki : false
       visibility : "public"
-    },
-    "catenax-ng.github.io" : {
-      name : "catenax-ng.github.io",
-      team_name : "team-foss",
-      description : "https://catenax-ng.github.io",
-      has_issues : false,
-      has_projects : false,
-      has_wiki : false
-      visibility : "public"
-      homepage_url: ""
-      topics: []
     },
     "product-portal-hello-helm" : {
       name : "product-portal-hello-helm",
@@ -914,6 +914,16 @@ module "github" {
       team_name : "product-team-example"
       repository : "k8s-helm-example"
       permission : "maintain"
+    }
+    "catenax-ng.github.io-team-foss" : {
+      team_name : "team-foss"
+      repository : "catenax-ng.github.io"
+      permission : "maintain"
+    }
+    "catenax-ng.github.io-argocdadmins" : {
+      team_name : "argocdadmins"
+      repository : "catenax-ng.github.io"
+      permission : "admin"
     }
   }
 }
