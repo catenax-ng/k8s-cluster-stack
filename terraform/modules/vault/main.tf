@@ -44,7 +44,6 @@ resource "vault_jwt_auth_backend" "oidc_auth_backend" {
   }
 }
 
-
 ##
 #   DevSecOps team related resources
 ##
@@ -118,8 +117,6 @@ resource "vault_generic_secret" "devsecops-avp-secret" {
 }
 EOT
 }
-
-
 
 ##
 #   product team related resources

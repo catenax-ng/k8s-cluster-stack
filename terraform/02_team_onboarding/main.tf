@@ -804,7 +804,6 @@ module "github" {
       template : null
     }
     "product-portal-frontend-registration" : {
-      # template
       name : "product-portal-frontend-registration"
       team_name : "product-portal"
       description : "Catena-X Portal Frontend Registration"
@@ -820,7 +819,21 @@ module "github" {
         owner : "catenax-ng"
         repository : "product-portal-hello-helm"
       }
-    },
+    }
+    "product-vas-country-risk-frontend" : {
+      name : "product-vas-country-risk-frontend"
+      team_name : "product-value-added-service"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
+    }
   }
 
   github_repositories_teams = {
@@ -1012,6 +1025,11 @@ module "github" {
     "product-test-data-generator-product-test-data-generator" : {
       team_name : "product-test-data-generator"
       repository : "product-test-data-generator"
+      permission : "maintain"
+    }
+    "product-vas-country-risk-frontend-product-value-added-service" : {
+      team_name : "product-value-added-service"
+      repository : "product-vas-country-risk-frontend"
       permission : "maintain"
     }
   }
