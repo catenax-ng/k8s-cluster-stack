@@ -295,6 +295,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-idses-frontend-apps" : {
       name : "product-idses-frontend-apps"
@@ -306,6 +307,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-semantics" : {
       name : "product-semantics"
@@ -317,6 +319,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-portal-frontend" : {
       name : "product-portal-frontend"
@@ -328,6 +331,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-portal-iam" : {
       name : "product-portal-iam"
@@ -339,6 +343,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-portal-backend" : {
       name : "product-portal-backend"
@@ -350,6 +355,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-data-integrity-demonstrator" : {
       name : "product-data-integrity-demonstrator"
@@ -361,6 +367,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "catenax-at-home" : {
       name : "catenax-at-home",
@@ -372,6 +379,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-core-schemas" : {
       name : "product-core-schemas",
@@ -383,6 +391,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-portal-cd" : {
       name : "product-portal-cd"
@@ -394,6 +403,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "DataSpaceConnector" : {
       name : "DataSpaceConnector"
@@ -405,6 +415,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-portal-common-assets" : {
       name : "product-portal-common-assets"
@@ -416,6 +427,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-core-managed-identity-wallets" : {
       "name" : "product-core-managed-identity-wallets"
@@ -427,6 +439,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-dft-backend" : {
       name : "product-dft-backend"
@@ -438,6 +451,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-dft-frontend" : {
       name : "product-dft-frontend"
@@ -449,6 +463,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-sd-hub" : {
       name : "product-sd-hub"
@@ -460,6 +475,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-omejdn-server" : {
       name : "product-omejdn-server"
@@ -471,6 +487,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-DAPS" : {
       name : "product-DAPS"
@@ -482,6 +499,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-item-relationship-service" : {
       name : "product-item-relationship-service"
@@ -493,6 +511,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-testdata-2-edc" : {
       name : "product-testdata-2-edc"
@@ -504,6 +523,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-traceability-foss" : {
       name : "product-traceability-foss"
@@ -515,6 +535,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-esc-backbone" : {
       name : "product-esc-backbone"
@@ -526,6 +547,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-traceability-foss-frontend" : {
       name : "product-traceability-foss-frontend"
@@ -537,6 +559,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-traceability-foss-backend" : {
       name : "product-traceability-foss-backend"
@@ -548,6 +571,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-esc-backbone-code" : {
       name : "product-esc-backbone-code"
@@ -559,6 +583,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-explorer" : {
       name : "product-explorer"
@@ -570,6 +595,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-core-managed-identity-wallets-cd" : {
       name : "product-core-managed-identity-wallets-cd"
@@ -581,6 +607,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-behaviour-twin-pilot" : {
       name : "product-behaviour-twin-pilot"
@@ -592,6 +619,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-behaviour-twin-pilot-private" : {
       name : "product-behaviour-twin-pilot-private"
@@ -603,6 +631,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-value-added-service" : {
       name : "product-value-added-service"
@@ -614,6 +643,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "foss-example" : {
       name : "foss-example"
@@ -625,6 +655,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     }
     "k8s-cluster-stack" : {
       name : "k8s-cluster-stack"
@@ -636,6 +667,7 @@ module "github" {
       pages : {
         enabled : false
       }
+      is_template: false
     },
     "product-edc" : {
       name : "product-edc"
@@ -647,6 +679,7 @@ module "github" {
       pages : {
         enabled : true
       }
+      is_template: false
     },
     "k8s-helm-example" : {
       name : "k8s-helm-example"
@@ -658,6 +691,7 @@ module "github" {
       pages : {
         enabled : true
       }
+      is_template: false
     }
     "catenax-ng.github.io" : {
       name : "catenax-ng.github.io"
@@ -669,6 +703,7 @@ module "github" {
       pages : {
         enabled : true
       }
+      is_template: false
     }
     "product-test-data-generator" : {
       name : "product-test-data-generator"
@@ -680,74 +715,28 @@ module "github" {
       pages : {
         enabled : true
       }
+      is_template: false
     }
-    ### Repositories with GH pages or something else non-standard configured
-    /*
-    "product-test-data-generator" : {
-      name : "product-test-data-generator",
-      team_name : "product-test-data-generator",
-      description : "Catena-X Testdata Generator",
-      has_issues : false,
-      has_projects : false,
-      has_wiki : false
-      visibility : "public"
-    },
     "product-portal-hello-helm" : {
-      name : "product-portal-hello-helm",
-      team_name : "product-portal",
-      description : "A minimal project template with a CI pipeline for docker",
-      has_issues : false,
-      has_projects : false,
-      has_wiki : false
+      name : "product-portal-hello-helm"
+      team_name : "product-portal"
+      description : "A minimal project template with a CI pipeline for docker"
       visibility : "public"
       homepage_url : ""
       topics : []
-    },
-    "product-portal-frontend-registration" : {    # template
-      name : "product-portal-frontend-registration"
-      team_name : "product-portal"
-      description : "Catena-X Portal Frontend Registration"
-      visibility : "public"
-      homepage_url : "https://portal.demo.catena-x.net/registration/"
-      topics : [ "catena-x", "frontend", "portal", "registration" ]
-    },
-    */
-
-    ### Repositories we might want to delete, since they are no longer needed
-    /*
-        "cluster-bootstrapping" : {
-      "name" : "cluster-bootstrapping",
-      "team_name" : "argocdadmins", # NO TEAM ASSIGNED
-      "description" : "",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
-    },
-    "devops-apps" : {
-      "name" : "devops-apps",
-      "team_name" : "argocdadmins", # NO TEAM ASSIGNED
-      "description" : "",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
-    },
-    "acme" : {
-      "name" : "acme",
-      "team_name" : "argocdadmins", #NO TEAM ASSIGNED
-      "description" : "Landing page including documentations.",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
-    },
-    "github" : {
-      "name" : "github",
-      "team_name" : "argocdadmins", # NO TEAM ASSIGNED
-      "description" : "",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
-    },
-    */
+      pages : {
+        enabled : false
+      }
+      is_template: true
+    }
+    /* "product-portal-frontend-registration" : {    # template
+       name : "product-portal-frontend-registration"
+       team_name : "product-portal"
+       description : "Catena-X Portal Frontend Registration"
+       visibility : "public"
+       homepage_url : "https://portal.demo.catena-x.net/registration/"
+       topics : [ "catena-x", "frontend", "portal", "registration" ]
+     },*/
   }
 
   github_repositories_teams = {
