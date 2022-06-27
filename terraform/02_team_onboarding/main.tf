@@ -185,168 +185,6 @@ module "github" {
 
   github_token = var.github_token
 
-  github_repositories_teams = {
-    "product-bpdm" : {
-      team_name : "product-bpdm"
-      repository : "product-bpdm"
-      permission : "maintain"
-    },    
-    "product-semantics" : {
-      team_name : "product-semantics"
-      repository : "product-semantics"
-      permission : "maintain"
-    },
-    "product-portal-frontend" : {
-      team_name : "product-portal"
-      repository : "product-portal-frontend"
-      permission : "maintain"
-    },
-    "product-portal-iam" : {
-      team_name : "product-portal"
-      repository : "product-portal-iam"
-      permission : "maintain"
-    },
-    "product-portal-backend" : {
-      team_name : "product-portal"
-      repository : "product-portal-backend"
-      permission : "maintain"
-    },
-    "product-data-integrity-demonstrator" : {
-      team_name : "product-data-integrity-demonstrator"
-      repository : "product-data-integrity-demonstrator"
-      permission : "maintain"
-    },
-    "catenax-at-home" : {
-      team_name : "product-catenax-at-home"
-      repository : "catenax-at-home"
-      permission : "maintain"
-    },
-    "product-core-schemas" : {
-      team_name : "cx-core-schemas"
-      repository : "product-core-schemas"
-      permission : "maintain"
-    },
-    "product-portal-cd" : {
-      team_name : "product-portal"
-      repository : "product-portal-cd"
-      permission : "maintain"
-    },
-    "DataSpaceConnector" : {
-      team_name : "product-managed-identity-wallets"
-      repository : "DataSpaceConnector"
-      permission : "maintain"
-    },
-    "product-portal-common-assets" : {
-      team_name : "product-portal"
-      repository : "product-portal-common-assets"
-      permission : "maintain"
-    },
-    "product-core-managed-identity-wallets" : {
-      team_name : "product-managed-identity-wallets"
-      repository : "product-core-managed-identity-wallets"
-      permission : "maintain"
-    },
-    "product-dft-backend" : {
-      team_name : "product-dft"
-      repository : "product-dft-backend"
-      permission : "maintain"
-    },
-    "product-dft-frontend" : {
-      team_name : "product-dft"
-      repository : "product-dft-frontend"
-      permission : "maintain"
-    },
-    "product-sd-hub" : {
-      team_name : "product-essential-services"
-      repository : "product-sd-hub"
-      permission : "maintain"
-    },
-    "product-omejdn-server" : {
-      team_name : "product-essential-services"
-      repository : "product-omejdn-server"
-      permission : "maintain"
-    },
-    "product-DAPS" : {
-      team_name : "product-essential-services"
-      repository : "product-DAPS"
-      permission : "maintain"
-    },
-    "product-item-relationship-service" : {
-      team_name : "product-traceability-irs"
-      repository : "product-item-relationship-service"
-      permission : "maintain"
-    },
-    "product-testdata-2-edc" : {
-      team_name : "product-data-integrity-demonstrator"
-      repository : "product-testdata-2-edc"
-      permission : "maintain"
-    },
-    "product-traceability-foss" : {
-      team_name : "product-traceability-foss"
-      repository : "product-traceability-foss"
-      permission : "maintain"
-    },
-    "product-esc-backbone" : {
-      team_name : "product-esc-backbone"
-      repository : "product-esc-backbone"
-      permission : "maintain"
-    },
-    "product-traceability-foss-frontend" : {
-      team_name : "product-traceability-foss"
-      repository : "product-traceability-foss-frontend"
-      permission : "maintain"
-    },
-    "product-traceability-foss-backend" : {
-      team_name : "product-traceability-foss"
-      repository : "product-traceability-foss-backend"
-      permission : "maintain"
-    },
-    "product-esc-backbone-code" : {
-      team_name : "product-esc-backbone"
-      repository : "product-esc-backbone-code"
-      permission : "maintain"
-    },
-    "product-explorer" : {
-      team_name : "product-explorer"
-      repository : "product-explorer"
-      permission : "maintain"
-    },
-    "product-core-managed-identity-wallets-cd" : {
-      team_name : "product-managed-identity-wallets"
-      repository : "product-core-managed-identity-wallets-cd"
-      permission : "maintain"
-    },
-    "product-behaviour-twin-pilot" : {
-      team_name : "product-behaviour-twin-pilot"
-      repository : "product-behaviour-twin-pilot"
-      permission : "maintain"
-    },
-    "product-behaviour-twin-pilot-private" : {
-      team_name : "product-behaviour-twin-pilot"
-      repository : "product-behaviour-twin-pilot-private"
-      permission : "maintain"
-    },
-    "product-value-added-service" : {
-      team_name : "product-value-added-service"
-      repository : "product-value-added-service"
-      permission : "maintain"
-    },
-    "foss-example" : {
-      team_name : "team-foss"
-      repository : "foss-example"
-      permission : "maintain"
-    },
-    "product-idses-frontend-apps" : {
-      team_name : "product-essential-services"
-      repository : "product-idses-frontend-apps"
-      permission : "maintain"
-    },
-    # "" : {      
-    #   team_name : ""
-    #   repository : ""
-    #   permission: "maintain"
-    # },
-  }
   github_teams = {
     "argocdadmins" : {
       "name" : "argocdadmins",
@@ -454,6 +292,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-idses-frontend-apps" : {
       name : "product-idses-frontend-apps"
@@ -462,6 +306,12 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-semantics" : {
       name : "product-semantics"
@@ -470,6 +320,12 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-portal-frontend" : {
       name : "product-portal-frontend"
@@ -478,6 +334,12 @@ module "github" {
       visibility : "public"
       homepage_url : "https://portal.dev.demo.catena-x.net"
       topics : ["catena-x", "docker", "portal", "react", "typescript"]
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-portal-iam" : {
       name : "product-portal-iam"
@@ -486,6 +348,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-portal-backend" : {
       name : "product-portal-backend"
@@ -494,6 +362,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-data-integrity-demonstrator" : {
       name : "product-data-integrity-demonstrator"
@@ -502,6 +376,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "catenax-at-home" : {
       name : "catenax-at-home",
@@ -510,6 +390,12 @@ module "github" {
       visibility : "public"
       homepage_url : "https://catenax-ng.github.io/docs/catenax-at-home-getting-started-guide"
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-core-schemas" : {
       name : "product-core-schemas",
@@ -518,6 +404,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-portal-cd" : {
       name : "product-portal-cd"
@@ -526,6 +418,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "DataSpaceConnector" : {
       name : "DataSpaceConnector"
@@ -534,6 +432,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-portal-common-assets" : {
       name : "product-portal-common-assets"
@@ -542,6 +446,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-core-managed-identity-wallets" : {
       "name" : "product-core-managed-identity-wallets"
@@ -550,6 +460,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-dft-backend" : {
       name : "product-dft-backend"
@@ -558,6 +474,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-dft-frontend" : {
       name : "product-dft-frontend"
@@ -566,6 +488,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-sd-hub" : {
       name : "product-sd-hub"
@@ -574,6 +502,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-omejdn-server" : {
       name : "product-omejdn-server"
@@ -582,6 +516,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-DAPS" : {
       name : "product-DAPS"
@@ -590,6 +530,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-item-relationship-service" : {
       name : "product-item-relationship-service"
@@ -598,6 +544,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-testdata-2-edc" : {
       name : "product-testdata-2-edc"
@@ -606,6 +558,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-traceability-foss" : {
       name : "product-traceability-foss"
@@ -614,6 +572,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-esc-backbone" : {
       name : "product-esc-backbone"
@@ -622,6 +586,12 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-traceability-foss-frontend" : {
       name : "product-traceability-foss-frontend"
@@ -630,6 +600,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-traceability-foss-backend" : {
       name : "product-traceability-foss-backend"
@@ -638,6 +614,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-esc-backbone-code" : {
       name : "product-esc-backbone-code"
@@ -646,6 +628,12 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-explorer" : {
       name : "product-explorer"
@@ -654,6 +642,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-core-managed-identity-wallets-cd" : {
       name : "product-core-managed-identity-wallets-cd"
@@ -662,6 +656,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-behaviour-twin-pilot" : {
       name : "product-behaviour-twin-pilot"
@@ -670,6 +670,12 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-behaviour-twin-pilot-private" : {
       name : "product-behaviour-twin-pilot-private"
@@ -678,6 +684,12 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-value-added-service" : {
       name : "product-value-added-service"
@@ -686,6 +698,12 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "foss-example" : {
       name : "foss-example"
@@ -694,118 +712,325 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     }
-    ### Repositories with GH pages or something else non-standard configured
-    /*
-    "product-test-data-generator" : {
-      name : "product-test-data-generator",
-      team_name : "product-test-data-generator",
-      description : "Catena-X Testdata Generator",
-      has_issues : false,
-      has_projects : false,
-      has_wiki : false
+    "k8s-cluster-stack" : {
+      name : "k8s-cluster-stack"
+      team_name : "argocdadmins"
+      description : "Bootstrapping k8s clusters with ready to use ArgoCD for k8s management."
       visibility : "public"
-    },
-    "k8s-cluster-stack" : { # admin privileges, only squash merge
-      name : "k8s-cluster-stack",
-      team_name : "argocdadmins",
-      description : "Bootstrapping k8s clusters with ready to use ArgoCD for k8s management.",
-      has_issues : false,
-      has_projects : false,
-      has_wiki : false
-      visibility : "public"
+      homepage_url : ""
+      topics : ["internal"]
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "product-edc" : {
-      "name" : "product-edc",
-      "team_name" : "product-edc",
-      "description" : "Repository for Catena-X specific eclipse dataspace connector apps",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
+      name : "product-edc"
+      team_name : "product-edc"
+      description : "Repository for Catena-X specific eclipse dataspace connector apps"
       visibility : "public"
-      homepage_url: ""
-      topics: []
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : true
+      }
+      is_template : false
+      uses_template : false
+      template : null
     },
     "k8s-helm-example" : {
-      name : "k8s-helm-example",
-      team_name : "product-team-example",
-      description : "Example project for Argo CD integration",
-      has_issues : false,
-      has_projects : false,
-      has_wiki : false
+      name : "k8s-helm-example"
+      team_name : "product-team-example"
+      description : "Example project for Argo CD integration and also landing pages for ArgoCD environments"
       visibility : "public"
-      homepage_url: ""
-      topics: []
-    },
+      homepage_url : ""
+      topics : ["ci-cd", "helm", "internal", "kubernetes"]
+      pages : {
+        enabled : true
+      }
+      is_template : false
+      uses_template : false
+      template : null
+    }
     "catenax-ng.github.io" : {
-      name : "catenax-ng.github.io",
-      team_name : "team-foss",
-      description : "https://catenax-ng.github.io",
-      has_issues : false,
-      has_projects : false,
-      has_wiki : false
+      name : "catenax-ng.github.io"
+      team_name : "team-foss"
+      description : "https://catenax-ng.github.io"
       visibility : "public"
-      homepage_url: ""
-      topics: []
-    },
+      homepage_url : "https://catenax-ng.github.io"
+      topics : ["internal"]
+      pages : {
+        enabled : true
+      }
+      is_template : false
+      uses_template : false
+      template : null
+    }
+    "product-test-data-generator" : {
+      name : "product-test-data-generator"
+      team_name : "product-test-data-generator"
+      description : "Catena-X Testdata Generator"
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : true
+      }
+      is_template : false
+      uses_template : false
+      template : null
+    }
     "product-portal-hello-helm" : {
-      name : "product-portal-hello-helm",
-      team_name : "product-portal",
-      description : "A minimal project template with a CI pipeline for docker",
-      has_issues : false,
-      has_projects : false,
-      has_wiki : false
+      name : "product-portal-hello-helm"
+      team_name : "product-portal"
+      description : "A minimal project template with a CI pipeline for docker"
       visibility : "public"
       homepage_url : ""
       topics : []
-    },
+      pages : {
+        enabled : false
+      }
+      is_template : true
+      uses_template : false
+      template : null
+    }
     "product-portal-frontend-registration" : {
-      name : "product-portal-frontend-registration",
-      team_name : "product-portal",
-      description : "Catena-X Portal Frontend Registration",
-      has_issues : false,
-      has_projects : false,
-      has_wiki : false
+      name : "product-portal-frontend-registration"
+      team_name : "product-portal"
+      description : "Catena-X Portal Frontend Registration"
+      visibility : "public"
+      homepage_url : "https://portal.demo.catena-x.net/registration/"
+      topics : ["catena-x", "frontend", "portal", "registration"]
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : true
+      template : {
+        owner : "catenax-ng"
+        repository : "product-portal-hello-helm"
+      }
+    }
+    "product-vas-country-risk-frontend" : {
+      name : "product-vas-country-risk-frontend"
+      team_name : "product-value-added-service"
+      description : ""
       visibility : "public"
       homepage_url : ""
       topics : []
-    },
-    */
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
+    }
+  }
 
-    ### Repositories we might want to delete, since they are no longer needed
-    /*
-        "cluster-bootstrapping" : {
-      "name" : "cluster-bootstrapping",
-      "team_name" : "argocdadmins", # NO TEAM ASSIGNED
-      "description" : "",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
+  github_repositories_teams = {
+    "product-bpdm-product-bpdm" : {
+      team_name : "product-bpdm"
+      repository : "product-bpdm"
+      permission : "maintain"
     },
-    "devops-apps" : {
-      "name" : "devops-apps",
-      "team_name" : "argocdadmins", # NO TEAM ASSIGNED
-      "description" : "",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
+    "product-semantics-product-semantics" : {
+      team_name : "product-semantics"
+      repository : "product-semantics"
+      permission : "maintain"
     },
-    "acme" : {
-      "name" : "acme",
-      "team_name" : "argocdadmins", #NO TEAM ASSIGNED
-      "description" : "Landing page including documentations.",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
+    "product-portal-frontend-product-portal" : {
+      team_name : "product-portal"
+      repository : "product-portal-frontend"
+      permission : "maintain"
     },
-    "github" : {
-      "name" : "github",
-      "team_name" : "argocdadmins", # NO TEAM ASSIGNED
-      "description" : "",
-      "has_issues" : false,
-      "has_projects" : false,
-      "has_wiki" : false
+    "product-portal-iam-product-portal" : {
+      team_name : "product-portal"
+      repository : "product-portal-iam"
+      permission : "maintain"
     },
-    */
+    "product-portal-backend-product-portal" : {
+      team_name : "product-portal"
+      repository : "product-portal-backend"
+      permission : "maintain"
+    },
+    "product-data-integrity-demonstrator-product-data-integrity-demonstrator" : {
+      team_name : "product-data-integrity-demonstrator"
+      repository : "product-data-integrity-demonstrator"
+      permission : "maintain"
+    },
+    "catenax-at-home-catenax-at-home" : {
+      team_name : "product-catenax-at-home"
+      repository : "catenax-at-home"
+      permission : "maintain"
+    },
+    "product-core-schemas-cx-core-schemas" : {
+      team_name : "cx-core-schemas"
+      repository : "product-core-schemas"
+      permission : "maintain"
+    },
+    "product-portal-cd-product-portal" : {
+      team_name : "product-portal"
+      repository : "product-portal-cd"
+      permission : "maintain"
+    },
+    "DataSpaceConnector-product-managed-identity-wallets" : {
+      team_name : "product-managed-identity-wallets"
+      repository : "DataSpaceConnector"
+      permission : "maintain"
+    },
+    "product-portal-common-assets-product-portal" : {
+      team_name : "product-portal"
+      repository : "product-portal-common-assets"
+      permission : "maintain"
+    },
+    "product-core-managed-identity-wallets-product-managed-identity-wallets" : {
+      team_name : "product-managed-identity-wallets"
+      repository : "product-core-managed-identity-wallets"
+      permission : "maintain"
+    },
+    "product-dft-backend-product-dft" : {
+      team_name : "product-dft"
+      repository : "product-dft-backend"
+      permission : "maintain"
+    },
+    "product-dft-frontend-product-dft" : {
+      team_name : "product-dft"
+      repository : "product-dft-frontend"
+      permission : "maintain"
+    },
+    "product-sd-hub-product-essential-services" : {
+      team_name : "product-essential-services"
+      repository : "product-sd-hub"
+      permission : "maintain"
+    },
+    "product-omejdn-server-product-essential-services" : {
+      team_name : "product-essential-services"
+      repository : "product-omejdn-server"
+      permission : "maintain"
+    },
+    "product-DAPS-product-essential-services" : {
+      team_name : "product-essential-services"
+      repository : "product-DAPS"
+      permission : "maintain"
+    },
+    "product-item-relationship-service-product-traceability-irs" : {
+      team_name : "product-traceability-irs"
+      repository : "product-item-relationship-service"
+      permission : "maintain"
+    },
+    "product-testdata-2-edc-product-data-integrity-demonstrator" : {
+      team_name : "product-data-integrity-demonstrator"
+      repository : "product-testdata-2-edc"
+      permission : "maintain"
+    },
+    "product-traceability-foss" : {
+      team_name : "product-traceability-foss"
+      repository : "product-traceability-foss"
+      permission : "maintain"
+    },
+    "product-esc-backbone-product-esc-backbone" : {
+      team_name : "product-esc-backbone"
+      repository : "product-esc-backbone"
+      permission : "maintain"
+    },
+    "product-traceability-foss-frontend-product-traceability-foss" : {
+      team_name : "product-traceability-foss"
+      repository : "product-traceability-foss-frontend"
+      permission : "maintain"
+    },
+    "product-traceability-foss-backend-product-traceability-foss" : {
+      team_name : "product-traceability-foss"
+      repository : "product-traceability-foss-backend"
+      permission : "maintain"
+    },
+    "product-esc-backbone-code-product-esc-backbone" : {
+      team_name : "product-esc-backbone"
+      repository : "product-esc-backbone-code"
+      permission : "maintain"
+    },
+    "product-explorer-product-explorer" : {
+      team_name : "product-explorer"
+      repository : "product-explorer"
+      permission : "maintain"
+    },
+    "product-core-managed-identity-wallets-cd-product-managed-identity-wallets" : {
+      team_name : "product-managed-identity-wallets"
+      repository : "product-core-managed-identity-wallets-cd"
+      permission : "maintain"
+    },
+    "product-behaviour-twin-pilot-product-behaviour-twin-pilot" : {
+      team_name : "product-behaviour-twin-pilot"
+      repository : "product-behaviour-twin-pilot"
+      permission : "maintain"
+    },
+    "product-behaviour-twin-pilot-private-product-behaviour-twin-pilot" : {
+      team_name : "product-behaviour-twin-pilot"
+      repository : "product-behaviour-twin-pilot-private"
+      permission : "maintain"
+    },
+    "product-value-added-service-product-value-added-service" : {
+      team_name : "product-value-added-service"
+      repository : "product-value-added-service"
+      permission : "maintain"
+    },
+    "foss-example-team-foss" : {
+      team_name : "team-foss"
+      repository : "foss-example"
+      permission : "maintain"
+    },
+    "product-idses-frontend-apps-product-essential-services" : {
+      team_name : "product-essential-services"
+      repository : "product-idses-frontend-apps"
+      permission : "maintain"
+    }
+    "k8s-cluster-stack-argocdadmins" : {
+      team_name : "argocdadmins"
+      repository : "k8s-cluster-stack"
+      permission : "admin"
+    }
+    "product-portal-frontend-registration-product-portal" : {
+      team_name : "product-portal"
+      repository : "product-portal-frontend-registration"
+      permission : "maintain"
+    }
+    "product-edc-product-edc" : {
+      team_name : "product-edc"
+      repository : "product-edc"
+      permission : "maintain"
+    }
+    "k8s-helm-example-product-team-example" : {
+      team_name : "product-team-example"
+      repository : "k8s-helm-example"
+      permission : "maintain"
+    }
+    "catenax-ng.github.io-team-foss" : {
+      team_name : "team-foss"
+      repository : "catenax-ng.github.io"
+      permission : "maintain"
+    }
+    "catenax-ng.github.io-argocdadmins" : {
+      team_name : "argocdadmins"
+      repository : "catenax-ng.github.io"
+      permission : "admin"
+    }
+    "product-test-data-generator-product-test-data-generator" : {
+      team_name : "product-test-data-generator"
+      repository : "product-test-data-generator"
+      permission : "maintain"
+    }
+    "product-vas-country-risk-frontend-product-value-added-service" : {
+      team_name : "product-value-added-service"
+      repository : "product-vas-country-risk-frontend"
+      permission : "maintain"
+    }
   }
 }

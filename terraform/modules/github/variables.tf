@@ -9,6 +9,15 @@ variable "github_repositories" {
     visibility   = string
     homepage_url = string
     topics       = set(string)
+    pages        = object({
+      enabled = bool
+    })
+    is_template   = bool
+    uses_template = bool
+    template      = object({
+      owner      = string
+      repository = string
+    })
   }))
 }
 

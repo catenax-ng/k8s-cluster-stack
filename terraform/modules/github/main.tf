@@ -14,8 +14,26 @@ resource "github_repository" "repositories" {
   has_downloads          = true
   vulnerability_alerts   = true
   delete_branch_on_merge = true
+  is_template            = each.value.is_template
   homepage_url           = each.value.homepage_url
   topics                 = each.value.topics
+
+  dynamic "template" {
+    for_each = each.value.uses_template ? [true] : []
+    content {
+      owner      = each.value.template.owner
+      repository = each.value.template.repository
+    }
+  }
+
+  dynamic "pages" {
+    for_each = each.value.pages.enabled ? [true] : []
+    content {
+      source {
+        branch = "gh-pages"
+      }
+    }
+  }
 }
 
 # Define desired state of all teams to the organization
@@ -27,14 +45,6 @@ resource "github_team" "teams" {
   description = each.value.description
   privacy     = "closed"
 }
-
-# resource "github_team_repository" "team-repository-access" {
-#   for_each = var.github_repositories
-
-#   team_id    = github_team.teams[each.value.team_name].id
-#   repository = each.value.name
-#   permission = "maintain"
-# }
 
 resource "github_team_repository" "team-repository-access" {
   for_each = var.github_repositories_teams
@@ -78,6 +88,7 @@ resource "github_repository_file" "cx-github-repositroy-file-codeowners" {
 # You can use a CODEOWNERS file to define individuals or teams that are responsible for code in a repository.
 # Learn more about it: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 # Example of CODEOWNER file: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners#example-of-a-codeowners-file
+*        @catenax-ng/${each.value.team_name}
 EOT
   commit_message      = "Add CODEOWNERS file as default repository configuration"
   commit_author       = "Catena-X DevSecOps"
