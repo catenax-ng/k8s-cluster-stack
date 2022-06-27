@@ -6,7 +6,7 @@ locals {
 # Define desired state of all repositories
 # @url: https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository
 resource "github_repository" "repositories" {
-  for_each = local.repos_without_github_pages
+  for_each = var.github_repositories
 
   name        = each.value.name
   description = each.value.description
@@ -30,28 +30,13 @@ resource "github_repository" "repositories" {
       repository = each.value.template.repository
     }
   }
-}
 
-resource "github_repository" "repositories_with_github_pages" {
-  for_each = local.repos_with_github_pages
-
-  name        = each.value.name
-  description = each.value.description
-
-  has_issues             = false
-  has_projects           = false
-  has_wiki               = false
-  visibility             = each.value.visibility
-  auto_init              = true
-  has_downloads          = true
-  vulnerability_alerts   = true
-  delete_branch_on_merge = true
-  is_template            = each.value.is_template
-  homepage_url           = each.value.homepage_url
-  topics                 = each.value.topics
-  pages {
-    source {
-      branch = "gh-pages"
+  dynamic "pages" {
+    for_each = each.value.pages.enabled ? [true] : []
+    content {
+      source {
+        branch = "gh-pages"
+      }
     }
   }
 }
