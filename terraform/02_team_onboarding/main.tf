@@ -669,7 +669,18 @@ module "github" {
       pages : {
         enabled : true
       }
-    },
+    }
+    "product-test-data-generator" : {
+      name : "product-test-data-generator"
+      team_name : "product-test-data-generator"
+      description : "Catena-X Testdata Generator"
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : true
+      }
+    }
     ### Repositories with GH pages or something else non-standard configured
     /*
     "product-test-data-generator" : {
@@ -924,6 +935,11 @@ module "github" {
       team_name : "argocdadmins"
       repository : "catenax-ng.github.io"
       permission : "admin"
+    }
+    "product-test-data-generator-product-test-data-generator" : {
+      team_name : "product-test-data-generator"
+      repository : "product-test-data-generator"
+      permission : "maintain"
     }
   }
 }
