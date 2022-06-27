@@ -292,8 +292,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-idses-frontend-apps" : {
@@ -303,8 +303,8 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-semantics" : {
@@ -314,8 +314,8 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-portal-frontend" : {
@@ -325,8 +325,8 @@ module "github" {
       visibility : "public"
       homepage_url : "https://portal.dev.demo.catena-x.net"
       topics : ["catena-x", "docker", "portal", "react", "typescript"]
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-portal-iam" : {
@@ -336,8 +336,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-portal-backend" : {
@@ -347,8 +347,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-data-integrity-demonstrator" : {
@@ -358,8 +358,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "catenax-at-home" : {
@@ -369,8 +369,8 @@ module "github" {
       visibility : "public"
       homepage_url : "https://catenax-ng.github.io/docs/catenax-at-home-getting-started-guide"
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-core-schemas" : {
@@ -380,8 +380,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-portal-cd" : {
@@ -391,8 +391,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "DataSpaceConnector" : {
@@ -402,8 +402,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-portal-common-assets" : {
@@ -413,8 +413,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-core-managed-identity-wallets" : {
@@ -424,8 +424,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-dft-backend" : {
@@ -435,8 +435,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-dft-frontend" : {
@@ -446,8 +446,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-sd-hub" : {
@@ -457,8 +457,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-omejdn-server" : {
@@ -468,8 +468,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-DAPS" : {
@@ -479,8 +479,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-item-relationship-service" : {
@@ -490,8 +490,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-testdata-2-edc" : {
@@ -501,8 +501,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-traceability-foss" : {
@@ -512,8 +512,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-esc-backbone" : {
@@ -523,8 +523,8 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-traceability-foss-frontend" : {
@@ -534,8 +534,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-traceability-foss-backend" : {
@@ -545,8 +545,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-esc-backbone-code" : {
@@ -556,8 +556,8 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-explorer" : {
@@ -567,8 +567,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-core-managed-identity-wallets-cd" : {
@@ -578,8 +578,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-behaviour-twin-pilot" : {
@@ -589,8 +589,8 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-behaviour-twin-pilot-private" : {
@@ -600,8 +600,8 @@ module "github" {
       visibility : "private"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "product-value-added-service" : {
@@ -611,8 +611,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     },
     "foss-example" : {
@@ -622,8 +622,8 @@ module "github" {
       visibility : "public"
       homepage_url : ""
       topics : []
-      pages: {
-        enabled: false
+      pages : {
+        enabled : false
       }
     }
     "k8s-cluster-stack" : {
@@ -632,9 +632,9 @@ module "github" {
       description : "Bootstrapping k8s clusters with ready to use ArgoCD for k8s management."
       visibility : "public"
       homepage_url : ""
-      topics : [ "internal" ]
-      pages: {
-        enabled: false
+      topics : ["internal"]
+      pages : {
+        enabled : false
       }
     },
     "product-edc" : {
@@ -642,12 +642,23 @@ module "github" {
       team_name : "product-edc"
       description : "Repository for Catena-X specific eclipse dataspace connector apps"
       visibility : "public"
-      homepage_url: ""
-      topics: []
-      pages: {
-        enabled: true
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : true
       }
     },
+    "k8s-helm-example" : {
+      name : "k8s-helm-example",
+      team_name : "product-team-example",
+      description : "Example project for Argo CD integration and also landing pages for ArgoCD environments",
+      visibility : "public"
+      homepage_url : ""
+      topics : ["ci-cd", "helm", "internal", "kubernetes"]
+      pages : {
+        enabled : true
+      }
+    }
     ### Repositories with GH pages or something else non-standard configured
     /*
     "product-test-data-generator" : {
@@ -658,18 +669,6 @@ module "github" {
       has_projects : false,
       has_wiki : false
       visibility : "public"
-    },
-
-    "k8s-helm-example" : {
-      name : "k8s-helm-example",
-      team_name : "product-team-example",
-      description : "Example project for Argo CD integration",
-      has_issues : false,
-      has_projects : false,
-      has_wiki : false
-      visibility : "public"
-      homepage_url: ""
-      topics: []
     },
     "catenax-ng.github.io" : {
       name : "catenax-ng.github.io",
@@ -901,15 +900,20 @@ module "github" {
       repository : "k8s-cluster-stack"
       permission : "admin"
     }
-    "product-portal-frontend-registration-product-portal": {
+    "product-portal-frontend-registration-product-portal" : {
       team_name : "product-portal"
       repository : "product-portal-frontend-registration"
       permission : "maintain"
     }
-    "product-edc-product-edc": {
-      team_name: "product-edc"
-      repository: "product-edc"
-      permission: "maintain"
+    "product-edc-product-edc" : {
+      team_name : "product-edc"
+      repository : "product-edc"
+      permission : "maintain"
+    }
+    "k8s-helm-example-product-team-example" : {
+      team_name : "product-team-example"
+      repository : "k8s-helm-example"
+      permission : "maintain"
     }
   }
 }
