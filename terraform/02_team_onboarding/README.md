@@ -15,12 +15,28 @@ After you defined the storage account credentials, you can initialize terraform 
 
 Besides the Azure storage account credentials, you also need to set the vault root token as a environment variable, that
 terraform can use to authenticate. We use the root token, since there may be remounts of vault resources, that need
-elevated permissions.
-You need to set the root token as follows:
-`export VAULT_TOKEN=<vault-root-token>`
+elevated permissions. Additionally, you need to specify the client_id and client_secret for OIDC configuration. 
+
+For the `github` module, you need to specify the organization to manage, and
+the personal access token to use for changes to repos and the org.
+You need to set the variables as follows:
+
+```shell
+# Vault module variables
+export VAULT_TOKEN=<vault-root-token>
+# you can find the OIDC settings in vault: secret engine devsecops/clusters/vault/github-oauth
+export TF_VAR_vault_oidc_client_id=<client-id>
+export TF_VAR_vault_oidc_client_secret=<client-secret>
+
+# GitHub module settings
+# The token needs privileges to manage the org and repositories
+export TF_VAR_github_token=<your-github-pat>
+export TF_VAR_github_org=catenax-ng
+```
+
 You can get the root token value from the cx-vault-unseal Azure key vault in the Azure portal. 
 
-To let terraform check, if there need to be config changes in vault, you first have to create a plan, that you can afterwards
+To let terraform check, if there are config changes, you first have to create a plan, that you can afterwards
 apply like this:
 
 ```shell
@@ -68,6 +84,26 @@ terraform import 'vault_approle_auth_backend_role.product-team-approles["explore
 # github team mappings
 terraform import 'vault_github_team.github-product-teams["bpdm"]' auth/github/map/teams/product-bpdm
 ```
+
+## Importing existing GitHub configuration
+
+If there were manual changes to the GitHub organization like manually added teams or repositories, you can import these
+like follows:
+
+```shell
+# Import a GitHub team
+terraform import 'module.github.github_team.cx-github-teams["map-key-in-github_teams-var"]' <team-id>
+
+# Import a GitHub repository
+terraform import 'module.github.github_repository.repositories["map-key-in-github_repositories-var"]' <repository-name>
+
+# Import collaboration relation between team and repository
+terraform import 'module.github.github_team_repository.team-repository-access["map-key-in-github_repositories_teams_var"]' <team-id>:<repository-name>
+```
+
+The GitHub team-id is not easy to find. You can use the following API request via curl to get a list of teams in our 
+catenax-ng organization. The result list will contain information (including the ID) for all the teams:
+`curl -H "Authorization: token your-githbu-pat" https://api.github.com/orgs/catenax-ng/teams`
 
 ## Handling the tfstate
 
