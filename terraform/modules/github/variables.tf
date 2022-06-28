@@ -18,6 +18,7 @@ variable "github_repositories" {
       owner      = string
       repository = string
     })
+    codeowners_available = bool
   }))
 }
 

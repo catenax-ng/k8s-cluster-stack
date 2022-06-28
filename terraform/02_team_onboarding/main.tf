@@ -298,6 +298,8 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
+
     },
     "product-idses-frontend-apps" : {
       name : "product-idses-frontend-apps"
@@ -312,6 +314,8 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
+
     },
     "product-semantics" : {
       name : "product-semantics"
@@ -326,6 +330,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-portal-frontend" : {
       name : "product-portal-frontend"
@@ -340,6 +345,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-portal-iam" : {
       name : "product-portal-iam"
@@ -354,6 +360,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-portal-backend" : {
       name : "product-portal-backend"
@@ -368,6 +375,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-data-integrity-demonstrator" : {
       name : "product-data-integrity-demonstrator"
@@ -382,6 +390,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "catenax-at-home" : {
       name : "catenax-at-home",
@@ -396,6 +405,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-core-schemas" : {
       name : "product-core-schemas",
@@ -410,6 +420,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-portal-cd" : {
       name : "product-portal-cd"
@@ -424,6 +435,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "DataSpaceConnector" : {
       name : "DataSpaceConnector"
@@ -438,6 +450,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-portal-common-assets" : {
       name : "product-portal-common-assets"
@@ -452,6 +465,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-core-managed-identity-wallets" : {
       "name" : "product-core-managed-identity-wallets"
@@ -466,6 +480,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-dft-backend" : {
       name : "product-dft-backend"
@@ -480,6 +495,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-dft-frontend" : {
       name : "product-dft-frontend"
@@ -494,6 +510,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-sd-hub" : {
       name : "product-sd-hub"
@@ -508,6 +525,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-omejdn-server" : {
       name : "product-omejdn-server"
@@ -522,6 +540,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-DAPS" : {
       name : "product-DAPS"
@@ -536,6 +555,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-item-relationship-service" : {
       name : "product-item-relationship-service"
@@ -550,6 +570,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-testdata-2-edc" : {
       name : "product-testdata-2-edc"
@@ -564,6 +585,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-traceability-foss" : {
       name : "product-traceability-foss"
@@ -578,6 +600,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-esc-backbone" : {
       name : "product-esc-backbone"
@@ -592,6 +615,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-traceability-foss-frontend" : {
       name : "product-traceability-foss-frontend"
@@ -606,6 +630,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-traceability-foss-backend" : {
       name : "product-traceability-foss-backend"
@@ -620,6 +645,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-esc-backbone-code" : {
       name : "product-esc-backbone-code"
@@ -634,6 +660,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-explorer" : {
       name : "product-explorer"
@@ -648,6 +675,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-core-managed-identity-wallets-cd" : {
       name : "product-core-managed-identity-wallets-cd"
@@ -662,6 +690,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-behaviour-twin-pilot" : {
       name : "product-behaviour-twin-pilot"
@@ -676,6 +705,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-behaviour-twin-pilot-private" : {
       name : "product-behaviour-twin-pilot-private"
@@ -690,6 +720,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "product-value-added-service" : {
       name : "product-value-added-service"
@@ -704,6 +735,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "foss-example" : {
       name : "foss-example"
@@ -718,6 +750,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     }
     "k8s-cluster-stack" : {
       name : "k8s-cluster-stack"
@@ -732,6 +765,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : true
     },
     "product-edc" : {
       name : "product-edc"
@@ -746,6 +780,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     },
     "k8s-helm-example" : {
       name : "k8s-helm-example"
@@ -760,6 +795,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     }
     "catenax-ng.github.io" : {
       name : "catenax-ng.github.io"
@@ -774,6 +810,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     }
     "product-test-data-generator" : {
       name : "product-test-data-generator"
@@ -788,6 +825,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     }
     "product-portal-hello-helm" : {
       name : "product-portal-hello-helm"
@@ -802,6 +840,7 @@ module "github" {
       is_template : true
       uses_template : false
       template : null
+      codeowners_available : false
     }
     "product-portal-frontend-registration" : {
       name : "product-portal-frontend-registration"
@@ -819,6 +858,7 @@ module "github" {
         owner : "catenax-ng"
         repository : "product-portal-hello-helm"
       }
+      codeowners_available : false
     }
     "product-vas-country-risk-frontend" : {
       name : "product-vas-country-risk-frontend"
@@ -833,6 +873,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
     }
     "product-knowledge" : {
       name : "product-knowledge"

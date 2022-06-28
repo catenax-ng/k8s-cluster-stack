@@ -1,3 +1,8 @@
+locals {
+  codeowners_repos = {for k, v in var.github_repositories : k => v if v.codeowners_available}
+  branch_for_codeowners = "main"
+}
+
 # Define desired state of all repositories
 # @url: https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository
 resource "github_repository" "repositories" {
@@ -53,14 +58,14 @@ resource "github_team_repository" "team-repository-access" {
   repository = each.value.repository
   permission = each.value.permission
 }
-/*
+
 # This resource allows you to configure branch protection for repositories in your organization. When applied, the branch will be protected from forced pushes and deletion. Additional constraints, such as required status checks or restrictions on users, teams, and apps, can also be configured.
 # @url: https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_protection_v3
-resource "github_branch_protection_v3" "cx-github-repositories-branch-protection-main" {
-  for_each = var.github_repositories
+resource "github_branch_protection_v3" "disable_branch_protection" {
+  for_each = local.codeowners_repos
 
   repository                      = each.value.name
-  branch                          = "main"
+  branch                          = local.branch_for_codeowners
   enforce_admins                  = true
   require_conversation_resolution = true
   require_signed_commits          = false
@@ -77,13 +82,16 @@ resource "github_branch_protection_v3" "cx-github-repositories-branch-protection
 
 # This resource allows you to create and manage files within a GitHub repository.
 #@url: https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_file
-resource "github_repository_file" "cx-github-repositroy-file-codeowners" {
-  for_each = var.github_repositories
+resource "github_repository_file" "codeowners" {
+  depends_on = [
+    github_branch_protection_v3.disable_branch_protection
+  ]
+  for_each = local.codeowners_repos
 
   repository = each.value.name
 
-  branch              = "main"
-  file                = "CODEOWNERS"
+  branch              = local.branch_for_codeowners
+  file                = ".github/CODEOWNERS"
   content             = <<EOT
 # You can use a CODEOWNERS file to define individuals or teams that are responsible for code in a repository.
 # Learn more about it: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
@@ -95,4 +103,26 @@ EOT
   commit_email        = "devsecops@catena-x.net"
   overwrite_on_create = false
 }
-*/
+
+resource "github_branch_protection_v3" "enable_branch_protection" {
+  depends_on = [
+    github_repository_file.codeowners
+  ]
+  for_each = local.codeowners_repos
+
+  repository                      = each.value.name
+  branch                          = local.branch_for_codeowners
+  enforce_admins                  = true
+  require_conversation_resolution = true
+  require_signed_commits          = false
+
+  required_pull_request_reviews {
+    dismiss_stale_reviews           = true
+    require_code_owner_reviews      = true
+    required_approving_review_count = 1
+  }
+
+  required_status_checks {
+    strict = true
+  }
+}
