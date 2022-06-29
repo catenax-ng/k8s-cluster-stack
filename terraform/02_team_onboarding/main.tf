@@ -872,6 +872,11 @@ module "github" {
       repository : "catenax-at-home"
       permission : "maintain"
     },
+    "catenax-at-home-product-edc" : {
+      team_name : "product-edc"
+      repository : "catenax-at-home"
+      permission : "maintain"
+    }
     "product-core-schemas-cx-core-schemas" : {
       team_name : "cx-core-schemas"
       repository : "product-core-schemas"
@@ -1004,6 +1009,11 @@ module "github" {
     }
     "product-edc-product-edc" : {
       team_name : "product-edc"
+      repository : "product-edc"
+      permission : "maintain"
+    }
+    "product-edc-product-managed-identity-wallets" = {
+      team_name : "product-managed-identity-wallets"
       repository : "product-edc"
       permission : "maintain"
     }
