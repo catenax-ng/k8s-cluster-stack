@@ -834,6 +834,20 @@ module "github" {
       uses_template : false
       template : null
     }
+    "product-knowledge" : {
+      name : "product-knowledge"
+      team_name : "product-knowledge"
+      description : "Catena-X Knowledge Agents Architecture"
+      visibility : "public"
+      homepage_url : ""
+      topics : ["sparql", "rdf", "ids", "edc", "catena-x"]
+      pages : {
+        enabled : true
+      }
+      is_template : false
+      uses_template : false
+      template : null
+    }
   }
 
   github_repositories_teams = {
@@ -1040,6 +1054,11 @@ module "github" {
     "product-vas-country-risk-frontend-product-value-added-service" : {
       team_name : "product-value-added-service"
       repository : "product-vas-country-risk-frontend"
+      permission : "maintain"
+    }
+    "product-knowlege-product-knowledge" : {
+      team_name : "product-knowledge"
+      repository : "product-knowledge"
       permission : "maintain"
     }
   }
