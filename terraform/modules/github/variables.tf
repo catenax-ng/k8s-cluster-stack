@@ -19,6 +19,10 @@ variable "github_repositories" {
       repository = string
     })
     codeowners_available = bool
+    codeowners = object({
+      pattern = string
+      review_count = number
+    })
   }))
 }
 
