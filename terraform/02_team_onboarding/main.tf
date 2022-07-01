@@ -222,6 +222,10 @@ module "github" {
       "name" : "product-esc-backbone",
       "description" : ""
     },
+    "product-esc-backbone-ro" : {
+      "name" : "product-esc-backbone-ro",
+      "description" : ""
+    },
     "product-essential-services" : {
       "name" : "product-essential-services",
       "description" : ""
@@ -960,6 +964,11 @@ module "github" {
       team_name : "product-esc-backbone"
       repository : "product-esc-backbone"
       permission : "maintain"
+    },
+    "product-esc-backbone-product-esc-backbone-ro" : {
+      team_name : "product-esc-backbone-ro"
+      repository : "product-esc-backbone"
+      permission : "pull"
     },
     "product-traceability-foss-frontend-product-traceability-foss" : {
       team_name : "product-traceability-foss"
