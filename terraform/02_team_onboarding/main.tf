@@ -930,6 +930,8 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
+      codeowners : null
     }
   }
 
