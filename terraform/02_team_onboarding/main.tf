@@ -933,6 +933,23 @@ module "github" {
       codeowners_available : false
       codeowners : null
     }
+    "gh-org-checks-action" : {
+      name : "gh-org-checks"
+      team_name : "argocdadmins"
+      description : "GitHub action to check for sane defaults throughout the organization"
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : true
+      template : {
+        owner : "actions"
+        repository : "javascript-action"
+      }
+    }
   }
 
   github_repositories_teams = {
@@ -1145,6 +1162,11 @@ module "github" {
       team_name : "product-knowledge"
       repository : "product-knowledge"
       permission : "maintain"
+    }
+    "gh-org-checks-argocdadmins" : {
+      team_name : "argocdadmins"
+      repository : "gh-org-checks"
+      permission : "admin"
     }
   }
 }
