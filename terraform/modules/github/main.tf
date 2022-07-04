@@ -80,7 +80,7 @@ EOT
 }
 
 resource "github_branch_protection" "branch_protection" {
-  for_each = local.codeowners_repos
+  for_each = { for k, v in local.codeowners_repos : k => v if v.visibility == "public"}
 
   repository_id                   = each.value.name
   pattern                         = each.value.codeowners.pattern

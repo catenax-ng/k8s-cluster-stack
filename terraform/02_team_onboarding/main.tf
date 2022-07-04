@@ -933,7 +933,7 @@ module "github" {
       codeowners_available : false
       codeowners : null
     }
-    "gh-org-checks-action" : {
+    "gh-org-checks" : {
       name : "gh-org-checks"
       team_name : "argocdadmins"
       description : "GitHub action to check for sane defaults throughout the organization"
@@ -948,6 +948,11 @@ module "github" {
       template : {
         owner : "actions"
         repository : "javascript-action"
+      }
+      codeowners_available : true
+      codeowners : {
+        review_count : 1
+        pattern : "main"
       }
     }
   }
