@@ -19,21 +19,9 @@ spec:
                 name: vault
                 port:
                   number: 8200
-    - host: vault.vault.demo.catena-x.net
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: vault
-                port:
-                  number: 8200
   tls:
     - hosts:
         - vault.{{ .Values.domain}}
       secretName: tls-secret
-    - hosts:
-        - vault.vault.demo.catena-x.net
-      secretName: tls-secret
+
 
