@@ -1,5 +1,5 @@
 issuer:
-  email: "yuanxun.gu@sap.com"
+  email: "devsecops@catena-x.net"
   azure:
     clientId: "48ab828d-7c2b-4895-8188-71603b4c0742"
     hostedZoneName: "demo.catena-x.net"
