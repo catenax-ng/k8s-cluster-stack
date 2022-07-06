@@ -936,7 +936,7 @@ module "github" {
     "gh-org-checks" : {
       name : "gh-org-checks"
       team_name : "argocdadmins"
-      description : "GitHub action to check for sane defaults throughout the organization"
+      description : "GitHub workflow to compile and overview of repository defaults compliance throughout the GitHub org"
       visibility : "public"
       homepage_url : ""
       topics : []
@@ -944,11 +944,8 @@ module "github" {
         enabled : false
       }
       is_template : false
-      uses_template : true
-      template : {
-        owner : "actions"
-        repository : "javascript-action"
-      }
+      uses_template : false
+      template : null
       codeowners_available : true
       codeowners : {
         review_count : 1
