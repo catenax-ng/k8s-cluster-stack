@@ -15,8 +15,9 @@ module "aks" {
   aks_service_principal_client_secret = var.service_principal_client_secret
   aks_dns_prefix                      = "cx-${var.environment_name}-aks"
 
-  k8s_vm_size = var.k8s_vm_size
   k8s_cluster_node_count = var.k8s_cluster_node_count
+  k8s_version            = var.k8s_version
+  k8s_vm_size            = var.k8s_vm_size
 }
 
 module "public_ip" {
