@@ -11,7 +11,7 @@ spec:
   commonName: "*.{{ .Values.certificate.dnsZone }}"
   dnsNames:
     {{- if (eq .Values.cluster "vault")}}
-    - "*.vault.demo.catena-x.net"
+    - "*.vault.{{ .Values.certificate.dnsZone }}"
     {{- end}}
     - "*.{{ .Values.certificate.dnsZone }}"
   duration: 2160h0m0s # 90d
