@@ -22,6 +22,14 @@ spec:
             cluster-name: vault-cluster
             valueFile: values-tls-vault.yaml
             targetRevision: HEAD
+          - cluster: devsecops-testing
+            cluster-name: devsecops-testing
+            valueFile: values-tls-devsecops-testing.yaml
+            targetRevision: HEAD
+          - cluster: pre-prod
+            cluster-name: pre-prod
+            valueFile: values-tls-pre-prod.yaml
+            targetRevision: HEAD
 
   template:
     metadata:

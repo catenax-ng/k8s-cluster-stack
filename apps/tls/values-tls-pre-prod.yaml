@@ -1,0 +1,4 @@
+cluster: "pre-prod"
+
+certificate:
+  dnsZone: "pre-prod.demo.catena-x.net"

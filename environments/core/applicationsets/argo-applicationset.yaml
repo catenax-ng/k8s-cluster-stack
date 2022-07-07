@@ -9,15 +9,23 @@ spec:
       - cluster: core
         cluster-name: in-cluster
         overlay: overlays/core
-        targetRevision: change-argocdadmins-group-name
+        targetRevision: onboarding-preprod
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         overlay: overlays/hotel-budapest
-        targetRevision: change-argocdadmins-group-name
+        targetRevision: onboarding-preprod
       - cluster: dev
         cluster-name: dev
         overlay: overlays/dev
-        targetRevision: change-argocdadmins-group-name
+        targetRevision: onboarding-preprod
+      - cluster: devsecops-testing
+        cluster-name: devsecops-testing
+        overlay: overlays/devsecops-testing
+        targetRevision: onboarding-preprod
+      - cluster: pre-prod
+        cluster-name: pre-prod
+        overlay: overlays/pre-prod
+        targetRevision: onboarding-preprod
 
   template:
     metadata:
