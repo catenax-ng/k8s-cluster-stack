@@ -31,8 +31,13 @@ module "public_ip" {
 module "a_record" {
   source = "../modules/a_record"
 
-  record_name = "*.${var.environment_name}"
-  target_resource_id = module.public_ip.id
+  record_name         = "*.${var.environment_name}"
+  target_resource_id  = module.public_ip.id
   resource_group_name = "cxtsi-demo-shared-rg"
-  zone_name = "demo.catena-x.net"
+  zone_name           = "demo.catena-x.net"
+
+  providers = {
+    azurerm = azurerm
+    azurerm.speedboat-sub = azurerm.speedboat-sub
+  }
 }
