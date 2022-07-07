@@ -10,6 +10,9 @@ spec:
     name: letsencrypt-prod
   commonName: "*.{{ .Values.certificate.dnsZone }}"
   dnsNames:
+    {{- if (eq .Values.cluster "vault")}}
+    - "*.vault.{{ .Values.certificate.dnsZone }}"
+    {{- end}}
     - "*.{{ .Values.certificate.dnsZone }}"
   duration: 2160h0m0s # 90d
   renewBefore: 360h0m0s # 15d
