@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: devsecops-testing-config
+  namespace: argocd
+  labels:
+    environment: devsecops-testing
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/catenax-ng/k8s-cluster-stack
+    targetRevision: HEAD
+    path: environments/devsecops-testing
+    plugin:
+      name: argocd-vault-plugin-kustomize
+
+  destination:
+    name: devsecops-testing
+    namespace: argocd
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: false
