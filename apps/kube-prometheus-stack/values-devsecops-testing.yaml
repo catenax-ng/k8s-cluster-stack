@@ -1,0 +1,24 @@
+# Default values for kube-prometheus-stack.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+kube-prometheus-stack:
+  ## Using default values from https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
+  ##
+  grafana:
+    adminPassword: <path:devsecops/data/apps/prometheus-stack/devsecops-testing/grafana#adminPassword>
+    grafana.ini:
+      server:
+        root_url: https://grafana.devsecops-testing.demo.catena-x.net
+      auth.github:
+        enabled: true
+        allow_sign_up: true
+        client_id: <path:devsecops/data/apps/prometheus-stack/devsecops-testing/github-oauth#client-id>
+        client_secret: <path:devsecops/data/apps/prometheus-stack/devsecops-testing/github-oauth#client-secret>
+        scopes: user:email,read:org
+        auth_url: https://github.com/login/oauth/authorize
+        token_url: https://github.com/login/oauth/access_token
+        api_url: https://api.github.com/user
+        allowed_organizations: catenax-ng
+
+domain: "devsecops-testing.demo.catena-x.net"
+cluster: "devsecops-testing"

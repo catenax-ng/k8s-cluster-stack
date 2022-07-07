@@ -8,6 +8,8 @@ resources:
   - environments/core.yaml
   - environments/dev.yaml
   - environments/hotel-budapest.yaml
+  - environments/devsecops-testing.yaml
+  - environments/pre-prod.yaml
 #  - environments/example.yaml
   - ingress/ingress-argocd.yaml
 
