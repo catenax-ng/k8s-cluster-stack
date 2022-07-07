@@ -1,3 +1,18 @@
+variable "azure_tenant_id" {
+  description = "Azure TenantID to use"
+  type        = string
+}
+
+variable "azure_subscription_id" {
+  description = "Azure SubscriptionID to use for k8s cluster creation"
+  type        = string
+}
+
+variable "azure_dns_subscription_id" {
+  description = "Azure SubscriptionID to use for dns A record creation"
+  type        = string
+}
+
 variable "environment_name" {
   description = "Name of the environment to create, i.e. 'core'. Will be used in several resource names"
   type        = string
@@ -13,7 +28,7 @@ variable "service_principal_client_secret" {
 }
 variable "k8s_version" {
   description = "AKS k8s Version to deploy"
-  type = string
+  type        = string
 }
 
 variable "k8s_vm_size" {
