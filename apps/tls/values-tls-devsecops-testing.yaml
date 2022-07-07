@@ -1,0 +1,4 @@
+cluster: "devsecops-testing"
+
+certificate:
+  dnsZone: "devsecops-testing.demo.catena-x.net"

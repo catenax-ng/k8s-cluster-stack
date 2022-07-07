@@ -15,6 +15,12 @@ spec:
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         targetRevision: HEAD
+      - cluster: devsecops-testing
+        cluster-name: devsecops-testing
+        targetRevision: HEAD
+      - cluster: pre-prod
+        cluster-name: pre-prod
+        targetRevision: HEAD
 
 
   template:

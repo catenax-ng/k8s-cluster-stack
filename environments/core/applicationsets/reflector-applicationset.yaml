@@ -18,6 +18,12 @@ spec:
           - cluster: vault
             cluster-name: vault-cluster
             targetRevision: 6.1.47
+          - cluster: devsecops-testing
+            cluster-name: devsecops-testing
+            targetRevision: 6.1.47
+          - cluster: pre-prod
+            cluster-name: pre-prod
+            targetRevision: 6.1.47
 
   template:
     metadata:

@@ -18,6 +18,12 @@ spec:
       - cluster: vault
         cluster-name: vault-cluster
         targetRevision: HEAD
+      - cluster: devsecops-testing
+        cluster-name: devsecops-testing
+        targetRevision: HEAD
+      - cluster: pre-prod
+        cluster-name: pre-prod
+        targetRevision: HEAD
 
   template:
     metadata:
