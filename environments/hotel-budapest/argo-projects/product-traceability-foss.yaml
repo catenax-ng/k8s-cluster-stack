@@ -3,6 +3,11 @@ kind: Namespace
 metadata:
   name: product-traceability-foss
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-traceability-foss-pen
+---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
@@ -14,6 +19,8 @@ spec:
     - '*'
   destinations:
     - namespace: product-traceability-foss
+      server: https://kubernetes.default.svc
+    - namespace: product-traceability-foss-pen
       server: https://kubernetes.default.svc
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
   namespaceResourceBlacklist:

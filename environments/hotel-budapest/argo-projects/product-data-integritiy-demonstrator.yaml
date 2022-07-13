@@ -3,6 +3,11 @@ kind: Namespace
 metadata:
   name: product-data-integrity-demonstrator
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-data-integrity-demonstrator-pen
+---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
@@ -14,6 +19,8 @@ spec:
     - '*'
   destinations:
     - namespace: product-data-integrity-demonstrator
+      server: https://kubernetes.default.svc
+    - namespace: product-data-integrity-demonstrator-pen
       server: https://kubernetes.default.svc
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
   namespaceResourceBlacklist:

@@ -13,6 +13,16 @@ kind: Namespace
 metadata:
   name: product-portal-dev
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-iam-pen
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-portal-pen
+---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
@@ -28,6 +38,10 @@ spec:
     - namespace: product-iam
       server: https://kubernetes.default.svc
     - namespace: product-portal-dev
+      server: https://kubernetes.default.svc
+    - namespace: product-portal-pen
+      server: https://kubernetes.default.svc
+    - namespace: product-iam-pen
       server: https://kubernetes.default.svc
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
   namespaceResourceBlacklist:
