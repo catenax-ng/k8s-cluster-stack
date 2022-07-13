@@ -933,6 +933,25 @@ module "github" {
       codeowners_available : false
       codeowners : null
     }
+    "gh-org-checks" : {
+      name : "gh-org-checks"
+      team_name : "argocdadmins"
+      description : "GitHub workflow to compile and overview of repository defaults compliance throughout the GitHub org"
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : true
+      codeowners : {
+        review_count : 1
+        pattern : "main"
+      }
+    }
     "product-battery-passport-consumer-app" : {
       name : "product-battery-passport-consumer-app"
       team_name : "product-battery-passport-consumer-app"
@@ -1161,6 +1180,11 @@ module "github" {
       team_name : "product-knowledge"
       repository : "product-knowledge"
       permission : "maintain"
+    }
+    "gh-org-checks-argocdadmins" : {
+      team_name : "argocdadmins"
+      repository : "gh-org-checks"
+      permission : "admin"
     }
   }
 }
