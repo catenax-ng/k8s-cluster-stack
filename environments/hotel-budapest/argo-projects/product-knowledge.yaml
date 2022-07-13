@@ -3,6 +3,11 @@ kind: Namespace
 metadata:
   name: product-knowledge
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-knowledge-pen
+---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
@@ -14,6 +19,8 @@ spec:
     - '*'
   destinations:
     - namespace: product-knowledge
+      server: https://kubernetes.default.svc
+    - namespace: product-knowledge-pen
       server: https://kubernetes.default.svc
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
   namespaceResourceBlacklist:
