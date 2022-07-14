@@ -935,7 +935,7 @@ module "github" {
     }
     "product-battery-passport-consumer-app" : {
       name : "product-battery-passport-consumer-app"
-      team_name : "product-battery-passport-consumer-app"
+      team_name : "product-material-pass"
       description : ""
       visibility : "public"
       homepage_url : ""
@@ -967,22 +967,6 @@ module "github" {
         review_count : 1
         pattern : "main"
       }
-    }
-    "product-battery-passport-consumer-app" : {
-      name : "product-battery-passport-consumer-app"
-      team_name : "product-battery-passport-consumer-app"
-      description : ""
-      visibility : "public"
-      homepage_url : ""
-      topics : []
-      pages : {
-        enabled : false
-      }
-      is_template : false
-      uses_template : false
-      template : null
-      codeowners_available : false
-      codeowners : null
     }
   }
 
@@ -1201,6 +1185,11 @@ module "github" {
       team_name : "argocdadmins"
       repository : "gh-org-checks"
       permission : "admin"
+    }
+    "product-battery-passport-consumer-app-product-material-pass" : {
+      team_name : "product-material-pass"
+      repository: "product-battery-passport-consumer-app"
+      permission: "maintain"
     }
   }
 }
