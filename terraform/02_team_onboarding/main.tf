@@ -933,6 +933,22 @@ module "github" {
       codeowners_available : false
       codeowners : null
     }
+    "product-battery-passport-consumer-app" : {
+      name : "product-battery-passport-consumer-app"
+      team_name : "product-battery-passport-consumer-app"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    }
     "gh-org-checks" : {
       name : "gh-org-checks"
       team_name : "argocdadmins"
