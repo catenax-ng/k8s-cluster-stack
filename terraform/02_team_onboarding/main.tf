@@ -933,11 +933,46 @@ module "github" {
       codeowners_available : false
       codeowners : null
     }
+    "product-battery-passport-consumer-app" : {
+      name : "product-battery-passport-consumer-app"
+      team_name : "product-material-pass"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    }
     "gh-org-checks" : {
       name : "gh-org-checks"
       team_name : "argocdadmins"
       description : "GitHub workflow to compile and overview of repository defaults compliance throughout the GitHub org"
       visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : true
+      codeowners : {
+        review_count : 1
+        pattern : "main"
+      }
+    }
+    "maintenance-dashboard" : {
+      name : "maintenance-dashboard"
+      team_name : "argocdadmins"
+      description : "DevSecOps team maintenance dashboard"
+      visibility : "private"
       homepage_url : ""
       topics : []
       pages : {
@@ -1168,6 +1203,16 @@ module "github" {
     "gh-org-checks-argocdadmins" : {
       team_name : "argocdadmins"
       repository : "gh-org-checks"
+      permission : "admin"
+    }
+    "product-battery-passport-consumer-app-product-material-pass" : {
+      team_name : "product-material-pass"
+      repository: "product-battery-passport-consumer-app"
+      permission: "maintain"
+    }
+    "maintenance-dashboard-argocdadmins" : {
+      team_name : "argocdadmins"
+      repository : "maintenance-dashboard"
       permission : "admin"
     }
   }
