@@ -968,6 +968,25 @@ module "github" {
         pattern : "main"
       }
     }
+    "maintenance-dashboard" : {
+      name : "maintenance-dashboard"
+      team_name : "argocdadmins"
+      description : "DevSecOps team maintenance dashboard"
+      visibility : "private"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : true
+      codeowners : {
+        review_count : 1
+        pattern : "main"
+      }
+    }
   }
 
   github_repositories_teams = {
@@ -1190,6 +1209,11 @@ module "github" {
       team_name : "product-material-pass"
       repository: "product-battery-passport-consumer-app"
       permission: "maintain"
+    }
+    "maintenance-dashboard-argocdadmins" : {
+      team_name : "argocdadmins"
+      repository : "maintenance-dashboard"
+      permission : "admin"
     }
   }
 }
