@@ -987,6 +987,22 @@ module "github" {
         pattern : "main"
       }
     }
+    "product-simple-configurator" : {
+      name : "product-simple-configurator"
+      team_name : "product-essential-services"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    }
   }
 
   github_repositories_teams = {
@@ -1207,13 +1223,18 @@ module "github" {
     }
     "product-battery-passport-consumer-app-product-material-pass" : {
       team_name : "product-material-pass"
-      repository: "product-battery-passport-consumer-app"
-      permission: "maintain"
+      repository : "product-battery-passport-consumer-app"
+      permission : "maintain"
     }
     "maintenance-dashboard-argocdadmins" : {
       team_name : "argocdadmins"
       repository : "maintenance-dashboard"
       permission : "admin"
+    }
+    "product-simple-configurator-product-essential-services" : {
+      team_name : "product-essential-services"
+      repository : "product-simple-configurator"
+      permission : "maintain"
     }
   }
 }
