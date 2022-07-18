@@ -1312,7 +1312,7 @@ module "github" {
       permission : "admin"
     }
     "product-simple-configurator-product-essential-services" : {
-      team_name : "product-value-added-service"
+      team_name : "product-essential-services"
       repository : "product-simple-configurator"
       permission : "maintain"
     }
