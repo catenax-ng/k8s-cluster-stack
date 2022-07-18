@@ -1003,6 +1003,86 @@ module "github" {
       codeowners_available : false
       codeowners : null
     }
+    "product-vas-fraud-api" : {
+      name : "product-vas-fraud-api"
+      team_name : "product-value-added-service"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    }
+    "product-vas-fraud-workers" : {
+      name : "product-vas-fraud-workers"
+      team_name : "product-value-added-service"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    }
+    "product-vas-fraud-dashboard" : {
+      name : "product-vas-fraud-dashboard"
+      team_name : "product-value-added-service"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    }
+    "product-vas-fraud-dags" : {
+      name : "product-vas-fraud-dags"
+      team_name : "product-value-added-service"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    }
+    "product-vas-fraud-cd" : {
+      name : "product-vas-fraud-cd"
+      team_name : "product-value-added-service"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    }
   }
 
   github_repositories_teams = {
@@ -1232,8 +1312,33 @@ module "github" {
       permission : "admin"
     }
     "product-simple-configurator-product-essential-services" : {
-      team_name : "product-essential-services"
+      team_name : "product-value-added-service"
       repository : "product-simple-configurator"
+      permission : "maintain"
+    }
+    "product-vas-fraud-api-product-value-added-service" : {
+      team_name : "product-value-added-service"
+      repository : "product-vas-fraud-api"
+      permission : "maintain"
+    }
+    "product-vas-fraud-workers-product-value-added-service" : {
+      team_name : "product-value-added-service"
+      repository : "product-vas-fraud-workers"
+      permission : "maintain"
+    }
+    "product-vas-fraud-dashboard-product-value-added-service" : {
+      team_name : "product-value-added-service"
+      repository : "product-vas-fraud-dashboard"
+      permission : "maintain"
+    }
+    "product-vas-fraud-dags-product-value-added-service" : {
+      team_name : "product-value-added-service"
+      repository : "product-vas-fraud-dags"
+      permission : "maintain"
+    }
+    "product-vas-fraud-cd-product-value-added-service" : {
+      team_name : "product-value-added-service"
+      repository : "product-vas-fraud-cd"
       permission : "maintain"
     }
   }
