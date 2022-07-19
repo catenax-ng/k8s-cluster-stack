@@ -293,7 +293,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -310,7 +310,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -327,7 +327,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -343,7 +343,7 @@ module "github" {
       homepage_url : "https://portal.dev.demo.catena-x.net"
       topics : ["catena-x", "docker", "portal", "react", "typescript"]
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -359,7 +359,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -375,7 +375,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -391,7 +391,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -407,7 +407,7 @@ module "github" {
       homepage_url : "https://catenax-ng.github.io/docs/catenax-at-home-getting-started-guide"
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -423,7 +423,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -439,7 +439,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -455,7 +455,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -471,7 +471,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -487,7 +487,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -503,7 +503,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -519,7 +519,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -535,7 +535,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -551,7 +551,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -567,7 +567,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -583,7 +583,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -599,7 +599,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -615,7 +615,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -631,7 +631,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -650,7 +650,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -666,7 +666,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -682,7 +682,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -698,7 +698,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -714,7 +714,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -730,7 +730,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -746,7 +746,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -762,7 +762,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -778,7 +778,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -794,7 +794,7 @@ module "github" {
       homepage_url : ""
       topics : ["internal"]
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -874,7 +874,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : true
       uses_template : false
@@ -890,7 +890,7 @@ module "github" {
       homepage_url : "https://portal.demo.catena-x.net/registration/"
       topics : ["catena-x", "frontend", "portal", "registration"]
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : true
@@ -909,7 +909,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -941,7 +941,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -957,7 +957,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -976,7 +976,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -995,7 +995,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -1011,7 +1011,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -1027,7 +1027,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -1043,7 +1043,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -1059,7 +1059,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
@@ -1075,7 +1075,7 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
+        enabled : true
       }
       is_template : false
       uses_template : false
