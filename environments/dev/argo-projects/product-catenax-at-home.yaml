@@ -3,6 +3,11 @@ kind: Namespace
 metadata:
   name: product-catenax-at-home
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-catenax-at-home-pen
+---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
@@ -14,6 +19,8 @@ spec:
     - '*'
   destinations:
     - namespace: catenax-at-home
+      server: https://kubernetes.default.svc
+    - namespace: catenax-at-home-pen
       server: https://kubernetes.default.svc
   namespaceResourceBlacklist:
     - group: ''
