@@ -14,6 +14,7 @@ TODOs:
   - prints -> variables
   - expose variables (json) to what?
   - add parameter with config file with files list to check in repo?
+  - add scan for argocd and plugin(s)
 
 ## query-newreleases.py
 
