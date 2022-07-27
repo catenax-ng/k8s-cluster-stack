@@ -282,6 +282,14 @@ module "github" {
       "name" : "product-knowledge"
       "description" : "Catena-X Knowledge Agents delivers a semantically-driven and state-of-the-art compute-to-data architecture for automotive use cases based on the best GAIA-X, W3C and Big Data practices."
     }
+    "release-management" : {
+      name : "release-management"
+      description : "Members will be granted permissions to manage releases on release relevant environments"
+    }
+    "test-management" : {
+      name : "test-management"
+      description : "Members will be granted permissions to manage deployments on integration environments for testing purposes"
+    }
   }
 
   github_repositories = {
@@ -1132,6 +1140,23 @@ module "github" {
       codeowners_available : false
       codeowners : null
     }
+    "catena-x-release" : {
+      name : "catena-x-release"
+      team_name : "argocdadmins"
+      description : "A collection of helm Charts that represent different configurations of Catena-X releases"
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : true
+        branch : "main"
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    }
   }
 
   github_repositories_teams = {
@@ -1388,6 +1413,21 @@ module "github" {
     "product-vas-fraud-cd-product-value-added-service" : {
       team_name : "product-value-added-service"
       repository : "product-vas-fraud-cd"
+      permission : "maintain"
+    }
+    "catena-x-release-argocd-admins" : {
+      team_name : "argocdadmins"
+      repository : "catena-x-release"
+      permission : "admin"
+    }
+    "catena-x-release-release-management" : {
+      team_name : "release-management"
+      repository : "catena-x-release"
+      permission : "maintain"
+    }
+    "catena-x-release-test-management" : {
+      team_name : "test-management"
+      repository : "catena-x-release"
       permission : "maintain"
     }
   }
