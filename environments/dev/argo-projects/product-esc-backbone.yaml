@@ -23,6 +23,9 @@ spec:
     - namespace: product-esc-backbone-pen
       server: https://kubernetes.default.svc
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
+  clusterResourceWhitelist:
+    - group: ''
+      kind: PersistentVolume
   namespaceResourceBlacklist:
     - group: ''
       kind: ResourceQuota
