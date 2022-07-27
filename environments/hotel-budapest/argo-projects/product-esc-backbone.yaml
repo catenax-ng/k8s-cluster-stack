@@ -22,6 +22,10 @@ spec:
       server: https://kubernetes.default.svc
     - namespace: product-esc-backbone-pen
       server: https://kubernetes.default.svc
+  # Whitelist cluster scope resource PersistentVolume
+  clusterResourceWhitelist:
+    - group: ''
+      kind: PersistentVolume
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
   namespaceResourceBlacklist:
     - group: ''
