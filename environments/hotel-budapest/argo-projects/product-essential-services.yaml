@@ -26,8 +26,6 @@ spec:
   clusterResourceWhitelist:
     - group: ''
       kind: Namespace
-    - group: ''
-      kind: PersistentVolume
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
   namespaceResourceBlacklist:
     - group: ''
