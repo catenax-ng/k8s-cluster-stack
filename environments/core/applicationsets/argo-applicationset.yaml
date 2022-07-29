@@ -21,7 +21,7 @@ spec:
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
         overlay: overlays/devsecops-testing
-        targetRevision: feature/add-image-updater
+        targetRevision: HEAD
       - cluster: pre-prod
         cluster-name: pre-prod
         overlay: overlays/pre-prod
