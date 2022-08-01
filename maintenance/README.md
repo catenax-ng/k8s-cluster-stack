@@ -26,19 +26,19 @@ Mapping between github helm charts/kustomizations/deployments and newreleases.io
 
 ```json
 {
-  <github repo>:<owner/repo>
-  <newreleases.io api url>:<value>
-  <charts>:[
+  "<github repo>":"<owner/repo>"
+  "<newreleases.io api url>":"<value>"
+  "<charts>":[
     {
-      <app>:<app name>
-      <path>:<path in github repo>
-      <deplendency>:<index of dependencies array(starts at 0)>
-      <project>:<newreleases.io project name>
-      <prefix>:<prefix of version in newreleases.io>
+      "<app>":"<app name>"
+      "<path>":"<path in github repo>"
+      "<deplendency>":"<index of dependencies array(starts at 0)>"
+      "<project>":"<newreleases.io project name>"
+      "<prefix>:"<prefix of version in newreleases.io>"
     }
   ]
-  <kustomizes>:[<same as charts>]
-  <deployments>:[<same as charts>]
+  "<kustomizes>":[{"<same structure>": "<as charts>"}]
+  "<deployments>":[{"<same structure>": "<as charts>"}]
 }
 ```
 
