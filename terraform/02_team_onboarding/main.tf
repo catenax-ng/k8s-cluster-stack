@@ -972,8 +972,8 @@ module "github" {
       homepage_url : ""
       topics : ["sparql", "rdf", "ids", "edc", "catena-x"]
       pages : {
-        enabled : false
-        branch : "main"
+        enabled : true
+        branch : "gh-pages"
       }
       is_template : false
       uses_template : false
@@ -1149,7 +1149,24 @@ module "github" {
       topics : []
       pages : {
         enabled : true
-        branch : "main"
+        branch : "gh-pages"
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    }
+    "catena-x-release-deployment" : {
+      name : "catena-x-release-deployment"
+      team_name : "argocdadmins"
+      description : "Consortia deployment configuration for Catena-X releases"
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : true
+        branch : "gh-pages"
       }
       is_template : false
       uses_template : false
@@ -1428,6 +1445,21 @@ module "github" {
     "catena-x-release-test-management" : {
       team_name : "test-management"
       repository : "catena-x-release"
+      permission : "maintain"
+    }
+    "catena-x-release-deployment-argocdadmins" : {
+      team_name : "argocdadmins"
+      repository : "catena-x-release-deployment"
+      permission : "admin"
+    }
+    "catena-x-release-deployment-release-management" : {
+      team_name : "release-management"
+      repository : "catena-x-release-deployment"
+      permission : "maintain"
+    }
+    "catena-x-release-deployment-test-management" : {
+      team_name : "test-management"
+      repository : "catena-x-release-deployment"
       permission : "maintain"
     }
   }
