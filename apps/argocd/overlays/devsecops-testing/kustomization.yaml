@@ -6,6 +6,7 @@ bases:
 
 resources:
   - ingress/ingress-argocd.yaml
+  - https://raw.githubusercontent.com/argoproj-labs/argocd-image-updater/stable/manifests/install.yaml
 
 patchesStrategicMerge:
   - configmap/argo-cm.yaml
