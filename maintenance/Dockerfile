@@ -7,6 +7,7 @@ RUN pip install --upgrade pip && \
 
 WORKDIR /usr/app/src
 
-COPY query-github-newreleases-api.py ./
+COPY query.py ./
+COPY config.json ./
 
-CMD [ "python", "./query-github-newreleases-api.py $GH_TOKEN $NR_URL $NR_API_KEY" ]
+CMD [ "python", "./query.py $GH_TOKEN $NR_API_KEY" ]
