@@ -1,66 +1,52 @@
 {
   "github_repo":"catenax-ng/k8s-cluster-stack",
   "newreleases_api_url":"https://api.newreleases.io/v1",
-  "charts":[
+  "apps":[
     {
-      "app":"cert-manager",
-      "path":"apps/certmanager/Chart.yaml",
-      "dependency":0,
+      "name":"cert-manager",
+      "deployed":"1.7.2",
       "project":"helm/cert-manager/cert-manager",
       "prefix":""
     },
     {
-      "app":"ingress-nginx",
-      "path":"apps/ingress-nginx/Chart.yaml",
-      "dependency":0,
+      "name":"ingress-nginx",
+      "deployed":"4.0.18",
       "project":"helm/ingress-nginx/ingress-nginx",
       "prefix":""
     },
     {
-      "app":"kube-prometheus-stack",
-      "path":"apps/kube-prometheus-stack/Chart.yaml",
-      "dependency":0,
+      "name":"kube-prometheus-stack",
+      "deployed":"35.5.1",
       "project":"prometheus-community/helm-charts",
       "prefix":"kube-prometheus-stack-"
     },
     {
-      "app":"vault",
-      "path":"apps/vault/Chart.yaml",
-      "dependency":0,
+      "name":"vault",
+      "deployed":"0.19.0",
       "project":"hashicorp/vault-helm",
       "prefix":"v"
     },
     {
-      "app":"dex",
-      "path":"apps/vault/Chart.yaml",
-      "dependency":1,
+      "name":"dex",
+      "deployed":"0.8.2",
       "project":"helm/dex/dex",
       "prefix":""
-    }
-  ],
-  "kustomizes":[
+    },
     {
-      "app":"argocd",
-      "path":"apps/argocd/base/kustomization.yaml",
-      "dependency":"",
+      "name":"argocd",
+      "deployed":"2.3.4",
       "project":"argoproj/argo-cd",
       "prefix":"v"
-    }
-  ],
-  "deployments":[
+    },
     {
-      "app":"argo-vault-plugin",
-      "path":"apps/argocd/base/plugins/argo-vault-plugin.yaml",
-      "dependency":"",
+      "name":"argo-vault-plugin",
+      "deployed":"1.10.1",
       "project":"argoproj-labs/argocd-vault-plugin",
       "prefix":"v"
-    }
-  ],
-  "other":[
+    },
     {
-      "app":"",
-      "path":"",
-      "dependency":"",
+      "name":"reflector",
+      "deployed":"6.1.47",
       "project":"emberstack/kubernetes-reflector",
       "prefix":"v"
     }
