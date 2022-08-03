@@ -34,7 +34,7 @@ resource "github_repository" "repositories" {
     for_each = each.value.pages.enabled ? [true] : []
     content {
       source {
-        branch = "gh-pages"
+        branch = each.value.pages.branch
       }
     }
   }

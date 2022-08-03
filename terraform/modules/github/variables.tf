@@ -11,6 +11,7 @@ variable "github_repositories" {
     topics       = set(string)
     pages        = object({
       enabled = bool
+      branch = string
     })
     is_template   = bool
     uses_template = bool
