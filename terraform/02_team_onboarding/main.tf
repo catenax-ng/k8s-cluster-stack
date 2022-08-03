@@ -176,6 +176,15 @@ module "vault" {
       approle_policy_name : "knowledge-ro"
       github_team : "product-knowledge"
       avp_secret_name : "knowledge"
+    },
+    "decentralized-organization-id" : {
+      name : "decentralized-organization-id",
+      secret_engine_name : "decentralized-organization-id"
+      ui_policy_name : "decentralized-organization-id-rw"
+      approle_name : "decentralized-organization-id"
+      approle_policy_name : "decentralized-organization-id-ro"
+      github_team : "product-decentralized-organization-id"
+      avp_secret_name : "decentralized-organization-id"
     }
   }
 }
@@ -289,6 +298,10 @@ module "github" {
     "test-management" : {
       name : "test-management"
       description : "Members will be granted permissions to manage deployments on integration environments for testing purposes"
+    },
+    "product-decentralized-organization-id" : {
+      "name" : "product-decentralized-organization-id"
+      "description" : ""
     }
   }
 
@@ -1174,6 +1187,23 @@ module "github" {
       codeowners_available : false
       codeowners : null
     }
+    "product-decentralized-organization-id" : {
+      name : "product-decentralized-organization-id"
+      team_name : "product-decentralized-organization-id"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : "main"
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    }
   }
 
   github_repositories_teams = {
@@ -1460,6 +1490,11 @@ module "github" {
     "catena-x-release-deployment-test-management" : {
       team_name : "test-management"
       repository : "catena-x-release-deployment"
+      permission : "maintain"
+    }
+    "product-decentralized-organization-id-product-decentralized-organization-id" : {
+      team_name : "product-decentralized-organization-id"
+      repository : "product-decentralized-organization-id"
       permission : "maintain"
     }
   }
