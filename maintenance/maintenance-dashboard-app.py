@@ -1,17 +1,42 @@
 # Import necessary modules
 
-import yaml, json, argparse, requests
+from flask import Flask
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
+from prometheus_client import make_wsgi_app
+#from prometheus_client import start_http_server
+
+import json, requests
+#import argparse
+from os import environ
+
+from prometheus_client.core import GaugeMetricFamily, REGISTRY, CounterMetricFamily
 
 # Arguments for ...
 
-parser = argparse.ArgumentParser()
-parser.add_argument('nr_api_key')       # ... newreleases.io api key
-args = parser.parse_args()
+#parser = argparse.ArgumentParser()
+#parser.add_argument('nr_api_key')       # ... newreleases.io api key
+#args = parser.parse_args()
 
 # Variables for ...
 
-nr_api_key = args.nr_api_key            # ... newreleases.io api key
+#nr_api_key = args.nr_api_key            # ... newreleases.io api key
+nr_api_key = environ['NR_API_KEY']
 results = []
+
+#totalRandomNumber = 0
+class VersionsCollector(object):
+  def __init__(self):
+    pass
+  def collect(self):
+    gauge = GaugeMetricFamily('appversions', 'A gauge for software versions', labels=['name','deployed','latest'])
+    for r in results:
+      gauge.add_metric([r['name'],r['deployed'],r['latest']], 1.0)
+    yield gauge
+    #count = CounterMetricFamily("random_number_2", "A random number 2.0", labels=['randomNum'])
+    #global totalRandomNumber
+    #totalRandomNumber += random.randint(1,30)
+    #count.add_metric(['random_num'], totalRandomNumber)
+    #yield count
 
 # Define functions
 
@@ -62,6 +87,22 @@ apps = configjson['apps']
 for app in apps:
   query_versions(app['name'], app['deployed'], app['project'], app['prefix'])
 
-#Print the results (change this to prometheus exporter)
+collectors = list(REGISTRY._collector_to_names.keys())
+for collector in collectors:
+  REGISTRY.unregister(collector)
+REGISTRY.register(VersionsCollector())
 
-print(results)
+# Create my app
+app = Flask(__name__)
+
+# Add prometheus wsgi middleware to route /metrics requests
+app.wsgi_app = DispatcherMiddleware(app.wsgi_app, {
+    '/metrics': make_wsgi_app()
+})
+
+#app.run()
+
+# Start http server
+#start_http_server(8000)
+
+#print(results)

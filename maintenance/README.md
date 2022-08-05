@@ -1,24 +1,12 @@
 # Maintenance "dashboard"
 
-  - Preliminary "version"
+  - version 1.0
 
-# query.py
+# maintenance-dashboard-app.py
 
-TODOs:
-  - expose variables (json) to what?
-  - add parameter with config file for exceptions?
+TODO:
 
-First fetch the newreleases.io api key from [Vault](https://vault.demo.catena-x.net/ui/vault/secrets/devsecops/show/acme/machine-user)
-and your/a github PAT that is authorized to read repo content (in the organizataion)
-Then run the script with following parameters
-  - github personal access token with read rights to the repo(s)
-  - newreleases.io api key from vault
-e.g.
-```python
-export GH_TOKEN = <insert PAT e.g. machine user from vault>
-export NR_API_KEY = <insert api key from vault>
-python3 query.py $GH_TOKEN $NR_API_KEY
-```
+  - annotate newreleases.io api key from [Vault](https://vault.demo.catena-x.net/ui/vault/secrets/devsecops/show/acme/machine-user) in the pod as environment variable "NR_API_KEY"
 
 ## config.json
 
@@ -41,8 +29,3 @@ Mapping between github helm charts/kustomizations/deployments and newreleases.io
   "<deployments>":[{"<same structure>": "<as charts>"}]
 }
 ```
-
-## Dockerfile
-
-TODOs:
-  - schedule?

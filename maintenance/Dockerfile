@@ -1,13 +1,17 @@
 FROM python:3
 
-LABEL Maintainer="csaba-fabian"
+LABEL Maintainer="catenax-ng"
 
-RUN pip install --upgrade pip && \
-    pip install requests, argparse, pyyaml, pygithub
+ENV NR_API_KEY="valuefromdockerfile"
+
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir requests argparse Flask prometheus_client uwsgi pyjson
 
 WORKDIR /usr/app/src
 
-COPY query.py ./
+COPY maintenance-dashboard-app.py ./
 COPY config.json ./
 
-CMD [ "python", "./query.py $GH_TOKEN $NR_API_KEY" ]
+#ENTRYPOINT ["sh","-c","echo","${NR_API_KEY}"]
+
+CMD [ "uwsgi","--http",":8000","--wsgi-file","maintenance-dashboard-app.py","--callable","app" ]
