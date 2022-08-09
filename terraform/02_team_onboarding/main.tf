@@ -402,7 +402,7 @@ module "github" {
       topics : []
       pages : {
         enabled : true
-        branch : "main"
+        branch : "gh-pages"
       }
       is_template : false
       uses_template : false
@@ -1035,7 +1035,7 @@ module "github" {
       name : "maintenance-dashboard"
       team_name : "argocdadmins"
       description : "DevSecOps team maintenance dashboard"
-      visibility : "private"
+      visibility : "public"
       homepage_url : ""
       topics : []
       pages : {
