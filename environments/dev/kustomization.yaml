@@ -28,6 +28,9 @@ resources:
   - argo-projects/product-explorer.yaml
   - avp-secrets/explorer-team-vault-secret.yaml
 
+  - argo-projects/product-innovation-radar.yaml
+  - avp-secrets/innovation-radar-team-vault-secret.yaml
+
   - argo-projects/product-managed-identity-wallets.yaml
   - avp-secrets/managed-identity-wallets-team-vault-secret.yaml
 
