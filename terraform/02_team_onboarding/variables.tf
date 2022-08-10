@@ -7,16 +7,19 @@ variable "vault_address" {
 variable "vault_oidc_client_id" {
   description = "Vault OIDC Client ID for Dex"
   type        = string
+  sensitive   = true
 }
 
 variable "vault_oidc_client_secret" {
   description = "Vault OIDC Client Secret for Dex"
   type        = string
+  sensitive   = true
 }
 
 variable "github_token" {
   description = "The Github Token"
   type        = string
+  sensitive   = true
 }
 
 variable "github_org" {

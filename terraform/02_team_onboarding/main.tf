@@ -86,6 +86,15 @@ module "vault" {
       github_team : "product-explorer"
       avp_secret_name : "product-explorer"
     },
+    "innovation-radar" : {
+      name : "innovation-radar",
+      secret_engine_name : "innovation-radar"
+      ui_policy_name : "innovation-radar-rw"
+      approle_name : "innovation-radar"
+      approle_policy_name : "innovation-radar-ro"
+      github_team : "product-innovation-radar"
+      avp_secret_name : "product-innovation-radar"
+    },
     "managed-identity-wallets" : {
       name : "managed-identity-wallets"
       secret_engine_name : "managed-identity-wallets"
@@ -239,6 +248,10 @@ module "github" {
       "name" : "product-explorer",
       "description" : ""
     },
+    "product-innovation-radar" : {
+      "name" : "product-innovation-radar",
+      "description" : ""
+    },
     "product-managed-identity-wallets" : {
       "name" : "product-managed-identity-wallets",
       "description" : ""
@@ -341,6 +354,23 @@ module "github" {
       codeowners_available : false
       codeowners : null
 
+    },
+    "product-innovation-radar" : {
+      name : "product-innovation-radar"
+      team_name : "product-innovation-radar"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : "main"
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
     },
     "product-semantics" : {
       name : "product-semantics"
@@ -1225,6 +1255,11 @@ module "github" {
     "product-portal-iam-product-portal" : {
       team_name : "product-portal"
       repository : "product-portal-iam"
+      permission : "maintain"
+    },
+    "product-innovation-radar-product-innovation-radar" : {
+      team_name : "product-innovation-radar"
+      repository : "product-innovation-radar"
       permission : "maintain"
     },
     "product-portal-backend-product-portal" : {
