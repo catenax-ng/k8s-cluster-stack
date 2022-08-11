@@ -1203,6 +1203,23 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
+     },
+    "product-daps-registration-service" : {
+      name : "product-daps-registration-service"
+      team_name : "product-essential-services"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : true
+        branch : "main"
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
     }
   }
 
@@ -1300,6 +1317,11 @@ module "github" {
     "product-DAPS-product-essential-services" : {
       team_name : "product-essential-services"
       repository : "product-DAPS"
+      permission : "maintain"
+    },
+    "product-daps-registration-service-product-essential-services" : {
+      team_name : "product-essential-services"
+      repository : "product-daps-registration-service"
       permission : "maintain"
     },
     "product-item-relationship-service-product-traceability-irs" : {
