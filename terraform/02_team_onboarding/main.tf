@@ -185,15 +185,6 @@ module "vault" {
       approle_policy_name : "knowledge-ro"
       github_team : "product-knowledge"
       avp_secret_name : "knowledge"
-    },
-    "decentralized-organization-id" : {
-      name : "decentralized-organization-id",
-      secret_engine_name : "decentralized-organization-id"
-      ui_policy_name : "decentralized-organization-id-rw"
-      approle_name : "decentralized-organization-id"
-      approle_policy_name : "decentralized-organization-id-ro"
-      github_team : "product-decentralized-organization-id"
-      avp_secret_name : "decentralized-organization-id"
     }
   }
 }
@@ -311,10 +302,6 @@ module "github" {
     "test-management" : {
       name : "test-management"
       description : "Members will be granted permissions to manage deployments on integration environments for testing purposes"
-    },
-    "product-decentralized-organization-id" : {
-      "name" : "product-decentralized-organization-id"
-      "description" : ""
     }
   }
 
@@ -867,7 +854,7 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
-    }
+    },
     "k8s-cluster-stack" : {
       name : "k8s-cluster-stack"
       team_name : "argocdadmins"
@@ -918,7 +905,7 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
-    }
+    },
     "catenax-ng.github.io" : {
       name : "catenax-ng.github.io"
       team_name : "team-foss"
@@ -935,7 +922,7 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
-    }
+    },
     "product-test-data-generator" : {
       name : "product-test-data-generator"
       team_name : "product-test-data-generator"
@@ -952,7 +939,7 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
-    }
+    },
     "product-portal-hello-helm" : {
       name : "product-portal-hello-helm"
       team_name : "product-portal"
@@ -969,7 +956,7 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
-    }
+    },
     "product-portal-frontend-registration" : {
       name : "product-portal-frontend-registration"
       team_name : "product-portal"
@@ -989,7 +976,7 @@ module "github" {
       }
       codeowners_available : false
       codeowners : null
-    }
+    },
     "product-vas-country-risk-frontend" : {
       name : "product-vas-country-risk-frontend"
       team_name : "product-value-added-service"
@@ -1006,7 +993,7 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
-    }
+    },
     "product-knowledge" : {
       name : "product-knowledge"
       team_name : "product-knowledge"
@@ -1023,7 +1010,7 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
-    }
+    },
     "product-battery-passport-consumer-app" : {
       name : "product-battery-passport-consumer-app"
       team_name : "product-material-pass"
@@ -1040,7 +1027,7 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
-    }
+    },
     "gh-org-checks" : {
       name : "gh-org-checks"
       team_name : "argocdadmins"
@@ -1060,7 +1047,7 @@ module "github" {
         review_count : 1
         pattern : "main"
       }
-    }
+    },
     "maintenance-dashboard" : {
       name : "maintenance-dashboard"
       team_name : "argocdadmins"
@@ -1080,7 +1067,7 @@ module "github" {
         review_count : 1
         pattern : "main"
       }
-    }
+    },
     "product-simple-configurator" : {
       name : "product-simple-configurator"
       team_name : "product-essential-services"
@@ -1097,7 +1084,7 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
-    }
+    },
     "product-vas-fraud-api" : {
       name : "product-vas-fraud-api"
       team_name : "product-value-added-service"
@@ -1114,7 +1101,7 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
-    }
+    },
     "product-vas-fraud-workers" : {
       name : "product-vas-fraud-workers"
       team_name : "product-value-added-service"
@@ -1131,7 +1118,7 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
-    }
+    },
     "product-vas-fraud-dashboard" : {
       name : "product-vas-fraud-dashboard"
       team_name : "product-value-added-service"
@@ -1148,7 +1135,7 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
-    }
+    },
     "product-vas-fraud-dags" : {
       name : "product-vas-fraud-dags"
       team_name : "product-value-added-service"
@@ -1165,7 +1152,7 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
-    }
+    },
     "product-vas-fraud-cd" : {
       name : "product-vas-fraud-cd"
       team_name : "product-value-added-service"
@@ -1182,7 +1169,7 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
-    }
+    },
     "catena-x-release" : {
       name : "catena-x-release"
       team_name : "argocdadmins"
@@ -1199,7 +1186,7 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
-    }
+    },
     "catena-x-release-deployment" : {
       name : "catena-x-release-deployment"
       team_name : "argocdadmins"
@@ -1210,23 +1197,6 @@ module "github" {
       pages : {
         enabled : true
         branch : "gh-pages"
-      }
-      is_template : false
-      uses_template : false
-      template : null
-      codeowners_available : false
-      codeowners : null
-    }
-    "product-decentralized-organization-id" : {
-      name : "product-decentralized-organization-id"
-      team_name : "product-decentralized-organization-id"
-      description : ""
-      visibility : "public"
-      homepage_url : ""
-      topics : []
-      pages : {
-        enabled : false
-        branch : "main"
       }
       is_template : false
       uses_template : false
@@ -1281,7 +1251,7 @@ module "github" {
       team_name : "product-edc"
       repository : "catenax-at-home"
       permission : "maintain"
-    }
+    },
     "product-core-schemas-cx-core-schemas" : {
       team_name : "cx-core-schemas"
       repository : "product-core-schemas"
@@ -1401,135 +1371,130 @@ module "github" {
       team_name : "product-essential-services"
       repository : "product-idses-frontend-apps"
       permission : "maintain"
-    }
+    },
     "k8s-cluster-stack-argocdadmins" : {
       team_name : "argocdadmins"
       repository : "k8s-cluster-stack"
       permission : "admin"
-    }
+    },
     "product-portal-frontend-registration-product-portal" : {
       team_name : "product-portal"
       repository : "product-portal-frontend-registration"
       permission : "maintain"
-    }
+    },
     "product-edc-product-edc" : {
       team_name : "product-edc"
       repository : "product-edc"
       permission : "maintain"
-    }
+    },
     "product-edc-product-managed-identity-wallets" = {
       team_name : "product-managed-identity-wallets"
       repository : "product-edc"
       permission : "maintain"
-    }
+    },
     "k8s-helm-example-product-team-example" : {
       team_name : "product-team-example"
       repository : "k8s-helm-example"
       permission : "maintain"
-    }
+    },
     "catenax-ng.github.io-team-foss" : {
       team_name : "team-foss"
       repository : "catenax-ng.github.io"
       permission : "maintain"
-    }
+    },
     "catenax-ng.github.io-argocdadmins" : {
       team_name : "argocdadmins"
       repository : "catenax-ng.github.io"
       permission : "admin"
-    }
+    },
     "product-test-data-generator-product-test-data-generator" : {
       team_name : "product-test-data-generator"
       repository : "product-test-data-generator"
       permission : "maintain"
-    }
+    },
     "product-vas-country-risk-frontend-product-value-added-service" : {
       team_name : "product-value-added-service"
       repository : "product-vas-country-risk-frontend"
       permission : "maintain"
-    }
+    },
     "product-knowlege-product-knowledge" : {
       team_name : "product-knowledge"
       repository : "product-knowledge"
       permission : "maintain"
-    }
+    },
     "gh-org-checks-argocdadmins" : {
       team_name : "argocdadmins"
       repository : "gh-org-checks"
       permission : "admin"
-    }
+    },
     "product-battery-passport-consumer-app-product-material-pass" : {
       team_name : "product-material-pass"
       repository : "product-battery-passport-consumer-app"
       permission : "maintain"
-    }
+    },
     "maintenance-dashboard-argocdadmins" : {
       team_name : "argocdadmins"
       repository : "maintenance-dashboard"
       permission : "admin"
-    }
+    },
     "product-simple-configurator-product-essential-services" : {
       team_name : "product-essential-services"
       repository : "product-simple-configurator"
       permission : "maintain"
-    }
+    },
     "product-vas-fraud-api-product-value-added-service" : {
       team_name : "product-value-added-service"
       repository : "product-vas-fraud-api"
       permission : "maintain"
-    }
+    },
     "product-vas-fraud-workers-product-value-added-service" : {
       team_name : "product-value-added-service"
       repository : "product-vas-fraud-workers"
       permission : "maintain"
-    }
+    },
     "product-vas-fraud-dashboard-product-value-added-service" : {
       team_name : "product-value-added-service"
       repository : "product-vas-fraud-dashboard"
       permission : "maintain"
-    }
+    },
     "product-vas-fraud-dags-product-value-added-service" : {
       team_name : "product-value-added-service"
       repository : "product-vas-fraud-dags"
       permission : "maintain"
-    }
+    },
     "product-vas-fraud-cd-product-value-added-service" : {
       team_name : "product-value-added-service"
       repository : "product-vas-fraud-cd"
       permission : "maintain"
-    }
+    },
     "catena-x-release-argocd-admins" : {
       team_name : "argocdadmins"
       repository : "catena-x-release"
       permission : "admin"
-    }
+    },
     "catena-x-release-release-management" : {
       team_name : "release-management"
       repository : "catena-x-release"
       permission : "maintain"
-    }
+    },
     "catena-x-release-test-management" : {
       team_name : "test-management"
       repository : "catena-x-release"
       permission : "maintain"
-    }
+    },
     "catena-x-release-deployment-argocdadmins" : {
       team_name : "argocdadmins"
       repository : "catena-x-release-deployment"
       permission : "admin"
-    }
+    },
     "catena-x-release-deployment-release-management" : {
       team_name : "release-management"
       repository : "catena-x-release-deployment"
       permission : "maintain"
-    }
+    },
     "catena-x-release-deployment-test-management" : {
       team_name : "test-management"
       repository : "catena-x-release-deployment"
-      permission : "maintain"
-    }
-    "product-decentralized-organization-id-product-decentralized-organization-id" : {
-      team_name : "product-decentralized-organization-id"
-      repository : "product-decentralized-organization-id"
       permission : "maintain"
     }
   }
