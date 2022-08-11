@@ -65,6 +65,3 @@ resources:
 
   - argo-projects/product-knowledge.yaml
   - avp-secrets/knowledge-team-vault-secret.yaml
-
-  - argo-projects/product-decentralized-organization-id.yaml
-  - avp-secrets/decentralized-organization-id-team-vault-secret.yaml
