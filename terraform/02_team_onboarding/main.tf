@@ -93,7 +93,7 @@ module "vault" {
       approle_name : "innovation-radar"
       approle_policy_name : "innovation-radar-ro"
       github_team : "product-innovation-radar"
-      avp_secret_name : "product-innovation-radar"
+      avp_secret_name : "innovation-radar"
     },
     "managed-identity-wallets" : {
       name : "managed-identity-wallets"
