@@ -185,6 +185,15 @@ module "vault" {
       approle_policy_name : "knowledge-ro"
       github_team : "product-knowledge"
       avp_secret_name : "knowledge"
+    },
+    "trace-cs-webapp" : {
+      name : "trace-cs-webapp",
+      secret_engine_name : "trace-cs-webapp"
+      ui_policy_name : "trace-cs-webapp-rw"
+      approle_name : "trace-cs-webapp"
+      approle_policy_name : "trace-cs-webapp-ro"
+      github_team : "product-data-integrity-demonstrator"
+      avp_secret_name : "trace-cs-webapp"
     }
   }
 }
@@ -739,6 +748,23 @@ module "github" {
     "product-esc-backbone-code" : {
       name : "product-esc-backbone-code"
       team_name : "product-esc-backbone"
+      description : ""
+      visibility : "private"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : "main"
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "product-trace-cs-webapp" : {
+      name : "product-trace-cs-webapp"
+      team_name : "product-data-integrity-demonstrator"
       description : ""
       visibility : "private"
       homepage_url : ""
@@ -1517,6 +1543,11 @@ module "github" {
     "catena-x-release-deployment-test-management" : {
       team_name : "test-management"
       repository : "catena-x-release-deployment"
+      permission : "maintain"
+    },
+    "product-data-integrity-demonstrator-product-trace-cs-webapp" : {
+      team_name : "product-data-integrity-demonstrator"
+      repository : "product-trace-cs-webapp"
       permission : "maintain"
     }
   }
