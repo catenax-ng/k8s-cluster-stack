@@ -68,4 +68,4 @@ resources:
 
   - argo-projects/product-trace-cs-webapp.yaml
   - avp-secrets/trace-cs-webapp-team-vault-secret.yaml
-  - argo-repos/product-trace-cs-webapp-repo.yaml
+ # - argo-repos/product-trace-cs-webapp-repo.yaml
