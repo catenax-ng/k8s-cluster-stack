@@ -14,5 +14,6 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     client_secret = var.aks_service_principal_client_secret
   }
 
-  dns_prefix = var.aks_dns_prefix
+  dns_prefix         = var.aks_dns_prefix
+  kubernetes_version = var.k8s_version
 }
