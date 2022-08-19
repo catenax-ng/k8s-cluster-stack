@@ -9,23 +9,27 @@ spec:
       - cluster: core
         cluster-name: in-cluster
         overlay: overlays/core
-        targetRevision: onboarding-preprod
+        targetRevision: onboarding-beta
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         overlay: overlays/hotel-budapest
-        targetRevision: onboarding-preprod
+        targetRevision: onboarding-beta
       - cluster: dev
         cluster-name: dev
         overlay: overlays/dev
-        targetRevision: onboarding-preprod
+        targetRevision: onboarding-beta
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
         overlay: overlays/devsecops-testing
-        targetRevision: onboarding-preprod
+        targetRevision: onboarding-beta
       - cluster: pre-prod
         cluster-name: pre-prod
         overlay: overlays/pre-prod
-        targetRevision: onboarding-preprod
+        targetRevision: onboarding-beta
+      - cluster: beta
+        cluster-name: beta
+        overlay: overlays/beta
+        targetRevision: onboarding-beta
 
   template:
     metadata:

@@ -1,0 +1,4 @@
+cluster: "beta"
+
+certificate:
+  dnsZone: "beta.demo.catena-x.net"

@@ -21,7 +21,9 @@ spec:
       - cluster: pre-prod
         cluster-name: pre-prod
         targetRevision: HEAD
-
+      - cluster: beta
+        cluster-name: beta
+        targetRevision: HEAD
 
   template:
     metadata:
