@@ -24,6 +24,9 @@ spec:
           - cluster: pre-prod
             cluster-name: pre-prod
             targetRevision: 6.1.47
+          - cluster: beta
+            cluster-name: beta
+            targetRevision: 6.1.47
 
   template:
     metadata:

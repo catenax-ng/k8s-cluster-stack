@@ -10,6 +10,7 @@ resources:
   - environments/hotel-budapest.yaml
   - environments/devsecops-testing.yaml
   - environments/pre-prod.yaml
+  - environments/beta.yaml
 #  - environments/example.yaml
   - ingress/ingress-argocd.yaml
 
