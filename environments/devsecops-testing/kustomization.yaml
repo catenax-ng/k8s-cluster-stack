@@ -5,3 +5,5 @@ resources:
   - avp-secrets/devsecops-team-vault-secret.yaml
   - avp-secrets/example-vault-secret.yaml
   - argo-projects/product-example.yaml
+
+  - pull-secret/secret.yaml
