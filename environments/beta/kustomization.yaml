@@ -6,3 +6,5 @@ resources:
   - avp-secrets/example-vault-secret.yaml
 
   - avp-secrets/devsecops-team-vault-secret.yaml
+
+  - pull-secret/secret.yaml
