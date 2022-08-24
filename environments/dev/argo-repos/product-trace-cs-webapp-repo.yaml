@@ -4,13 +4,13 @@ metadata:
   name: product-trace-cs-webapp-repo
   namespace: argocd
   annotations:
-    avp.kubernetes.io/path: "trace-cs-webapp/data/deploy-key"
+    avp.kubernetes.io/path: "data-integrity-demonstrator/data/deploy-key"
   labels:
     argocd.argoproj.io/secret-type: repository
 stringData:
   type: git
   url: git@github.com:catenax-ng/product-trace-cs-webapp
   name: product-trace-cs-webapp-repo
-  project: project-trace-cs-webapp
+  project: project-data-integrity-demonstrator
   sshPrivateKey: |
-    <trace-cs-webapp-deploy-key>
+    <product-data-integrity-demonstrator-deploy-key>
