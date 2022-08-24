@@ -1,6 +1,6 @@
 locals {
   codeowners_repos      = {for k, v in var.github_repositories : k => v if v.codeowners_available}
-  product_team_repos_with_template = { for k,v in var.github_repositories : k => v if v.uses_template == "true" && (try(v.template.repository, "") == "template_product_team_repo") }
+  product_team_repos_with_template = { for k,v in var.github_repositories : k => v if v.uses_template == "true" && (try(v.template.repository, "") == "k8s-helm-example") }
 }
 
 # Define desired state of all repositories
@@ -39,10 +39,6 @@ resource "github_repository" "repositories" {
       }
     }
   }
-
-  depends_on = [
-    github_repository.template-product-team-repo
-  ]
 }
 
 resource "github_branch" "gh-pages" {
@@ -109,139 +105,4 @@ resource "github_branch_protection" "branch_protection" {
   required_status_checks {
     strict = true
   }
-}
-
-resource "github_repository" "template-product-team-repo" {
-  name        = "template-product-team-repo"
-  description = "Template repo for creating product team repos with terraform"
-  has_issues             = false
-  has_projects           = false
-  has_wiki               = false
-  visibility             = "public"
-  auto_init              = true
-  has_downloads          = true
-  vulnerability_alerts   = true
-  delete_branch_on_merge = true
-  is_template            = true
-}
-
-resource "github_repository_file" "chart-yaml" {
-  repository          = github_repository.template-product-team-repo.name
-  branch              = "main"
-  file                = "charts/template-product-team-repo/Chart.yaml"
-  content             = file("${path.module}/template-product-team-repo/charts/template-product-team-repo/Chart.yaml")
-  commit_message      = "add Chart.yaml to template repo"
-  commit_author       = "Catena-X DevSecOps"
-  commit_email        = "devsecops@catena-x.net"
-  overwrite_on_create = false
-}
-
-resource "github_repository_file" "helmignore" {
-  repository          = github_repository.template-product-team-repo.name
-  branch              = "main"
-  file                = "charts/template-product-team-repo/.helmignore"
-  content             = file("${path.module}/template-product-team-repo/charts/template-product-team-repo/.helmignore")
-  commit_message      = "add .helmignore to template repo"
-  commit_author       = "Catena-X DevSecOps"
-  commit_email        = "devsecops@catena-x.net"
-  overwrite_on_create = false
-}
-
-resource "github_repository_file" "values-yaml" {
-  repository          = github_repository.template-product-team-repo.name
-  branch              = "main"
-  file                = "charts/template-product-team-repo/values.yaml"
-  content             = file("${path.module}/template-product-team-repo/charts/template-product-team-repo/values.yaml")
-  commit_message      = "add values.yaml to template repo"
-  commit_author       = "Catena-X DevSecOps"
-  commit_email        = "devsecops@catena-x.net"
-  overwrite_on_create = false
-}
-
-resource "github_repository_file" "helpers-tpl" {
-  repository          = github_repository.template-product-team-repo.name
-  branch              = "main"
-  file                = "charts/template-product-team-repo/templates/_helpers.tpl"
-  content             = file("${path.module}/template-product-team-repo/charts/template-product-team-repo/templates/_helpers.tpl")
-  commit_message      = "add _helpers.tpl to template repo"
-  commit_author       = "Catena-X DevSecOps"
-  commit_email        = "devsecops@catena-x.net"
-  overwrite_on_create = false
-}
-
-resource "github_repository_file" "helm-releaser-yml" {
-  repository          = github_repository.template-product-team-repo.name
-  branch              = "main"
-  file                = ".github/workflows/helm-releaser.yml"
-  content             = file("${path.module}/template-product-team-repo/gh_workflows/helm-releaser.yml")
-  commit_message      = "add helm-releaser.yml to template repo"
-  commit_author       = "Catena-X DevSecOps"
-  commit_email        = "devsecops@catena-x.net"
-  overwrite_on_create = false
-}
-
-resource "github_repository_file" "deployment-yaml" {
-  repository          = github_repository.template-product-team-repo.name
-  branch              = "main"
-  file                = "charts/template-product-team-repo/templates/deployment.yaml"
-  content             = file("${path.module}/template-product-team-repo/charts/template-product-team-repo/templates/deployment.yaml")
-  commit_message      = "add deployment.yaml to template repo"
-  commit_author       = "Catena-X DevSecOps"
-  commit_email        = "devsecops@catena-x.net"
-  overwrite_on_create = false
-}
-
-resource "github_repository_file" "hpa-yaml" {
-  repository          = github_repository.template-product-team-repo.name
-  branch              = "main"
-  file                = "charts/template-product-team-repo/templates/hpa.yaml"
-  content             = file("${path.module}/template-product-team-repo/charts/template-product-team-repo/templates/hpa.yaml")
-  commit_message      = "add hpa.yaml to template repo"
-  commit_author       = "Catena-X DevSecOps"
-  commit_email        = "devsecops@catena-x.net"
-  overwrite_on_create = false
-}
-
-resource "github_repository_file" "ingress-yaml" {
-  repository          = github_repository.template-product-team-repo.name
-  branch              = "main"
-  file                = "charts/template-product-team-repo/templates/ingress.yaml"
-  content             = file("${path.module}/template-product-team-repo/charts/template-product-team-repo/templates/ingress.yaml")
-  commit_message      = "add ingress.yaml to template repo"
-  commit_author       = "Catena-X DevSecOps"
-  commit_email        = "devsecops@catena-x.net"
-  overwrite_on_create = false
-}
-
-resource "github_repository_file" "notes-txt" {
-  repository          = github_repository.template-product-team-repo.name
-  branch              = "main"
-  file                = "charts/template-product-team-repo/templates/NOTES.txt"
-  content             = file("${path.module}/template-product-team-repo/charts/template-product-team-repo/templates/NOTES.txt")
-  commit_message      = "add NOTES.txt to template repo"
-  commit_author       = "Catena-X DevSecOps"
-  commit_email        = "devsecops@catena-x.net"
-  overwrite_on_create = false
-}
-
-resource "github_repository_file" "service-yaml" {
-  repository          = github_repository.template-product-team-repo.name
-  branch              = "main"
-  file                = "charts/template-product-team-repo/templates/service.yaml"
-  content             = file("${path.module}/template-product-team-repo/charts/template-product-team-repo/templates/service.yaml")
-  commit_message      = "add service.yaml to template repo"
-  commit_author       = "Catena-X DevSecOps"
-  commit_email        = "devsecops@catena-x.net"
-  overwrite_on_create = false
-}
-
-resource "github_repository_file" "serviceaccount-yaml" {
-  repository          = github_repository.template-product-team-repo.name
-  branch              = "main"
-  file                = "charts/template-product-team-repo/templates/serviceaccount.yaml"
-  content             = file("${path.module}/template-product-team-repo/charts/template-product-team-repo/templates/serviceaccount.yaml")
-  commit_message      = "add serviceaccount.yaml to template repo"
-  commit_author       = "Catena-X DevSecOps"
-  commit_email        = "devsecops@catena-x.net"
-  overwrite_on_create = false
 }

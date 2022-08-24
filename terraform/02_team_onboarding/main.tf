@@ -900,7 +900,7 @@ module "github" {
         enabled : true
         branch : "gh-pages"
       }
-      is_template : false
+      is_template : true
       uses_template : false
       template : null
       codeowners_available : false
