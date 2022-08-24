@@ -15,8 +15,9 @@ module "aks" {
   aks_service_principal_client_secret = var.service_principal_client_secret
   aks_dns_prefix                      = "cx-${var.environment_name}-aks"
 
-  k8s_vm_size = var.k8s_vm_size
   k8s_cluster_node_count = var.k8s_cluster_node_count
+  k8s_version            = var.k8s_version
+  k8s_vm_size            = var.k8s_vm_size
 }
 
 module "public_ip" {
@@ -30,8 +31,13 @@ module "public_ip" {
 module "a_record" {
   source = "../modules/a_record"
 
-  record_name = "*.${var.environment_name}"
-  target_resource_id = module.public_ip.id
+  record_name         = "*.${var.environment_name}"
+  target_resource_id  = module.public_ip.id
   resource_group_name = "cxtsi-demo-shared-rg"
-  zone_name = "demo.catena-x.net"
+  zone_name           = "demo.catena-x.net"
+
+  providers = {
+    azurerm = azurerm
+    azurerm.speedboat-sub = azurerm.speedboat-sub
+  }
 }

@@ -1,53 +1,33 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: argocd-applicationset
+  name: maintenance-dashboard-app-applicationset
 spec:
   generators:
   - list:
       elements:
       - cluster: core
         cluster-name: in-cluster
-        overlay: overlays/core
-        targetRevision: onboarding-beta
-      - cluster: hotel-budapest
-        cluster-name: hotel-budapest
-        overlay: overlays/hotel-budapest
-        targetRevision: onboarding-beta
-      - cluster: dev
-        cluster-name: dev
-        overlay: overlays/dev
-        targetRevision: onboarding-beta
-      - cluster: devsecops-testing
-        cluster-name: devsecops-testing
-        overlay: overlays/devsecops-testing
-        targetRevision: onboarding-beta
-      - cluster: pre-prod
-        cluster-name: pre-prod
-        overlay: overlays/pre-prod
-        targetRevision: onboarding-beta
-      - cluster: beta
-        cluster-name: beta
-        overlay: overlays/beta
-        targetRevision: onboarding-beta
+        targetRevision: HEAD
 
   template:
     metadata:
-      name: '{{cluster}}-argo'
+      name: '{{ cluster }}-maintenance-dashboard-app'
       labels:
-        app: argo
+        app: maintenance-dashboard-app
     spec:
       project: default
       source:
-        repoURL: https://github.com/catenax-ng/k8s-cluster-stack
-        targetRevision: '{{ targetRevision }}'
-        path: apps/argocd/{{overlay}}
         plugin:
-          name: argocd-vault-plugin-kustomize
+          name: argocd-vault-plugin-helm
+        repoURL: https://github.com/catenax-ng/maintenance-dashboard
+        targetRevision: '{{ targetRevision }}'
+        path: chart
       destination:
         name: '{{ cluster-name }}'
-        namespace: argocd
+        namespace: maintenance-dashboard-app
         server: ''
+
       # Sync policy
       syncPolicy:
         # disabled autoSync with A1ODT-461 to avoid accidental damage to Hotel Budapest
@@ -67,3 +47,10 @@ spec:
             duration: 5s # the amount to back off. Default unit is seconds, but could also be a duration (e.g. "2m", "1h")
             factor: 2 # a factor to multiply the base duration after each failed retry
             maxDuration: 3m # the maximum amount of time allowed for the backoff strategy
+
+#      ignoreDifferences: # https://github.com/argoproj/argo-cd/issues/4276#issuecomment-908455476
+#        - group: admissionregistration.k8s.io
+#         kind: ValidatingWebhookConfiguration
+#         name: '{{ cluster }}-certmanager-webhook'
+#         jsonPointers:
+#           - /webhooks/0/namespaceSelector/matchExpressions/2
