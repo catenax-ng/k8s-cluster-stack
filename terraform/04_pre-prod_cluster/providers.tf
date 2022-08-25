@@ -1,10 +1,17 @@
 terraform {
-  required_providers {
+   required_providers {
     azurerm = {
-      source                = "hashicorp/azurerm"
-      version               = ">= 2.99.0"
+      source  = "hashicorp/azurerm"
+      version = ">= 2.99.0"
       configuration_aliases = [azurerm.speedboat-sub]
     }
+  }
+
+  backend "azurerm" {
+    resource_group_name  = "cx-devsecops-tfstates"
+    storage_account_name = "cxdevsecopstfstate"
+    container_name       = "vault-tfstate"
+    key                  = "pre-prod-cluster-terraform.tfstate"
   }
 }
 

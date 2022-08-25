@@ -7,6 +7,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     name       = "default"
     vm_size    = var.k8s_vm_size
     node_count = var.k8s_cluster_node_count
+    orchestrator_version = var.k8s_version
   }
 
   service_principal {
