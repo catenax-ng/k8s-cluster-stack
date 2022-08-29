@@ -1,6 +1,6 @@
 locals {
   codeowners_repos      = {for k, v in var.github_repositories : k => v if v.codeowners_available}
-  product_team_repos_with_template = { for k,v in var.github_repositories : k => v if v.uses_template == "true" && (try(v.template.repository, "") == "k8s-helm-example") }
+  product_team_repos_with_template = { for k,v in var.github_repositories : k => v if v.uses_template == true && (try(v.template.repository, "") == "k8s-helm-example") }
 }
 
 # Define desired state of all repositories
@@ -46,6 +46,10 @@ resource "github_branch" "gh-pages" {
 
   repository = each.value.name
   branch     = "gh-pages"
+
+  depends_on = [
+    github_repository.repositories
+  ]
 }
 
 # Define desired state of all teams to the organization
