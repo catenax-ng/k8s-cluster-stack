@@ -8,7 +8,10 @@ To create a terraform plan and apply it to the vault instance you first have to 
 Since the stage is stored in an Azure storage account, you need to define credentials for read/write access to this 
 storage account. You need to set these credentials via a specific environment variable like this:
 
+```shell
+# Requires you to be logged in with az on the cli
 `export ARM_ACCESS_KEY=$(az storage account keys list --resource-group cx-devsecops-tfstates --account-name cxdevsecopstfstate --query '[0].value' -o tsv)`
+```
 
 For more details about the state, see one of the upcoming sections. 
 After you defined the storage account credentials, you can initialize terraform via `terraform init`.
@@ -23,7 +26,9 @@ You need to set the variables as follows:
 
 ```shell
 # Vault module variables
-export VAULT_TOKEN=<vault-root-token>
+# You can get your vault token, by logging into the Vault web UI and using 'copy token' from the top right user menu
+# You can get the root token value from the cx-vault-unseal Azure key vault in the Azure portal
+export VAULT_TOKEN=<your-vault-token-or-root-token>
 # you can find the OIDC settings in vault: secret engine devsecops/clusters/vault/github-oauth
 export TF_VAR_vault_oidc_client_id=<client-id>
 export TF_VAR_vault_oidc_client_secret=<client-secret>
@@ -33,8 +38,6 @@ export TF_VAR_vault_oidc_client_secret=<client-secret>
 export TF_VAR_github_token=<your-github-pat>
 export TF_VAR_github_org=catenax-ng
 ```
-
-You can get the root token value from the cx-vault-unseal Azure key vault in the Azure portal. 
 
 To let terraform check, if there are config changes, you first have to create a plan, that you can afterwards
 apply like this:
