@@ -10,7 +10,7 @@ storage account. You need to set these credentials via a specific environment va
 
 ```shell
 # Requires you to be logged in with az on the cli
-`export ARM_ACCESS_KEY=$(az storage account keys list --resource-group cx-devsecops-tfstates --account-name cxdevsecopstfstate --query '[0].value' -o tsv)`
+export ARM_ACCESS_KEY=$(az storage account keys list --resource-group cx-devsecops-tfstates --account-name cxdevsecopstfstate --query '[0].value' -o tsv)
 ```
 
 For more details about the state, see one of the upcoming sections. 
