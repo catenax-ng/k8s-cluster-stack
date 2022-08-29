@@ -185,6 +185,15 @@ module "vault" {
       approle_policy_name : "knowledge-ro"
       github_team : "product-knowledge"
       avp_secret_name : "knowledge"
+    },
+    "registry-twin-check" : {
+      name : "registry-twin-check",
+      secret_engine_name : "registry-twin-check"
+      ui_policy_name : "registry-twin-check-rw"
+      approle_name : "registry-twin-check"
+      approle_policy_name : "registry-twin-check-ro"
+      github_team : "product-registry-twin-check"
+      avp_secret_name : "registry-twin-check"
     }
   }
 }
@@ -302,6 +311,10 @@ module "github" {
     "test-management" : {
       name : "test-management"
       description : "Members will be granted permissions to manage deployments on integration environments for testing purposes"
+    },
+    "product-registry-twin-check" : {
+      name : "product-registry-twin-check"
+      description : ""
     }
   }
 
@@ -1237,6 +1250,23 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
+    },
+    "product-registry-twin-check" : {
+      name : "product-registry-twin-check"
+      team_name : "product-registry-twin-check"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : "main"
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
     }
   }
 
@@ -1539,6 +1569,11 @@ module "github" {
     "product-data-integrity-demonstrator-product-trace-cs-webapp" : {
       team_name : "product-data-integrity-demonstrator"
       repository : "product-trace-cs-webapp"
+      permission : "maintain"
+    },
+    "product-registry-twin-check-product-registry-twin-check" : {
+      team_name : "product-registry-twin-check"
+      repository : "product-registry-twin-check"
       permission : "maintain"
     }
   }

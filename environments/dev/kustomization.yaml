@@ -17,6 +17,7 @@ resources:
 
   - argo-projects/product-data-integritiy-demonstrator.yaml
   - avp-secrets/data-integrity-demonstrator-team-vault-secret.yaml
+  - argo-repos/product-trace-cs-webapp-repo.yaml
 
   - argo-projects/product-edc.yaml
   - avp-secrets/edc-team-vault-secret.yaml
@@ -65,9 +66,5 @@ resources:
 
   - argo-projects/product-knowledge.yaml
   - avp-secrets/knowledge-team-vault-secret.yaml
-
-  - argo-projects/product-trace-cs-webapp.yaml
-  - avp-secrets/trace-cs-webapp-team-vault-secret.yaml
-  - argo-repos/product-trace-cs-webapp-repo.yaml
 
   - pull-secret/secret.yaml
