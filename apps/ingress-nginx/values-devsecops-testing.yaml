@@ -1,9 +1,9 @@
 ingress-nginx:
   controller:
-    annotations:
-      service.beta.kubernetes.io/azure-load-balancer-resource-group: MC_cx-devsecops-testing-rg_cx-devsecops-testing-aks_germanywestcentral
-      service.beta.kubernetes.io/azure-load-balancer-ips: 20.113.72.134
     service:
+      annotations:
+        service.beta.kubernetes.io/azure-load-balancer-resource-group: MC_cx-devsecops-testing-rg_cx-devsecops-testing-aks_germanywestcentral
+        service.beta.kubernetes.io/azure-load-balancer-ips: 20.113.72.134
       loadBalancerIP: ""
     ingressClassResource:
       default: true
