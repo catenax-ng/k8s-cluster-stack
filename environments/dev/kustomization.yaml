@@ -17,6 +17,7 @@ resources:
 
   - argo-projects/product-data-integritiy-demonstrator.yaml
   - avp-secrets/data-integrity-demonstrator-team-vault-secret.yaml
+  - argo-repos/product-trace-cs-webapp-repo.yaml
 
   - argo-projects/product-edc.yaml
   - avp-secrets/edc-team-vault-secret.yaml
@@ -27,6 +28,9 @@ resources:
 
   - argo-projects/product-explorer.yaml
   - avp-secrets/explorer-team-vault-secret.yaml
+
+  - argo-projects/product-innovation-radar.yaml
+  - avp-secrets/innovation-radar-team-vault-secret.yaml
 
   - argo-projects/product-managed-identity-wallets.yaml
   - avp-secrets/managed-identity-wallets-team-vault-secret.yaml
@@ -63,5 +67,4 @@ resources:
   - argo-projects/product-knowledge.yaml
   - avp-secrets/knowledge-team-vault-secret.yaml
 
-  - argo-projects/product-decentralized-organization-id.yaml
-  - avp-secrets/decentralized-organization-id-team-vault-secret.yaml
+  - pull-secret/secret.yaml

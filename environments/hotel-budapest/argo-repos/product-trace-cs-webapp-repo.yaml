@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: product-trace-cs-webapp-repo
+  namespace: argocd
+  annotations:
+    avp.kubernetes.io/path: "data-integrity-demonstrator/data/deploy-key"
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: git
+  url: git@github.com:catenax-ng/product-trace-cs-webapp
+  name: product-trace-cs-webapp-repo
+  project: project-data-integrity-demonstrator
+  sshPrivateKey: |
+    <product-data-integrity-demonstrator-deploy-key>

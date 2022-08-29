@@ -7,6 +7,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     name       = "default"
     vm_size    = var.k8s_vm_size
     node_count = var.k8s_cluster_node_count
+    orchestrator_version = var.k8s_version
   }
 
   service_principal {
@@ -14,5 +15,6 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     client_secret = var.aks_service_principal_client_secret
   }
 
-  dns_prefix = var.aks_dns_prefix
+  dns_prefix         = var.aks_dns_prefix
+  kubernetes_version = var.k8s_version
 }

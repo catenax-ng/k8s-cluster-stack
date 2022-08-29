@@ -21,5 +21,5 @@ variable "target_resource_id" {
 variable "ttl" {
   description = "The time to live (ttl) value in seconds"
   type        = number
-  default     = 0
+  default     = 3600
 }

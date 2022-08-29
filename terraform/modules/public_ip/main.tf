@@ -5,4 +5,6 @@ resource "azurerm_public_ip" "public_ip" {
 
   allocation_method = "Static"
   sku               = "Standard"
+
+  zones = ["1", "2", "3"]
 }

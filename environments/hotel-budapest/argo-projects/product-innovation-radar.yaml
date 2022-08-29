@@ -1,26 +1,26 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: product-decentralized-organization-id
+  name: product-innovation-radar
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: product-decentralized-organization-id-pen
+  name: product-innovation-radar-pen
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: project-decentralized-organization-id
+  name: project-innovation-radar
   namespace: argocd
 spec:
-  description: Project for team Decentralized Organization ID
+  description: Project for team Innovation Radar
   sourceRepos:
     - '*'
   destinations:
-    - namespace: product-decentralized-organization-id
+    - namespace: product-innovation-radar
       server: https://kubernetes.default.svc
-    - namespace: product-decentralized-organization-id-pen
+    - namespace: product-innovation-radar-pen
       server: https://kubernetes.default.svc
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
   namespaceResourceBlacklist:
@@ -32,8 +32,8 @@ spec:
       kind: NetworkPolicy
   roles:
     - name: team-admin
-      description: All access to applications inside project-knowledge. Read only on project itself
+      description: All access to applications inside project-innovation-radar. Read only on project itself
       policies:
-        - p, proj:project-decentralized-organization-id:team-admin, applications, *, project-decentralized-organization-id/*, allow
+        - p, proj:project-innovation-radar:team-admin, applications, *, project-innovation-radar/*, allow
       groups:
-        - catenax-ng:product-decentralized-organization-id
+        - catenax-ng:product-innovation-radar

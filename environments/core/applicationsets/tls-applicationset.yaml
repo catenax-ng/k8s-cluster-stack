@@ -30,6 +30,10 @@ spec:
             cluster-name: pre-prod
             valueFile: values-tls-pre-prod.yaml
             targetRevision: HEAD
+          - cluster: beta
+            cluster-name: beta
+            valueFile: values-tls-beta.yaml
+            targetRevision: HEAD
 
   template:
     metadata:
