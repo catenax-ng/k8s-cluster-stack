@@ -1267,6 +1267,23 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
+    },
+    "product-autosetup-backend" : {
+      name : "product-autosetup-backend"
+      team_name : "product-dft"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : "main"
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
     }
   }
 
@@ -1574,6 +1591,11 @@ module "github" {
     "product-registry-twin-check-product-registry-twin-check" : {
       team_name : "product-registry-twin-check"
       repository : "product-registry-twin-check"
+      permission : "maintain"
+    },
+    "product-autosetup-backend-product-dft" : {
+      team_name : "product-dft"
+      repository : "product-autosetup-backend"
       permission : "maintain"
     }
   }
