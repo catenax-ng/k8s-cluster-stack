@@ -17,7 +17,7 @@ resources:
   - avp-secrets/portal-team-vault-secret.yaml
   
   - argo-projects/product-semantics.yaml
-    - argo-repos/product-semantics-repo.yaml
+  - argo-repos/product-semantics-repo.yaml
   - avp-secrets/semantics-team-vault-secret.yaml
   
   - argo-projects/product-traceability-foss.yaml
