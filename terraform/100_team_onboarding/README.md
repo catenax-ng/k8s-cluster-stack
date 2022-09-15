@@ -5,7 +5,7 @@ Following are some instructions and hints, when configuring Vault with terraform
 ## How to run this terraforming
 
 To create a terraform plan and apply it to the vault instance you first have to initialize terraform.
-Since the stage is stored in an Azure storage account, you need to define credentials for read/write access to this 
+Since the stage is stored in an Azure storage account, you need to define credentials for read/write access to this
 storage account. You need to set these credentials via a specific environment variable like this:
 
 ```shell
@@ -13,12 +13,12 @@ storage account. You need to set these credentials via a specific environment va
 export ARM_ACCESS_KEY=$(az storage account keys list --resource-group cx-devsecops-tfstates --account-name cxdevsecopstfstate --query '[0].value' -o tsv)
 ```
 
-For more details about the state, see one of the upcoming sections. 
+For more details about the state, see one of the upcoming sections.
 After you defined the storage account credentials, you can initialize terraform via `terraform init`.
 
 Besides the Azure storage account credentials, you also need to set the vault root token as a environment variable, that
 terraform can use to authenticate. We use the root token, since there may be remounts of vault resources, that need
-elevated permissions. Additionally, you need to specify the client_id and client_secret for OIDC configuration. 
+elevated permissions. Additionally, you need to specify the client_id and client_secret for OIDC configuration.
 
 For the `github` module, you need to specify the organization to manage, and
 the personal access token to use for changes to repos and the org.
@@ -61,6 +61,7 @@ To avoid this issue, you have to manually import all the existing objects to you
 Secret engines can be imported like this: `terraform import vault_mount.<my-mount> <path-of-secret-engine>`.
 
 Here are some examples for secret engines and policies to import
+
 ```shell
 # The DevSecOps secret engine is created as separate resource definition in the terraform files
 terraform import vault_mount.devsecops-secret-engine devsecops
@@ -104,7 +105,7 @@ terraform import 'module.github.github_repository.repositories["map-key-in-githu
 terraform import 'module.github.github_team_repository.team-repository-access["map-key-in-github_repositories_teams_var"]' <team-id>:<repository-name>
 ```
 
-The GitHub team-id is not easy to find. You can use the following API request via curl to get a list of teams in our 
+The GitHub team-id is not easy to find. You can use the following API request via curl to get a list of teams in our
 catenax-ng organization. The result list will contain information (including the ID) for all the teams:
 `curl -H "Authorization: token your-githbu-pat" https://api.github.com/orgs/catenax-ng/teams`
 
@@ -115,11 +116,10 @@ The details are configured in the backend section of the provider config in [./p
 In order to upload the state file to Azure, you need to specify the storage account access key.
 
 You can query the value for storage access key and store it in an environment variable, that terraform will use
-with the following command: 
+with the following command:
 `export ARM_ACCESS_KEY=$(az storage account keys list --resource-group cx-devsecops-tfstates --account-name cxdevsecopstfstate --query '[0].value' -o tsv)`
 
 If you did not yet initialize terraform, you'll also need the storage access key.
-
 
 ## 'Design' decisions
 
@@ -136,4 +136,3 @@ There is no way to define variable typing for local variables.
 The configuration was created during a time, when there were a lot of inconsistencies in the naming of GitHub teams,
 vault secret engines and vault policies. Specifying product teams as objects instead of strings, enabled more flexibility
 to handle the inconsistent definitions.
-
