@@ -21,7 +21,7 @@ spec:
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
         overlay: overlays/devsecops-testing
-        targetRevision: onboarding-beta
+        targetRevision: ArgoCD-v2.3.7-testing
       - cluster: pre-prod
         cluster-name: pre-prod
         overlay: overlays/pre-prod
