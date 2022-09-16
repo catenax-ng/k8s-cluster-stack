@@ -9,27 +9,27 @@ spec:
       - cluster: core
         cluster-name: in-cluster
         overlay: overlays/core
-        targetRevision: onboarding-beta
+        targetRevision: ArgoCD-v2.3.7
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         overlay: overlays/hotel-budapest
-        targetRevision: onboarding-beta
+        targetRevision: ArgoCD-v2.3.7
       - cluster: dev
         cluster-name: dev
         overlay: overlays/dev
-        targetRevision: onboarding-beta
+        targetRevision: ArgoCD-v2.3.7
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
         overlay: overlays/devsecops-testing
-        targetRevision: ArgoCD-v2.3.7-testing
+        targetRevision: ArgoCD-v2.3.7
       - cluster: pre-prod
         cluster-name: pre-prod
         overlay: overlays/pre-prod
-        targetRevision: onboarding-beta
+        targetRevision: ArgoCD-v2.3.7
       - cluster: beta
         cluster-name: beta
         overlay: overlays/beta
-        targetRevision: onboarding-beta
+        targetRevision: ArgoCD-v2.3.7
 
   template:
     metadata:
