@@ -1214,8 +1214,11 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
-      codeowners_available : false
-      codeowners : null
+      codeowners_available : true
+      codeowners : {
+        review_count : 1
+        pattern : "main"
+      }
     },
     "catena-x-release-deployment" : {
       name : "catena-x-release-deployment"
@@ -1231,8 +1234,11 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
-      codeowners_available : false
-      codeowners : null
+      codeowners_available : true
+      codeowners : {
+        review_count : 1
+        pattern : "main"
+      }
      },
     "product-daps-registration-service" : {
       name : "product-daps-registration-service"
