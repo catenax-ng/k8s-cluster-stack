@@ -700,7 +700,7 @@ module "github" {
       team_name : "product-esc-backbone"
       description : ""
       visibility : "private"
-      homepage_url : ""
+      homepage_url : "https://argo.dev.demo.catena-x.net/"
       topics : []
       pages : {
         enabled : false
@@ -910,8 +910,8 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
-        branch : "main"
+        enabled : true
+        branch : "gh-pages"
       }
       is_template : false
       uses_template : false
@@ -944,8 +944,8 @@ module "github" {
       homepage_url : "https://catenax-ng.github.io"
       topics : ["internal"]
       pages : {
-        enabled : false
-        branch : "main"
+        enabled : true
+        branch : "gh-pages"
       }
       is_template : false
       uses_template : false
