@@ -8,3 +8,4 @@ resources:
   - avp-secrets/devsecops-team-vault-secret.yaml
 
   - pull-secret/secret.yaml
+  - pre-prod-apps-wave-a.yaml
