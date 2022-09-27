@@ -415,7 +415,8 @@ module "github" {
       topics : [
         "catena-x",
         "identity-and-access-management",
-        "keycloak"]
+        "keycloak"
+      ]
       pages : {
         enabled : true
         branch : "gh-pages"
@@ -435,7 +436,8 @@ module "github" {
       topics : [
         "backend",
         "catena-x",
-        "portal"]
+        "portal"
+      ]
       pages : {
         enabled : true
         branch : "main"
