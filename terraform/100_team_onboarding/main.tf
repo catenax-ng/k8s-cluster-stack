@@ -409,13 +409,17 @@ module "github" {
     "product-portal-iam" : {
       name : "product-portal-iam"
       team_name : "product-portal"
-      description : ""
+      description : "Catena-X IAM - Keycloak instances"
       visibility : "public"
       homepage_url : ""
-      topics : []
+      topics : [
+        "catena-x",
+        "identity-and-access-management",
+        "keycloak"
+      ]
       pages : {
-        enabled : false
-        branch : "main"
+        enabled : true
+        branch : "gh-pages"
       }
       is_template : false
       uses_template : false
@@ -426,13 +430,17 @@ module "github" {
     "product-portal-backend" : {
       name : "product-portal-backend"
       team_name : "product-portal"
-      description : ""
+      description : "Catena-X Portal Backend"
       visibility : "public"
       homepage_url : ""
-      topics : []
+      topics : [
+        "backend",
+        "catena-x",
+        "portal"
+      ]
       pages : {
         enabled : true
-        branch : "gh-pages"
+        branch : "main"
       }
       is_template : false
       uses_template : false
@@ -494,10 +502,17 @@ module "github" {
     "product-portal-cd" : {
       name : "product-portal-cd"
       team_name : "product-portal"
-      description : ""
+      description : "Catena-X Portal - Continuous Deployment"
       visibility : "public"
       homepage_url : ""
-      topics : []
+      topics : [
+        "argocd",
+        "catena-x",
+        "continuous-deployment",
+        "helm",
+        "kubernetes",
+        "portal"
+      ]
       pages : {
         enabled : true
         branch : "gh-pages"
@@ -808,8 +823,8 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
-        branch : "main"
+        enabled : true
+        branch : "gh-pages"
       }
       is_template : false
       uses_template : false
