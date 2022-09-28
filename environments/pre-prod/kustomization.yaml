@@ -2,10 +2,22 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - argo-projects/product-example.yaml
-  - avp-secrets/example-vault-secret.yaml
+  - argo-projects/product-bpdm.yaml
+  - avp-secrets/bpdm-team-vault-secret.yaml
+
+  - argo-projects/product-daps.yaml
+  - avp-secrets/daps-team-vault-secret.yaml
+
+  - argo-projects/product-managed-identity-wallets.yaml
+  - avp-secrets/managed-identity-wallets-team-vault-secret.yaml
+
+  - argo-projects/product-portal.yaml
+  - avp-secrets/portal-team-vault-secret.yaml
+
+  - argo-projects/product-sldt.yaml
+  - avp-secrets/sldt-team-vault-secret.yaml
 
   - avp-secrets/devsecops-team-vault-secret.yaml
 
   - pull-secret/secret.yaml
-  - pre-prod-apps-wave-a.yaml
+  - argo-apps/apps-wave-a.yaml
