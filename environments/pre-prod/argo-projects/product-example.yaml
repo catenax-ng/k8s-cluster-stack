@@ -15,7 +15,7 @@ spec:
   destinations:
     - namespace: product-team-example
       server: https://kubernetes.default.svc
-  # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
+  # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy.
   namespaceResourceBlacklist:
     - group: ''
       kind: ResourceQuota
