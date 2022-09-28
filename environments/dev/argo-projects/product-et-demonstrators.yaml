@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-et-demonstrators
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-et-demonstrators-pen
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-et-demonstrators
+  namespace: argocd
+spec:
+  description: Project for team et demonstrators
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: product-et-demonstrators
+      server: https://kubernetes.default.svc
+    - namespace: product-et-demonstrators-pen
+      server: https://kubernetes.default.svc
+  # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
+  namespaceResourceBlacklist:
+    - group: ''
+      kind: ResourceQuota
+    - group: ''
+      kind: LimitRange
+    - group: ''
+      kind: NetworkPolicy
+  roles:
+    - name: team-admin
+      description: All access to applications inside project-et-demonstrators. Read only on project itself
+      policies:
+        - p, proj:project-et-demonstrators:team-admin, applications, *, project-et-demonstrators/*, allow
+      groups:
+        - catenax-ng:product-et-demonstrators
