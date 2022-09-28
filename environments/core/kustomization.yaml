@@ -10,6 +10,7 @@ resources:
   - applicationsets/tls-applicationset.yaml
   - applicationsets/reflector-applicationset.yaml
   - applicationsets/kube-prometheus-stack-applicationset.yaml
+  - applicationsets/maintenance-dashboard-app-applicationset.yaml
   - applications/vault-application.yaml
   - applications/gh-org-checks-application.yaml
   - cluster-secrets/hotel-budapest-secret.yaml
