@@ -28,7 +28,6 @@ spec:
       description: provide read-only access to project
       policies:
         - p, proj:project-managed-identity-wallets:project-read-only, applications, get, project-managed-identity-wallets/*, allow
-        - p, proj:project-managed-identity-wallets:project-read-only, applications, get, default/*, allow
       groups:
         - catenax-ng:product-managed-identity-wallets
         - catenax-ng:release-management
