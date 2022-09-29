@@ -28,6 +28,7 @@ spec:
       description: provide read-only access to project
       policies:
         - p, proj:project-portal:project-read-only, applications, get, project-portal/*, allow
+        - p, proj:project-portal:project-read-only, applications, get, default/*, allow
       groups:
         - catenax-ng:product-portal
         - catenax-ng:release-management

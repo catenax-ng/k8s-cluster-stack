@@ -28,6 +28,7 @@ spec:
       description: provide read-only access to project DAPS (managed by product-team essential-services)
       policies:
         - p, proj:project-daps:project-read-only, applications, get, project-daps/*, allow
+        - p, proj:project-daps:project-read-only, applications, get, default/*, allow
       groups:
         - catenax-ng:product-essential-services
         - catenax-ng:release-management
