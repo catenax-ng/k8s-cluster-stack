@@ -9,6 +9,9 @@ resources:
   - argo-projects/product-bpdm.yaml
   - avp-secrets/bpdm-team-vault-secret.yaml
 
+  - argo-projects/product-business-partner-certificates.yaml
+  - avp-secrets/business-partner-certificates-team-vault-secret.yaml
+
   - argo-projects/product-catenax-at-home.yaml
   - avp-secrets/catenax-at-home-team-vault-secret.yaml
 
@@ -25,6 +28,9 @@ resources:
   - argo-projects/product-essential-services.yaml
   - avp-secrets/essential-services-team-vault-secret.yaml
   - argo-repos/product-essential-services-repo.yaml
+
+  - argo-projects/product-et-demonstrators.yaml
+  - avp-secrets/et-demonstrators-team-vault-secret.yaml
 
   - argo-projects/product-explorer.yaml
   - avp-secrets/explorer-team-vault-secret.yaml

@@ -194,6 +194,24 @@ module "vault" {
       approle_policy_name : "registry-twin-check-ro"
       github_team : "product-registry-twin-check"
       avp_secret_name : "registry-twin-check"
+    },
+    "business-partner-certificates" : {
+      name : "business-partner-certificates",
+      secret_engine_name : "business-partner-certificates"
+      ui_policy_name : "business-partner-certificates-rw"
+      approle_name : "business-partner-certificates"
+      approle_policy_name : "business-partner-certificates-ro"
+      github_team : "product-business-partner-certificates"
+      avp_secret_name : "business-partner-certificates"
+    },
+    "et-demonstrators" : {
+      name : "et-demonstrators",
+      secret_engine_name : "et-demonstrators"
+      ui_policy_name : "et-demonstrators-rw"
+      approle_name : "et-demonstrators"
+      approle_policy_name : "et-demonstrators-ro"
+      github_team : "product-et-demonstrators"
+      avp_secret_name : "et-demonstrators"
     }
   }
 }
@@ -314,6 +332,14 @@ module "github" {
     },
     "product-registry-twin-check" : {
       name : "product-registry-twin-check"
+      description : ""
+    },
+    "product-business-partner-certificates" : {
+      name : "product-business-partner-certificates"
+      description : ""
+    },
+    "product-et-demonstrators" : {
+      name : "product-et-demonstrators"
       description : ""
     }
   }
@@ -1305,6 +1331,40 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
+    },
+    "product-business-partner-certificates" : {
+      name : "product-business-partner-certificates"
+      team_name : "product-business-partner-certificates"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : "main"
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "product-et-demonstrators" : {
+      name : "product-et-demonstrators"
+      team_name : "product-et-demonstrators"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : "main"
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
     }
   }
 
@@ -1617,6 +1677,16 @@ module "github" {
     "product-autosetup-backend-product-dft" : {
       team_name : "product-dft"
       repository : "product-autosetup-backend"
+      permission : "maintain"
+    },
+    "product-business-partner-certificates-product-business-partner-certificates" : {
+      team_name : "product-business-partner-certificates"
+      repository : "product-business-partner-certificates"
+      permission : "maintain"
+    },
+    "product-et-demonstrators-product-et-demonstrators" : {
+      team_name : "product-et-demonstrators"
+      repository : "product-et-demonstrators"
       permission : "maintain"
     }
   }
