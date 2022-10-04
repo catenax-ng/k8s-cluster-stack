@@ -1664,6 +1664,31 @@ module "github" {
       repository : "catena-x-release-deployment"
       permission : "maintain"
     },
+    "catena-x-release-deployment-product-portal" : {
+      team_name : "product-portal"
+      repository : "catena-x-release-deployment"
+      permission : "write"
+    },
+    "catena-x-release-deployment-product-semantics" : {
+      team_name : "product-semantics"
+      repository : "catena-x-release-deployment"
+      permission : "write"
+    },
+    "catena-x-release-deployment-product-essential-services" : {
+      team_name : "product-essential-services"
+      repository : "catena-x-release-deployment"
+      permission : "write"
+    },
+    "catena-x-release-deployment-product-bpdm" : {
+      team_name : "product-bpdm"
+      repository : "catena-x-release-deployment"
+      permission : "write"
+    },
+    "catena-x-release-deployment-product-managed-identity-wallets" : {
+      team_name : "product-managed-identity-wallets"
+      repository : "catena-x-release-deployment"
+      permission : "write"
+    },
     "product-data-integrity-demonstrator-product-trace-cs-webapp" : {
       team_name : "product-data-integrity-demonstrator"
       repository : "product-trace-cs-webapp"
