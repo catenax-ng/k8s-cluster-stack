@@ -212,6 +212,15 @@ module "vault" {
       approle_policy_name : "et-demonstrators-ro"
       github_team : "product-et-demonstrators"
       avp_secret_name : "et-demonstrators"
+    },
+    "item-relationship-service-frontend" : {
+      name : "item-relationship-service-frontend",
+      secret_engine_name : "item-relationship-service-frontend"
+      ui_policy_name : "item-relationship-service-frontend-rw"
+      approle_name : "item-relationship-service-frontend"
+      approle_policy_name : "item-relationship-service-frontend-ro"
+      github_team : "item-relationship-service-frontend"
+      avp_secret_name : "item-relationship-service-frontend"
     }
   }
 }
@@ -340,6 +349,10 @@ module "github" {
     },
     "product-et-demonstrators" : {
       name : "product-et-demonstrators"
+      description : ""
+    },
+    "product-item-relationship-service-frontend" : {
+      name : "product-item-relationship-service-frontend"
       description : ""
     }
   }
@@ -1280,7 +1293,7 @@ module "github" {
         review_count : 1
         pattern : "main"
       }
-     },
+    },
     "product-daps-registration-service" : {
       name : "product-daps-registration-service"
       team_name : "product-essential-services"
@@ -1363,6 +1376,26 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "product-item-relationship-service-frontend" : {
+      name : "product-item-relationship-service-frontend"
+      team_name : "product-item-relationship-service-frontend"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : true
+        branch : "main"
+      }
+      is_template : false
+      uses_template : true
+      template : {
+        owner : "catenax-ng"
+        repository : "k8s-helm-example"
+      }
       codeowners_available : false
       codeowners : null
     }
@@ -1712,6 +1745,11 @@ module "github" {
     "product-et-demonstrators-product-et-demonstrators" : {
       team_name : "product-et-demonstrators"
       repository : "product-et-demonstrators"
+      permission : "maintain"
+    }
+    "product-item-relationship-service-frontend-product-item-relationship-service-frontend" : {
+      team_name : "product-item-relationship-service-frontend"
+      repository : "product-item-relationship-service-frontend"
       permission : "maintain"
     }
   }

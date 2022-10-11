@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-item-relationship-service-frontend
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-item-relationship-service-frontend-pen
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-item-relationship-service-frontend
+  namespace: argocd
+spec:
+  description: Project for team et demonstrators
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: product-item-relationship-service-frontend
+      server: https://kubernetes.default.svc
+    - namespace: product-item-relationship-service-frontend-pen
+      server: https://kubernetes.default.svc
+  # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
+  namespaceResourceBlacklist:
+    - group: ''
+      kind: ResourceQuota
+    - group: ''
+      kind: LimitRange
+    - group: ''
+      kind: NetworkPolicy
+  roles:
+    - name: team-admin
+      description: All access to applications inside project-item-relationship-service-frontend. Read only on project itself
+      policies:
+        - p, proj:project-item-relationship-service-frontend:team-admin, applications, *, project-item-relationship-service-frontend/*, allow
+      groups:
+        - catenax-ng:product-item-relationship-service-frontend
