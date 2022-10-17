@@ -13,7 +13,7 @@ dependencies:
 
 - name: dex
   alias: dex
-  version: 0.8.2
+  version: 0.12.1
   repository: https://charts.dexidp.io
 
 
