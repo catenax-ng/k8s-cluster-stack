@@ -17,14 +17,14 @@ spec:
         emptyDir: {}
       initContainers:
       - name: download-tools
-        image: alpine:3.8
+        image: alpine:3.16
         command: [sh, -c]
 
         # Don't forget to update this to whatever the stable release version is
         # Note the lack of the `v` prefix unlike the git tag
         env:
           - name: AVP_VERSION
-            value: "1.10.1"
+            value: "1.13.0"
         args:
           - >-
             wget -O argocd-vault-plugin
