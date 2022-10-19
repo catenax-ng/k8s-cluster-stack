@@ -1580,7 +1580,7 @@ module "github" {
     "product-portal-frontend-registration-product-portal" : {
       team_name : "product-portal"
       repository : "product-portal-frontend-registration"
-      permission : "maintain"
+      permission : "push"
     },
     "product-edc-product-edc" : {
       team_name : "product-edc"
