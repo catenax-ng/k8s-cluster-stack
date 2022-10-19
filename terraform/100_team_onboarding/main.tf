@@ -1254,26 +1254,6 @@ module "github" {
       codeowners_available : false
       codeowners : null
     },
-    "catena-x-release" : {
-      name : "catena-x-release"
-      team_name : "argocdadmins"
-      description : "A collection of helm Charts that represent different configurations of Catena-X releases"
-      visibility : "public"
-      homepage_url : ""
-      topics : []
-      pages : {
-        enabled : true
-        branch : "gh-pages"
-      }
-      is_template : false
-      uses_template : false
-      template : null
-      codeowners_available : true
-      codeowners : {
-        review_count : 1
-        pattern : "main"
-      }
-    },
     "catena-x-release-deployment" : {
       name : "catena-x-release-deployment"
       team_name : "argocdadmins"
@@ -1665,21 +1645,6 @@ module "github" {
     "product-vas-fraud-cd-product-value-added-service" : {
       team_name : "product-value-added-service"
       repository : "product-vas-fraud-cd"
-      permission : "maintain"
-    },
-    "catena-x-release-argocd-admins" : {
-      team_name : "argocdadmins"
-      repository : "catena-x-release"
-      permission : "admin"
-    },
-    "catena-x-release-release-management" : {
-      team_name : "release-management"
-      repository : "catena-x-release"
-      permission : "maintain"
-    },
-    "catena-x-release-test-management" : {
-      team_name : "test-management"
-      repository : "catena-x-release"
       permission : "maintain"
     },
     "catena-x-release-deployment-argocdadmins" : {
