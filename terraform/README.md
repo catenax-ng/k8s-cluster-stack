@@ -12,24 +12,12 @@ from [https://www.terraform.io/downloads](https://www.terraform.io/downloads).
 You can verify your installation by running the command `terraform --version` from your terminal.
 
 Make sure you've cloned the [k8s_cluster_stack](https://github.com/catenax-ng/k8s-cluster-stack)
-repository and navigate to the repository where you want to run terraform.
-`cd terraform/02_devsecops-testing_cluster`
+repository and **navigate to the repository where you want to run terraform**
+e.g. `cd terraform/02_devsecops-testing_cluster`, `cd terraform/100_team_onboarding`.
 
 You have to [initialize](https://www.terraform.io/cli/commands/init)
 terraform in the current working directory by running `terraform init`.
 This will initialize the necessary modules and download plugins for the used providers.
-
-### Removing existing terraform config
-
-We always run from a clean working directory. So in case you did run any terraform commands
-before, there are some files that could disturb the clean run. To get rid of these files remove state files, plans and
-the .terraform directory (if present).
-
-```shell
-rm *.tfstate*
-rm *.tfplan
-rm -rf .terraform
-```
 
 ### Creating and applying the terraform plan
 
