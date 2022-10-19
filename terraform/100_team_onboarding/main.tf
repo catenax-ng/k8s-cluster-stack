@@ -703,11 +703,11 @@ module "github" {
       team_name : "product-traceability-irs"
       description : ""
       visibility : "public"
-      homepage_url : ""
+      homepage_url : "https://catenax-ng.github.io/product-item-relationship-service/docs/"
       topics : []
       pages : {
-        enabled : false
-        branch : "main"
+        enabled : true
+        branch : "gh-pages"
       }
       is_template : false
       uses_template : false
@@ -908,10 +908,10 @@ module "github" {
     "product-value-added-service" : {
       name : "product-value-added-service"
       team_name : "product-value-added-service"
-      description : ""
+      description : "Repository for Value Added Service - Country Risk Backend"
       visibility : "public"
       homepage_url : ""
-      topics : []
+      topics : ["catena-x", "java", "spring-boot"]
       pages : {
         enabled : false
         branch : "main"
@@ -1044,7 +1044,7 @@ module "github" {
     "product-portal-frontend-registration" : {
       name : "product-portal-frontend-registration"
       team_name : "product-portal"
-      description : "Catena-X Portal Frontend Registration"
+      description : "Catena-X Portal Frontend Registration - DEPRECATED"
       visibility : "public"
       homepage_url : "https://portal.demo.catena-x.net/registration/"
       topics : ["catena-x", "frontend", "portal", "registration"]
@@ -1064,10 +1064,10 @@ module "github" {
     "product-vas-country-risk-frontend" : {
       name : "product-vas-country-risk-frontend"
       team_name : "product-value-added-service"
-      description : ""
+      description : "Repository for Value Added Service - Country Risk Frontend Dashboard"
       visibility : "public"
       homepage_url : ""
-      topics : []
+      topics : ["catena-x", "react"]
       pages : {
         enabled : false
         branch : "main"
