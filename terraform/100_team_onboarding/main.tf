@@ -1395,6 +1395,57 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
+    },
+    "product-oem-hi-app" : {
+      name : "product-oem-hi-app"
+      team_name : "product-behaviour-twin-pilot"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "product-oem-rul-backend" : {
+      name : "product-oem-rul-backend"
+      team_name : "product-behaviour-twin-pilot"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "product-behaviour-twin-libraries" : {
+      name : "product-behaviour-twin-libraries"
+      team_name : "product-behaviour-twin-pilot"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
     }
   }
 
@@ -1737,6 +1788,21 @@ module "github" {
     "product-esc-backbone-blockexplorer-product-esc-backbone" : {
       team_name : "product-esc-backbone"
       repository : "product-esc-backbone-blockexplorer"
+      permission : "maintain"
+    },
+    "product-oem-hi-app-product-behaviour-twin-pilot" : {
+      team_name : "product-behaviour-twin-pilot"
+      repository : "product-oem-hi-app"
+      permission : "maintain"
+    },
+    "product-oem-rul-backend-product-behaviour-twin-pilot" : {
+      team_name : "product-behaviour-twin-pilot"
+      repository : "product-oem-rul-backend"
+      permission : "maintain"
+    },
+    "product-behaviour-twin-libraries-product-behaviour-twin-pilot" : {
+      team_name : "product-behaviour-twin-pilot"
+      repository : "product-behaviour-twin-libraries"
       permission : "maintain"
     }
   }
