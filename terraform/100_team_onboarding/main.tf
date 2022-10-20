@@ -1411,11 +1411,8 @@ module "github" {
         branch : ""
       }
       is_template : false
-      uses_template : true
-      template : {
-        owner : "catenax-ng"
-        repository : "k8s-helm-example"
-      }
+      uses_template : false
+      template : null
       codeowners_available : false
       codeowners : null
     }
