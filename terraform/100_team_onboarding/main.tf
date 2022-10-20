@@ -1408,7 +1408,7 @@ module "github" {
       topics : []
       pages : {
         enabled : false
-        branch : "main"
+        branch : ""
       }
       is_template : false
       uses_template : true
