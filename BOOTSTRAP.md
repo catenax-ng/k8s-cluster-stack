@@ -13,7 +13,7 @@ After completing the steps below, the following resources will be created:
 
 ## Create a new Catena-X environment from scratch
 
-For creating a new AKS Cluster we are using an Azure Service Pricipal Account (SP) and set up via terraform.
+For creating a new AKS Cluster we are using an Azure Service Principal Account (SP) and set up via terraform.
 
 ## Configure the AKS Cluster
 
