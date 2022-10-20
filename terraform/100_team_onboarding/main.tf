@@ -1398,6 +1398,26 @@ module "github" {
       }
       codeowners_available : false
       codeowners : null
+    },
+    "product-esc-backbone-blockexplorer" : {
+      name : "product-esc-backbone-blockexplorer"
+      team_name : "product-esc-backbone"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : "main"
+      }
+      is_template : false
+      uses_template : true
+      template : {
+        owner : "catenax-ng"
+        repository : "k8s-helm-example"
+      }
+      codeowners_available : false
+      codeowners : null
     }
   }
 
@@ -1746,10 +1766,15 @@ module "github" {
       team_name : "product-et-demonstrators"
       repository : "product-et-demonstrators"
       permission : "maintain"
-    }
+    },
     "product-item-relationship-service-frontend-product-item-relationship-service-frontend" : {
       team_name : "product-item-relationship-service-frontend"
       repository : "product-item-relationship-service-frontend"
+      permission : "maintain"
+    },
+    "product-esc-backbone-blockexplorer-product-esc-backbone" : {
+      team_name : "product-esc-backbone"
+      repository : "product-esc-backbone-blockexplorer"
       permission : "maintain"
     }
   }
