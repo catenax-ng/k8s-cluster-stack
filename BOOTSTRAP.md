@@ -32,5 +32,3 @@ GitHub organization and ArgoCD needs to be configured.
 
 To deploy applications via the Core ArgoCD to remote clusters, the remote cluster needs to be introduced to the
 Core ArgoCD instance.
-
-### Adding remote clusters to an ApplicationSet
