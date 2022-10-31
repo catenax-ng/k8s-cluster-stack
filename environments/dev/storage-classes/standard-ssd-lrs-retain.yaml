@@ -11,3 +11,4 @@ provisioner: disk.csi.azure.com
 reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer
 allowVolumeExpansion: true
+
