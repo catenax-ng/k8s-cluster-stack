@@ -1396,7 +1396,7 @@ module "github" {
       name : "product-esc-backbone-blockexplorer"
       team_name : "product-esc-backbone"
       description : ""
-      visibility : "public"
+      visibility : "private"
       homepage_url : ""
       topics : []
       pages : {
