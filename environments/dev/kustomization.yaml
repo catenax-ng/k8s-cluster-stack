@@ -78,3 +78,6 @@ resources:
   - avp-secrets/item-relationship-service-frontend-vault-secret.yaml
 
   - pull-secret/secret.yaml
+
+  - storage-classes/standard-ssd-lrs-retain.yaml
+
