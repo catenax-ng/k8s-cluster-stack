@@ -68,6 +68,7 @@ resources:
   - argo-projects/product-esc-backbone.yaml
   - avp-secrets/esc-backbone-vault-secret.yaml
   - argo-repos/product-esc-backbone.yaml
+  - argo-repos/product-esc-backbone-blockexplorer.yaml
 
   - argo-projects/product-value-added-service.yaml
   - avp-secrets/value-added-service-team-vault-secret.yaml
@@ -81,3 +82,6 @@ resources:
   - avp-secrets/item-relationship-service-frontend-vault-secret.yaml
 
   - pull-secret/secret.yaml
+
+  - storage-classes/standard-ssd-lrs-retain.yaml
+
