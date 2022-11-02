@@ -44,6 +44,9 @@ resources:
   - argo-projects/product-portal.yaml
   - avp-secrets/portal-team-vault-secret.yaml
 
+  - argo-projects/product-r-strategy-assistant.yaml
+  - avp-secrets/r-strategy-assistant.yaml
+
   - argo-projects/product-semantics.yaml
   - avp-secrets/semantics-team-vault-secret.yaml
   - argo-repos/product-semantics-repo.yaml
