@@ -219,17 +219,17 @@ module "vault" {
       ui_policy_name : "item-relationship-service-frontend-rw"
       approle_name : "item-relationship-service-frontend"
       approle_policy_name : "item-relationship-service-frontend-ro"
-      github_team : "item-relationship-service-frontend"
+      github_team : "product-item-relationship-service-frontend"
       avp_secret_name : "item-relationship-service-frontend"
     },
-    "product-r-strategy-assistant" : {
-      name : "product-r-strategy-assistant",
-      secret_engine_name : "product-r-strategy-assistant"
-      ui_policy_name : "product-r-strategy-assistant-rw"
-      approle_name : "product-r-strategy-assistant"
-      approle_policy_name : "product-r-strategy-assistant-ro"
+    "r-strategy-assistant" : {
+      name : "r-strategy-assistant",
+      secret_engine_name : "r-strategy-assistant"
+      ui_policy_name : "r-strategy-assistant-rw"
+      approle_name : "r-strategy-assistant"
+      approle_policy_name : "r-strategy-assistant-ro"
       github_team : "product-r-strategy-assistant"
-      avp_secret_name : "product-r-strategy-assistant"
+      avp_secret_name : "r-strategy-assistant"
     }
   }
 }
@@ -651,8 +651,8 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
-        branch : "main"
+        enabled : true
+        branch : "gh-pages"
       }
       is_template : false
       uses_template : false
