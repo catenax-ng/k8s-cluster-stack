@@ -35,7 +35,7 @@ Hey, there's a new ArgoCD version, then follow these steps:
             - cluster: devsecops-testing
               cluster-name: devsecops-testing
               overlay: overlays/devsecops-testing
-              targetRevision: ArgoCD-v2.3.10_AVP-v0.13.0
+              targetRevision: ArgoCD-v2.3.11_AVP-v0.13.0
   ```
 
   Change the _targetRevision_ from `ArgoCD-v2.3.10_AVP-v0.13.0` → `ArgoCD-v2.3.11_AVP-v0.13.0`. Ensure to only change
@@ -89,7 +89,7 @@ Hey, there's a new ArgoCD version, then follow these steps:
              - cluster: devsecops-testing
                cluster-name: devsecops-testing
                overlay: overlays/devsecops-testing
-               targetRevision: ArgoCD-v2.3.10_AVP-v0.13.0
+               targetRevision: ArgoCD-v2.3.11_AVP-v1.13.0
    ```
 
 Change the _targetRevision_ from `ArgoCD-v2.3.10_AVP-v0.13.0` → `ArgoCD-v2.3.11_AVP-v1.13.0`. Ensure to only change the
