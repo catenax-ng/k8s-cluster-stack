@@ -15,7 +15,7 @@ Hey, there's a new ArgoCD version, then follow these steps:
 
 - Create a new branch from `main`, e.g. `chore/bump_argocd_version`
 - Checkout new branch
-- ArgoCD app has to be updated in `apps/argocd/base/kustomization.yaml`
+- ArgoCD version has to be updated in `apps/argocd/base/kustomization.yaml`
 
     ```yaml
     resources:
@@ -48,7 +48,7 @@ Hey, there's a new ArgoCD version, then follow these steps:
 
 - Sync ArgoCD App _devsecops-testing-argo_ on core ArgoCD
 - New ArgoCD version will be deployed to _devsecops-testing_ cluster
-- Test if ArgoCD on devsecops-testing cluster behave as expected.
+- Test if ArgoCD on _devsecops-testing_ cluster behaves as expected.
 
 #### Rollout To Productive Clusters
 
@@ -103,7 +103,7 @@ AVP part of the tag, not the ArgoCD part!
 
 - Sync ArgoCD App _devsecops-testing-argo_ on core ArgoCD
 - New ArgoCD Vault Plugin version will be deployed to _devsecops-testing_ cluster
-- Test if ArgoCD on devsecops-testing cluster behave as expected.
+- Test if ArgoCD on _devsecops-testing_ cluster behaves as expected.
 
 #### Rollout To Productive Clusters
 
