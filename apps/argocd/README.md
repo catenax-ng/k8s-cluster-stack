@@ -42,7 +42,8 @@ Hey, there's a new ArgoCD version, then follow these steps:
   the ArgoCD part of the tag, not the AVP part!
 - Create PR to merge branch `chore/bump_argocd_version` into `main`
 - Approve PR and merge to main
-- Create a Git Tag in `main` branch named `ArgoCD-v2.3.11_AVP-v0.13.0`
+- Create an annotated Git Tag in `main` branch named `ArgoCD-v2.3.11_AVP-v0.13.0`, ensure the tag points to the merge
+  commit ID from PR in the step before.
 
 #### Testing
 
@@ -97,7 +98,8 @@ AVP part of the tag, not the ArgoCD part!
 
 - Create PR to merge branch `chore/bump_avp_version` into `main`
 - Approve PR and merge to main
-- Create a Git Tag in `main` branch named `ArgoCD-v2.3.11_AVP-v1.13.0`
+- Create an annotated Git Tag in `main` branch named `ArgoCD-v2.3.11_AVP-v1.13.0`, ensure the tag points to the merge
+  commit ID from PR in the step before.
 
 #### Testing
 
