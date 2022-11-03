@@ -21,7 +21,7 @@ spec:
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
         overlay: overlays/devsecops-testing
-        targetRevision: ArgoCD-v2.3.10_AVP-v0.13.0
+        targetRevision: ArgoCD-v2.3.11_AVP-v1.13.0
       - cluster: pre-prod
         cluster-name: pre-prod
         overlay: overlays/pre-prod
