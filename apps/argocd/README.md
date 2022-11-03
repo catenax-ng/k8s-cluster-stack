@@ -3,7 +3,7 @@
 ## Installation
 
 For installation instructions, please refer to installation section in
-the [bootstrap.md](../../BOOTSTRAP.md#install_core_argocd_cluster).
+the [bootstrap.md](../../BOOTSTRAP.md#install-core-argocd-cluster).
 
 ## Maintenance
 
