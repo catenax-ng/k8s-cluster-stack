@@ -1,6 +1,6 @@
 locals {
-  codeowners_repos      = {for k, v in var.github_repositories : k => v if v.codeowners_available}
-  product_team_repos_with_template = { for k,v in var.github_repositories : k => v if v.uses_template == true && (try(v.template.repository, "") == "k8s-helm-example") }
+  codeowners_repos                 = {for k, v in var.github_repositories : k => v if v.codeowners_available}
+  product_team_repos_with_template = {for k, v in var.github_repositories : k => v if v.uses_template == true && (try(v.template.repository, "") == "k8s-helm-example")}
 }
 
 # Define desired state of all repositories
@@ -22,6 +22,11 @@ resource "github_repository" "repositories" {
   is_template            = each.value.is_template
   homepage_url           = each.value.homepage_url
   topics                 = each.value.topics
+
+  merge_commit_message        = "PR_TITLE"
+  merge_commit_title          = "MERGE_MESSAGE"
+  squash_merge_commit_message = "COMMIT_MESSAGES"
+  squash_merge_commit_title   = "COMMIT_OR_PR_TITLE"
 
   dynamic "template" {
     for_each = each.value.uses_template ? [true] : []
@@ -92,7 +97,7 @@ EOT
 }
 
 resource "github_branch_protection" "branch_protection" {
-  for_each = { for k, v in local.codeowners_repos : k => v if v.visibility == "public"}
+  for_each = {for k, v in local.codeowners_repos : k => v if v.visibility == "public"}
 
   repository_id                   = each.value.name
   pattern                         = each.value.codeowners.pattern
