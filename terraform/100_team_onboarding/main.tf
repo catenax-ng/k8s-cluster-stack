@@ -1476,6 +1476,160 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
+    },
+    "tx-sd-factory" : {
+      name : "tx-sd-factory"
+      team_name : "product-essential-services"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "tx-item-relationship-service" : {
+      name : "tx-item-relationship-service"
+      team_name : "product-traceability-irs"
+      homepage_url: "https://catenax-ng.github.io/tx-item-relationship-service/docs/"
+      description : ""
+      visibility : "public"
+      homepage_url : "https://catenax-ng.github.io/tx-item-relationship-service/docs/"
+      topics : []
+      pages : {
+        enabled : true
+        branch: "gh-pages"
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "tx-daps-registration-service" : {
+      name : "tx-daps-registration-service"
+      team_name : "product-essential-services"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "tx-autosetup-backend" : {
+      name : "tx-autosetup-backend"
+      team_name : "product-essential-services"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "tx-portal-frontend-registration" : {
+      name : "tx-portal-frontend-registration"
+      team_name : "product-portal"
+      description : "Catena-X Portal Frontend Registration"
+      visibility : "public"
+      homepage_url : "https://portal.demo.catena-x.net/registration/"
+      topics : [ "catena-x", "frontend", "portal", "registration"]
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "tx-portal-frontend" : {
+      name : "tx-portal-frontend"
+      team_name : "product-portal"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "tx-portal-backend" : {
+      name : "tx-portal-backend"
+      team_name : "product-portal"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "tractus-x-release" : {
+      name : "tractus-x-release"
+      team_name : ""
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : true
+        branch : "gh-pages"
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "eclipse-tractusx.github.io" : {
+      name : "eclipse-tractusx.github.io"
+      team_name : ""
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
     }
   }
 
