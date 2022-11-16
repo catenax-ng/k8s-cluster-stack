@@ -714,7 +714,7 @@ module "github" {
     "product-item-relationship-service" : {
       name : "product-item-relationship-service"
       team_name : "product-traceability-irs"
-      description : ""
+      description : "DEPRECATED - use https://github.com/catenax-ng/tx-item-relationship-service"
       visibility : "public"
       homepage_url : "https://catenax-ng.github.io/product-item-relationship-service/docs/"
       topics : []
@@ -1734,9 +1734,29 @@ module "github" {
       repository : "product-daps-registration-service"
       permission : "maintain"
     },
+    "tx-sd-factory-product-essential-services" : {
+      team_name : "product-essential-services"
+      repository : "tx-sd-factory"
+      permission : "maintain"
+    },
+    "tx-autosetup-backend-product-essential-services" : {
+      team_name : "product-essential-services"
+      repository : "tx-autosetup-backend"
+      permission : "maintain"
+    },
+    "tx-daps-registration-service-product-essential-services" : {
+      team_name : "product-essential-services"
+      repository : "tx-daps-registration-service"
+      permission : "maintain"
+    },
     "product-item-relationship-service-product-traceability-irs" : {
       team_name : "product-traceability-irs"
       repository : "product-item-relationship-service"
+      permission : "maintain"
+    },
+    "tx-item-relationship-service-product-traceability-irs" : {
+      team_name : "product-traceability-irs"
+      repository : "tx-item-relationship-service"
       permission : "maintain"
     },
     "product-testdata-2-edc-product-data-integrity-demonstrator" : {
@@ -1918,6 +1938,21 @@ module "github" {
       team_name : "product-portal"
       repository : "catena-x-release-deployment"
       permission : "push"
+    },
+    "tx-portal-frontend-registration-product-portal" : {
+      team_name : "product-portal"
+      repository : "tx-portal-frontend-registration"
+      permission : "maintain"
+    },
+    "tx-portal-frontend-product-portal" : {
+      team_name : "product-portal"
+      repository : "tx-portal-frontend"
+      permission : "maintain"
+    },
+    "tx-portal-backend-product-portal" : {
+      team_name : "product-portal"
+      repository : "tx-portal-backend"
+      permission : "maintain"
     },
     "catena-x-release-deployment-product-semantics" : {
       team_name : "product-semantics"
