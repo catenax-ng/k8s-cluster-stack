@@ -668,8 +668,8 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
-        branch : "main"
+        enabled : true
+        branch : "gh-pages"
       }
       is_template : false
       uses_template : false
@@ -714,7 +714,7 @@ module "github" {
     "product-item-relationship-service" : {
       name : "product-item-relationship-service"
       team_name : "product-traceability-irs"
-      description : ""
+      description : "DEPRECATED - use https://github.com/catenax-ng/tx-item-relationship-service"
       visibility : "public"
       homepage_url : "https://catenax-ng.github.io/product-item-relationship-service/docs/"
       topics : []
@@ -1476,6 +1476,160 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
+    },
+    "tx-sd-factory" : {
+      name : "tx-sd-factory"
+      team_name : "product-essential-services"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "tx-item-relationship-service" : {
+      name : "tx-item-relationship-service"
+      team_name : "product-traceability-irs"
+      homepage_url: "https://catenax-ng.github.io/tx-item-relationship-service/docs/"
+      description : ""
+      visibility : "public"
+      homepage_url : "https://catenax-ng.github.io/tx-item-relationship-service/docs/"
+      topics : []
+      pages : {
+        enabled : true
+        branch: "gh-pages"
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "tx-daps-registration-service" : {
+      name : "tx-daps-registration-service"
+      team_name : "product-essential-services"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "tx-autosetup-backend" : {
+      name : "tx-autosetup-backend"
+      team_name : "product-essential-services"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "tx-portal-frontend-registration" : {
+      name : "tx-portal-frontend-registration"
+      team_name : "product-portal"
+      description : "Catena-X Portal Frontend Registration"
+      visibility : "public"
+      homepage_url : "https://portal.demo.catena-x.net/registration/"
+      topics : [ "catena-x", "frontend", "portal", "registration"]
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "tx-portal-frontend" : {
+      name : "tx-portal-frontend"
+      team_name : "product-portal"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "tx-portal-backend" : {
+      name : "tx-portal-backend"
+      team_name : "product-portal"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "tractus-x-release" : {
+      name : "tractus-x-release"
+      team_name : ""
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : true
+        branch : "gh-pages"
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "eclipse-tractusx.github.io" : {
+      name : "eclipse-tractusx.github.io"
+      team_name : ""
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
     }
   }
 
@@ -1580,9 +1734,29 @@ module "github" {
       repository : "product-daps-registration-service"
       permission : "maintain"
     },
+    "tx-sd-factory-product-essential-services" : {
+      team_name : "product-essential-services"
+      repository : "tx-sd-factory"
+      permission : "maintain"
+    },
+    "tx-autosetup-backend-product-essential-services" : {
+      team_name : "product-essential-services"
+      repository : "tx-autosetup-backend"
+      permission : "maintain"
+    },
+    "tx-daps-registration-service-product-essential-services" : {
+      team_name : "product-essential-services"
+      repository : "tx-daps-registration-service"
+      permission : "maintain"
+    },
     "product-item-relationship-service-product-traceability-irs" : {
       team_name : "product-traceability-irs"
       repository : "product-item-relationship-service"
+      permission : "maintain"
+    },
+    "tx-item-relationship-service-product-traceability-irs" : {
+      team_name : "product-traceability-irs"
+      repository : "tx-item-relationship-service"
       permission : "maintain"
     },
     "product-testdata-2-edc-product-data-integrity-demonstrator" : {
@@ -1764,6 +1938,21 @@ module "github" {
       team_name : "product-portal"
       repository : "catena-x-release-deployment"
       permission : "push"
+    },
+    "tx-portal-frontend-registration-product-portal" : {
+      team_name : "product-portal"
+      repository : "tx-portal-frontend-registration"
+      permission : "maintain"
+    },
+    "tx-portal-frontend-product-portal" : {
+      team_name : "product-portal"
+      repository : "tx-portal-frontend"
+      permission : "maintain"
+    },
+    "tx-portal-backend-product-portal" : {
+      team_name : "product-portal"
+      repository : "tx-portal-backend"
+      permission : "maintain"
     },
     "catena-x-release-deployment-product-semantics" : {
       team_name : "product-semantics"
