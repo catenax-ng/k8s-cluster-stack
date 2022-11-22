@@ -1546,6 +1546,23 @@ module "github" {
       codeowners_available : false
       codeowners : null
     },
+    "tx-portal-assets" : {
+      name : "tx-portal-assets"
+      team_name : "product-portal"
+      description : "Catena-X Portal Assets"
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
     "tx-portal-frontend-registration" : {
       name : "tx-portal-frontend-registration"
       team_name : "product-portal"
@@ -1938,6 +1955,11 @@ module "github" {
       team_name : "product-portal"
       repository : "catena-x-release-deployment"
       permission : "push"
+    },
+    "tx-portal-assets-product-portal" : {
+      team_name : "product-portal"
+      repository : "tx-portal-assets"
+      permission : "maintain"
     },
     "tx-portal-frontend-registration-product-portal" : {
       team_name : "product-portal"
