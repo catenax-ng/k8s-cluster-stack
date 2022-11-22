@@ -5,6 +5,7 @@ metadata:
   annotations:
     avp.kubernetes.io/path: "devsecops/data/clusters/devsecops-testing/github-oauth"
 data:
+  exec.enabled: "true"
   dex.config: |
     connectors:
       - type: github

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: product-semantics-repo
+  namespace: argocd
+  annotations:
+    avp.kubernetes.io/path: "semantics/data/deploy-key"
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: git
+  url: git@github.com:catenax-ng/product-semantics
+  name: product-semantics-repo
+  project: project-semantics
+  sshPrivateKey: |
+    <semantics-deploy-key>

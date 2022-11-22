@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/catenax-ng/k8s-cluster-stack
-    targetRevision: feat/upgrade-argocd-to-2.4
+    targetRevision: HEAD
     path: environments/devsecops-testing
     plugin:
       name: argocd-vault-plugin-kustomize
