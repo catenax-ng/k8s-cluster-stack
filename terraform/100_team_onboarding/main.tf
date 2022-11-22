@@ -669,7 +669,7 @@ module "github" {
       topics : []
       pages : {
         enabled : true
-        branch : "main"
+        branch : "gh-pages"
       }
       is_template : false
       uses_template : false
