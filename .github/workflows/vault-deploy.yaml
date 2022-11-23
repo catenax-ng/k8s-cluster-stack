@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
 
       - name: Kubernetes Login (central argocd)
-        uses: azure/aks-set-context@v1
+        uses: azure/aks-set-context@v3
         with:
           creds: ${{ secrets.VAULT_SP_CREDS }}
           resource-group: cx-core-rg
