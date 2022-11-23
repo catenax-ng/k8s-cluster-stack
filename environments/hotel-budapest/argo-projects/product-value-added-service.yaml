@@ -35,5 +35,6 @@ spec:
       description: All access to applications inside project-value-added-service. Read only on project itself
       policies:
         - p, proj:project-value-added-service:team-admin, applications, *, project-value-added-service/*, allow
+        - p, proj:project-value-added-service:team-admin, exec, create, project-value-added-service/*, allow
       groups:
         - catenax-ng:product-value-added-service

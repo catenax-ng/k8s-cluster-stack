@@ -35,5 +35,6 @@ spec:
       description: All access to applications inside project-test-data-generator. Read only on project itself
       policies:
         - p, proj:project-test-data-generator:team-admin, applications, *, project-test-data-generator/*, allow
+        - p, proj:project-test-data-generator:team-admin, exec, create, project-test-data-generator/*, allow
       groups:
         - catenax-ng:product-test-data-generator

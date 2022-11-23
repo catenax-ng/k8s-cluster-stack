@@ -35,5 +35,6 @@ spec:
       description: All access to applications inside project-innovation-radar. Read only on project itself
       policies:
         - p, proj:project-innovation-radar:team-admin, applications, *, project-innovation-radar/*, allow
+        - p, proj:project-innovation-radar:team-admin, exec, create, project-innovation-radar/*, allow
       groups:
         - catenax-ng:product-innovation-radar

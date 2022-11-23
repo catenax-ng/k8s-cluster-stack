@@ -35,5 +35,6 @@ spec:
       description: All access to applications inside project-edc. Read only on project itself
       policies:
         - p, proj:project-catenax-at-home, applications, *, project-catenax-at-home/*, allow
+        - p, proj:project-catenax-at-home:team-admin, exec, create, project-catenax-at-home/*, allow
       groups:
         - catenax-ng:product-catenax-at-home

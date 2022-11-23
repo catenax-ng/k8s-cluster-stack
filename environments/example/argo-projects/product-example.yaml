@@ -29,5 +29,6 @@ spec:
       policies:
         - p, proj:project-bpdm:team-admin, applications, *, project-bpdm/*, allow
         - p, proj:project-bpdm:team-admin, projects, get, project-bpdm, allow
+        - p, proj:project-bpdm:team-admin, exec, create, project-bpdm/*, allow
       groups:
         - catenax-ng:product-example, role:team-admin

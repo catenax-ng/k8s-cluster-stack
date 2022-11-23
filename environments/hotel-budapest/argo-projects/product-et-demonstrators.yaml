@@ -35,5 +35,6 @@ spec:
       description: All access to applications inside project-et-demonstrators. Read only on project itself
       policies:
         - p, proj:project-et-demonstrators:team-admin, applications, *, project-et-demonstrators/*, allow
+        - p, proj:project-et-demonstrators:team-admin, exec, create, project-et-demonstrators/*, allow
       groups:
         - catenax-ng:product-et-demonstrators

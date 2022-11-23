@@ -35,5 +35,6 @@ spec:
       description: All access to applications inside project-behaviour-twin-pilot. Read only on project itself
       policies:
         - p, proj:project-behaviour-twin-pilot:team-admin, applications, *, project-behaviour-twin-pilot/*, allow
+        - p, proj:project-behaviour-twin-pilot:team-admin, exec, create, project-behaviour-twin-pilot/*, allow
       groups:
         - catenax-ng:product-behaviour-twin-pilot
