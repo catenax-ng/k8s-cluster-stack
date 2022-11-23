@@ -16,4 +16,5 @@ resources:
 
 patchesStrategicMerge:
   - configmap/argo-cm.yaml
+  - cluster-role/enable-webterminal.yaml
 
