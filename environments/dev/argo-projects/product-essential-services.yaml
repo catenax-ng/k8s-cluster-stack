@@ -40,5 +40,6 @@ spec:
       description: All access to applications inside project-essential-services. Read only on project itself
       policies:
         - p, proj:project-essential-services:team-admin, applications, *, project-essential-services/*, allow
+        - p, proj:project-essential-services:team-admin, exec, create, project-essential-services/*, allow
       groups:
         - catenax-ng:product-essential-services

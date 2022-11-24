@@ -35,5 +35,6 @@ spec:
       description: All access to applications inside project-business-partner-certificates. Read only on project itself
       policies:
         - p, proj:project-business-partner-certificates:team-admin, applications, *, project-business-partner-certificates/*, allow
+        - p, proj:project-business-partner-certificates:team-admin, exec, create, project-business-partner-certificates/*, allow
       groups:
         - catenax-ng:product-business-partner-certificates

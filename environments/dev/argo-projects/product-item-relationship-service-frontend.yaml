@@ -35,5 +35,6 @@ spec:
       description: All access to applications inside project-item-relationship-service-frontend. Read only on project itself
       policies:
         - p, proj:project-item-relationship-service-frontend:team-admin, applications, *, project-item-relationship-service-frontend/*, allow
+        - p, proj:project-item-relationship-service-frontend:team-admin, exec, create, project-item-relationship-service-frontend/*, allow
       groups:
         - catenax-ng:product-item-relationship-service-frontend

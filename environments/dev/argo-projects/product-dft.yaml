@@ -36,5 +36,6 @@ spec:
       description: All access to applications inside product-dft. Read only on project itself
       policies:
         - p, proj:product-dft:team-admin, applications, *, product-dft/*, allow
+        - p, proj:product-dft:team-admin, exec, create, product-dft/*, allow
       groups:
         - catenax-ng:product-dft

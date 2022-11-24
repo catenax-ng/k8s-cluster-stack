@@ -29,5 +29,6 @@ spec:
       description: All access to applications inside project-traceability-foss. Read only on project itself
       policies:
         - p, proj:project-traceability-foss:team-admin, applications, *, project-traceability-foss/*, allow
+        - p, proj:project-traceability-foss:team-admin, exec, create, project-traceability-foss/*, allow
       groups:
         - catenax-ng:product-traceability-foss

@@ -28,6 +28,7 @@ spec:
       description: provide read-only access to project
       policies:
         - p, proj:project-bpdm:project-read-only, applications, get, project-bpdm/*, allow
+        - p, proj:project-bpdm:team-admin, exec, create, project-bpdm/*, allow
       groups:
         - catenax-ng:product-bpdm
         - catenax-ng:release-management

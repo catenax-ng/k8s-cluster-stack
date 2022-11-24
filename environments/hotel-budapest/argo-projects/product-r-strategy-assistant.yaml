@@ -35,5 +35,6 @@ spec:
       description: All access to applications inside project-r-strategy-assistant. Read only on project itself
       policies:
         - p, proj:project-r-strategy-assistant:team-admin, applications, *, project-r-strategy-assistant/*, allow
+        - p, proj:project-r-strategy-assistant:team-admin, exec, create, project-r-strategy-assistant/*, allow
       groups:
         - catenax-ng:product-r-strategy-assistant

@@ -39,5 +39,6 @@ spec:
       description: All access to applications inside project-esc-backbone. Read only on project itself
       policies:
         - p, proj:project-esc-backbone:team-admin, applications, *, project-esc-backbone/*, allow
+        - p, proj:project-esc-backbone:team-admin, exec, create, project-esc-backbone/*, allow
       groups:
         - catenax-ng:product-esc-backbone

@@ -57,5 +57,6 @@ spec:
       description: All access to applications inside project-portal. Read only on project itself
       policies:
         - p, proj:project-portal:team-admin, applications, *, project-portal/*, allow
+        - p, proj:project-portal:team-admin, exec, create, project-portal/*, allow
       groups:
         - catenax-ng:product-portal

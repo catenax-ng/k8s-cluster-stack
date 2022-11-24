@@ -35,5 +35,6 @@ spec:
       description: All access to applications inside project-explorer. Read only on project itself
       policies:
         - p, proj:project-explorer:team-admin, applications, *, project-explorer/*, allow
+        - p, proj:project-explorer:team-admin, exec, create, project-explorer/*, allow
       groups:
         - catenax-ng:product-explorer

@@ -35,5 +35,6 @@ spec:
       description: All access to applications inside project-knowledge. Read only on project itself
       policies:
         - p, proj:project-knowledge:team-admin, applications, *, project-knowledge/*, allow
+        - p, proj:project-knowledge:team-admin, exec, create, project-knowledge/*, allow
       groups:
         - catenax-ng:product-knowledge
