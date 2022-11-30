@@ -21,7 +21,7 @@ data:
         args: ["helm dependency update -n $ARGOCD_APP_NAMESPACE"]
       generate:
         command: ["sh", "-c"]
-        args: ["helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE ${helm_args} . | argocd-vault-plugin generate - -s vault-secret"]
+        args: ["helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE ${ARGOCD_ENV_helm_args} . | argocd-vault-plugin generate - -s vault-secret"]
     - name: argocd-vault-plugin-kustomize
       generate:
         command: ["sh", "-c"]
@@ -32,4 +32,4 @@ data:
           args: ["helm dependency update -n $ARGOCD_APP_NAMESPACE"]
       generate:
         command: ["sh", "-c"]
-        args: ["helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE ${helm_args} . > manifest.yaml && kustomize build | argocd-vault-plugin generate - -s vault-secret"]
+        args: ["helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE ${ARGOCD_ENV_helm_args} . > manifest.yaml && kustomize build | argocd-vault-plugin generate - -s vault-secret"]
