@@ -1594,8 +1594,11 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
-      codeowners_available : false
-      codeowners : null
+      codeowners_available : true
+      codeowners : {
+        review_count : 1
+        pattern : "[dm][ea][vi]*"
+      }
     },
     "tx-portal-backend" : {
       name : "tx-portal-backend"
@@ -1664,7 +1667,7 @@ module "github" {
     "product-portal-frontend-product-portal" : {
       team_name : "product-portal"
       repository : "product-portal-frontend"
-      permission : "maintain"
+      permission : "pull"
     },
     "product-portal-iam-product-portal" : {
       team_name : "product-portal"
