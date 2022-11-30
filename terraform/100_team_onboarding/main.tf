@@ -372,15 +372,15 @@ module "github" {
 
   github_repositories = {
     "product-bpdm" : {
-      "name" : "product-bpdm"
-      "team_name" : "product-bpdm"
-      "description" : ""
+      name : "product-bpdm"
+      team_name : "product-bpdm"
+      description : ""
       visibility : "public"
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
-        branch : ""
+        enabled : true
+        branch : "gh-pages"
       }
       is_template : false
       uses_template : false
@@ -444,7 +444,7 @@ module "github" {
     "product-portal-frontend" : {
       name : "product-portal-frontend"
       team_name : "product-portal"
-      description : "Catena-X Portal Frontend"
+      description : "Catena-X Portal Frontend - DEPRECATED"
       visibility : "public"
       homepage_url : "https://portal.dev.demo.catena-x.net"
       topics : ["catena-x", "docker", "portal", "react", "typescript"]
@@ -634,8 +634,8 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
-        branch : "main"
+        enabled : true
+        branch : "gh-pages"
       }
       is_template : false
       uses_template : false
@@ -1583,10 +1583,10 @@ module "github" {
     "tx-portal-frontend" : {
       name : "tx-portal-frontend"
       team_name : "product-portal"
-      description : ""
+      description : "Catena-X Portal Frontend"
       visibility : "public"
-      homepage_url : ""
-      topics : []
+      homepage_url : "https://portal.dev.demo.catena-x.net"
+      topics : ["catena-x", "docker", "portal", "react", "typescript"]
       pages : {
         enabled : false
         branch : ""
@@ -1594,8 +1594,11 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
-      codeowners_available : false
-      codeowners : null
+      codeowners_available : true
+      codeowners : {
+        review_count : 1
+        pattern : "[dm][ea][vi]*" # terrible workaround as GH provider can only create one rule and GH only supports very limited RegEx features
+      }
     },
     "tx-portal-backend" : {
       name : "tx-portal-backend"
@@ -1664,7 +1667,7 @@ module "github" {
     "product-portal-frontend-product-portal" : {
       team_name : "product-portal"
       repository : "product-portal-frontend"
-      permission : "maintain"
+      permission : "pull"
     },
     "product-portal-iam-product-portal" : {
       team_name : "product-portal"
