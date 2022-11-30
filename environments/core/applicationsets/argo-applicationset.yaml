@@ -21,7 +21,7 @@ spec:
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
         overlay: overlays/devsecops-testing
-        targetRevision: HEAD # intentional for testing purposes, don't change without good reason
+        targetRevision: fix/argo_2.4_env_variable_breaking_change # intentional for testing purposes, don't change without good reason
       - cluster: pre-prod
         cluster-name: pre-prod
         overlay: overlays/pre-prod
