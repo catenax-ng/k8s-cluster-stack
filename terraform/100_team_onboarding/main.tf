@@ -643,8 +643,42 @@ module "github" {
       codeowners_available : false
       codeowners : null
     },
+    "tx-dft-backend" : {
+      name : "tx-dft-backend"
+      team_name : "product-dft"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : true
+        branch : "gh-pages"
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
     "product-dft-frontend" : {
       name : "product-dft-frontend"
+      team_name : "product-dft"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : true
+        branch : "gh-pages"
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "tx-dft-frontend" : {
+      name : "tx-dft-frontend"
       team_name : "product-dft"
       description : ""
       visibility : "public"
@@ -807,8 +841,8 @@ module "github" {
       homepage_url : ""
       topics : []
       pages : {
-        enabled : false
-        branch : "main"
+        enabled : true
+        branch : "gh-pages"
       }
       is_template : false
       uses_template : false
@@ -1732,6 +1766,16 @@ module "github" {
     "product-dft-frontend-product-dft" : {
       team_name : "product-dft"
       repository : "product-dft-frontend"
+      permission : "maintain"
+    },
+    "tx-dft-backend-product-dft" : {
+      team_name : "product-dft"
+      repository : "tx-dft-backend"
+      permission : "maintain"
+    },
+    "tx-dft-frontend-product-dft" : {
+      team_name : "product-dft"
+      repository : "tx-dft-frontend"
       permission : "maintain"
     },
     "product-sd-hub-product-essential-services" : {
