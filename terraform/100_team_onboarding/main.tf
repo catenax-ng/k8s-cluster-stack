@@ -1688,6 +1688,7 @@ module "github" {
   }
 
   github_repositories_teams = {
+    # repoName-gh-teamName
     "product-bpdm-product-bpdm" : {
       team_name : "product-bpdm"
       repository : "product-bpdm"
