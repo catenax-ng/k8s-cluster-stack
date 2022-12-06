@@ -1628,7 +1628,7 @@ module "github" {
       is_template : false
       uses_template : false
       template : null
-      codeowners_available : true
+      codeowners_available : false
       codeowners : {
         review_count : 1
         pattern : "[dm][ea][vi]*" # terrible workaround as GH provider can only create one rule and GH only supports very limited RegEx features
