@@ -1684,7 +1684,75 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
-    }
+    },
+    "product-bpdm-pool" : {
+      name : "product-bpdm-pool"
+      team_name : ""
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "product-bpdm-gate" : {
+      name : "product-bpdm-gate"
+      team_name : ""
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "product-bpdm-common" : {
+      name : "product-bpdm-common"
+      team_name : ""
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "product-bpdm-cdq-bridge" : {
+      name : "product-bpdm-cdq-bridge"
+      team_name : ""
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
   }
 
   github_repositories_teams = {
@@ -1692,6 +1760,26 @@ module "github" {
     "product-bpdm-product-bpdm" : {
       team_name : "product-bpdm"
       repository : "product-bpdm"
+      permission : "maintain"
+    },
+    "product-bpdm-pool-product-bpdm" : {
+      team_name : "product-bpdm"
+      repository : "product-bpdm-pool"
+      permission : "maintain"
+    },
+    "product-bpdm-gate-product-bpdm" : {
+      team_name : "product-bpdm"
+      repository : "product-bpdm-gate"
+      permission : "maintain"
+    },
+    "product-bpdm-common-product-bpdm" : {
+      team_name : "product-bpdm"
+      repository : "product-bpdm-common"
+      permission : "maintain"
+    },
+    "product-bpdm-cdq-bridge-product-bpdm" : {
+      team_name : "product-bpdm"
+      repository : "product-bpdm-cdq-bridge"
       permission : "maintain"
     },
     "product-semantics-product-semantics" : {
