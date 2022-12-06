@@ -14,6 +14,15 @@ module "vault" {
       avp_secret_name : "example"
       github_team : "product-team-example"
     },
+    "puris" : {
+      name : "puris",
+      secret_engine_name : "puris"
+      ui_policy_name : "puris-rw"
+      approle_name : "puris"
+      approle_policy_name : "puris-ro"
+      avp_secret_name : "puris"
+      github_team : "product-puris"
+    },
     "edc" : {
       name : "edc",
       secret_engine_name : "edc"
@@ -244,6 +253,10 @@ module "github" {
       "name" : "argocdadmins",
       "description" : "ArgoCD OAuth administrator team"
     },
+    "product-puris" : {
+      "name" : "product-puris",
+      "description" : "Product Team puris"
+    },
     "cx-core-schemas" : {
       "name" : "cx-core-schemas",
       "description" : ""
@@ -371,6 +384,48 @@ module "github" {
   }
 
   github_repositories = {
+    "product-puris-backend" : {
+      name : "product-puris-backend"
+      team_name : "product-puris"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : true
+        branch : "gh-pages"
+      }
+      is_template : false
+      uses_template : false
+      template : {
+        owner : "catenax-ng"
+        repository : "k8s-helm-example"
+      }
+      codeowners_available : false
+      codeowners : null
+
+    },
+    "product-puris-frontend" : {
+      name : "product-puris-frontend"
+      team_name : "product-puris"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : true
+        branch : "gh-pages"
+      }
+      is_template : false
+      uses_template : false
+      template : {
+        owner : "catenax-ng"
+        repository : "k8s-helm-example"
+      }
+      codeowners_available : false
+      codeowners : null
+
+    },
     "product-bpdm" : {
       name : "product-bpdm"
       team_name : "product-bpdm"
@@ -1531,14 +1586,14 @@ module "github" {
     "tx-item-relationship-service" : {
       name : "tx-item-relationship-service"
       team_name : "product-traceability-irs"
-      homepage_url: "https://catenax-ng.github.io/tx-item-relationship-service/docs/"
+      homepage_url : "https://catenax-ng.github.io/tx-item-relationship-service/docs/"
       description : ""
       visibility : "public"
       homepage_url : "https://catenax-ng.github.io/tx-item-relationship-service/docs/"
       topics : []
       pages : {
         enabled : true
-        branch: "gh-pages"
+        branch : "gh-pages"
       }
       is_template : false
       uses_template : false
@@ -1603,7 +1658,7 @@ module "github" {
       description : "Catena-X Portal Frontend Registration"
       visibility : "public"
       homepage_url : "https://portal.demo.catena-x.net/registration/"
-      topics : [ "catena-x", "frontend", "portal", "registration"]
+      topics : ["catena-x", "frontend", "portal", "registration"]
       pages : {
         enabled : false
         branch : ""
