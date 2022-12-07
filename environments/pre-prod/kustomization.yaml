@@ -17,6 +17,9 @@ resources:
   - argo-projects/product-portal.yaml
   - avp-secrets/portal-team-vault-secret.yaml
 
+  - argo-projects/product-sd-factory.yaml
+  - avp-secrets/sd-factory-vault-secret.yaml
+
   - argo-projects/product-sldt.yaml
   - avp-secrets/sldt-team-vault-secret.yaml
 
