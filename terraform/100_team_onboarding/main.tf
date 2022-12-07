@@ -537,7 +537,7 @@ module "github" {
     "product-portal-backend" : {
       name : "product-portal-backend"
       team_name : "product-portal"
-      description : "Catena-X Portal Backend- DEPRECATED"
+      description : "Catena-X Portal Backend - DEPRECATED"
       visibility : "public"
       homepage_url : ""
       topics : [
