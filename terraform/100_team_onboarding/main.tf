@@ -1812,6 +1812,16 @@ module "github" {
 
   github_repositories_teams = {
     # repoName-gh-teamName
+    "product-puris-backend-product-puris" : {
+      team_name : "product-puris"
+      repository : "product-puris-backend"
+      permission : "maintain"
+    },
+    "product-puris-frontend-product-puris" : {
+      team_name : "product-puris"
+      repository : "product-puris-frontend"
+      permission : "maintain"
+    },
     "product-bpdm-product-bpdm" : {
       team_name : "product-bpdm"
       repository : "product-bpdm"
