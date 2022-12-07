@@ -537,7 +537,7 @@ module "github" {
     "product-portal-backend" : {
       name : "product-portal-backend"
       team_name : "product-portal"
-      description : "Catena-X Portal Backend"
+      description : "Catena-X Portal Backend- DEPRECATED"
       visibility : "public"
       homepage_url : ""
       topics : [
@@ -1692,10 +1692,10 @@ module "github" {
     "tx-portal-backend" : {
       name : "tx-portal-backend"
       team_name : "product-portal"
-      description : ""
+      description : "Catena-X Portal Backend"
       visibility : "public"
       homepage_url : ""
-      topics : []
+      topics : ["catena-x", "portal", "backend", "dotnet", "csharp", "docker"]
       pages : {
         enabled : false
         branch : ""
@@ -1870,7 +1870,7 @@ module "github" {
     "product-portal-backend-product-portal" : {
       team_name : "product-portal"
       repository : "product-portal-backend"
-      permission : "maintain"
+      permission : "pull"
     },
     "product-data-integrity-demonstrator-product-data-integrity-demonstrator" : {
       team_name : "product-data-integrity-demonstrator"
