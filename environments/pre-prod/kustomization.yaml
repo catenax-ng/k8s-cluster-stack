@@ -21,3 +21,4 @@ resources:
 
   - pull-secret/secret.yaml
   - argo-apps/apps-wave-a.yaml
+  - argo-apps/apps-wave-b.yaml
