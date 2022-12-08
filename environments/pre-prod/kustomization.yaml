@@ -2,12 +2,18 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
+  - argo-projects/product-autosetup.yaml
+  - avp-secrets/autosetup-vault-secret.yaml
+  -
   - argo-projects/product-bpdm.yaml
   - avp-secrets/bpdm-team-vault-secret.yaml
 
   - argo-projects/product-daps.yaml
   - avp-secrets/daps-team-vault-secret.yaml
 
+  - argo-projects/product-dft-sde.yaml
+  - avp-secrets/dft-sde-vault-secret.yaml
+  -
   - argo-projects/product-item-relationship-service.yaml
   - avp-secrets/item-relationship-service-vault-secret.yaml
 
@@ -19,6 +25,9 @@ resources:
 
   - argo-projects/product-sd-factory.yaml
   - avp-secrets/sd-factory-vault-secret.yaml
+
+  - argo-projects/product-semantic-hub.yaml
+  - avp-secrets/semantic-hub-vault-secret.yaml
 
   - argo-projects/product-sldt.yaml
   - avp-secrets/sldt-team-vault-secret.yaml

@@ -1,19 +1,19 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: product-item-relationship-service
+  name: product-sde
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: project-item-relationship-service
+  name: project-sde
   namespace: argocd
 spec:
-  description: Project for product-item-relationship-service
+  description: Project for product-sde
   sourceRepos:
     - '*'
   destinations:
-    - namespace: product-item-relationship-service
+    - namespace: product-sde
       server: https://kubernetes.default.svc
   # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy.
   namespaceResourceBlacklist:
@@ -27,9 +27,9 @@ spec:
     - name: project-read-only
       description: provide read-only access to project
       policies:
-        - p, proj:project-item-relationship-service:project-read-only, applications, get, project-item-relationship-service/*, allow
-        - p, proj:project-item-relationship-service:team-admin, exec, create, project-item-relationship-service/*, allow
+        - p, proj:project-sde:project-read-only, applications, get, project-sde/*, allow
+        - p, proj:project-sde:team-admin, exec, create, project-sde/*, allow
       groups:
-        - catenax-ng:product-item-relationship-service
+        - catenax-ng:product-dft
         - catenax-ng:release-management
         - catenax-ng:test-management
