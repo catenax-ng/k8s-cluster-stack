@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: product-semantic-hub
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: project-semantic-hub
+  namespace: argocd
+spec:
+  description: Project for product-semantic-hub
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: product-semantic-hub
+      server: https://kubernetes.default.svc
+  # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy.
+  namespaceResourceBlacklist:
+    - group: ''
+      kind: ResourceQuota
+    - group: ''
+      kind: LimitRange
+    - group: ''
+      kind: NetworkPolicy
+  roles:
+    - name: project-read-only
+      description: provide read-only access to project
+      policies:
+        - p, proj:project-semantic-hub:project-read-only, applications, get, project-semantic-hub/*, allow
+        - p, proj:project-semantic-hub:team-admin, exec, create, project-semantic-hub/*, allow
+      groups:
+        - catenax-ng:product-semantics
+        - catenax-ng:release-management
+        - catenax-ng:test-management
