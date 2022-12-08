@@ -255,7 +255,7 @@ module "github" {
     },
     "product-puris" : {
       "name" : "product-puris",
-      "description" : "Product Team puris"
+      "description" : "Product Team PURIS"
     },
     "cx-core-schemas" : {
       "name" : "cx-core-schemas",
