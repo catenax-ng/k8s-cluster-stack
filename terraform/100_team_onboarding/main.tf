@@ -1618,6 +1618,23 @@ module "github" {
       codeowners_available : false
       codeowners : null
     },
+    "tx-daps-helm-chart" : {
+      name : "tx-daps-helm-chart"
+      team_name : "product-essential-services"
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
     "tx-autosetup-backend" : {
       name : "tx-autosetup-backend"
       team_name : "product-essential-services"
