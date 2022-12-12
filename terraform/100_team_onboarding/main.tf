@@ -1275,7 +1275,7 @@ module "github" {
       name : "product-vas-fraud-api"
       team_name : "product-value-added-service"
       description : ""
-      visibility : "public"
+      visibility : "private"
       homepage_url : ""
       topics : []
       pages : {
@@ -1292,7 +1292,7 @@ module "github" {
       name : "product-vas-fraud-workers"
       team_name : "product-value-added-service"
       description : ""
-      visibility : "public"
+      visibility : "private"
       homepage_url : ""
       topics : []
       pages : {
@@ -1309,7 +1309,7 @@ module "github" {
       name : "product-vas-fraud-dashboard"
       team_name : "product-value-added-service"
       description : ""
-      visibility : "public"
+      visibility : "private"
       homepage_url : ""
       topics : []
       pages : {
