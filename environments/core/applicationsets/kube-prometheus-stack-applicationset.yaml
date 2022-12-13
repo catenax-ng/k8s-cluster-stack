@@ -8,22 +8,22 @@ spec:
       elements:
       - cluster: core
         cluster-name: in-cluster
-        targetRevision: HEAD
+        targetRevision: kubeprometheusstack-35.5.1
       - cluster: dev
         cluster-name: dev
-        targetRevision: HEAD
+        targetRevision: kubeprometheusstack-35.5.1
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
-        targetRevision: HEAD
+        targetRevision: kubeprometheusstack-35.5.1
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
         targetRevision: feat/A1ODT-657-add-loki-logging
       - cluster: pre-prod
         cluster-name: pre-prod
-        targetRevision: HEAD
+        targetRevision: kubeprometheusstack-35.5.1
       - cluster: beta
         cluster-name: beta
-        targetRevision: HEAD
+        targetRevision: kubeprometheusstack-35.5.1
 
   template:
     metadata:

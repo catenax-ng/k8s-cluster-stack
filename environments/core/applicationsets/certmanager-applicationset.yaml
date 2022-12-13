@@ -8,25 +8,25 @@ spec:
       elements:
       - cluster: core
         cluster-name: in-cluster
-        targetRevision: HEAD
+        targetRevision: certmanager-1.10.0
       - cluster: dev
         cluster-name: dev
-        targetRevision: HEAD
+        targetRevision: certmanager-1.10.0
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
-        targetRevision: HEAD
+        targetRevision: certmanager-1.10.0
       - cluster: vault
         cluster-name: vault-cluster
-        targetRevision: HEAD
+        targetRevision: certmanager-1.10.0
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
         targetRevision: HEAD
       - cluster: pre-prod
         cluster-name: pre-prod
-        targetRevision: HEAD
+        targetRevision: certmanager-1.10.0
       - cluster: beta
         cluster-name: beta
-        targetRevision: HEAD
+        targetRevision: certmanager-1.10.0
 
   template:
     metadata:
