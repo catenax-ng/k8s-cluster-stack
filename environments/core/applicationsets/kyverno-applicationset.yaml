@@ -9,8 +9,6 @@ spec:
           - cluster: devsecops-testing
             cluster-name: devsecops-testing
             targetRevision: 2.6.0
-
-
   template:
     metadata:
       name: '{{ cluster }}-kyverno'

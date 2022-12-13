@@ -6,9 +6,6 @@ metadata:
     avp.kubernetes.io/path: "devsecops/data/clusters/devsecops-testing/github-oauth"
 data:
   exec.enabled: "true"
-  # https://kyverno.io/docs/installation/#notes-for-argocd-users
-  resource.compareoptions: |
-    ignoreAggregatedRoles: true
   dex.config: |
     connectors:
       - type: github
