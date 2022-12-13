@@ -9,6 +9,17 @@ data:
   # https://kyverno.io/docs/installation/#notes-for-argocd-users
   resource.compareoptions: |
     ignoreAggregatedRoles: true
+  # https://github.com/kyverno/kyverno/tree/main/charts/kyverno
+  resource.exclusions: |
+    - apiGroups:
+        - kyverno.io
+      kinds:
+        - AdmissionReport
+        - BackgroundScanReport
+        - ClusterAdmissionReport
+        - ClusterBackgroundScanReport
+      clusters:
+        - '*'
   dex.config: |
     connectors:
       - type: github
