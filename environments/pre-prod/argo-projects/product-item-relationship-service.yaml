@@ -30,6 +30,6 @@ spec:
         - p, proj:project-item-relationship-service:project-read-only, applications, get, project-item-relationship-service/*, allow
         - p, proj:project-item-relationship-service:team-admin, exec, create, project-item-relationship-service/*, allow
       groups:
-        - catenax-ng:product-item-relationship-service
+        - catenax-ng:product-traceability-irs
         - catenax-ng:release-management
         - catenax-ng:test-management
