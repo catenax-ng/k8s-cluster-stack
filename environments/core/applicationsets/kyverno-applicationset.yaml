@@ -18,8 +18,9 @@ spec:
       project: default
       source:
         chart: kyverno
-        repoURL: https://kyverno.github.io/kyverno
+        repoURL: https://github.com/catenax-ng/k8s-cluster-stack
         targetRevision: '{{ targetRevision }}'
+        path: apps/kyverno
       destination:
         name: '{{ cluster-name }}'
         namespace: kyverno
@@ -37,6 +38,8 @@ spec:
           # https://kyverno.io/docs/installation/#notes-for-argocd-users
           - CreateNamespace=true
           - Replace=true
+          - PrunePropagationPolicy=foreground # Supported policies are background, foreground and orphan.
+          - PruneLast=true # Allow the ability for resource pruning to happen as a final, implicit wave of a sync operation
         # The retry feature is available since v1.7
         retry:
           limit: 5 # number of failed sync attempt retries; unlimited number of attempts if less than 0
