@@ -17,7 +17,6 @@ spec:
     spec:
       project: default
       source:
-        chart: kyverno
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
         targetRevision: '{{ targetRevision }}'
         path: apps/kyverno
