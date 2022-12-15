@@ -80,6 +80,9 @@ resources:
   - argo-projects/product-item-relationship-service-frontend.yaml
   - avp-secrets/item-relationship-service-frontend-vault-secret.yaml
 
+  - argo-projects/product-material-pass.yaml
+  - avp-secrets/material-pass-team-vault-secret.yaml
+
   - pull-secret/secret.yaml
 
   - storage-classes/standard-ssd-lrs-retain.yaml
