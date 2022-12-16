@@ -6,6 +6,21 @@ metadata:
     avp.kubernetes.io/path: "devsecops/data/clusters/core/github-oauth"
 data:
   exec.enabled: "true"
+  # https://kyverno.io/docs/installation/#notes-for-argocd-users
+  resource.compareoptions: |
+    ignoreAggregatedRoles: true
+  # https://github.com/kyverno/kyverno/tree/main/charts/kyverno
+  resource.exclusions: |
+    - apiGroups:
+        - kyverno.io
+      kinds:
+        - AdmissionReport
+        - BackgroundScanReport
+        - ClusterAdmissionReport
+        - ClusterBackgroundScanReport
+      clusters:
+        - '*'
+  kustomize.buildOptions: --enable-helm
   dex.config: |
     connectors:
       - type: github
