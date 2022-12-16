@@ -20,7 +20,6 @@ data:
         - ClusterBackgroundScanReport
       clusters:
         - '*'
-  kustomize.buildOptions: --enable-helm
   dex.config: |
     connectors:
       - type: github
