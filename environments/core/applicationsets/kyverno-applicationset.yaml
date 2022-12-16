@@ -17,9 +17,9 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/catenax-ng/k8s-cluster-stack
-        targetRevision: '{{ targetRevision }}'
-        path: apps/kyverno
+        chart: kyverno
+        repoURL: https://kyverno.github.io/kyverno
+        targetRevision: 2.6.0
       destination:
         name: '{{ cluster-name }}'
         namespace: kyverno
@@ -29,9 +29,9 @@ spec:
       syncPolicy:
         # disabled autoSync with A1ODT-461 to avoid accidental damage to Hotel Budapest
         # https://github.com/kyverno/kyverno/tree/main/charts/kyverno
-       # automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
-        #  prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).
-        #  selfHeal: true # Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected ( false by default ).
+        automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
+          prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).
+          selfHeal: true # Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected ( false by default ).
         #          allowEmpty: false # Allows deleting all application resources during automatic syncing ( false by default ).
         syncOptions:
           # https://kyverno.io/docs/installation/#notes-for-argocd-users
