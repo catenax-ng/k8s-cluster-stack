@@ -8,7 +8,7 @@ spec:
         elements:
           - cluster: devsecops-testing
             cluster-name: devsecops-testing
-            targetRevision: feature/A1ODT-662-kyverno
+            targetRevision: HEAD
   template:
     metadata:
       name: '{{ cluster }}-kyverno'
