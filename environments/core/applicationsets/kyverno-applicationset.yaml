@@ -20,8 +20,6 @@ spec:
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
         targetRevision: '{{ targetRevision }}'
         path: apps/kyverno
-        plugin:
-          name: argocd-vault-plugin-kustomize
       destination:
         name: '{{ cluster-name }}'
         namespace: kyverno
