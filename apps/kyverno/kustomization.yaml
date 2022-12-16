@@ -9,6 +9,9 @@ helmCharts:
     version: 2.6.0
     releaseName: kyverno
     namespace: kyverno
+    valuesInline:
+      createSelfSignedCert: true
+
 
 # Here's the warning fix for sharedResourceWarning
 patches:
