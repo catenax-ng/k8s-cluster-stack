@@ -20,7 +20,7 @@ spec:
         targetRevision: ingress-nginx-v4.2.3-c1
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
-        targetRevision: HEAD
+        targetRevision: chore/dev_ingress_defaultBackend
       - cluster: pre-prod
         cluster-name: pre-prod
         targetRevision: ingress-nginx-v4.2.3-c1
