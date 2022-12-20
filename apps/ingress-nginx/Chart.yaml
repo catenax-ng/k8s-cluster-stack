@@ -28,3 +28,12 @@ dependencies:
   alias: ingress-nginx
   version: 4.2.3
   repository: https://kubernetes.github.io/ingress-nginx
+
+  # This dependency is already there as default backend service (404,4xx,5xx pages) is served
+  # by k8s-helm-example a.k.a. landing page container. And if this container (<namespace>/<service>)
+  # can not be found, the WHOLE ingress controller will cease to work and all services
+  # accessed through THIS ingress controller will be unavailable.
+- name: k8s-default-backend
+  alias: landing-page
+  version: 1.0.0-rc1
+  repository: https://catenax-ng.github.io/k8s-helm-example/
