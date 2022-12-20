@@ -609,7 +609,7 @@ module "github" {
     "product-portal-cd" : {
       name : "product-portal-cd"
       team_name : "product-portal"
-      description : "Catena-X Portal - Continuous Deployment"
+      description : "Catena-X Portal - Continuous Deployment - DEPRECATED"
       visibility : "public"
       homepage_url : ""
       topics : [
@@ -1912,7 +1912,7 @@ module "github" {
     "product-portal-cd-product-portal" : {
       team_name : "product-portal"
       repository : "product-portal-cd"
-      permission : "maintain"
+      permission : "pull"
     },
     "DataSpaceConnector-product-managed-identity-wallets" : {
       team_name : "product-managed-identity-wallets"
