@@ -35,5 +35,5 @@ dependencies:
   # accessed through THIS ingress controller will be unavailable.
 - name: k8s-default-backend
   alias: landing-page
-  version: 1.0.0-rc1
+  version: 0.1.0-rc1
   repository: https://catenax-ng.github.io/k8s-helm-example/
