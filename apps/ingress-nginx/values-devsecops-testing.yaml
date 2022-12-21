@@ -15,8 +15,8 @@ ingress-nginx:
     ##
     ## DEPRECATED but new extra Argument has been added.
     ## IMPORTANT If <namespace>/<service_name> is not available, ingress controller will crash (all services are out) because it was designed to make your life miserable!
-    extraArgs:
-      default-backend-service: $(POD_NAMESPACE)/k8s-default-backend
+#    extraArgs:
+#      default-backend-service: $(POD_NAMESPACE)/k8s-default-backend
 
   defaultBackend:
     ## If false, controller.defaultBackendService must be provided
@@ -28,7 +28,7 @@ landing-page:
     enabled: true
     annotations:
       kubernetes.io/ingress.class: nginx
-#      nginx.ingress.kubernetes.io/default-backend: k8s-default-backend
+      nginx.ingress.kubernetes.io/default-backend: k8s-default-backend
       nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
       nginx.ingress.kubernetes.io/ssl-passthrough: "true"
       nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
