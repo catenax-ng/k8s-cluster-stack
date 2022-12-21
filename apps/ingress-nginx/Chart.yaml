@@ -33,7 +33,7 @@ dependencies:
   # by k8s-helm-example a.k.a. landing page container. And if this container (<namespace>/<service>)
   # can not be found, the WHOLE ingress controller will cease to work and all services
   # accessed through THIS ingress controller will be unavailable.
-- name: k8s-default-backend
+- name: k8s-landing-page
   alias: landing-page
-  version: 0.1.0-rc2
+  version: 0.1.0
   repository: https://catenax-ng.github.io/k8s-helm-example/

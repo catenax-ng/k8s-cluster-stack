@@ -11,7 +11,7 @@ ingress-nginx:
 
     # IMPORTANT If <namespace>/<service_name> is not available, ingress controller will crash (all services are out) because it was designed to make your life miserable!
     extraArgs:
-      default-backend-service: $(POD_NAMESPACE)/k8s-default-backend
+      default-backend-service: $(POD_NAMESPACE)/k8s-landing-page
       default-ssl-certificate: $(POD_NAMESPACE)/tls-secret
 
   defaultBackend:
