@@ -1,5 +1,7 @@
 ingress-nginx:
   controller:
+    annotations:
+      nginx.ingress.kubernetes.io/default-backend: "k8s-default-backend"
     service:
       loadBalancerIP: 20.113.72.134
     ingressClassResource:
@@ -27,8 +29,8 @@ landing-page:
   ingress:
     enabled: true
     annotations:
-      kubernetes.io/ingress.class: "nginx"
-      nginx.ingress.kubernetes.io/default-backend: "k8s-default-backend"
+      kubernetes.io/ingress.class: nginx
+#      nginx.ingress.kubernetes.io/default-backend: "k8s-default-backend"
       nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
       nginx.ingress.kubernetes.io/ssl-passthrough: "true"
       nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
