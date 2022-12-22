@@ -12,6 +12,7 @@ resources:
   - applicationsets/kube-prometheus-stack-applicationset.yaml
   - applicationsets/maintenance-dashboard-app-applicationset.yaml
   - applicationsets/kyverno-applicationset.yaml
+  - applicationsets/landing-page-applicationset.yaml
   - applications/vault-application.yaml
   - applications/gh-org-checks-application.yaml
   - cluster-secrets/hotel-budapest-secret.yaml

@@ -8,8 +8,13 @@ ingress-nginx:
     config:
       # @url: https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#enable-underscores-in-headers
       enable-underscores-in-headers: "true"
-      #extraArgs:
-      #default-ssl-certificate: "default/www-tls"  # K8_NAMESPACE/K8_SECRET_NAME @url: https://kubernetes.github.io/ingress-nginx/user-guide/tls/#default-ssl-certificate
-  defaultBackend:
-    enabled: true
 
+    # IMPORTANT If <namespace>/<service_name> is not available, ingress controller will crash (all services are out) because it was designed to make your life miserable!
+    extraArgs:
+      default-backend-service: $(POD_NAMESPACE)/k8s-landing-page
+      default-ssl-certificate: $(POD_NAMESPACE)/tls-secret
+
+  defaultBackend:
+    ## If false, controller.defaultBackendService must be provided
+    ##
+    enabled: false
