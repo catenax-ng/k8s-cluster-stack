@@ -6,9 +6,24 @@ spec:
   generators:
     - list:
         elements:
+          - cluster: beta
+            cluster-name: beta
+            targetRevision: HEAD
+          - cluster: core
+            cluster-name: in-cluster
+            targetRevision: HEAD
+          - cluster: dev
+            cluster-name: dev
+            targetRevision: HEAD
           - cluster: devsecops-testing
             cluster-name: devsecops-testing
-            targetRevision: chore/dev_ingress_defaultBackend
+            targetRevision: HEAD
+          - cluster: hotel-budapest
+            cluster-name: hotel-budapest
+            targetRevision: HEAD
+          - cluster: pre-prod
+            cluster-name: pre-prod
+            targetRevision: HEAD
   template:
     metadata:
       name: '{{ cluster }}-landing-page'

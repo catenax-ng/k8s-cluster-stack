@@ -7,13 +7,13 @@ landing-page:
       nginx.ingress.kubernetes.io/ssl-passthrough: "true"
       nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     hosts:
-      - host: home.devsecops-testing.demo.catena-x.net
+      - host: home.pre-prod.demo.catena-x.net
         paths:
           - path: /
             pathType: ImplementationSpecific
     tls:
       - secretName: tls-secret
         hosts:
-          - home.devsecops-testing.demo.catena-x.net
+          - home.pre-prod.demo.catena-x.net
   service:
-    environment: "DEVSECOPS-TESTING"
+    environment: "PRE-PROD"
