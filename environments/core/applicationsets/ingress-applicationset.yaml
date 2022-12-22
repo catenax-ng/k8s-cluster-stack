@@ -8,25 +8,25 @@ spec:
       elements:
       - cluster: core
         cluster-name: in-cluster
-        targetRevision: ingress-nginx-v4.2.3-c1
+        targetRevision: HEAD
       - cluster: dev
         cluster-name: dev
-        targetRevision: ingress-nginx-v4.2.3-c1
+        targetRevision: HEAD
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
-        targetRevision: ingress-nginx-v4.2.3-c1
+        targetRevision: HEAD
       - cluster: vault
         cluster-name: vault-cluster
-        targetRevision: ingress-nginx-v4.2.3-c1
+        targetRevision: HEAD
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
-        targetRevision: chore/dev_ingress_defaultBackend
+        targetRevision: HEAD
       - cluster: pre-prod
         cluster-name: pre-prod
-        targetRevision: ingress-nginx-v4.2.3-c1
+        targetRevision: HEAD
       - cluster: beta
         cluster-name: beta
-        targetRevision: ingress-nginx-v4.2.3-c1
+        targetRevision: HEAD
 
   template:
     metadata:
