@@ -18,6 +18,7 @@ module "aks" {
   k8s_cluster_node_count = var.k8s_cluster_node_count
   k8s_version            = var.k8s_version
   k8s_vm_size            = var.k8s_vm_size
+  default_node_pool_name = "defaultng"
 }
 
 module "public_ip" {

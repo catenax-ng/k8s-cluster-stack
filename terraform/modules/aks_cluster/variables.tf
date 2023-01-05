@@ -43,3 +43,9 @@ variable "k8s_vm_size" {
   type        = string
   default     = "Standard_D8s_v3"
 }
+
+variable "default_node_pool_name" {
+  description = "The name of the AKS cluster's default node pool"
+  type        = string
+  default     = "default"
+}

@@ -4,7 +4,7 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   resource_group_name = var.aks_resource_group
 
   default_node_pool {
-    name       = "default"
+    name       = var.default_node_pool_name
     vm_size    = var.k8s_vm_size
     node_count = var.k8s_cluster_node_count
     orchestrator_version = var.k8s_version
