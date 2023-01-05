@@ -9,24 +9,27 @@ spec:
       - cluster: core
         cluster-name: in-cluster
         targetRevision: HEAD
+        ingress: 'app.core.demo.catena-x.net'
       - cluster: dev
         cluster-name: dev
         targetRevision: HEAD
+        ingress: 'app.dev.demo.catena-x.net'
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         targetRevision: HEAD
-      - cluster: vault
-        cluster-name: vault-cluster
-        targetRevision: HEAD
+        ingress: 'app.int.demo.catena-x.net'
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
         targetRevision: HEAD
+        ingress: 'app.devsecops-testing.demo.catena-x.net'
       - cluster: pre-prod
         cluster-name: pre-prod
         targetRevision: HEAD
+        ingress: 'app.pre-prod.demo.catena-x.net'
       - cluster: beta
         cluster-name: beta
         targetRevision: HEAD
+        ingress: 'app.beta.demo.catena-x.net'
 
   template:
     metadata:
@@ -38,8 +41,12 @@ spec:
       source:
         helm:
           parameters:
+            - name: ingress.enabled
+              value: true
             - name: environmentName
               value: '{{ cluster-name }}'
+            - name: simpleHost
+              value: '{{ ingress }}'
         repoURL: https://github.com/eclipse-tractusx/app-dashboard
         targetRevision: '{{ targetRevision }}'
         path: charts/app-dashboard
