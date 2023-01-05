@@ -42,7 +42,7 @@ spec:
         helm:
           parameters:
             - name: ingress.enabled
-              value: true
+              value: 'true'
             - name: environmentName
               value: '{{ cluster-name }}'
             - name: simpleHost
