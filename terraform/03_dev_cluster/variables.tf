@@ -21,7 +21,6 @@ variable "k8s_version" {
 variable "default_node_pool_name" {
   description = "The name of the AKS cluster's default node pool"
   type        = string
-  default     = "default"
 }
 
 variable "azure_tenant_id" {
