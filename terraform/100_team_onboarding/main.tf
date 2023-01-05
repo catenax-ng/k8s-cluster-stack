@@ -516,7 +516,7 @@ module "github" {
     "product-portal-iam" : {
       name : "product-portal-iam"
       team_name : "product-portal"
-      description : "Catena-X IAM - Keycloak instances"
+      description : "Catena-X IAM - Keycloak instances - DEPRECATED"
       visibility : "public"
       homepage_url : ""
       topics : [
@@ -1877,7 +1877,7 @@ module "github" {
     "product-portal-iam-product-portal" : {
       team_name : "product-portal"
       repository : "product-portal-iam"
-      permission : "maintain"
+      permission : "pull"
     },
     "product-innovation-radar-product-innovation-radar" : {
       team_name : "product-innovation-radar"
