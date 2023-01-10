@@ -1841,6 +1841,23 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
+    },
+    "tx-bpdm" : {
+      name : "tx-bpdm"
+      team_name : ""
+      description : "Fork of eclipse-tractusx/bpdm repository"
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
     }
   }
 
@@ -2289,6 +2306,11 @@ module "github" {
     "product-behaviour-twin-minio-product-behaviour-twin-minio" : {
       team_name : "product-behaviour-twin-pilot"
       repository : "product-behaviour-twin-minio"
+      permission : "maintain"
+    },
+    "tx-bpdm-tx-bpdm" : {
+      team_name : "product-bpdm"
+      repository : "tx-bpdm"
       permission : "maintain"
     }
   }
