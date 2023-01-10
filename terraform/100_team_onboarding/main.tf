@@ -1825,6 +1825,23 @@ module "github" {
       codeowners_available : false
       codeowners : null
     },
+    "product-behaviour-twin-minio" : {
+      name : "product-behaviour-twin-minio"
+      team_name : ""
+      description : ""
+      visibility : "private"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    }
   }
 
   github_repositories_teams = {
@@ -2267,6 +2284,11 @@ module "github" {
     "product-r-strategy-assistant-product-r-strategy-assistant" : {
       team_name : "product-r-strategy-assistant"
       repository : "product-r-strategy-assistant"
+      permission : "maintain"
+    },
+    "product-behaviour-twin-minio-product-behaviour-twin-minio" : {
+      team_name : "product-behaviour-twin-pilot"
+      repository : "product-behaviour-twin-minio"
       permission : "maintain"
     }
   }
