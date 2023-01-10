@@ -7,4 +7,6 @@ resource "azurerm_public_ip" "public_ip" {
   sku               = "Standard"
 
   zones = ["1", "2", "3"]
+
+  ddos_protection_mode = "Disabled"
 }

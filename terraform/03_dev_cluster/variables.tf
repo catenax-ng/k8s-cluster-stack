@@ -18,6 +18,11 @@ variable "k8s_version" {
   type        = string
 }
 
+variable "default_node_pool_name" {
+  description = "The name of the AKS cluster's default node pool"
+  type        = string
+}
+
 variable "azure_tenant_id" {
   description = "Azure TenantID to use"
   type        = string
@@ -40,4 +45,22 @@ variable "service_principal_client_id" {
 
 variable "service_principal_client_secret" {
   description = "USE TF_VAR_service_principal_client_secret! The secret of the service principal that will be used to create the AKS cluster."
+}
+
+variable "enable_auto_scaling" {
+  description = "Whether auto scaling of the worker nodes are enabled"
+  type        = bool
+  default     = null
+}
+
+variable "max_count" {
+  description = "If auto scaling is enabled the maximum number of nodes in the pool"
+  type        = number
+  default     = null
+}
+
+variable "min_count" {
+  description = "If auto scaling is enabled the minimum number of nodes in the pool"
+  type        = number
+  default     = null
 }
