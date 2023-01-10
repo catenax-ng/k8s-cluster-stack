@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: argocd
 
 resources:
+  - applicationsets/app-dashboard-applicationset.yaml
   - applicationsets/argo-applicationset.yaml
   - applicationsets/ingress-applicationset.yaml
   - applicationsets/certmanager-applicationset.yaml
