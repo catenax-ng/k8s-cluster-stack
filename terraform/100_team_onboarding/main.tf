@@ -1862,10 +1862,10 @@ module "github" {
     "product-onboarding" : {
       name : "product-onboarding"
       team_name : "argocdadmins"
-      description : "Destination for /environments + terraform/100"
+      description : "Product onboarding to Catena-X environment(s)"
       visibility : "public"
       homepage_url : ""
-      topics : []
+      topics : ["onboarding", "system-team", "consortia-environments"]
       pages : {
         enabled : false
         branch : ""
