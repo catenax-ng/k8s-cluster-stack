@@ -9,7 +9,7 @@ metadata:
     argocd.argoproj.io/secret-type: repository
 stringData:
   type: git
-  url: git@github.com:catenax-ng/product-behaviour-twin-pilot-private
+  url: git@github.com:catenax-ng/product-behaviour-twin-minio
   name: product-behaviour-twin-minio
   project: project-behaviour-twin-pilot
   sshPrivateKey: |
