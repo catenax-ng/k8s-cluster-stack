@@ -1858,6 +1858,40 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
+    },
+    "product-onboarding" : {
+      name : "product-onboarding"
+      team_name : "argocdadmins"
+      description : "Destination for /environments + terraform/100"
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "cloud-infra" : {
+      name : "cloud-infra"
+      team_name : "argocdadmins"
+      description : "Destination Terraform/* - 100"
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
     }
   }
 
@@ -2312,6 +2346,16 @@ module "github" {
       team_name : "product-bpdm"
       repository : "tx-bpdm"
       permission : "maintain"
+    },
+    "product-onboarding-argocdadmins" : {
+      team_name : "argocdadmins"
+      repository : "product-onboarding"
+      permission : "admin"
+    },
+    "cloud-infra-argocdadmins" : {
+      team_name : "argocdadmins"
+      repository : "cloud-infra"
+      permission : "admin"
     }
   }
 }
