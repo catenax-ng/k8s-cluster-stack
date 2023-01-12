@@ -1943,6 +1943,23 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
+    },
+    "product-portal-swagger" : {
+      name : "product-portal-swagger"
+      team_name : ""
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
     }
   }
 
@@ -2421,6 +2438,11 @@ module "github" {
     "tx-traceability-foss-backend-product-traceability-foss" : {
       team_name : "product-traceability-foss"
       repository : "tx-traceability-foss-backend"
+      permission : "maintain"
+    },
+    "product-portal-swagger-product-portal" : {
+      team_name : "product-portal"
+      repository : "product-portal-swagger"
       permission : "maintain"
     }
   }
