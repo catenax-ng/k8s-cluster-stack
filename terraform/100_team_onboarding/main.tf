@@ -1892,6 +1892,23 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
+    },
+    "tx-managed-identity-wallets" : {
+      name : "tx-managed-identity-wallets"
+      team_name : ""
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
     }
   }
 
@@ -2356,6 +2373,11 @@ module "github" {
       team_name : "argocdadmins"
       repository : "cloud-infra"
       permission : "admin"
+    },
+    "tx-managed-identity-wallets-product-managed-identity-wallets" : {
+      team_name : "product-managed-identity-wallets"
+      repository : "tx-managed-identity-wallets"
+      permission : "maintain"
     }
   }
 }
