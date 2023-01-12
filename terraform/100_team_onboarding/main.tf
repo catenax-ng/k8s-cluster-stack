@@ -1909,6 +1909,40 @@ module "github" {
       template : null
       codeowners_available : false
       codeowners : null
+    },
+    "tx-traceability-foss-frontend" : {
+      name : "tx-traceability-foss-frontend"
+      team_name : ""
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
+    },
+    "tx-traceability-foss-backend" : {
+      name : "tx-traceability-foss-backend"
+      team_name : ""
+      description : ""
+      visibility : "public"
+      homepage_url : ""
+      topics : []
+      pages : {
+        enabled : false
+        branch : ""
+      }
+      is_template : false
+      uses_template : false
+      template : null
+      codeowners_available : false
+      codeowners : null
     }
   }
 
@@ -2377,6 +2411,16 @@ module "github" {
     "tx-managed-identity-wallets-product-managed-identity-wallets" : {
       team_name : "product-managed-identity-wallets"
       repository : "tx-managed-identity-wallets"
+      permission : "maintain"
+    },
+    "tx-traceability-foss-frontend-product-traceability-foss" : {
+      team_name : "product-traceability-foss"
+      repository : "tx-traceability-foss-frontend"
+      permission : "maintain"
+    },
+    "tx-traceability-foss-backend-product-traceability-foss" : {
+      team_name : "product-traceability-foss"
+      repository : "tx-traceability-foss-backend"
       permission : "maintain"
     }
   }
