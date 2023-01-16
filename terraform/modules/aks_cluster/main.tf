@@ -14,9 +14,8 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
     min_count = var.min_count
   }
 
-  service_principal {
-    client_id     = var.aks_service_principal_client_id
-    client_secret = var.aks_service_principal_client_secret
+  identity {
+    type         = "SystemAssigned"
   }
 
   dns_prefix         = var.aks_dns_prefix
