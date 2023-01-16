@@ -9,3 +9,6 @@ resources:
 
 patchesStrategicMerge:
   - configmap/argo-cm.yaml
+  - configmap/argocd-notifications-catalog.yaml
+  - configmap/irs/argocd-notifications-cm.yaml
+  - secret/irs/argocd-notifications-secret.yaml
