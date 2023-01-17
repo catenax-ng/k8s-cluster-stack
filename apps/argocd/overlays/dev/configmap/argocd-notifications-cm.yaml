@@ -5,4 +5,4 @@ metadata:
 data:
   service.teams: |
     recipientUrls:
-      channelName: $channel-teams-url
+      irs-dev-teams: $irs-teams-channel-url

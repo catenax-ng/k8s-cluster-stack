@@ -10,5 +10,5 @@ resources:
 patchesStrategicMerge:
   - configmap/argo-cm.yaml
   - configmap/argocd-notifications-catalog.yaml
-  - configmap/irs/argocd-notifications-cm.yaml
-  - secret/irs/argocd-notifications-secret.yaml
+  - configmap/argocd-notifications-cm.yaml
+  - secret/argocd-notifications-secret.yaml
