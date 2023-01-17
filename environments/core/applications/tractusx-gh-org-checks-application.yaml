@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tractusx-gh-org-checks
+  namespace: argocd
+  labels:
+    environment: core
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/catenax-ng/gh-org-checks'
+    path: charts/gh-org-checks
+    targetRevision: 'HEAD'
+    plugin:
+      name: argocd-vault-plugin-helm-args
+      env:
+        - name: helm_args
+          value: '-f values-tractusx.yaml'
+  destination:
+    namespace: tractusx-gh-org-checks
+    name: in-cluster
+    server: ''
+  syncPolicy:
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
+
