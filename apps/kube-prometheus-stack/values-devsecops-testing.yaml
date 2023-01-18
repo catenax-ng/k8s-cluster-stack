@@ -32,7 +32,7 @@ kube-prometheus-stack:
           tlsSkipVerify: true
       orgId: 1
       type: loki
-      url: http://loki.logging.svc.cluster.local:3100
+      url: http://devsecops-testing-loki.logging.svc.cluster.local:3100
       version: 1
 
 domain: "devsecops-testing.demo.catena-x.net"
