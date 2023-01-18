@@ -1,0 +1,41 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: loki-applicationset
+spec:
+  generators:
+  - list:
+      elements:
+      - cluster: devsecops-testing
+        cluster-name: devsecops-testing
+        targetRevision: HEAD
+
+
+  template:
+    metadata:
+      name: '{{ cluster }}-loki'
+      labels:
+        app: loki
+    spec:
+      project: default
+      source:
+        helm:
+          values: ''
+          valueFiles:
+            - values.yaml
+        repoURL: https://github.com/catenax-ng/k8s-cluster-stack
+        targetRevision: '{{ targetRevision }}'
+        path: apps/loki
+      destination:
+        name: '{{ cluster-name }}'
+        namespace: logging
+        server: ''
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
+        retry:
+          limit: 5
+          backoff:
+            duration: 5s
+            factor: 2
+            maxDuration: 3m
