@@ -1,0 +1,15 @@
+apiVersion: v2
+name: catena-cluster-stack
+description: A Helm chart installing the default stack components for k8s clusters running at the Catena-X consortium
+
+type: application
+
+version: 0.1.0
+
+appVersion: "0.1.0"
+
+dependencies:
+  - name: ingress-nginx
+    alias: ingress-nginx
+    version: 4.2.3
+    repository: https://kubernetes.github.io/ingress-nginx
