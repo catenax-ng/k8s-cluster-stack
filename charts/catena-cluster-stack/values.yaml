@@ -8,3 +8,39 @@ ingress-nginx:
       enable-underscores-in-headers: "true"
   defaultBackend:
     enabled: true
+
+certmanager:
+  installCRDs: true
+
+tls:
+  # enableTLSComponents specifies, if a ClusterIssuer configured for LetsEncrypt will be included
+  enableTLSComponents: true
+
+  # dnsClientSecretName is the name of the secret storing DNS zone configuration
+  dnsClientSecretName: "dns-config"
+  # dnsClientKey is the key name in the k8s secret containing client secret values for potential DNS zone access
+  dnsClientSecretKey: "dnsClientKey"
+  # dnsClientSecret is the client secret used to authenticate for DNS configuration
+  dnsClientSecretValue: ""
+
+  # issuerEmail is the LetsEncrypt account email
+  issuerEmail: ""
+
+  # dnsZoneName is the name of the DNS zone. i.e. demo.catena-x.net
+  dnsZoneNames: {}
+  # - *.int.demo.catena-x.net
+  # - *.demo.catena-x.net
+
+  # solvers contains DNS zone provider specific configuration. Only included, if
+  solvers: []
+  # Azure example:
+  #  - dno01:
+  #      azuredns:
+  #        clientID: "<azrue-client-id>"
+  #        clientSecretSecretRef:
+  #          name: "dns-config" # -> value of dnsClientSecretName
+  #          key: "dnsClientKey" # -> value of dnsClientSecretKey
+  #        hostedZoneName: "<dns-zone-name>"
+  #        resourceGroupName: "<dns-zone-resource-group-name"
+  #        subscriptionID: "<dns-zone-subscription-id>"
+  #        tenantID: "<dns-zone-azure-subscription-id>"

@@ -1,0 +1,23 @@
+{{- if .Values.tls.enableTLSComponents -}}
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: le-crt
+  namespace: default
+spec:
+  secretName: tls-secret
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-prod
+  commonName: "*.{{ .Values.tls.dnsZoneName }}"
+  dnsNames:
+    {{- range .Values.tls.dnsZoneNames -}}
+    - "*.{{ . }}"
+    {{- end}}
+  duration: 2160h0m0s # 90d
+  renewBefore: 360h0m0s # 15d
+  secretTemplate:
+    annotations:
+      reflector.v1.k8s.emberstack.com/reflection-allowed: "true"
+      reflector.v1.k8s.emberstack.com/reflection-auto-enabled: "true" # Auto create reflection for matching namespaces
+{{- end -}}
