@@ -86,3 +86,5 @@ The official [kube-prometheus-stack Chart](https://github.com/prometheus-communi
 is included. Check out the docs, how to set a custom admin password, or specify other login mechanisms.
 
 ### Loki
+
+### Reflector

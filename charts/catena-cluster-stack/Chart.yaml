@@ -26,3 +26,6 @@ dependencies:
     alias: loki
     version: 3.10.0
     repository: https://grafana.github.io/helm-charts
+  - name: reflector
+    version: 6.1.47
+    repository: https://emberstack.github.io/helm-charts
