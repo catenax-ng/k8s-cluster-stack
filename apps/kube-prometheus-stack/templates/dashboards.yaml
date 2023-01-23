@@ -6,5 +6,5 @@ metadata:
   labels:
     grafana_dashboard: "1"
 data:
-  loki-example.json: |
-{{ .Files.Get "dashboards/loki-example.json" | indent 4 }}
+  logging.json: |
+{{ .Files.Get "dashboards/logging.json" | indent 4 }}
