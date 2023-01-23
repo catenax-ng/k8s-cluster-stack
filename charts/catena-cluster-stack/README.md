@@ -71,14 +71,18 @@ tls:
     - dns01:
         azureDNS:
         clientID: <azure-dns-zone-client-id>
-        clientSecretSecretRef: <
-        hostedZoneName: {{ .Values.issuer.azure.hostedZoneName }}
-        resourceGroupName: {{ .Values.issuer.azure.resourceGroupName }}
-        subscriptionID: {{ .Values.issuer.azure.subscriptionID }}
-        tenantID: {{ .Values.issuer.azure.tenantID }}
+        clientSecretSecretRef: 
+          name: <dns-zone-client-secret-name>
+          key: <dns-zone-client-secret-key>
+        hostedZoneName: <azure-hosted-zone-name>
+        resourceGroupName: <azure-resource-group-name>
+        subscriptionID: <azure-subscription-id>
+        tenantID: <azure-tenant-id>
 ```
 
 ### kube-prometheus-stack
 
 The official [kube-prometheus-stack Chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
 is included. Check out the docs, how to set a custom admin password, or specify other login mechanisms.
+
+### Loki
