@@ -44,3 +44,10 @@ tls:
   #        resourceGroupName: "<dns-zone-resource-group-name"
   #        subscriptionID: "<dns-zone-subscription-id>"
   #        tenantID: "<dns-zone-azure-subscription-id>"
+kube-prometheus-stack:
+  prometheusOperator:
+    # https://github.com/prometheus-community/helm-charts/issues/479#issuecomment-752709725
+    tls:
+      enabled: false
+    admissionWebhooks:
+      enabled: false

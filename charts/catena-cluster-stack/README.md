@@ -38,7 +38,13 @@ ingress-nginx:
         service.beta.kubernetes.io/azure-load-balancer-health-probe-request-path: "/healthz"
 ```
 
-### cert-manager
+### TLS
+
+This section describes, which resources are created to add TLS tooling and configuration.
+TLS resources are only added, if `tls.enableTLSComponents` is set to `true`. This is the default value.
+
+If `tls.enableTLSComponents` is set to `true`, [cert-manager](https://cert-manager.io/docs/) is added alongside a
+`ClusterIssuer` resource to issue certificates via LetsEncrypt](https://letsencrypt.org/).
 
 The alias used for cert-manager is `certmanager`. Check out available config option on the
 [official ArtifactHUB documentation](https://artifacthub.io/packages/helm/cert-manager/cert-manager#configuration).
@@ -71,3 +77,8 @@ tls:
         subscriptionID: {{ .Values.issuer.azure.subscriptionID }}
         tenantID: {{ .Values.issuer.azure.tenantID }}
 ```
+
+### kube-prometheus-stack
+
+The official [kube-prometheus-stack Chart](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
+is included. Check out the docs, how to set a custom admin password, or specify other login mechanisms.
