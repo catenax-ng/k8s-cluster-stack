@@ -1,12 +1,11 @@
-loki:
-  loki-stack:
-    loki:
-      commonConfig:
-        replication_factor: 1
-      storage:
-        type: 'filesystem'
-      auth_enabled: false
-      write:
-        persistence:
-          size: 50Gi
-          storageClass: default
+loki-stack:
+  loki:
+    commonConfig:
+      replication_factor: 1
+    storage:
+      type: 'filesystem'
+    auth_enabled: false
+    write:
+      persistence:
+        size: 50Gi
+        storageClass: default
