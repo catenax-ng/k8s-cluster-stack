@@ -5,3 +5,6 @@ loki:
     storage:
       type: 'filesystem'
     auth_enabled: false
+    write:
+      persistence:
+        size: 50Gi
