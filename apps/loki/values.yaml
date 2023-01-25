@@ -8,3 +8,4 @@ loki:
     write:
       persistence:
         size: 50Gi
+        storageClass: default
