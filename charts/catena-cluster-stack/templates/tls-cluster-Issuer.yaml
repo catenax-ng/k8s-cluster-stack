@@ -1,0 +1,19 @@
+{{- if .Values.tls.enableTLSComponents -}}
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    server: "https://acme-v02.api.letsencrypt.org/directory"
+    #server: "https://acme-staging-v02.api.letsencrypt.org/directory"
+    email: {{ .Values.tls.issuerEmail }}
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    {{- if .Values.tls.solvers }}
+    solvers:
+      {{- range .Values.tls.solvers -}}
+      {{- toYaml . | nindent 6 }}
+      {{ end }}
+    {{- end -}}
+{{- end -}}
