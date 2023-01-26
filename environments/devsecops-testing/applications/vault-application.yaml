@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vault
+  namespace: argocd
+  labels:
+    environment: devsecops-testing
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/catenax-ng/k8s-cluster-stack'
+    path: apps/vault
+    targetRevision: 'chore/vault-devsecops-testing'
+    plugin:
+      name: argocd-vault-plugin-helm-args
+      env:
+        - name: helm_args
+          value: '-f values-devsecops-testing.yaml'
+  destination:
+    namespace: vault
+    name: in-cluster
+    server: ''
+  syncPolicy:
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
+  ignoreDifferences: # https://github.com/argoproj/argo-cd/issues/4276#issuecomment-908455476
+    - group: admissionregistration.k8s.io
+      kind: MutatingWebhookConfiguration
+      jqPathExpressions:
+        - .webhooks[]?.clientConfig.caBundle

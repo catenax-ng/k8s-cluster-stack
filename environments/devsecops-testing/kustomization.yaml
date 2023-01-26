@@ -12,3 +12,5 @@ resources:
   - argo-repos/product-semantics-repo.yaml
 
   - pull-secret/secret.yaml
+  
+  - applications/vault-application.yaml
