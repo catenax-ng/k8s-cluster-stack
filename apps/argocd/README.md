@@ -21,7 +21,7 @@ Hey, there's a new ArgoCD version, then follow these steps:
     resources:
       - namespace.yaml
       - https://raw.githubusercontent.com/argoproj/argo-cd/v2.3.11/manifests/ha/install.yaml
-      - rbac-secret-access.yaml # grant avp access to secret with AVP configuration
+      - avp-rbac-secret-access.yaml # grant avp access to secret with AVP configuration
     ```
 
 - Update `targetRevision` according to new ArgoCD version for testing only for _devsecops-testing_ cluster in ArgoCD

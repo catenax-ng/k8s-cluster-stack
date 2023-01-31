@@ -5,7 +5,7 @@ namespace: argocd
 resources:
   - namespace.yaml
   - https://raw.githubusercontent.com/argoproj/argo-cd/v2.4.21/manifests/ha/install.yaml
-  - rbac-secret-access.yaml # grant avp access to secret with AVP configuration
+  - avp-rbac-secret-access.yaml # grant avp access to secret with AVP configuration
 
 patchesStrategicMerge:
   - argocd-rbac-cm.yaml
