@@ -8,18 +8,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/catenax-ng/k8s-cluster-stack
+    repoURL: https://github.com/catenax-ng/product-onboarding
     targetRevision: HEAD
-    path: environments/hotel-budapest
+    path: cluster/int
     plugin:
       name: argocd-vault-plugin-kustomize
 
   destination:
     name: hotel-budapest
     namespace: argocd
-
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-      allowEmpty: false
