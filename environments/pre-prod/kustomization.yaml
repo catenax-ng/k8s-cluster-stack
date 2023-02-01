@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - argo-projects/product-autosetup.yaml
   - avp-secrets/autosetup-vault-secret.yaml
-  
+
   - argo-projects/product-bpdm.yaml
   - avp-secrets/bpdm-team-vault-secret.yaml
 
@@ -13,7 +13,7 @@ resources:
 
   - argo-projects/product-dft-sde.yaml
   - avp-secrets/dft-sde-vault-secret.yaml
-  
+
   - argo-projects/product-item-relationship-service.yaml
   - avp-secrets/item-relationship-service-vault-secret.yaml
 
@@ -35,5 +35,3 @@ resources:
   - avp-secrets/devsecops-team-vault-secret.yaml
 
   - pull-secret/secret.yaml
-  - argo-apps/apps-wave-a.yaml
-  - argo-apps/apps-wave-b.yaml
