@@ -7,5 +7,5 @@ loki-stack:
     auth_enabled: false
     write:
       persistence:
-        size: 50Gi
+        size: 15Gi
         storageClass: default
