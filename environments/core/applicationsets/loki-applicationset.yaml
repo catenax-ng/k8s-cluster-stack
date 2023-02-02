@@ -12,6 +12,9 @@ spec:
       - cluster: dev
         cluster-name: dev
         targetRevision: HEAD
+      - cluster: hotel-budapest
+        cluster-name: hotel-budapest
+        targetRevision: HEAD
 
 
   template:
