@@ -32,7 +32,7 @@ kube-prometheus-stack:
           tlsSkipVerify: true
       orgId: 1
       type: loki
-      url: http://dev-loki.logging.svc.cluster.local:3100
+      url: http://hotel-budapest-loki.logging.svc.cluster.local:3100
       version: 1
 
 domain: "int.demo.catena-x.net"
