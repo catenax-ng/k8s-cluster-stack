@@ -5,7 +5,6 @@ loki-stack:
     storage:
       type: 'filesystem'
     auth_enabled: false
-    write:
-      persistence:
-        size: 15Gi
-        storageClass: default
+    persistence:
+      enabled: true
+      size: 30Gi
