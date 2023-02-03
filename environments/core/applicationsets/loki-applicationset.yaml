@@ -6,6 +6,9 @@ spec:
   generators:
   - list:
       elements:
+      - cluster: core
+        cluster-name: in-cluster
+        targetRevision: HEAD
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
         targetRevision: HEAD
@@ -15,7 +18,12 @@ spec:
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         targetRevision: HEAD
-
+      - cluster: pre-prod
+        cluster-name: pre-prod
+        targetRevision: HEAD
+      - cluster: beta
+        cluster-name: beta
+        targetRevision: HEAD
 
   template:
     metadata:
