@@ -8,7 +8,7 @@ spec:
       elements:
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
-        targetRevision: feat/A1ODT-657-add-loki-logging
+        targetRevision: HEAD
       - cluster: dev
         cluster-name: dev
         targetRevision: HEAD
