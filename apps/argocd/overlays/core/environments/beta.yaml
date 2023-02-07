@@ -17,9 +17,3 @@ spec:
   destination:
     name: beta
     namespace: argocd
-
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-      allowEmpty: false
