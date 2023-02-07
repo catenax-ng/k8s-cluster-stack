@@ -25,47 +25,10 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": 1,
-  "iteration": 1674480608261,
+  "iteration": 1675701785483,
   "links": [],
   "liveNow": false,
   "panels": [
-    {
-      "datasource": {
-        "type": "loki",
-        "uid": "P8E80F9AEF21F6940"
-      },
-      "gridPos": {
-        "h": 24,
-        "w": 21,
-        "x": 0,
-        "y": 0
-      },
-      "id": 2,
-      "options": {
-        "dedupStrategy": "none",
-        "enableLogDetails": true,
-        "prettifyLogMessage": false,
-        "showCommonLabels": false,
-        "showLabels": true,
-        "showTime": false,
-        "sortOrder": "Descending",
-        "wrapLogMessage": false
-      },
-      "pluginVersion": "8.5.3",
-      "targets": [
-        {
-          "datasource": {
-            "type": "loki",
-            "uid": "P8E80F9AEF21F6940"
-          },
-          "expr": "{namespace=~\"$namespace\",app=~\"$app\"} |~ \"(?i)$search\"",
-          "queryType": "range",
-          "refId": "A"
-        }
-      ],
-      "title": "Combined Logs",
-      "type": "logs"
-    },
     {
       "datasource": {
         "type": "loki",
@@ -124,9 +87,9 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 21,
+        "w": 24,
         "x": 0,
-        "y": 24
+        "y": 0
       },
       "id": 4,
       "options": {
@@ -155,6 +118,43 @@
       ],
       "title": "Timeline",
       "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "P8E80F9AEF21F6940"
+      },
+      "gridPos": {
+        "h": 24,
+        "w": 24,
+        "x": 0,
+        "y": 5
+      },
+      "id": 2,
+      "options": {
+        "dedupStrategy": "none",
+        "enableLogDetails": true,
+        "prettifyLogMessage": false,
+        "showCommonLabels": false,
+        "showLabels": true,
+        "showTime": false,
+        "sortOrder": "Descending",
+        "wrapLogMessage": false
+      },
+      "pluginVersion": "8.5.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "expr": "{namespace=~\"$namespace\",app=~\"$app\"} |~ \"(?i)$search\"",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "Combined Logs",
+      "type": "logs"
     }
   ],
   "refresh": false,
@@ -239,6 +239,6 @@
   "timezone": "",
   "title": "Logging",
   "uid": "qkcOB5oVz",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
