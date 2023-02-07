@@ -8,9 +8,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/catenax-ng/k8s-cluster-stack
+    repoURL: https://github.com/catenax-ng/product-onboarding
     targetRevision: HEAD
-    path: environments/beta
+    path: cluster/beta
     plugin:
       name: argocd-vault-plugin-kustomize
 

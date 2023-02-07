@@ -9,15 +9,15 @@ spec:
       - cluster: core
         cluster-name: in-cluster
         overlay: overlays/core
-        targetRevision: ArgoCD-v2.4.22-c1_AVP-v1.13.1
+        targetRevision: ArgoCD-v2.4.22-c2_AVP-v1.13.1
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         overlay: overlays/hotel-budapest
-        targetRevision: ArgoCD-v2.4.22-c1_AVP-v1.13.1
+        targetRevision: ArgoCD-v2.4.22-c2_AVP-v1.13.1
       - cluster: dev
         cluster-name: dev
         overlay: overlays/dev
-        targetRevision: ArgoCD-v2.4.22-c1_AVP-v1.13.1
+        targetRevision: ArgoCD-v2.4.22-c2_AVP-v1.13.1
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
         overlay: overlays/devsecops-testing
@@ -25,11 +25,11 @@ spec:
       - cluster: pre-prod
         cluster-name: pre-prod
         overlay: overlays/pre-prod
-        targetRevision: ArgoCD-v2.4.22-c1_AVP-v1.13.1
+        targetRevision: ArgoCD-v2.4.22-c2_AVP-v1.13.1
       - cluster: beta
         cluster-name: beta
         overlay: overlays/beta
-        targetRevision: ArgoCD-v2.4.22-c1_AVP-v1.13.1
+        targetRevision: ArgoCD-v2.4.22-c2_AVP-v1.13.1
 
   template:
     metadata:
