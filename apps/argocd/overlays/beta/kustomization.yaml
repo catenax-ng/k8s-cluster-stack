@@ -9,3 +9,4 @@ resources:
 
 patchesStrategicMerge:
   - configmap/argo-cm.yaml
+  - configmap/argo-rbac-cm.yaml
