@@ -12,3 +12,4 @@ patchesStrategicMerge:
   - plugins/argo-vault-plugin.yaml
   - avp-argocd-cm.yaml
   - enable-webterminal.yaml
+  - argo-notification-cm.yaml
