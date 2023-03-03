@@ -13,3 +13,4 @@ patchesStrategicMerge:
   - avp-argocd-cm.yaml
   - enable-webterminal.yaml
   - argo-notification-cm.yaml
+  - argocd-notifications-secrets.yaml
