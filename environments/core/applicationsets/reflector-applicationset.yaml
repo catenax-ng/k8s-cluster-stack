@@ -8,25 +8,25 @@ spec:
         elements:
           - cluster: core
             cluster-name: in-cluster
-            targetRevision: 6.1.47
+            targetRevision: 7.0.147
           - cluster: dev
             cluster-name: dev
-            targetRevision: 6.1.47
+            targetRevision: 7.0.147
           - cluster: hotel-budapest
             cluster-name: hotel-budapest
-            targetRevision: 6.1.47
+            targetRevision: 7.0.147
           - cluster: vault
             cluster-name: vault-cluster
-            targetRevision: 6.1.47
+            targetRevision: 7.0.147
           - cluster: devsecops-testing
             cluster-name: devsecops-testing
-            targetRevision: 6.1.47
+            targetRevision: 7.0.147
           - cluster: pre-prod
             cluster-name: pre-prod
-            targetRevision: 6.1.47
+            targetRevision: 7.0.147
           - cluster: beta
             cluster-name: beta
-            targetRevision: 6.1.47
+            targetRevision: 7.0.147
 
   template:
     metadata:
