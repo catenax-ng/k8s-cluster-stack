@@ -18,13 +18,14 @@ spec:
     spec:
       project: default
       source:
-        helm:
-          valueFiles:
-            - values.yaml
-            - values-catenax-ng.yaml
-        repoURL: https://github.com/catenax-ng/maintenance-dashboard
-        targetRevision: '{{ targetRevision }}'
+        repoURL: 'https://github.com/catenax-ng/maintenance-dashboard'
         path: charts/maintenance-dashboard
+        targetRevision: '{{ targetRevision }}'
+        plugin:
+          name: argocd-vault-plugin-helm-args
+          env:
+            - name: helm_args
+              value: '-f values.yaml -f values-catenax-ng.yaml'
       destination:
         name: '{{ cluster-name }}'
         namespace: maintenance-dashboard-app
