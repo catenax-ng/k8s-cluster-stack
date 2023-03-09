@@ -8,7 +8,7 @@ spec:
       elements:
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
-        targetRevision: maintenance-dashboard-1.0.3
+        targetRevision: HEAD
 
   template:
     metadata:
