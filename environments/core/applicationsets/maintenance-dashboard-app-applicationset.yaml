@@ -25,7 +25,7 @@ spec:
           name: argocd-vault-plugin-helm-args
           env:
             - name: helm_args
-              value: '-f values.yaml -f values-catenax-ng.yaml'
+              value: '-f values.yaml -f values-{{ cluster }}.yaml'
       destination:
         name: '{{ cluster-name }}'
         namespace: maintenance-dashboard-app
