@@ -1,0 +1,87 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cmp-plugin
+data:
+  avp-kustomize.yaml: |
+    ---
+    apiVersion: argoproj.io/v1alpha1
+    kind: ConfigManagementPlugin
+    metadata:
+      name: argocd-vault-plugin-kustomize
+    spec:
+      allowConcurrency: true
+      discover:
+        find:
+          command: [sh, -c, "find . -name kustomization.yaml"] 
+      generate:
+        command: [sh, -c, "kustomize build . | argocd-vault-plugin generate - -s $ARGOCD_APP_NAMESPACE:vault-secret"]
+      lockRepo: false
+  avp-helm-args.yaml: |
+    ---
+    apiVersion: argoproj.io/v1alpha1
+    kind: ConfigManagementPlugin
+    metadata:
+      name: argocd-vault-plugin-helm-args
+    spec:
+      allowConcurrency: true
+      discover:
+        find:
+          command:
+            - sh
+            - "-c"
+            - >-
+              if [ -n "$(find . -name 'values-*.yaml' | head -1)" ] && [ -n "$(find . -name 'Chart.yaml' | head -1)" ]; then
+                  echo "Hit!"
+              fi
+      init:
+        command: [sh, -c, "helm dependency build"]
+      generate:
+        command:
+          - sh
+          - "-c"
+          - >-
+            helm template $ARGOCD_APP_NAME --include-crds -n $ARGOCD_APP_NAMESPACE ${ARGOCD_ENV_HELM_ARGS} . |
+            argocd-vault-plugin generate - -s $ARGOCD_APP_NAMESPACE:vault-secret
+      lockRepo: false
+  avp-helm-values.yaml: |
+    ---
+    apiVersion: argoproj.io/v1alpha1
+    kind: ConfigManagementPlugin
+    metadata:
+      name: argocd-vault-plugin-helm-values
+    spec:
+      allowConcurrency: true
+      discover:
+        find:
+          command:
+            - sh
+            - "-c"
+            - "find . -name 'Chart.yaml' && find . -name 'values.yaml'"
+      generate:
+        command:
+          - bash
+          - "-c"
+          - >-
+            helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE -f <(echo "$ARGOCD_ENV_HELM_VALUES") . |
+            argocd-vault-plugin generate - -s $ARGOCD_APP_NAMESPACE:vault-secret
+      lockRepo: false
+  avp.yaml: |
+    apiVersion: argoproj.io/v1alpha1
+    kind: ConfigManagementPlugin
+    metadata:
+      name: argocd-vault-plugin
+    spec:
+      allowConcurrency: true
+      discover:
+        find:
+          command:
+            - sh
+            - "-c"
+            - "find . -name '*.yaml' | xargs -I {} grep \"<path\\|avp\\.kubernetes\\.io\" {} | grep ."
+      generate:
+        command:
+          - sh
+          - "-c"
+          - "argocd-vault-plugin generate . -s $ARGOCD_APP_NAMESPACE:vault-secret"
+      lockRepo: false
