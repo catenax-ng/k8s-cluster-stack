@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: argocd-repo-server
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-repo-server
@@ -117,7 +118,32 @@ spec:
               subPath: argocd-vault-plugin
               mountPath: /usr/local/bin/argocd-vault-plugin
 
-#        # argocd-vault-plugin with plain YAML
+        # argocd-vault-plugin with Kustomize and Helm
+        - name: avp-helm-kustomize
+          command: [ /var/run/argocd/argocd-cmp-server ]
+          image: quay.io/argoproj/
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 999
+          volumeMounts:
+            - mountPath: /var/run/argocd
+              name: var-files
+            - mountPath: /home/argocd/cmp-server/plugins
+              name: plugins
+            - mountPath: /tmp
+              name: cmp-tmp
+
+            # Register plugins into sidecar
+            - mountPath: /home/argocd/cmp-server/config/plugin.yaml
+              subPath: avp-helm-kustomize.yaml
+              name: cmp-plugin
+
+            # Important: Mount tools into $PATH
+            - name: custom-tools
+              subPath: argocd-vault-plugin
+              mountPath: /usr/local/bin/argocd-vault-plugin
+
+        # argocd-vault-plugin with plain YAML
         - name: avp
           command: [/var/run/argocd/argocd-cmp-server]
           image: quay.io/argoproj/argocd:v2.5.14
