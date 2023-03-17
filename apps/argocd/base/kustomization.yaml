@@ -9,10 +9,7 @@ resources:
   - avp-rbac-secret-access.yaml # grant avp access to secret with AVP configuration
 
 patches:
-  - path: vault-plugin/argo-repo-server-sidecars.yaml # add AVP sidecars to reposerver deployment
+  - path: argocd-cm.yaml
   - path: argocd-rbac-cm.yaml
   - path: enable-webterminal.yaml
-
-# OLD AVP setup
-#  - path: plugins/argo-vault-plugin.yaml
-#  - path: avp-argocd-cm.yaml
+  - path: vault-plugin/argo-repo-server-sidecars.yaml # add AVP sidecars to reposerver deployment
