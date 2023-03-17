@@ -31,17 +31,49 @@ data:
             - sh
             - "-c"
             - >-
-              if [ -n "$(find . -name 'values-*.yaml' | head -1)" ] && [ -n "$(find . -name 'Chart.yaml' | head -1)" ]; then
+              if [ -n "$(find . -name 'values-*.yaml' | head -1)" ] && 
+                 [ -n "$(find . -name 'Chart.yaml' | head -1)" ] &&
+                 [ -n "${ARGOCD_ENV_helm_args}" ]; then
                   echo "Hit!"
               fi
       init:
-        command: [sh, -c, "helm dependency build"]
+        command: [sh, -c, "helm dependency update"]
+      generate:
+        command:
+          - bash
+          - "-c"
+          - >-
+            helm template $ARGOCD_APP_NAME --include-crds -n $ARGOCD_APP_NAMESPACE $ARGOCD_ENV_helm_args . |
+            argocd-vault-plugin generate - -s $ARGOCD_APP_NAMESPACE:vault-secret
+      lockRepo: false
+  avp-helm-kustomize.yaml: |
+    ---
+    apiVersion: argoproj.io/v1alpha1
+    kind: ConfigManagementPlugin
+    metadata:
+      name: argocd-vault-plugin-helm-kustomize
+    spec:
+      allowConcurrency: true
+      discover:
+        find:
+          command:
+            - sh
+            - "-c"
+            - |
+              if [ -n "$(find . -name 'Chart.yaml' | head -1)" ] && 
+                 [ -n "$(find . -name 'kustomization.yaml' | head -1)" ] &&
+                 [ -n "${ARGOCD_ENV_helm_args}" ]; then
+                  echo "Hit!"
+              fi
+      init:
+        command: [sh, -c, "helm dependency update"]
       generate:
         command:
           - sh
           - "-c"
           - >-
-            helm template $ARGOCD_APP_NAME --include-crds -n $ARGOCD_APP_NAMESPACE ${ARGOCD_ENV_HELM_ARGS} . |
+            helm template $ARGOCD_APP_NAME --incluse-crds -n $ARGOCD_APP_NAMESPACE ${ARGOCD_ENV_helm_args} . > manifest.yaml && 
+            kustomize build | 
             argocd-vault-plugin generate - -s $ARGOCD_APP_NAMESPACE:vault-secret
       lockRepo: false
   avp-helm-values.yaml: |
@@ -57,7 +89,13 @@ data:
           command:
             - sh
             - "-c"
-            - "find . -name 'Chart.yaml' && find . -name 'values.yaml'"
+            - >-
+              if [ -n "$(find . -name 'values.yaml' | head -1)" ] &&
+                 [ -n "$(find . -name 'Chart.yaml' | head -1)" ] &&
+                 [ -n "$(find . -name '*.yaml' | xargs -I {} grep '<path\|avp\.kubernetes\.io' {})" ]; 
+              then
+                echo "Hit!"
+              fi
       generate:
         command:
           - bash
@@ -78,7 +116,14 @@ data:
           command:
             - sh
             - "-c"
-            - "find . -name '*.yaml' | xargs -I {} grep \"<path\\|avp\\.kubernetes\\.io\" {} | grep ."
+            - >-
+              if [ -z "$(find . -name 'Chart.yaml')" ] &&
+                 [ -z "$(find . -name 'kustomization.yaml')" ] &&
+                 [ -n "$(find . -name '*.yaml')" ] &&
+                 [ -n "$(find . -name '*.yaml' | xargs -I {} grep '<path\|avp\.kubernetes\.io' {})" ];
+              then
+                 echo "Hit!"
+              fi
       generate:
         command:
           - sh
