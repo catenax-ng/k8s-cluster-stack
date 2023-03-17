@@ -51,7 +51,7 @@ data:
     apiVersion: argoproj.io/v1alpha1
     kind: ConfigManagementPlugin
     metadata:
-      name: argocd-vault-plugin-helm-kustomize
+      name: argocd-vault-plugin-kustomize-helm-args
     spec:
       allowConcurrency: true
       discover:
@@ -81,7 +81,7 @@ data:
     apiVersion: argoproj.io/v1alpha1
     kind: ConfigManagementPlugin
     metadata:
-      name: argocd-vault-plugin-helm-values
+      name: argocd-vault-plugin-helm
     spec:
       allowConcurrency: true
       discover:
