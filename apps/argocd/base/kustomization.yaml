@@ -13,3 +13,5 @@ patches:
   - path: argocd-rbac-cm.yaml
   - path: enable-webterminal.yaml
   - path: vault-plugin/argo-repo-server-sidecars.yaml # add AVP sidecars to reposerver deployment
+  - path: argo-notification-cm.yaml
+  - path: argocd-notifications-secrets.yaml
