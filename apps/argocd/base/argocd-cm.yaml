@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+data:
+  # The metadata.label key name where Argo CD injects the app name as a tracking label (optional).
+  # Tracking labels are used to determine which resources need to be deleted when pruning.
+  # If omitted, Argo CD injects the app name into the label: 'app.kubernetes.io/instance'
+  # This might cause problems with Helm charts which will set 'app.kubernetes.io/instance' as well (e.g. Kyverno)
+  application.instanceLabelKey: argocd.argoproj.io/instance
