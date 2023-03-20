@@ -10,4 +10,4 @@ resources:
 patchesStrategicMerge:
   - configmap/argo-cm.yaml
   - configmap/argo-notification-channels.yaml
-  - secrets/notification-secret-irs.yaml
+  - secrets/argo-notification-secrets.yaml
