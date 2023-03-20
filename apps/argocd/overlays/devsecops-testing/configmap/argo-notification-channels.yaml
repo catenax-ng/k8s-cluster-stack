@@ -5,5 +5,5 @@ metadata:
 data:
   service.teams.irs: |
     recipientUrls:
+      argocd-teams-channel-url: $argocd-teams-channel-url
       irs-dev-teams: $irs-teams-channel-url
-      demo-teams-channel: $demo-teams-channel-url
