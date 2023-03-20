@@ -21,8 +21,7 @@ spec:
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
         overlay: overlays/devsecops-testing
-        targetRevision: feat/argocd_2.5 # temp branch for testing upgrade and AVP implementation
-#        targetRevision: HEAD # intentional for testing purposes, don't change without good reason
+        targetRevision: HEAD # intentional for testing purposes, don't change without good reason
       - cluster: pre-prod
         cluster-name: pre-prod
         overlay: overlays/pre-prod
