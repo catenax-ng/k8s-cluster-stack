@@ -3,7 +3,9 @@ kind: ConfigMap
 metadata:
   name: argocd-notifications-cm
 data:
-  service.teams.irs: |
+  service.teams.system_team: |
     recipientUrls:
       argocd-teams-channel-url: $argocd-teams-channel-url
+  service.teams.irs: |
+    recipientUrls:
       irs-dev-teams: $irs-teams-channel-url
