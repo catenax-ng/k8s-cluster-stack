@@ -1,19 +1,16 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-bases:
-  - ../../base
-
 resources:
+  - ../../base
   - environments/core.yaml
   - environments/dev.yaml
   - environments/hotel-budapest.yaml
   - environments/devsecops-testing.yaml
   - environments/pre-prod.yaml
   - environments/beta.yaml
-#  - environments/example.yaml
   - ingress/ingress-argocd.yaml
 
-patchesStrategicMerge:
-  - configmap/argo-cm.yaml
-  - configmap/avp-argocd-cm.yaml
+patches:
+  - path: configmap/argo-cm.yaml
+  - path: configmap/vault-plugin-cm.yaml # use vault-secret from argocd ns
