@@ -30,7 +30,7 @@ spec:
           image: registry.access.redhat.com/ubi8
           env:
             - name: AVP_VERSION
-              value: 1.13.1
+              value: 1.14.0
           command: [sh, -c]
           args:
             - >-
