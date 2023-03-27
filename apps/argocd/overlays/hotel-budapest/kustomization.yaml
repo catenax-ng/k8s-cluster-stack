@@ -1,12 +1,11 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-bases:
-  - ../../base
-
 resources:
+  - ../../base
   - ingress/ingress-argocd.yaml
 
-patchesStrategicMerge:
-  - configmap/argo-cm.yaml
-
+patches:
+  - path: configmap/argo-cm.yaml
+  - path: configmap/argo-notification-channels.yaml
+  - path: secrets/argo-notification-secrets.yaml
