@@ -3,6 +3,11 @@ kind: ConfigMap
 metadata:
   name: argocd-notifications-cm
 data:
+  ## our default MS Teams Argo Cd notification channel
+  service.teams.system_team: |
+    recipientUrls:
+      argocdadmins-teams-channel: $argocd-teams-channel-url
+  ## all default templates for notification
   template.app-created: |
     email:
       subject: Application {{.app.metadata.name}} has been created.
