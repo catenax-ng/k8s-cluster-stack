@@ -96,6 +96,8 @@ data:
               then
                 echo "Hit!"
               fi
+      init:
+        command: [sh, -c, "helm dependency update"]  
       generate:
         command:
           - bash
