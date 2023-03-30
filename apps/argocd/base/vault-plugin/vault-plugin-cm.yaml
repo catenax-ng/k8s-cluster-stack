@@ -31,7 +31,7 @@ data:
             - sh
             - "-c"
             - >-
-              if [ -n "$(find . -name 'values-*.yaml' | head -1)" ] && 
+              if [ -n "$(find . -name 'values.yaml' | head -1)" ] && 
                  [ -n "$(find . -name 'Chart.yaml' | head -1)" ] &&
                  [ -n "${ARGOCD_ENV_helm_args}" ]; then
                   echo "Hit!"
