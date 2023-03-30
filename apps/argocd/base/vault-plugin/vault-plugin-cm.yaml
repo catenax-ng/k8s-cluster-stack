@@ -17,6 +17,37 @@ data:
       generate:
         command: [sh, -c, "kustomize build . | argocd-vault-plugin generate - -s $ARGOCD_APP_NAMESPACE:vault-secret"]
       lockRepo: false
+  avp-helm-kustomize.yaml: |
+    ---
+    apiVersion: argoproj.io/v1alpha1
+    kind: ConfigManagementPlugin
+    metadata:
+      name: argocd-vault-plugin-kustomize-helm-args
+    spec:
+      allowConcurrency: true
+      discover:
+        find:
+          command:
+            - sh
+            - "-c"
+            - |
+              if [ -n "$(find . -name 'values.yaml' | head -1)" ] &&
+                 [ -n "$(find . -name 'Chart.yaml' | head -1)" ] && 
+                 [ -n "$(find . -name 'kustomization.yaml' | head -1)" ] &&
+                 [ -n "${ARGOCD_ENV_helm_args}" ]; then
+                  echo "Hit!"
+              fi
+      init:
+        command: [sh, -c, "helm dependency update"]
+      generate:
+        command:
+          - sh
+          - "-c"
+          - >-
+            helm template $ARGOCD_APP_NAME --incluse-crds -n $ARGOCD_APP_NAMESPACE ${ARGOCD_ENV_helm_args} . > manifest.yaml && 
+            kustomize build | 
+            argocd-vault-plugin generate - -s $ARGOCD_APP_NAMESPACE:vault-secret
+      lockRepo: false
   avp-helm-args.yaml: |
     ---
     apiVersion: argoproj.io/v1alpha1
@@ -44,36 +75,6 @@ data:
           - "-c"
           - >-
             helm template $ARGOCD_APP_NAME --include-crds -n $ARGOCD_APP_NAMESPACE $ARGOCD_ENV_helm_args . |
-            argocd-vault-plugin generate - -s $ARGOCD_APP_NAMESPACE:vault-secret
-      lockRepo: false
-  avp-helm-kustomize.yaml: |
-    ---
-    apiVersion: argoproj.io/v1alpha1
-    kind: ConfigManagementPlugin
-    metadata:
-      name: argocd-vault-plugin-kustomize-helm-args
-    spec:
-      allowConcurrency: true
-      discover:
-        find:
-          command:
-            - sh
-            - "-c"
-            - |
-              if [ -n "$(find . -name 'Chart.yaml' | head -1)" ] && 
-                 [ -n "$(find . -name 'kustomization.yaml' | head -1)" ] &&
-                 [ -n "${ARGOCD_ENV_helm_args}" ]; then
-                  echo "Hit!"
-              fi
-      init:
-        command: [sh, -c, "helm dependency update"]
-      generate:
-        command:
-          - sh
-          - "-c"
-          - >-
-            helm template $ARGOCD_APP_NAME --incluse-crds -n $ARGOCD_APP_NAMESPACE ${ARGOCD_ENV_helm_args} . > manifest.yaml && 
-            kustomize build | 
             argocd-vault-plugin generate - -s $ARGOCD_APP_NAMESPACE:vault-secret
       lockRepo: false
   avp-helm-values.yaml: |
