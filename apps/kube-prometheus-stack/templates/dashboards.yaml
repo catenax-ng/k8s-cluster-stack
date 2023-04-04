@@ -8,3 +8,5 @@ metadata:
 data:
   logging.json: |
 {{ .Files.Get "dashboards/logging.json" | indent 4 }}
+  maintenance.json: |
+{{ .Files.Get "dashboards/maintenance.json" | indent 4 }}
