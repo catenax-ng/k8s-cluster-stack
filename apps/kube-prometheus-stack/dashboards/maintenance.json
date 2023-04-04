@@ -25,7 +25,7 @@
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
     "id": 29,
-    "iteration": 1680511756693,
+    "iteration": 1680611763996,
     "links": [],
     "liveNow": false,
     "panels": [
@@ -40,7 +40,7 @@
             "id": 8,
             "panels": [],
             "repeat": "release_name",
-            "title": "Release: $release_name",
+            "title": "$release_name",
             "type": "row"
         },
         {
@@ -107,7 +107,7 @@
                     "refId": "A"
                 }
             ],
-            "title": "Resource: $resource_name",
+            "title": "$resource_name",
             "type": "gauge"
         }
     ],
@@ -150,16 +150,10 @@
                 "current": {
                     "selected": true,
                     "text": [
-                        "aks-default-17331370-vmss000000",
-                        "aks-default-17331370-vmss00000a",
-                        "aks-default-17331370-vmss00000b",
-                        "aks-default-17331370-vmss00000c"
+                        "All"
                     ],
                     "value": [
-                        "aks-default-17331370-vmss000000",
-                        "aks-default-17331370-vmss00000a",
-                        "aks-default-17331370-vmss00000b",
-                        "aks-default-17331370-vmss00000c"
+                        "$__all"
                     ]
                 },
                 "datasource": {
@@ -168,7 +162,7 @@
                 },
                 "definition": "label_values(maintenance_app_version_info, resource_name)",
                 "hide": 0,
-                "includeAll": false,
+                "includeAll": true,
                 "multi": true,
                 "name": "resource_name",
                 "options": [],
@@ -192,6 +186,6 @@
     "timezone": "",
     "title": "Maintenance",
     "uid": "y4pgKmB4k",
-    "version": 4,
+    "version": 5,
     "weekStart": ""
 }
