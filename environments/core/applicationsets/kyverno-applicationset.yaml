@@ -30,7 +30,9 @@ spec:
       project: default
       source:
         plugin:
-          name: argocd-vault-plugin-kustomize-helm-args
+          env:
+            - name: helm_args
+              value: '-f values.yaml'
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
         targetRevision: '{{ targetRevision }}'
         path: apps/kyverno
