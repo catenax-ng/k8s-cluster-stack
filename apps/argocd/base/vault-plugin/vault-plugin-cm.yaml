@@ -44,7 +44,7 @@ data:
           - sh
           - "-c"
           - >-
-            helm template $ARGOCD_APP_NAME --incluse-crds -n $ARGOCD_APP_NAMESPACE ${ARGOCD_ENV_helm_args} . > manifest.yaml && 
+            helm template $ARGOCD_APP_NAME --include-crds -n $ARGOCD_APP_NAMESPACE ${ARGOCD_ENV_helm_args} . > manifest.yaml && 
             kustomize build | 
             argocd-vault-plugin generate - -s $ARGOCD_APP_NAMESPACE:vault-secret
       lockRepo: false
