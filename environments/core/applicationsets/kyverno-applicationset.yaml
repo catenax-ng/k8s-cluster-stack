@@ -51,8 +51,8 @@ spec:
         #          allowEmpty: false # Allows deleting all application resources during automatic syncing ( false by default ).
         syncOptions:
           # https://kyverno.io/docs/installation/#notes-for-argocd-users
+          - ServerSideApply=true
           - CreateNamespace=true
-          - Replace=true
           - PrunePropagationPolicy=foreground # Supported policies are background, foreground and orphan.
           - PruneLast=true # Allow the ability for resource pruning to happen as a final, implicit wave of a sync operation
         # The retry feature is available since v1.7
