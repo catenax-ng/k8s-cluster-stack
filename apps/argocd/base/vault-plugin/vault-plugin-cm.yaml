@@ -63,7 +63,7 @@ data:
             - "-c"
             - >-
               if [ -n "$(find . -name 'values.yaml' | head -1)" ] &&
-                 [ ! -n "$(find . -name 'kustomization.yaml' | head -1)" ] &&
+                 [ -z "$(find . -name 'kustomization.yaml')" ] &&
                  [ -n "$(find . -name 'Chart.yaml' | head -1)" ] &&
                  [ -n "${ARGOCD_ENV_helm_args}" ]; then
                   echo "Hit!"
@@ -94,7 +94,9 @@ data:
             - >-
               if [ -n "$(find . -name 'values.yaml' | head -1)" ] &&
                  [ -n "$(find . -name 'Chart.yaml' | head -1)" ] &&
-                 [ -n "$(find . -name '*.yaml' | xargs -I {} grep '<path\|avp\.kubernetes\.io' {})" ]; 
+                 [ -n "$(find . -name '*.yaml' | xargs -I {} grep '<path\|avp\.kubernetes\.io' {})" ] &&
+                 [ -z "$(find . -name 'kustomization.yaml')" ] &&
+                 [ -z "${ARGOCD_ENV_helm_args}" ]; 
               then
                 echo "Hit!"
               fi
