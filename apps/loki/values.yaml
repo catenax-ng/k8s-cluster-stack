@@ -7,4 +7,4 @@ loki-stack:
     auth_enabled: false
     persistence:
       enabled: true
-      size: 30Gi
+      size: 50Gi
