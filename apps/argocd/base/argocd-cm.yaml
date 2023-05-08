@@ -7,4 +7,5 @@ data:
   # Tracking labels are used to determine which resources need to be deleted when pruning.
   # If omitted, Argo CD injects the app name into the label: 'app.kubernetes.io/instance'
   # This might cause problems with Helm charts which will set 'app.kubernetes.io/instance' as well (e.g. Kyverno)
-  application.instanceLabelKey: argocd.argoproj.io/instance
+  application.instanceLabelKey: "argocd.argoproj.io/instance"
+  help.chatUrl: "https://chat.eclipse.org/#/room/#tools.tractus-x:matrix.eclipse.org"
