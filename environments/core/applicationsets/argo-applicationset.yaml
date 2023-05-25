@@ -30,6 +30,10 @@ spec:
         cluster-name: beta
         overlay: overlays/beta
         targetRevision: ArgoCD-v2.6.7-c7_AVP-v1.14.0
+      - cluster: stable
+        cluster-name: stable
+        overlay: overlays/stable
+        targetRevision: ArgoCD-v2.6.7-c7_AVP-v1.14.0
 
   template:
     metadata:

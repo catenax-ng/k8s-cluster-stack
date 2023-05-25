@@ -9,6 +9,7 @@ resources:
   - environments/devsecops-testing.yaml
   - environments/pre-prod.yaml
   - environments/beta.yaml
+  - environments/stable.yaml
   - ingress/ingress-argocd.yaml
 
 patches:
