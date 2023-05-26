@@ -23,6 +23,7 @@ resources:
   - cluster-secrets/devsecops-testing-cluster-secret.yaml
   - cluster-secrets/pre-prod-cluster-secret.yaml
   - cluster-secrets/beta-cluster-secret.yaml
+  - cluster-secrets/stable-cluster-secret.yaml
 
 # TODO 08.04.2022 CARSLEN: after vault cluster secret is available in vault, enable it here for deployment
 #  - cluster-secrets/vault-cluster-secret.yaml
