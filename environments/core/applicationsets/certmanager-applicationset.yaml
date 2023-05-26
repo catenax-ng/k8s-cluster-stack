@@ -39,8 +39,6 @@ spec:
     spec:
       project: default
       source:
-        plugin:
-          name: argocd-vault-plugin-helm
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
         targetRevision: '{{ targetRevision }}'
         path: apps/certmanager
