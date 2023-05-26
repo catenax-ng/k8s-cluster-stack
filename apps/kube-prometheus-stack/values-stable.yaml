@@ -1,0 +1,39 @@
+# Default values for kube-prometheus-stack.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+kube-prometheus-stack:
+  ## Using default values from https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
+  ##
+  grafana:
+    adminPassword: <path:devsecops/data/apps/prometheus-stack/stable/grafana#adminPassword>
+    grafana.ini:
+      server:
+        root_url: https://grafana.stable.demo.catena-x.net
+      auth.github:
+        enabled: true
+        allow_sign_up: true
+        client_id: <path:devsecops/data/apps/prometheus-stack/stable/github-oauth#client-id>
+        client_secret: <path:devsecops/data/apps/prometheus-stack/stable/github-oauth#client-secret>
+        scopes: user:email,read:org
+        auth_url: https://github.com/login/oauth/authorize
+        token_url: https://github.com/login/oauth/access_token
+        api_url: https://api.github.com/user
+        allowed_organizations: catenax-ng
+    sidecar:
+      datasources:
+        enabled: true
+        defaultDatasourceEnabled: true
+    additionalDataSources:
+    - name: Loki
+      access: proxy
+      basicAuth: false
+      editable: false
+      jsonData:
+          tlsSkipVerify: true
+      orgId: 1
+      type: loki
+      url: http://stable-loki.logging.svc.cluster.local:3100
+      version: 1
+
+domain: "stable.demo.catena-x.net"
+cluster: "stable"
