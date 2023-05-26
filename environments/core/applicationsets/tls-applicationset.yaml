@@ -34,6 +34,10 @@ spec:
             cluster-name: beta
             valueFile: values-tls-beta.yaml
             targetRevision: HEAD
+          - cluster: stable
+            cluster-name: stable
+            valueFile: values-tls-stable.yaml
+            targetRevision: HEAD
 
   template:
     metadata:

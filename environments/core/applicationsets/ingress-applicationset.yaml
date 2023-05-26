@@ -27,6 +27,9 @@ spec:
       - cluster: beta
         cluster-name: beta
         targetRevision: HEAD
+      - cluster: stable
+        cluster-name: stable
+        targetRevision: HEAD
 
   template:
     metadata:
