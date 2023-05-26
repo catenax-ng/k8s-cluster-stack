@@ -30,6 +30,10 @@ spec:
         cluster-name: beta
         targetRevision: HEAD
         ingress: 'app.beta.demo.catena-x.net'
+      - cluster: stable
+        cluster-name: stable
+        targetRevision: HEAD
+        ingress: 'app.stable.demo.catena-x.net'
 
   template:
     metadata:

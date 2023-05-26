@@ -27,6 +27,9 @@ spec:
           - cluster: beta
             cluster-name: beta
             targetRevision: 7.0.147
+          - cluster: stable
+            cluster-name: stable
+            targetRevision: 7.0.147
 
   template:
     metadata:
