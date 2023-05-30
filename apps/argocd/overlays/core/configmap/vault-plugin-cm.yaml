@@ -13,7 +13,7 @@ data:
       allowConcurrency: true
       discover:
         find:
-          command: [sh, -c, "find . -name kustomization.yaml"] 
+          command: [sh, -c, "find $ARGOCD_APP_SOURCE_PATH -name kustomization.yaml"] 
       generate:
         command: [sh, -c, "kustomize build . | argocd-vault-plugin generate - -s vault-secret"]
       lockRepo: false
@@ -31,9 +31,9 @@ data:
             - sh
             - "-c"
             - |
-              if [ -n "$(find . -name 'values.yaml' | head -1)" ] &&
-                 [ -n "$(find . -name 'Chart.yaml' | head -1)" ] && 
-                 [ -n "$(find . -name 'kustomization.yaml' | head -1)" ] &&
+              if [ -n "$(find $ARGOCD_APP_SOURCE_PATH -name 'values.yaml' | head -1)" ] &&
+                 [ -n "$(find $ARGOCD_APP_SOURCE_PATH -name 'Chart.yaml' | head -1)" ] && 
+                 [ -n "$(find $ARGOCD_APP_SOURCE_PATH -name 'kustomization.yaml' | head -1)" ] &&
                  [ -n "${ARGOCD_ENV_helm_args}" ]; then
                   echo "Hit!"
               fi
@@ -62,9 +62,9 @@ data:
             - sh
             - "-c"
             - >-
-              if [ -n "$(find . -name 'values.yaml' | head -1)" ] &&
-                 [ -z "$(find . -name 'kustomization.yaml')" ] &&
-                 [ -n "$(find . -name 'Chart.yaml' | head -1)" ] &&
+              if [ -n "$(find $ARGOCD_APP_SOURCE_PATH -name 'values.yaml' | head -1)" ] &&
+                 [ -z "$(find $ARGOCD_APP_SOURCE_PATH -name 'kustomization.yaml')" ] &&
+                 [ -n "$(find $ARGOCD_APP_SOURCE_PATH -name 'Chart.yaml' | head -1)" ] &&
                  [ -n "${ARGOCD_ENV_helm_args}" ]; then
                   echo "Hit!"
               fi
@@ -92,10 +92,10 @@ data:
             - sh
             - "-c"
             - >-
-              if [ -n "$(find . -name 'values.yaml' | head -1)" ] &&
-                 [ -n "$(find . -name 'Chart.yaml' | head -1)" ] &&
-                 [ -n "$(find . -name '*.yaml' | xargs -I {} grep '<path\|avp\.kubernetes\.io' {})" ] &&
-                 [ -z "$(find . -name 'kustomization.yaml')" ] &&
+              if [ -n "$(find $ARGOCD_APP_SOURCE_PATH -name 'values.yaml' | head -1)" ] &&
+                 [ -n "$(find $ARGOCD_APP_SOURCE_PATH -name 'Chart.yaml' | head -1)" ] &&
+                 [ -n "$(find $ARGOCD_APP_SOURCE_PATH -name '*.yaml' | xargs -I {} grep '<path\|avp\.kubernetes\.io' {})" ] &&
+                 [ -z "$(find $ARGOCD_APP_SOURCE_PATH -name 'kustomization.yaml')" ] &&
                  [ -z "${ARGOCD_ENV_helm_args}" ]; 
               then
                 echo "Hit!"
@@ -123,10 +123,10 @@ data:
             - sh
             - "-c"
             - >-
-              if [ -z "$(find . -name 'Chart.yaml')" ] &&
-                 [ -z "$(find . -name 'kustomization.yaml')" ] &&
-                 [ -n "$(find . -name '*.yaml')" ] &&
-                 [ -n "$(find . -name '*.yaml' | xargs -I {} grep '<path\|avp\.kubernetes\.io' {})" ];
+              if [ -z "$(find $ARGOCD_APP_SOURCE_PATH -name 'Chart.yaml')" ] &&
+                 [ -z "$(find $ARGOCD_APP_SOURCE_PATH -name 'kustomization.yaml')" ] &&
+                 [ -n "$(find $ARGOCD_APP_SOURCE_PATH -name '*.yaml')" ] &&
+                 [ -n "$(find $ARGOCD_APP_SOURCE_PATH -name '*.yaml' | xargs -I {} grep '<path\|avp\.kubernetes\.io' {})" ];
               then
                  echo "Hit!"
               fi
