@@ -3,7 +3,7 @@ ingress-nginx:
     service:
       annotations:
         service.beta.kubernetes.io/azure-load-balancer-health-probe-request-path: "/healthz"
-        maintenance/releasename: "cert-manager/cert-manager"
+        maintenance/releasename: "kubernetes/ingress-nginx"
       labels:
         maintenance/scan: "true"
     ingressClassResource:
