@@ -1,5 +1,10 @@
 loki-stack:
   loki:
+    service:
+      annotations:
+        maintenance/releasename: "prometheus-community/helm-charts"
+      labels:
+        maintenance/scan: "true"
     commonConfig:
       replication_factor: 1
     storage:
