@@ -1,4 +1,10 @@
 kube-prometheus-stack:
+  prometheus:
+    service:
+      labels:
+        maintenance/scan: "true"
+      annotations:
+        maintenance/releasename: "prometheus-community/helm-charts"
   # https://github.com/prometheus-community/helm-charts/issues/479#issuecomment-752709725
   prometheusOperator:
     # https://github.com/prometheus-community/helm-charts/issues/479#issuecomment-752709725
