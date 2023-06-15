@@ -2,3 +2,9 @@
 
 certmanager:
   installCRDs: true
+  
+  serviceLabels:
+    maintenance/scan: "true"
+
+  serviceAnnotations:
+    maintenance/releasename: "cert-manager/cert-manager"
