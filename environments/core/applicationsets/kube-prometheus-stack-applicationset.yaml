@@ -51,7 +51,7 @@ spec:
         syncOptions:
           - CreateNamespace=true
           - ServerSideApply=true
-	  - Validate=false
+          - Validate=false
         retry:
           limit: 5
           backoff:
