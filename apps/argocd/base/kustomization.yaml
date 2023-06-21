@@ -7,11 +7,11 @@ namespace: argocd
 # https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/images/
 images:
   - name: quay.io/argoproj/argocd
-    newTag: v2.6.8
+    newTag: v2.6.10
 
 resources:
   - namespace.yaml
-  - https://raw.githubusercontent.com/argoproj/argo-cd/v2.6.8/manifests/ha/install.yaml # ensure to keep images.newTag in sync
+  - https://raw.githubusercontent.com/argoproj/argo-cd/v2.6.10/manifests/ha/install.yaml # ensure to keep images.newTag in sync
   - vault-plugin/vault-plugin-cm.yaml # AVP sidecar configuration
   - avp-rbac-secret-access.yaml # grant avp access to secret with AVP configuration
 

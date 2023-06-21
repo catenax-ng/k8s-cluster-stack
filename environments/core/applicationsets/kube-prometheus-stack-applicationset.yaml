@@ -17,7 +17,7 @@ spec:
         targetRevision: HEAD
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
-        targetRevision: HEAD
+        targetRevision: chore/prometheus-upgrade 
       - cluster: pre-prod
         cluster-name: pre-prod
         targetRevision: HEAD
@@ -51,6 +51,7 @@ spec:
         syncOptions:
           - CreateNamespace=true
           - ServerSideApply=true
+          - Validate=false
         retry:
           limit: 5
           backoff:
