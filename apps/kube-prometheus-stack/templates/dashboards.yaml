@@ -10,3 +10,5 @@ data:
 {{ .Files.Get "dashboards/logging.json" | indent 4 }}
   maintenance.json: |
 {{ .Files.Get "dashboards/maintenance.json" | indent 4 }}
+  portal.json: |
+{{ .Files.Get "dashboards/portal.json" | indent 4 }}
