@@ -141,7 +141,7 @@
             "uid": "${DS_LOKI}"
           },
           "editorMode": "code",
-          "expr": "sum by(container) (count_over_time({container=~\"administration-service|marketplace-app-service|processes-worker|notification-service|registration-service|services-service\"} |= `Level` | json log | __error__=`` | line_format `{{.log}}` | json | __error__=`` | unpack  | Level = `Error` [$__interval]))",
+          "expr": "sum by(container) (count_over_time({container=~\"administration-service|marketplace-app-service|processes-worker|notification-service|registration-service|services-service\"} |= `Level` | json | __error__=`` | unpack  | Level = `Error` [$__interval]))",
           "queryType": "range",
           "refId": "A"
         }
@@ -237,8 +237,8 @@
             "type": "loki",
             "uid": "${DS_LOKI}"
           },
-          "editorMode": "builder",
-          "expr": "sum by(Properties_StatusCode, container) (count_over_time({container=~\"administration-service|marketplace-app-service|processes-worker|notification-service|registration-service|services-service\"} |= `Level` | json log | __error__=`` | line_format `{{.log}}` | json | __error__=`` | unpack | Level = `Error` [$__interval]))",
+          "editorMode": "code",
+          "expr": "sum by(Properties_StatusCode, container) (count_over_time({container=~\"administration-service|marketplace-app-service|notification-service|registration-service|services-service\"} |= `Level` | json | __error__=`` | unpack | Level = `Error` [$__interval]))",
           "queryType": "range",
           "refId": "A"
         }
@@ -335,7 +335,7 @@
             "uid": "${DS_LOKI}"
           },
           "editorMode": "code",
-          "expr": "sum by(container) (count_over_time({container=~\"administration-service|marketplace-app-service|processes-worker|notification-service|registration-service|services-service\"} |= `Level` | json log | __error__=`` | line_format `{{.log}}` | json | __error__=`` | unpack  | Level = `Warning` [$__interval]))",
+          "expr": "sum by(container) (count_over_time({container=~\"administration-service|marketplace-app-service|processes-worker|notification-service|registration-service|services-service\"} |= `Level` | json | __error__=`` | unpack  | Level = `Warning` [$__interval]))",
           "queryType": "range",
           "refId": "A"
         }
@@ -452,7 +452,7 @@
             "uid": "${DS_LOKI}"
           },
           "editorMode": "code",
-          "expr": "sum by(Properties_Elapsed) (avg_over_time({container=~\"administration-service|marketplace-app-service|processes-worker|notification-service|registration-service|services-service\"} |= `Elapsed` | json log | __error__=`` | line_format `{{.log}}` | json | __error__=`` | unwrap Properties_Elapsed | __error__=`` [$__interval]) by (container))",
+          "expr": "sum by(Properties_Elapsed) (avg_over_time({container=~\"administration-service|marketplace-app-service|processes-worker|notification-service|registration-service|services-service\"} |= `Elapsed` | json | __error__=`` | unwrap Properties_Elapsed | __error__=`` [$__interval]) by (container))",
           "queryType": "range",
           "refId": "A"
         }
@@ -470,13 +470,13 @@
     "list": []
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-30m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Product Portal",
   "uid": "bd886d0a-492c-47e8-b4a5-b389814598d7",
-  "version": 3,
+  "version": 5,
   "weekStart": ""
 }
