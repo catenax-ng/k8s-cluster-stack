@@ -1,0 +1,12 @@
+apiVersion: v2
+name: kubeapps
+description: Kubeapps to deploy helm charts in the cluster
+type: application
+version: 0.0.1
+appVersion: "0.0.1"
+
+dependencies:
+- name: kubeapps
+  alias: kubeapps
+  version: 12.4.7
+  repository: https://charts.bitnami.com/bitnami

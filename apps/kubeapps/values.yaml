@@ -1,0 +1,15 @@
+kubeapps:
+  authProxy:
+    enabled: true
+    provider: github
+    scope: 'openid email groups user:email'
+    clientID: '<path:/devsecops/data/clusters/devsecops-testing/github-oauth#kubeappsOAuthClientId>'
+    clientSecret: '<path:/devsecops/data/clusters/devsecops-testing/github-oauth#kubeappsOAuthClientSecret>'
+    cookieSecret: '<path:/devsecops/data/clusters/devsecops-testing/github-oauth#kubeappsOAuthCookieSecret>'
+  ingress:
+    enabled: true
+    hostname: kubeapps-test.devsecops-testing.demo.catena-x.net
+    extraTls:
+    - hosts:
+      - kubeapps-test.devsecops-testing.demo.catena-x.net
+      secretName: tls-secret
