@@ -17,7 +17,7 @@ spec:
         targetRevision: HEAD
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
-        targetRevision: HEAD
+        targetRevision: chore/kube-prometheus-stack-upgrade-devsecopscluster
       - cluster: pre-prod
         cluster-name: pre-prod
         targetRevision: HEAD
