@@ -67,7 +67,7 @@ Hey, there's a new ArgoCD version, then follow these steps:
 
 - Create a new branch from `main`, e.g. `chore/bump_avp_version`
 - Checkout new branch
-- ArgoCD Vault Plugin version has to be updated in `apps/argocd/base/plugins/argo-vault-plugin.yaml`
+- ArgoCD Vault Plugin version has to be updated in `apps/argocd/base/vault-plugin/argo-repo-server-sidecars.yaml` 
 
   ```yaml
   initContainers:
