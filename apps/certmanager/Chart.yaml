@@ -26,5 +26,5 @@ appVersion: "1.16.0"
 dependencies:
 - name: cert-manager
   alias: certmanager
-  version: 1.10.0
+  version: 1.12.2
   repository: https://charts.jetstack.io
