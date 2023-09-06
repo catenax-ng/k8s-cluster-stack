@@ -15,7 +15,13 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "9.5.2"
+      "version": "10.0.3"
+    },
+    {
+      "type": "panel",
+      "id": "logs",
+      "name": "Logs",
+      "version": ""
     },
     {
       "type": "datasource",
@@ -46,6 +52,7 @@
       }
     ]
   },
+  "description": "",
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
@@ -460,6 +467,44 @@
       "title": "Elapsed time",
       "transformations": [],
       "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "${DS_LOKI}"
+      },
+      "gridPos": {
+        "h": 24,
+        "w": 24,
+        "x": 0,
+        "y": 16
+      },
+      "id": 5,
+      "options": {
+        "dedupStrategy": "none",
+        "enableLogDetails": true,
+        "prettifyLogMessage": true,
+        "showCommonLabels": false,
+        "showLabels": true,
+        "showTime": false,
+        "sortOrder": "Descending",
+        "wrapLogMessage": false
+      },
+      "pluginVersion": "8.5.3",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "${DS_LOKI}"
+          },
+          "editorMode": "code",
+          "expr": "{namespace=\"product-portal\", app=\"$app\"} |= `Level` | json log | __error__=`` | line_format `{{.log}}` | json | __error__=`` | unpack | Level = \"$level\" | line_format `{{.RenderedMessage}}` |~ `(?i)$search`",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "Combined Logs",
+      "type": "logs"
     }
   ],
   "refresh": "",
@@ -467,7 +512,102 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "current": {},
+        "datasource": {
+          "type": "loki",
+          "uid": "${DS_LOKI}"
+        },
+        "definition": "",
+        "hide": 0,
+        "includeAll": false,
+        "label": "App",
+        "multi": false,
+        "name": "app",
+        "options": [],
+        "query": {
+          "label": "app",
+          "refId": "LokiVariableQueryEditor-VariableQuery",
+          "stream": "{namespace=~\"product-portal\"}",
+          "type": 1
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "Information",
+          "value": "Information"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "label": "Log Level",
+        "multi": false,
+        "name": "level",
+        "options": [
+          {
+            "selected": true,
+            "text": "Information",
+            "value": "Information"
+          },
+          {
+            "selected": false,
+            "text": "Verbose",
+            "value": "Verbose"
+          },
+          {
+            "selected": false,
+            "text": "Debug",
+            "value": "Debug"
+          },
+          {
+            "selected": false,
+            "text": "Error",
+            "value": "Error"
+          },
+          {
+            "selected": false,
+            "text": "Warning",
+            "value": "Warning"
+          },
+          {
+            "selected": false,
+            "text": "Critial",
+            "value": "Critial"
+          }
+        ],
+        "query": "Information, Verbose, Debug, Error, Warning, Critial",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "",
+          "value": ""
+        },
+        "description": "hint: case insensitive",
+        "hide": 0,
+        "label": "Search Query",
+        "name": "search",
+        "options": [
+          {
+            "selected": true,
+            "text": "",
+            "value": ""
+          }
+        ],
+        "query": "",
+        "skipUrlSync": false,
+        "type": "textbox"
+      }
+    ]
   },
   "time": {
     "from": "now-30m",
