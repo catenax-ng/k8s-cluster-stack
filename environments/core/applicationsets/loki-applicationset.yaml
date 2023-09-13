@@ -11,7 +11,7 @@ spec:
         targetRevision: HEAD
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
-        targetRevision: HEAD
+        targetRevision: chore/update_loki-stack
       - cluster: dev
         cluster-name: dev
         targetRevision: HEAD
