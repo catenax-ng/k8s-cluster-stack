@@ -30,7 +30,7 @@ spec:
           image: registry.access.redhat.com/ubi8
           env:
             - name: AVP_VERSION
-              value: 1.14.0
+              value: 1.16.1
           command: [sh, -c]
           args:
             - >-
@@ -45,7 +45,7 @@ spec:
         # argocd-vault-plugin with Helm values
         - name: avp-helm-values
           command: [ /var/run/argocd/argocd-cmp-server ]
-          image: quay.io/argoproj/argocd:v2.6.6
+          image: quay.io/argoproj/argocd:v2.7.13
           securityContext:
             runAsNonRoot: true
             runAsUser: 999
@@ -70,7 +70,7 @@ spec:
         # argocd-vault-plugin with Helm args
         - name: avp-helm-args
           command: [ /var/run/argocd/argocd-cmp-server ]
-          image: quay.io/argoproj/argocd:v2.6.6
+          image: quay.io/argoproj/argocd:v2.7.13
           securityContext:
             runAsNonRoot: true
             runAsUser: 999
@@ -95,7 +95,7 @@ spec:
         # argocd-vault-plugin with Kustomize
         - name: avp-kustomize
           command: [/var/run/argocd/argocd-cmp-server]
-          image: quay.io/argoproj/argocd:v2.6.6
+          image: quay.io/argoproj/argocd:v2.7.13
           securityContext:
             runAsNonRoot: true
             runAsUser: 999
@@ -120,7 +120,7 @@ spec:
         # argocd-vault-plugin with Kustomize and Helm
         - name: avp-helm-kustomize
           command: [ /var/run/argocd/argocd-cmp-server ]
-          image: quay.io/argoproj/argocd:v2.6.6
+          image: quay.io/argoproj/argocd:v2.7.13
           securityContext:
             runAsNonRoot: true
             runAsUser: 999
@@ -145,7 +145,7 @@ spec:
         # argocd-vault-plugin with plain YAML
         - name: avp
           command: [/var/run/argocd/argocd-cmp-server]
-          image: quay.io/argoproj/argocd:v2.6.6
+          image: quay.io/argoproj/argocd:v2.7.13
           securityContext:
             runAsNonRoot: true
             runAsUser: 999
