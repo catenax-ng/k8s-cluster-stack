@@ -17,7 +17,7 @@ spec:
         targetRevision: HEAD
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
-        targetRevision: HEAD
+        targetRevision: chore/upgrade_prom_stack_to_51.0.2
       - cluster: pre-prod
         cluster-name: pre-prod
         targetRevision: HEAD
