@@ -63,7 +63,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "${DS_LOKI}"
+        "uid": "DS_LOKI"
       },
       "description": "Count of errors for each given container",
       "fieldConfig": {
@@ -145,7 +145,7 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "${DS_LOKI}"
+            "uid": "DS_LOKI"
           },
           "editorMode": "code",
           "expr": "sum by(container) (count_over_time({container=~\"administration-service|marketplace-app-service|processes-worker|notification-service|registration-service|services-service\"} |= `Level` | json | __error__=`` | unpack  | Level = `Error` [$__interval]))",
@@ -160,7 +160,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "${DS_LOKI}"
+        "uid": "DS_LOKI"
       },
       "description": "Count of errors for each given container",
       "fieldConfig": {
@@ -242,7 +242,7 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "${DS_LOKI}"
+            "uid": "DS_LOKI"
           },
           "editorMode": "code",
           "expr": "sum by(Properties_StatusCode, container) (count_over_time({container=~\"administration-service|marketplace-app-service|notification-service|registration-service|services-service\"} |= `Level` | json | __error__=`` | unpack | Level = `Error` [$__interval]))",
@@ -257,7 +257,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "${DS_LOKI}"
+        "uid": "DS_LOKI"
       },
       "description": "Count of warnings for each given container",
       "fieldConfig": {
@@ -339,7 +339,7 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "${DS_LOKI}"
+            "uid": "DS_LOKI"
           },
           "editorMode": "code",
           "expr": "sum by(container) (count_over_time({container=~\"administration-service|marketplace-app-service|processes-worker|notification-service|registration-service|services-service\"} |= `Level` | json | __error__=`` | unpack  | Level = `Warning` [$__interval]))",
@@ -354,7 +354,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "${DS_LOKI}"
+        "uid": "DS_LOKI"
       },
       "fieldConfig": {
         "defaults": {
@@ -456,7 +456,7 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "${DS_LOKI}"
+            "uid": "DS_LOKI"
           },
           "editorMode": "code",
           "expr": "sum by(Properties_Elapsed) (avg_over_time({container=~\"administration-service|marketplace-app-service|processes-worker|notification-service|registration-service|services-service\"} |= `Elapsed` | json | __error__=`` | unwrap Properties_Elapsed | __error__=`` [$__interval]) by (container))",
@@ -471,7 +471,7 @@
     {
       "datasource": {
         "type": "loki",
-        "uid": "${DS_LOKI}"
+        "uid": "DS_LOKI"
       },
       "gridPos": {
         "h": 24,
@@ -495,7 +495,7 @@
         {
           "datasource": {
             "type": "loki",
-            "uid": "${DS_LOKI}"
+            "uid": "DS_LOKI"
           },
           "editorMode": "code",
           "expr": "{namespace=\"product-portal\", app=\"$app\"} |= `Level` | json log | __error__=`` | line_format `{{.log}}` | json | __error__=`` | unpack | Level = \"$level\" | line_format `{{.RenderedMessage}}` |~ `(?i)$search`",
@@ -517,7 +517,7 @@
         "current": {},
         "datasource": {
           "type": "loki",
-          "uid": "${DS_LOKI}"
+          "uid": "DS_LOKI"
         },
         "definition": "",
         "hide": 0,
