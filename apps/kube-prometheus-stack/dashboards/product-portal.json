@@ -498,7 +498,7 @@
             "uid": "P8E80F9AEF21F6940"
           },
           "editorMode": "code",
-          "expr": "{namespace=\"product-portal\", app=\"$app\"} |= `Level` | json log | __error__=`` | line_format `{{.log}}` | json | __error__=`` | unpack | Level = \"$level\" | line_format `{{.RenderedMessage}}` |~ `(?i)$search`",
+          "expr": "{namespace=\"product-portal\", app=\"$app\"} |= `Level` | json | __error__=`` | unpack | Level = \"$level\" | line_format `{{.RenderedMessage}}` |~ `(?i)$search`",
           "queryType": "range",
           "refId": "A"
         }
