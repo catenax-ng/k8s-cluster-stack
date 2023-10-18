@@ -2,11 +2,22 @@ apiVersion: v2
 name: kubeapps
 description: Kubeapps to deploy helm charts in the cluster
 type: application
-version: 0.0.1
-appVersion: "0.0.1"
+version: 0.0.2
+appVersion: "2.8.0"
 
 dependencies:
 - name: kubeapps
   alias: kubeapps
-  version: 12.4.7
+  condition: kubeapps.enabled
+  version: 13.1.1 # bump to 14.0.0 later
   repository: https://charts.bitnami.com/bitnami
+- name: pinniped
+  alias: pinniped
+  condition: pinniped.enabled
+  version: 1.3.2 # bump to 1.3.9 later
+  repository: https://charts.bitnami.com/bitnami
+- name: dex
+  alias: dex
+  condition: dex.enabled
+  repository: https://charts.dexidp.io
+  version: 0.15.3

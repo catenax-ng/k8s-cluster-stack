@@ -1,15 +1,40 @@
+# Must be set according to the install guide!
+jwtAuthenticatorDexCaData: ""
+
+dex:
+  enabled: true
+  config:
+    # See https://dexidp.io/docs/storage/ for more options
+    storage:
+      type: memory
+
+pinniped:
+  enabled: true
+  concierge:
+    enabled: true
+    rbac:
+      create: true
+    credentialIssuerConfig: |
+      impersonationProxy:
+        mode: auto
+        service:
+          type: ClusterIP
+  supervisor:
+    enabled: false
+
 kubeapps:
+  enabled: false
   authProxy:
     enabled: true
-    provider: github
+    provider: oidc
     scope: 'openid email groups user:email'
-    clientID: '<path:/devsecops/data/clusters/devsecops-testing/github-oauth#kubeappsOAuthClientId>'
-    clientSecret: '<path:/devsecops/data/clusters/devsecops-testing/github-oauth#kubeappsOAuthClientSecret>'
-    cookieSecret: '<path:/devsecops/data/clusters/devsecops-testing/github-oauth#kubeappsOAuthCookieSecret>'
-  ingress:
+    emailDomain: "*"
+  pinnipedProxy:
     enabled: true
-    hostname: kubeapps-test.devsecops-testing.demo.catena-x.net
-    extraTls:
-    - hosts:
-      - kubeapps-test.devsecops-testing.demo.catena-x.net
-      secretName: tls-secret
+    defaultPinnipedNamespace: kubeapps
+    defaultAuthenticatorName: jwt-authenticator
+
+  ingress:
+    annotations:
+      nginx.ingress.kubernetes.io/proxy-buffer-size: 10k
+      nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
