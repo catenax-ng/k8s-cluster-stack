@@ -1,0 +1,45 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: kubeapps-applicationset
+spec:
+  generators:
+  - list:
+      elements:
+      - cluster: devsecops-testing
+        cluster-name: devsecops-testing
+        targetRevision: HEAD
+
+  template:
+    metadata:
+      name: '{{ cluster }}-kubeapps'
+      labels:
+        app: kubeapps
+    spec:
+      project: default
+      source:
+        plugin:
+          env:
+            - name: helm_args
+              value: '-f values.yaml -f values-{{ cluster }}.yaml'
+        repoURL: https://github.com/catenax-ng/k8s-cluster-stack
+        targetRevision: '{{ targetRevision }}'
+        path: apps/kubeapps
+      destination:
+        name: '{{ cluster-name }}'
+        namespace: kubeapps
+        server: ''
+
+      syncPolicy:
+        syncOptions:
+          - Validate=false
+          - CreateNamespace=true
+          - PrunePropagationPolicy=foreground
+          - PruneLast=true
+
+        retry:
+          limit: 5
+          backoff:
+            duration: 5s
+            factor: 2
+            maxDuration: 3m
