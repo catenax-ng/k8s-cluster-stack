@@ -1,1 +1,10 @@
-
+kyverno:
+  metricsConfig:
+    namespaces:
+      exclude:
+        - argocd
+        - cert-manager
+        - kubeapps
+        - logging
+        - monitoring
+        - reflector
