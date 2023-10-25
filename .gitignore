@@ -1,7 +1,7 @@
 .idea
 .vscode
-**/charts/*.tgz
-**/Chart.lock
+apps/**/charts/
+apps/**/Chart.lock
 
 # Created by https://www.toptal.com/developers/gitignore/api/node
 # Edit at https://www.toptal.com/developers/gitignore?templates=node
