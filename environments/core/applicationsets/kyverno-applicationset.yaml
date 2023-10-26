@@ -8,7 +8,7 @@ spec:
         elements:
           - cluster: devsecops-testing
             cluster-name: devsecops-testing
-            targetRevision: chore/upgrade-kyverno-to-v1.10 # pin to feature branch for testing purpose
+            targetRevision: HEAD
           - cluster: dev
             cluster-name: dev
             targetRevision: HEAD
