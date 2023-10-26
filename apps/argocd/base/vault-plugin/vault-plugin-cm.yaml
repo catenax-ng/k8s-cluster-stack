@@ -3,51 +3,6 @@ kind: ConfigMap
 metadata:
   name: cmp-plugin
 data:
-  avp-kustomize.yaml: |
-    ---
-    apiVersion: argoproj.io/v1alpha1
-    kind: ConfigManagementPlugin
-    metadata:
-      name: argocd-vault-plugin-kustomize
-    spec:
-      allowConcurrency: true
-      discover:
-        find:
-          command: [sh, -c, "find . -name kustomization.yaml"] 
-      generate:
-        command: [sh, -c, "kustomize build . | argocd-vault-plugin generate - -s $ARGOCD_APP_NAMESPACE:vault-secret"]
-      lockRepo: false
-  avp-helm-kustomize.yaml: |
-    ---
-    apiVersion: argoproj.io/v1alpha1
-    kind: ConfigManagementPlugin
-    metadata:
-      name: argocd-vault-plugin-kustomize-helm-args
-    spec:
-      allowConcurrency: true
-      discover:
-        find:
-          command:
-            - sh
-            - "-c"
-            - |
-              if [ -n "$(find . -name 'values.yaml' | head -1)" ] &&
-                 [ -n "$(find . -name 'Chart.yaml' | head -1)" ] && 
-                 [ -n "$(find . -name 'kustomization.yaml' | head -1)" ] &&
-                 [ -n "${ARGOCD_ENV_helm_args}" ]; then
-                  echo "Hit!"
-              fi
-      init:
-        command: [sh, -c, "helm dependency update"]
-      generate:
-        command:
-          - sh
-          - "-c"
-          - >-
-            helm template $ARGOCD_APP_NAME --include-crds -n $ARGOCD_APP_NAMESPACE ${ARGOCD_ENV_helm_args} . > manifest.yaml && 
-            kustomize build | 
-            argocd-vault-plugin generate - -s $ARGOCD_APP_NAMESPACE:vault-secret
-      lockRepo: false
   avp-helm-args.yaml: |
     ---
     apiVersion: argoproj.io/v1alpha1
@@ -61,20 +16,20 @@ data:
           command:
             - sh
             - "-c"
-            - >-
-              if [ -n "$(find . -name 'values.yaml' | head -1)" ] &&
-                 [ -z "$(find . -name 'kustomization.yaml')" ] &&
-                 [ -n "$(find . -name 'Chart.yaml' | head -1)" ] &&
-                 [ -n "${ARGOCD_ENV_helm_args}" ]; then
-                  echo "Hit!"
+            - |
+              if [ -n "$(find . -name 'Chart.yaml')" ] && # if find output is nonzero
+                [ -n "$(find . -name 'values.yaml')" ] && # if find output is nonzero
+                [ -n "${ARGOCD_ENV_helm_args}" ]; # if var ARGOCD_ENV_helm_args is defined and nonzero
+              then
+                echo "ARGOCD_ENV_helm_args!"
               fi
       init:
-        command: [sh, -c, "helm dependency update"]
+        command: [ sh, -c, "helm dependency update" ]
       generate:
         command:
           - bash
           - "-c"
-          - >-
+          - |
             helm template $ARGOCD_APP_NAME --include-crds -n $ARGOCD_APP_NAMESPACE $ARGOCD_ENV_helm_args . |
             argocd-vault-plugin generate - -s $ARGOCD_APP_NAMESPACE:vault-secret
       lockRepo: false
@@ -83,7 +38,7 @@ data:
     apiVersion: argoproj.io/v1alpha1
     kind: ConfigManagementPlugin
     metadata:
-      name: argocd-vault-plugin-helm
+      name: argocd-vault-plugin-helm-values
     spec:
       allowConcurrency: true
       discover:
@@ -91,24 +46,36 @@ data:
           command:
             - sh
             - "-c"
-            - >-
-              if [ -n "$(find . -name 'values.yaml' | head -1)" ] &&
-                 [ -n "$(find . -name 'Chart.yaml' | head -1)" ] &&
-                 [ -n "$(find . -name '*.yaml' | xargs -I {} grep '<path\|avp\.kubernetes\.io' {})" ] &&
-                 [ -z "$(find . -name 'kustomization.yaml')" ] &&
-                 [ -z "${ARGOCD_ENV_helm_args}" ]; 
+            - |
+              if [ -n "$(find . -name 'Chart.yaml')" ] &&
+                [ -n "$(find . -name 'values.yaml')" ] &&
+                [ -n "${ARGOCD_ENV_HELM_VALUES}" ];
               then
-                echo "Hit!"
+                echo "ARGOCD_ENV_HELM_VALUES"
               fi
       init:
-        command: [sh, -c, "helm dependency update"]  
+        command: [ sh, -c, "helm dependency update" ]
       generate:
         command:
           - bash
           - "-c"
-          - >-
-            helm template $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE -f <(echo "$ARGOCD_ENV_HELM_VALUES") . |
+          - |
+            helm template --include-crds $ARGOCD_APP_NAME -n $ARGOCD_APP_NAMESPACE -f <(echo "$ARGOCD_ENV_HELM_VALUES") . |
             argocd-vault-plugin generate - -s $ARGOCD_APP_NAMESPACE:vault-secret
+      lockRepo: false
+  avp-kustomize.yaml: |
+    ---
+    apiVersion: argoproj.io/v1alpha1
+    kind: ConfigManagementPlugin
+    metadata:
+      name: argocd-vault-plugin-kustomize
+    spec:
+      allowConcurrency: true
+      discover:
+        find:
+          command: [ sh, -c, "find . -name kustomization.yaml" ]
+      generate:
+        command: [ sh, -c, "kustomize build . | argocd-vault-plugin generate - -s $ARGOCD_APP_NAMESPACE:vault-secret" ]
       lockRepo: false
   avp.yaml: |
     apiVersion: argoproj.io/v1alpha1
@@ -123,12 +90,11 @@ data:
             - sh
             - "-c"
             - >-
-              if [ -z "$(find . -name 'Chart.yaml')" ] &&
-                 [ -z "$(find . -name 'kustomization.yaml')" ] &&
-                 [ -n "$(find . -name '*.yaml')" ] &&
+              if [ -z "${ARGOCD_ENV_helm_args}" ] &&
+                 [ -z "${ARGOCD_ENV_HELM_VALUES}" ] &&
                  [ -n "$(find . -name '*.yaml' | xargs -I {} grep '<path\|avp\.kubernetes\.io' {})" ];
               then
-                 echo "Hit!"
+                 echo "PLAIN_AVP"
               fi
       generate:
         command:
