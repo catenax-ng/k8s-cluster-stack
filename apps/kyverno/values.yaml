@@ -1,1 +1,4 @@
-kyverno: {}
+kyverno:
+  config:
+    webhookAnnotations:
+      admissions.enforcer/disabled": true
