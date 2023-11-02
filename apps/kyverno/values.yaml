@@ -6,12 +6,20 @@ kyverno:
       "admissions.enforcer/disabled": true
   admissionController:
     replicas: 3
+    serviceMonitor:
+      enabled: true
   backgroundController:
     replicas: 2
+    serviceMonitor:
+      enabled: true
   cleanupController:
     replicas: 2
+    serviceMonitor:
+      enabled: true
   reportsController:
     replicas: 2
+    serviceMonitor:
+      enabled: true
   grafana:
     enabled: true
     namespace: monitoring
