@@ -1,9 +1,7 @@
 kyverno:
-  apiVersionOverride:
-    podDisruptionBudget: policy/v1
   config:
     webhookAnnotations:
-      "admissions.enforcer/disabled": true
+      "admissions.enforcer/disabled": 'true'
   admissionController:
     replicas: 3
     serviceMonitor:
