@@ -6,9 +6,9 @@ spec:
   generators:
     - list:
         elements:
-          - cluster: devsecops-testing
-            cluster-name: devsecops-testing
-            targetRevision: feat/kyverno-monitoring
+#          - cluster: devsecops-testing
+#            cluster-name: devsecops-testing
+#            targetRevision: feat/kyverno-monitoring
           - cluster: dev
             cluster-name: dev
             targetRevision: HEAD
