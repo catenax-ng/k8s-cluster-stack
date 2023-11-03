@@ -47,7 +47,7 @@ spec:
               - $values/apps/{{appName}}/values-{{cluster-name}}.yaml
         - repoURL: 'https://github.com/catenax-ng/k8s-cluster-stack'
           targetRevision: HEAD
-          ref: value
+          ref: values
       destination:
         name: '{{cluster-name}}'
         namespace: '{{appName}}'
