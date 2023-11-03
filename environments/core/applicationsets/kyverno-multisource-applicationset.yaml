@@ -46,7 +46,7 @@ spec:
               - $values/apps/kyverno/values.yaml
               - $values/apps/{{appName}}/values-{{cluster-name}}.yaml
         - repoURL: 'https://github.com/catenax-ng/k8s-cluster-stack'
-          targetRevision: HEAD
+          targetRevision: '{{targetRevision}}'
           ref: values
       destination:
         name: '{{cluster-name}}'
