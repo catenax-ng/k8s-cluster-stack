@@ -4,19 +4,19 @@ config:
 admissionController:
   replicas: 3
   serviceMonitor:
-    enabled: true
+    enabled: false
 backgroundController:
   replicas: 2
   serviceMonitor:
-    enabled: true
+    enabled: false
 cleanupController:
   replicas: 2
   serviceMonitor:
-    enabled: true
+    enabled: false
 reportsController:
   replicas: 2
   serviceMonitor:
-    enabled: true
+    enabled: false
 grafana:
   enabled: true
   namespace: monitoring
