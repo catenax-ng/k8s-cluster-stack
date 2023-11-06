@@ -20,10 +20,6 @@ kube-prometheus-stack:
         api_url: https://api.github.com/user
         team_ids: "5765033"
         allowed_organizations: catenax-ng
-    sidecar:
-      datasources:
-        enabled: true
-        defaultDatasourceEnabled: true
     additionalDataSources:
     - name: Loki
       access: proxy
