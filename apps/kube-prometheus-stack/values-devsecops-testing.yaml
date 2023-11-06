@@ -19,10 +19,6 @@ kube-prometheus-stack:
         token_url: https://github.com/login/oauth/access_token
         api_url: https://api.github.com/user
         allowed_organizations: catenax-ng
-    sidecar:
-      datasources:
-        enabled: true
-        defaultDatasourceEnabled: true
     additionalDataSources:
     - name: Loki
       access: proxy
@@ -35,15 +31,5 @@ kube-prometheus-stack:
       type: loki
       url: http://devsecops-testing-loki.logging.svc.cluster.local:3100
       version: 1
-    - name: DS_PROMETHEUS_KYVERNO
-      access: proxy
-      basicAuth: false
-      orgId: 1
-      editable: false
-      jsonData:
-        tlsSkipVerify: true
-      type: prometheus
-      url: http://devsecops-testing-kyverno-svc-metrics.kyverno.svc.cluster.local:8000
-
 domain: "devsecops-testing.demo.catena-x.net"
 cluster: "devsecops-testing"
