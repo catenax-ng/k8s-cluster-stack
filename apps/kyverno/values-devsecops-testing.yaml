@@ -3,15 +3,3 @@ admissionController:
     enabled: true
     additionalLabels:
       release: "devsecops-testing-kube-prometheus-stack"
-backgroundController:
-  serviceMonitor:
-    additionalLabels:
-      release: "devsecops-testing-kube-prometheus-stack"
-cleanupController:
-  serviceMonitor:
-    additionalLabels:
-      release: "devsecops-testing-kube-prometheus-stack"
-reportsController:
-  serviceMonitor:
-    additionalLabels:
-      release: "devsecops-testing-kube-prometheus-stack"
