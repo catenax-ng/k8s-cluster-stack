@@ -1,8 +1,8 @@
 admissionController:
   serviceMonitor:
     enabled: true
-#    additionalLabels:
-#      release: "devsecops-testing-kube-prometheus-stack"
+    additionalLabels:
+      release: "devsecops-testing-kube-prometheus-stack"
 backgroundController:
   serviceMonitor:
     additionalLabels:
