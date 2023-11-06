@@ -19,5 +19,3 @@ reportsController:
     enabled: false
 grafana:
   enabled: true
-  namespace: monitoring
-  configMapName: kyverno-dashboards
