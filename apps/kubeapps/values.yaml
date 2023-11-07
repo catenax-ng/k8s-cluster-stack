@@ -1,0 +1,40 @@
+# Must be set according to the install guide!
+jwtAuthenticatorDexCaData: ""
+
+dex:
+  enabled: true
+  config:
+    # See https://dexidp.io/docs/storage/ for more options
+    storage:
+      type: memory
+
+pinniped:
+  enabled: true
+  concierge:
+    enabled: true
+    rbac:
+      create: true
+    credentialIssuerConfig: |
+      impersonationProxy:
+        mode: auto
+        service:
+          type: ClusterIP
+  supervisor:
+    enabled: false
+
+kubeapps:
+  enabled: false
+  authProxy:
+    enabled: true
+    provider: oidc
+    scope: 'openid email groups user:email'
+    emailDomain: "*"
+  pinnipedProxy:
+    enabled: true
+    defaultPinnipedNamespace: kubeapps
+    defaultAuthenticatorName: jwt-authenticator
+
+  ingress:
+    annotations:
+      nginx.ingress.kubernetes.io/proxy-buffer-size: 10k
+      nginx.ingress.kubernetes.io/proxy-read-timeout: "600"

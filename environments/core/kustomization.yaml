@@ -12,6 +12,7 @@ resources:
   - applicationsets/reflector-applicationset.yaml
   - applicationsets/kube-prometheus-stack-applicationset.yaml
   - applicationsets/maintenance-dashboard-app-applicationset.yaml
+  - applicationsets/kubeapps-applicationset.yaml
   - applicationsets/kyverno-multisource-applicationset.yaml
   - applicationsets/landing-page-applicationset.yaml
   - applicationsets/loki-applicationset.yaml

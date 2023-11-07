@@ -1,0 +1,12 @@
+apiVersion: authentication.concierge.pinniped.dev/v1alpha1
+kind: JWTAuthenticator
+metadata:
+  name: jwt-authenticator
+spec:
+  issuer: https://dex-kubeapps.devsecops-testing.demo.catena-x.net
+  audience: kubeapps
+  claims:
+    username: email
+    groups: groups
+    tls:
+      certificateAuthorityData: {{ .Values.jwtAuthenticatorDexCaData }}

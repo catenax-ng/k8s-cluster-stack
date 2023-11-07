@@ -1,0 +1,99 @@
+jwtAuthenticatorDexCaData: <path:/devsecops/data/apps/kubeapps/devsecops-testing#jwtAuthenticatorDexCaData>
+
+dex:
+  config:
+    issuer: https://dex-kubeapps.devsecops-testing.demo.catena-x.net
+
+    staticClients:
+    - id: <path:/devsecops/data/apps/kubeapps/devsecops-testing#kubeappsDexClientId>
+      secret: <path:/devsecops/data/apps/kubeapps/devsecops-testing#kubeappsDexClientSecret>
+      name: 'Kubeapps'
+      # Where the app will be running.
+      redirectURIs:
+      - 'https://kubeapps.devsecops-testing.demo.catena-x.net/oauth2/callback'
+
+    connectors:
+    - type: github
+      # Required field for connector id.
+      id: github
+      # Required field for connector name.
+      name: GitHub
+      config:
+        # Credentials can be string literals or pulled from the environment.
+        clientID: <path:/devsecops/data/apps/kubeapps/devsecops-testing#dexGitHubClientId>
+        clientSecret: <path:/devsecops/data/apps/kubeapps/devsecops-testing#dexGitHubClientSecret>
+        redirectURI: https://dex-kubeapps.devsecops-testing.demo.catena-x.net/callback
+    
+        # Optional organizations and teams, communicated through the "groups" scope.
+        #
+        # NOTE: This is an EXPERIMENTAL config option and will likely change.
+        #
+        # Legacy 'org' field. 'org' and 'orgs' cannot be used simultaneously. A user
+        # MUST be a member of the following org to authenticate with dex.
+        # org: my-organization
+        #
+        # Dex queries the following organizations for group information if the
+        # "groups" scope is provided. Group claims are formatted as "(org):(team)".
+        # For example if a user is part of the "engineering" team of the "coreos"
+        # org, the group claim would include "coreos:engineering".
+        #
+        # If orgs are specified in the config then user MUST be a member of at least one of the specified orgs to
+        # authenticate with dex.
+        #
+        # If neither 'org' nor 'orgs' are specified in the config and 'loadAllGroups' setting set to true then user
+        # authenticate with ALL user's GitHub groups. Typical use case for this setup:
+        # provide read-only access to everyone and give full permissions if user has 'my-organization:admins-team' group claim.  
+        orgs:
+        - name: catenax-ng
+        # Flag which indicates that all user groups and teams should be loaded.
+        loadAllGroups: false
+    
+        # Optional choice between 'name' (default), 'slug', or 'both'.
+        #
+        # As an example, group claims for member of 'Site Reliability Engineers' in
+        # Acme organization would yield:
+        #   - ['acme:Site Reliability Engineers'] for 'name'
+        #   - ['acme:site-reliability-engineers'] for 'slug'
+        #   - ['acme:Site Reliability Engineers', 'acme:site-reliability-engineers'] for 'both'
+        teamNameField: slug
+        # flag which will switch from using the internal GitHub id to the users handle (@mention) as the user id.
+        # It is possible for a user to change their own user name but it is very rare for them to do so
+        useLoginAsID: false
+  ingress:
+    enabled: true
+    hosts:
+      - host: dex-kubeapps.devsecops-testing.demo.catena-x.net
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+    tls:
+      - hosts:
+          - dex-kubeapps.devsecops-testing.demo.catena-x.net
+        secretName: tls-secret
+
+kubeapps:
+  enabled: true
+  authProxy:
+    clientID: <path:/devsecops/data/apps/kubeapps/devsecops-testing#kubeappsDexClientId>
+    clientSecret: <path:/devsecops/data/apps/kubeapps/devsecops-testing#kubeappsDexClientSecret>
+    cookieSecret: <path:/devsecops/data/apps/kubeapps/devsecops-testing#kubeappsCookieSecret>
+    extraFlags:
+    - --cookie-refresh=0
+    - --ssl-insecure-skip-verify
+    - --cookie-secure=true
+    - --oidc-issuer-url=https://dex-kubeapps.devsecops-testing.demo.catena-x.net
+  clusters:
+    - name: default
+      isKubeappsCluster: true
+      apiServiceURL: <path:/devsecops/data/apps/kubeapps/devsecops-testing#impersonationProxyApiServiceUrl>
+      certificateAuthorityData: <path:/devsecops/data/apps/kubeapps/devsecops-testing#impersonationProxyCaData>
+      pinnipedConfig:
+        enabled: true
+
+  ingress:
+    enabled: true
+    hostname: kubeapps.devsecops-testing.demo.catena-x.net
+    extraTls:
+    - hosts:
+      - kubeapps.devsecops-testing.demo.catena-x.net
+      secretName: tls-secret
