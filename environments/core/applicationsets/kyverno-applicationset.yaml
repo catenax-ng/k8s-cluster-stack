@@ -6,9 +6,9 @@ spec:
   generators:
     - list:
         elements:
-          - cluster: devsecops-testing
-            cluster-name: devsecops-testing
-            targetRevision: HEAD
+#          - cluster: devsecops-testing
+#            cluster-name: devsecops-testing
+#            targetRevision: feat/kyverno-monitoring
           - cluster: dev
             cluster-name: dev
             targetRevision: HEAD
@@ -32,10 +32,6 @@ spec:
     spec:
       project: default
       source:
-        plugin:
-          env:
-            - name: helm_args
-              value: '-f values.yaml'
         repoURL: https://github.com/catenax-ng/k8s-cluster-stack
         targetRevision: '{{ targetRevision }}'
         path: apps/kyverno
@@ -46,23 +42,8 @@ spec:
 
       # Sync policy
       syncPolicy:
-        # disabled autoSync with A1ODT-461 to avoid accidental damage to Hotel Budapest
-        # https://github.com/kyverno/kyverno/tree/main/charts/kyverno
-       # automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
-        #  prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).
-        #  selfHeal: true # Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected ( false by default ).
-        #          allowEmpty: false # Allows deleting all application resources during automatic syncing ( false by default ).
+        # automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
         syncOptions:
           # https://kyverno.io/docs/installation/#notes-for-argocd-users
           - ServerSideApply=true
           - CreateNamespace=true
-          - PrunePropagationPolicy=foreground # Supported policies are background, foreground and orphan.
-          - PruneLast=true # Allow the ability for resource pruning to happen as a final, implicit wave of a sync operation
-        # The retry feature is available since v1.7
-        retry:
-          limit: 5 # number of failed sync attempt retries; unlimited number of attempts if less than 0
-          backoff:
-            duration: 5s # the amount to back off. Default unit is seconds, but could also be a duration (e.g. "2m", "1h")
-            factor: 2 # a factor to multiply the base duration after each failed retry
-            maxDuration: 3m # the maximum amount of time allowed for the backoff strategy
-

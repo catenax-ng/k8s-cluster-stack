@@ -9,3 +9,16 @@ data:
   # This might cause problems with Helm charts which will set 'app.kubernetes.io/instance' as well (e.g. Kyverno)
   application.instanceLabelKey: "argocd.argoproj.io/instance"
   help.chatUrl: "https://chat.eclipse.org/#/room/#tools.tractus-x:matrix.eclipse.org"
+
+  # exclude Kyverno resources according to recommendation in Kyverno documentation
+  # https://github.com/kyverno/kyverno/blob/release-1.10/charts/kyverno/README.md?plain=1#L53-L84
+  resource.exclusions: |
+    - apiGroups:
+        - kyverno.io
+      kinds:
+        - AdmissionReport
+        - BackgroundScanReport
+        - ClusterAdmissionReport
+        - ClusterBackgroundScanReport
+      clusters:
+        - '*'

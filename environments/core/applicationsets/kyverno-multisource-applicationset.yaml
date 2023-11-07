@@ -1,0 +1,60 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: kyverno-multisource-applicationset
+spec:
+  generators:
+    - list:
+        elements:
+          - cluster: devsecops-testing
+            cluster-name: devsecops-testing
+            targetRevision: feat/kyverno-monitoring
+            appName: 'kyverno'
+#          - cluster: dev
+#            cluster-name: dev
+#            targetRevision: HEAD
+#            appName: 'kyverno'
+#          - cluster: hotel-budapest
+#            cluster-name: hotel-budapest
+#            targetRevision: HEAD
+#            appName: 'kyverno'
+#          - cluster: pre-prod
+#            cluster-name: pre-prod
+#            targetRevision: HEAD
+#            appName: 'kyverno'
+#          - cluster: beta
+#            cluster-name: beta
+#            targetRevision: HEAD
+#            appName: 'kyverno'
+#          - cluster: stable
+#            cluster-name: stable
+#            targetRevision: HEAD
+#            appName: 'kyverno'
+  template:
+    metadata:
+      name: '{{cluster}}-kyverno'
+      labels:
+        app: '{{appName}}'
+    spec:
+      project: default
+      sources:
+        - repoURL: https://kyverno.github.io/kyverno
+          chart: '{{appName}}'
+          targetRevision: 3.0.6
+          helm:
+            valueFiles:
+              - $values/apps/kyverno/values.yaml
+              - $values/apps/{{appName}}/values-{{cluster-name}}.yaml
+        - repoURL: 'https://github.com/catenax-ng/k8s-cluster-stack'
+          targetRevision: '{{targetRevision}}'
+          ref: values
+      destination:
+        name: '{{cluster-name}}'
+        namespace: '{{appName}}'
+        server: ''
+
+      # Sync policy
+      syncPolicy:
+        syncOptions:
+          - ServerSideApply=true # https://kyverno.io/docs/installation/#notes-for-argocd-users
+          - CreateNamespace=true
