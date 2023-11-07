@@ -7,7 +7,7 @@ spec:
     - list:
         elements:
           - cluster: core
-            cluster-name: core
+            cluster-name: in-cluster
             targetRevision: HEAD
             appName: 'kyverno'
           - cluster: dev
