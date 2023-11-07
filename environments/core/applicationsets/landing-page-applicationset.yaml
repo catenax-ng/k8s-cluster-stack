@@ -6,9 +6,6 @@ spec:
   generators:
     - list:
         elements:
-          - cluster: beta
-            cluster-name: beta
-            targetRevision: HEAD
           - cluster: core
             cluster-name: in-cluster
             targetRevision: HEAD
@@ -20,9 +17,6 @@ spec:
             targetRevision: HEAD
           - cluster: hotel-budapest
             cluster-name: hotel-budapest
-            targetRevision: HEAD
-          - cluster: pre-prod
-            cluster-name: pre-prod
             targetRevision: HEAD
           - cluster: stable
             cluster-name: stable

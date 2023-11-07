@@ -26,14 +26,6 @@ spec:
             cluster-name: devsecops-testing
             valueFile: values-tls-devsecops-testing.yaml
             targetRevision: HEAD
-          - cluster: pre-prod
-            cluster-name: pre-prod
-            valueFile: values-tls-pre-prod.yaml
-            targetRevision: HEAD
-          - cluster: beta
-            cluster-name: beta
-            valueFile: values-tls-beta.yaml
-            targetRevision: HEAD
           - cluster: stable
             cluster-name: stable
             valueFile: values-tls-stable.yaml
