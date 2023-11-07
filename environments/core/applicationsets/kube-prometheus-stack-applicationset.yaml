@@ -17,7 +17,7 @@ spec:
         targetRevision: HEAD
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
-        targetRevision: feat/kyverno-monitoring
+        targetRevision: HEAD
       - cluster: pre-prod
         cluster-name: pre-prod
         targetRevision: HEAD
