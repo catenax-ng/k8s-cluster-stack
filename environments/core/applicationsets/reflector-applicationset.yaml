@@ -21,12 +21,6 @@ spec:
           - cluster: devsecops-testing
             cluster-name: devsecops-testing
             targetRevision: 7.0.147
-          - cluster: pre-prod
-            cluster-name: pre-prod
-            targetRevision: 7.0.147
-          - cluster: beta
-            cluster-name: beta
-            targetRevision: 7.0.147
           - cluster: stable
             cluster-name: stable
             targetRevision: 7.0.147
