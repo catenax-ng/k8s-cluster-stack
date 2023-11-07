@@ -1,0 +1,5 @@
+admissionController:
+  serviceMonitor:
+    enabled: true
+    additionalLabels:
+      release: "dev-kube-prometheus-stack"
