@@ -6,30 +6,26 @@ spec:
   generators:
     - list:
         elements:
+          - cluster: core
+            cluster-name: in-cluster
+            targetRevision: HEAD
+            appName: 'kyverno'
+          - cluster: dev
+            cluster-name: dev
+            targetRevision: HEAD
+            appName: 'kyverno'
           - cluster: devsecops-testing
             cluster-name: devsecops-testing
-            targetRevision: feat/kyverno-monitoring
+            targetRevision: HEAD
             appName: 'kyverno'
-#          - cluster: dev
-#            cluster-name: dev
-#            targetRevision: HEAD
-#            appName: 'kyverno'
-#          - cluster: hotel-budapest
-#            cluster-name: hotel-budapest
-#            targetRevision: HEAD
-#            appName: 'kyverno'
-#          - cluster: pre-prod
-#            cluster-name: pre-prod
-#            targetRevision: HEAD
-#            appName: 'kyverno'
-#          - cluster: beta
-#            cluster-name: beta
-#            targetRevision: HEAD
-#            appName: 'kyverno'
-#          - cluster: stable
-#            cluster-name: stable
-#            targetRevision: HEAD
-#            appName: 'kyverno'
+          - cluster: hotel-budapest
+            cluster-name: hotel-budapest
+            targetRevision: HEAD
+            appName: 'kyverno'
+          - cluster: stable
+            cluster-name: stable
+            targetRevision: HEAD
+            appName: 'kyverno'
   template:
     metadata:
       name: '{{cluster}}-kyverno'
@@ -55,6 +51,7 @@ spec:
 
       # Sync policy
       syncPolicy:
+        automated: {}
         syncOptions:
           - ServerSideApply=true # https://kyverno.io/docs/installation/#notes-for-argocd-users
           - CreateNamespace=true

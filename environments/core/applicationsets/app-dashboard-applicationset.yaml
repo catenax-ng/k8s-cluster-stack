@@ -22,14 +22,6 @@ spec:
         cluster-name: devsecops-testing
         targetRevision: HEAD
         ingress: 'app.devsecops-testing.demo.catena-x.net'
-      - cluster: pre-prod
-        cluster-name: pre-prod
-        targetRevision: HEAD
-        ingress: 'app.pre-prod.demo.catena-x.net'
-      - cluster: beta
-        cluster-name: beta
-        targetRevision: HEAD
-        ingress: 'app.beta.demo.catena-x.net'
       - cluster: stable
         cluster-name: stable
         targetRevision: HEAD

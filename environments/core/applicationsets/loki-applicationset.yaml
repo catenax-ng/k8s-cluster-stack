@@ -18,12 +18,6 @@ spec:
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         targetRevision: HEAD
-      - cluster: pre-prod
-        cluster-name: pre-prod
-        targetRevision: HEAD
-      - cluster: beta
-        cluster-name: beta
-        targetRevision: HEAD
       - cluster: stable
         cluster-name: stable
         targetRevision: HEAD
