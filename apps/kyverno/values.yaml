@@ -1,26 +1,15 @@
-kyverno:
-  apiVersionOverride:
-    podDisruptionBudget: policy/v1
-  config:
-    webhookAnnotations:
-      "admissions.enforcer/disabled": true
-  admissionController:
-    replicas: 3
-    serviceMonitor:
-      enabled: true
-  backgroundController:
-    replicas: 2
-    serviceMonitor:
-      enabled: true
-  cleanupController:
-    replicas: 2
-    serviceMonitor:
-      enabled: true
-  reportsController:
-    replicas: 2
-    serviceMonitor:
-      enabled: true
-  grafana:
+config:
+  webhookAnnotations:
+    "admissions.enforcer/disabled": 'true'
+admissionController:
+  replicas: 3
+  serviceMonitor:
     enabled: true
-    namespace: monitoring
-    configMapName: kyverno-dashboards
+backgroundController:
+  replicas: 2
+cleanupController:
+  replicas: 2
+reportsController:
+  replicas: 2
+grafana:
+  enabled: true

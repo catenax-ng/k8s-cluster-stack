@@ -19,15 +19,5 @@ kube-prometheus-stack:
           editable: true
           options:
             path: /var/lib/grafana/dashboards/default
-        - name: 'kyverno'
-          orgId: 1
-          folder: ''
-          type: file
-          disableDeletion: false
-          editable: true
-          options:
-            path: /var/lib/grafana/dashboards/kyverno
-
     dashboardsConfigMaps:
       default: "grafana-dashboards"
-      kyverno: "kyverno-dashboards"
