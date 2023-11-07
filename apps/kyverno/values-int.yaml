@@ -1,5 +1,4 @@
 admissionController:
   serviceMonitor:
-    enabled: true
     additionalLabels:
       release: "hotel-budapest-kube-prometheus-stack"

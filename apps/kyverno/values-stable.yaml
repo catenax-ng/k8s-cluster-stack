@@ -1,5 +1,4 @@
 admissionController:
   serviceMonitor:
-    enabled: true
     additionalLabels:
       release: "stable-kube-prometheus-stack"
