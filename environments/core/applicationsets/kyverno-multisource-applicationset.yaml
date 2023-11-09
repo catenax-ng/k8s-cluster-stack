@@ -9,23 +9,23 @@ spec:
           - cluster: core
             cluster-name: in-cluster
             targetRevision: HEAD
-            appName: 'kyverno'
+            path: 'apps/kyverno'
           - cluster: dev
             cluster-name: dev
             targetRevision: HEAD
-            appName: 'kyverno'
+            path: 'apps/kyverno'
           - cluster: devsecops-testing
             cluster-name: devsecops-testing
             targetRevision: HEAD
-            appName: 'kyverno'
+            path: 'apps/kyverno'
           - cluster: hotel-budapest
             cluster-name: hotel-budapest
             targetRevision: HEAD
-            appName: 'kyverno'
+            path: 'apps/kyverno'
           - cluster: stable
             cluster-name: stable
             targetRevision: HEAD
-            appName: 'kyverno'
+            path: 'apps/kyverno'
   template:
     metadata:
       name: '{{cluster}}-kyverno'
@@ -34,19 +34,21 @@ spec:
     spec:
       project: default
       sources:
-        - repoURL: https://kyverno.github.io/kyverno
-          chart: '{{appName}}'
+        - repoURL: 'https://kyverno.github.io/kyverno'
+          chart: kyverno
           targetRevision: 3.0.6
           helm:
             valueFiles:
               - $values/apps/kyverno/values.yaml
               - $values/apps/{{appName}}/values-{{cluster-name}}.yaml
+              - $values/{{path}}/kyverno/values.yaml
+              - $values/{{path}}/kyverno/values-{{cluster-name}}.yaml
         - repoURL: 'https://github.com/catenax-ng/k8s-cluster-stack'
           targetRevision: '{{targetRevision}}'
           ref: values
       destination:
         name: '{{cluster-name}}'
-        namespace: '{{appName}}'
+        namespace: 'kyverno'
         server: ''
 
       # Sync policy
