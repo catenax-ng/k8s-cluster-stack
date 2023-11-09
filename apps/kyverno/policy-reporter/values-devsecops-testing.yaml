@@ -1,0 +1,4 @@
+monitoring:
+  serviceMonitor:
+    labels:
+      release: "devsecops-testing-kube-prometheus-stack"

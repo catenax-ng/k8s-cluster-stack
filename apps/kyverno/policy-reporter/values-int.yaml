@@ -1,0 +1,4 @@
+monitoring:
+  serviceMonitor:
+    labels:
+      release: "hotel-budapest-kube-prometheus-stack"

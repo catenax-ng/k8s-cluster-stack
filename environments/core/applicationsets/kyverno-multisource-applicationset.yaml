@@ -39,10 +39,15 @@ spec:
           targetRevision: 3.0.6
           helm:
             valueFiles:
-              - $values/apps/kyverno/values.yaml
-              - $values/apps/{{appName}}/values-{{cluster-name}}.yaml
               - $values/{{path}}/kyverno/values.yaml
               - $values/{{path}}/kyverno/values-{{cluster-name}}.yaml
+        - repoURL: 'https://kyverno.github.io/policy-reporter'
+          chart: policy-reporter
+          targetRevision: 2.21.1
+          helm:
+            valueFiles:
+              - $values/{{path}}/policy-reporter/values.yaml
+              - $values/{{path}}/policy-reporter/values-{{cluster-name}}.yaml
         - repoURL: 'https://github.com/catenax-ng/k8s-cluster-stack'
           targetRevision: '{{targetRevision}}'
           ref: values
