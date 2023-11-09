@@ -30,7 +30,7 @@ spec:
     metadata:
       name: '{{cluster}}-kyverno'
       labels:
-        app: '{{appName}}'
+        app: 'kyverno'
     spec:
       project: default
       sources:
