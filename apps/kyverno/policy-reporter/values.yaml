@@ -1,0 +1,10 @@
+monitoring:
+  enabled: true
+  plugins:
+    kyverno: true
+kyvernoPlugin:
+  enabled: true
+  replicaCount: 3
+  blockReports:
+    enabled: true
+    eventNamespace: kyverno

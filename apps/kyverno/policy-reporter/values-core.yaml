@@ -1,0 +1,4 @@
+monitoring:
+  serviceMonitor:
+    labels:
+      release: "core-kube-prometheus-stack"
