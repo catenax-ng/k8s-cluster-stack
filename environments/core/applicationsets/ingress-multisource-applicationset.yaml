@@ -50,8 +50,7 @@ spec:
         server: ''
 
       # Sync policy
-      syncPolicy:
+#      syncPolicy:
 #        automated: {}
-        syncOptions:
-          - ServerSideApply=true # https://ingress.io/docs/installation/#notes-for-argocd-users
-          - CreateNamespace=true
+#        syncOptions:
+#          - CreateNamespace=true
