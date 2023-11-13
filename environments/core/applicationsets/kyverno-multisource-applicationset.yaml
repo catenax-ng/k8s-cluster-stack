@@ -36,7 +36,7 @@ spec:
       sources:
         - repoURL: 'https://kyverno.github.io/kyverno'
           chart: kyverno
-          targetRevision: 3.0.6
+          targetRevision: 3.0.7
           helm:
             valueFiles:
               - $values/{{path}}/kyverno/values.yaml
