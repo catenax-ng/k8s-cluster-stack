@@ -21,6 +21,9 @@ spec:
           - cluster: stable
             cluster-name: stable
             targetRevision: HEAD
+          - cluster: vault
+            cluster-name: vault-cluster
+            targetRevision: HEAD
   template:
     metadata:
       name: '{{ cluster }}-landing-page'
