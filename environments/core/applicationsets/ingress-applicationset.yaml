@@ -18,9 +18,9 @@ spec:
       - cluster: vault
         cluster-name: vault-cluster
         targetRevision: HEAD
-#      - cluster: devsecops-testing
-#        cluster-name: devsecops-testing
-#        targetRevision: HEAD
+      - cluster: devsecops-testing
+        cluster-name: devsecops-testing
+        targetRevision: HEAD
       - cluster: stable
         cluster-name: stable
         targetRevision: HEAD
