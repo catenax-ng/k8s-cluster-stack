@@ -15,9 +15,9 @@ spec:
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         targetRevision: HEAD
-#      - cluster: vault
-#        cluster-name: vault-cluster
-#        targetRevision: HEAD
+      - cluster: vault
+        cluster-name: vault-cluster
+        targetRevision: HEAD
 #      - cluster: devsecops-testing
 #        cluster-name: devsecops-testing
 #        targetRevision: HEAD
