@@ -17,7 +17,7 @@ spec:
 #            path: 'apps/ingress-nginx'
           - cluster: devsecops-testing
             cluster-name: devsecops-testing
-            chartVersion: 4.7.1
+            chartVersion: 4.8.3
             targetRevision: chore/ingress-as-multi-source-app
             path: 'apps/ingress-nginx'
 #          - cluster: hotel-budapest
