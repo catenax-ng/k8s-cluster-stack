@@ -6,11 +6,11 @@ spec:
   generators:
     - list:
         elements:
-          - cluster: core
-            cluster-name: in-cluster
-            chartVersion: 4.7.1
-            targetRevision: chore/ingress-as-multi-source-app
-            path: 'apps/ingress-nginx'
+#          - cluster: core
+#            cluster-name: in-cluster
+#            chartVersion: 4.7.1
+#            targetRevision: chore/ingress-as-multi-source-app
+#            path: 'apps/ingress-nginx'
 #          - cluster: dev
 #            cluster-name: dev
 #            targetRevision: HEAD
