@@ -14,10 +14,10 @@ spec:
 #            cluster-name: dev
 #            targetRevision: HEAD
 #            path: 'apps/ingress-nginx'
-          - cluster: devsecops-testing
-            cluster-name: devsecops-testing
-            targetRevision: chore/ingress-as-multi-source-app
-            path: 'apps/ingress-nginx'
+#          - cluster: devsecops-testing
+#            cluster-name: devsecops-testing
+#            targetRevision: chore/ingress-as-multi-source-app
+#            path: 'apps/ingress-nginx'
 #          - cluster: hotel-budapest
 #            cluster-name: hotel-budapest
 #            targetRevision: HEAD
