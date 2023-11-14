@@ -28,11 +28,11 @@ spec:
 #            cluster-name: stable
 #            targetRevision: HEAD
 #            path: 'apps/ingress-nginx'
-#          - cluster: vault
-#            cluster-name: vault-cluster
-#            chartVersion: 4.7.1
-#            targetRevision: chore/ingress-as-multi-source-app
-#            path: 'apps/ingress-nginx'
+          - cluster: vault
+            cluster-name: vault-cluster
+            chartVersion: 4.7.1
+            targetRevision: chore/ingress-as-multi-source-app
+            path: 'apps/ingress-nginx'
   template:
     metadata:
       name: '{{cluster}}-ingress-nginx'
