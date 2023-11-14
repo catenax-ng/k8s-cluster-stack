@@ -1,6 +1,6 @@
 controller:
   service:
-    loadBalancerIP: 20.79.90.225
+    loadBalancerIP: 20.113.44.248
   extraArgs: { }
 defaultBackend:
   enabled: true
