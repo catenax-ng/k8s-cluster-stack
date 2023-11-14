@@ -38,7 +38,7 @@ spec:
       sources:
         - repoURL: 'https://kubernetes.github.io/ingress-nginx'
           chart: ingress-nginx
-          targetRevision: {{chartVersion}}
+          targetRevision: '{{chartVersion}}'
           helm:
             valueFiles:
               - $values/{{path}}/values.yaml
