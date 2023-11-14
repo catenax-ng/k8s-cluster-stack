@@ -6,16 +6,18 @@ spec:
   generators:
     - list:
         elements:
-#          - cluster: core
-#            cluster-name: in-cluster
-#            targetRevision: HEAD
-#            path: 'apps/ingress-nginx'
+          - cluster: core
+            cluster-name: in-cluster
+            chartVersion: 4.7.1
+            targetRevision: chore/ingress-as-multi-source-app
+            path: 'apps/ingress-nginx'
 #          - cluster: dev
 #            cluster-name: dev
 #            targetRevision: HEAD
 #            path: 'apps/ingress-nginx'
           - cluster: devsecops-testing
             cluster-name: devsecops-testing
+            chartVersion: 4.7.1
             targetRevision: chore/ingress-as-multi-source-app
             path: 'apps/ingress-nginx'
 #          - cluster: hotel-budapest
@@ -36,11 +38,11 @@ spec:
       sources:
         - repoURL: 'https://kubernetes.github.io/ingress-nginx'
           chart: ingress-nginx
-          targetRevision: 4.7.1
+          targetRevision: {{chartVersion}}
           helm:
             valueFiles:
               - $values/{{path}}/values.yaml
-              - $values/{{path}}/values-{{cluster-name}}.yaml
+              - $values/{{path}}/values-{{cluster}}.yaml
         - repoURL: 'https://github.com/catenax-ng/k8s-cluster-stack'
           targetRevision: '{{targetRevision}}'
           ref: values
@@ -48,10 +50,5 @@ spec:
         name: '{{cluster-name}}'
         namespace: 'default'
         server: ''
-
-      # Sync policy
-      syncPolicy:
+#      syncPolicy:
 #        automated: {}
-        syncOptions:
-          - ServerSideApply=true # https://ingress.io/docs/installation/#notes-for-argocd-users
-          - CreateNamespace=true
