@@ -55,5 +55,5 @@ spec:
         name: '{{cluster-name}}'
         namespace: 'default'
         server: ''
-      syncPolicy:
-        automated: {}
+#      syncPolicy:
+#        automated: {}
