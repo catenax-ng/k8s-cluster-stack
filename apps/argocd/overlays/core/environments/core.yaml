@@ -18,8 +18,8 @@ spec:
     name: in-cluster
     namespace: argocd
 
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-      allowEmpty: false
+#  syncPolicy:
+#    automated:
+#      prune: true
+#      selfHeal: true
+#      allowEmpty: false
