@@ -9,7 +9,7 @@ spec:
       - cluster: core
         cluster-name: in-cluster
         overlay: overlays/core
-        targetRevision: ArgoCD-v2.7.14-c3_AVP-v1.16.1
+        targetRevision: ArgoCD-v2.7.14-c4_AVP-v1.16.1
       - cluster: hotel-budapest
         cluster-name: hotel-budapest
         overlay: overlays/hotel-budapest
