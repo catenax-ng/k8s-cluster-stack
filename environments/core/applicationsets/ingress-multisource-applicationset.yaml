@@ -24,10 +24,11 @@ spec:
 #            cluster-name: hotel-budapest
 #            targetRevision: HEAD
 #            path: 'apps/ingress-nginx'
-#          - cluster: stable
-#            cluster-name: stable
-#            targetRevision: HEAD
-#            path: 'apps/ingress-nginx'
+          - cluster: stable
+            cluster-name: stable
+            chartVersion: 4.7.1
+            targetRevision: chore/ingress-as-multi-source-app
+            path: 'apps/ingress-nginx'
           - cluster: vault
             cluster-name: vault-cluster
             chartVersion: 4.7.1
