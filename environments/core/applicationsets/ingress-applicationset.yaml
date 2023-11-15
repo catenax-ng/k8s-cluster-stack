@@ -21,9 +21,9 @@ spec:
 #      - cluster: devsecops-testing
 #        cluster-name: devsecops-testing
 #        targetRevision: HEAD
-      - cluster: stable
-        cluster-name: stable
-        targetRevision: HEAD
+#      - cluster: stable
+#        cluster-name: stable
+#        targetRevision: HEAD
 
   template:
     metadata:
