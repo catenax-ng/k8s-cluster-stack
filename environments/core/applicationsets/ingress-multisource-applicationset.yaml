@@ -9,32 +9,32 @@ spec:
           - cluster: core
             cluster-name: in-cluster
             chartVersion: 4.7.1
-            targetRevision: chore/ingress-as-multi-source-app
+            targetRevision: HEAD
             path: 'apps/ingress-nginx'
           - cluster: dev
             cluster-name: dev
             chartVersion: 4.7.1
-            targetRevision: chore/ingress-as-multi-source-app
+            targetRevision: HEAD
             path: 'apps/ingress-nginx'
           - cluster: devsecops-testing
             cluster-name: devsecops-testing
             chartVersion: 4.8.3
-            targetRevision: chore/ingress-as-multi-source-app
+            targetRevision: HEAD
             path: 'apps/ingress-nginx'
           - cluster: int
             cluster-name: hotel-budapest
             chartVersion: 4.7.1
-            targetRevision: chore/ingress-as-multi-source-app
+            targetRevision: HEAD
             path: 'apps/ingress-nginx'
           - cluster: stable
             cluster-name: stable
             chartVersion: 4.7.1
-            targetRevision: chore/ingress-as-multi-source-app
+            targetRevision: HEAD
             path: 'apps/ingress-nginx'
           - cluster: vault
             cluster-name: vault-cluster
             chartVersion: 4.7.1
-            targetRevision: chore/ingress-as-multi-source-app
+            targetRevision: HEAD
             path: 'apps/ingress-nginx'
   template:
     metadata:
@@ -58,5 +58,5 @@ spec:
         name: '{{cluster-name}}'
         namespace: 'default'
         server: ''
-#      syncPolicy:
-#        automated: {}
+      syncPolicy:
+        automated: {}
