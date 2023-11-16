@@ -61,9 +61,12 @@ spec:
             factor: 2 # a factor to multiply the base duration after each failed retry
             maxDuration: 3m # the maximum amount of time allowed for the backoff strategy
 
-      ignoreDifferences: # https://github.com/argoproj/argo-cd/issues/4276#issuecomment-908455476
+      ignoreDifferences:
         - group: admissionregistration.k8s.io
           kind: ValidatingWebhookConfiguration
           name: '{{ cluster }}-certmanager-webhook'
-          jsonPointers:
-            - /webhooks/0/namespaceSelector/matchExpressions/2
+#          jsonPointers:
+#            - /webhooks/0/namespaceSelector/matchExpressions/2
+          jqPathExpressions:
+            - .webhooks[].namespaceSelector.matchExpressions[] | select(.key == "control-plane") # https://github.com/argoproj/argo-cd/issues/4276#issuecomment-907797060
+            - .webhooks[].namespaceSelector.matchExpressions[] | select(.key == "kubernetes.azure.com/managedby") # https://github.com/cert-manager/cert-manager/issues/4114#issuecomment-1008162907
