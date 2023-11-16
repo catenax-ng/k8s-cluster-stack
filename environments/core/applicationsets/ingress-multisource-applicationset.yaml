@@ -11,19 +11,21 @@ spec:
             chartVersion: 4.7.1
             targetRevision: chore/ingress-as-multi-source-app
             path: 'apps/ingress-nginx'
-#          - cluster: dev
-#            cluster-name: dev
-#            targetRevision: HEAD
-#            path: 'apps/ingress-nginx'
+          - cluster: dev
+            cluster-name: dev
+            chartVersion: 4.7.1
+            targetRevision: HEAD
+            path: 'apps/ingress-nginx'
           - cluster: devsecops-testing
             cluster-name: devsecops-testing
             chartVersion: 4.7.1
             targetRevision: chore/ingress-as-multi-source-app
             path: 'apps/ingress-nginx'
-#          - cluster: hotel-budapest
-#            cluster-name: hotel-budapest
-#            targetRevision: HEAD
-#            path: 'apps/ingress-nginx'
+          - cluster: int
+            cluster-name: hotel-budapest
+            chartVersion: 4.7.1
+            targetRevision: HEAD
+            path: 'apps/ingress-nginx'
           - cluster: stable
             cluster-name: stable
             chartVersion: 4.7.1
