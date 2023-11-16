@@ -6,7 +6,7 @@ namespace: argocd
 resources:
   - applicationsets/app-dashboard-applicationset.yaml
   - applicationsets/argo-applicationset.yaml
-  - applicationsets/ingress-applicationset.yaml
+#  - applicationsets/ingress-applicationset.yaml
   - applicationsets/ingress-multisource-applicationset.yaml
   - applicationsets/certmanager-applicationset.yaml
   - applicationsets/tls-applicationset.yaml
