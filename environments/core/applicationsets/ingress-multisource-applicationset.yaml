@@ -14,7 +14,7 @@ spec:
           - cluster: dev
             cluster-name: dev
             chartVersion: 4.7.1
-            targetRevision: HEAD
+            targetRevision: chore/ingress-as-multi-source-app
             path: 'apps/ingress-nginx'
           - cluster: devsecops-testing
             cluster-name: devsecops-testing
@@ -24,7 +24,7 @@ spec:
           - cluster: int
             cluster-name: hotel-budapest
             chartVersion: 4.7.1
-            targetRevision: HEAD
+            targetRevision: chore/ingress-as-multi-source-app
             path: 'apps/ingress-nginx'
           - cluster: stable
             cluster-name: stable
