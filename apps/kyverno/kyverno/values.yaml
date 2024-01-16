@@ -13,6 +13,6 @@ reportsController:
   replicas: 2
   resources:
     limits:
-      memory: 256Mi
+      memory: 512Mi
 grafana:
   enabled: true
