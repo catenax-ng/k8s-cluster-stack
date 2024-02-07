@@ -7,6 +7,7 @@ kube-prometheus-stack:
     admissionWebhooks:
       enabled: false
   grafana:
+    assertNoLeakedSecrets: false
     dashboardProviders:
       dashboardproviders.yaml:
         apiVersion: 1
