@@ -5,6 +5,7 @@ kube-prometheus-stack:
   ## Using default values from https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
   ##
   grafana:
+    assertNoLeakedSecrets: false
     adminPassword: <path:devsecops/data/apps/prometheus-stack/devsecops-testing/grafana#adminPassword>
     grafana.ini:
       server:
