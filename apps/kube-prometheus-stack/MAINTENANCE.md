@@ -21,6 +21,7 @@ Just for historic perspective and example purpose, procedure was build upon movi
    targetRevision in the
    ApplicationSet [here](https://github.com/catenax-ng/k8s-cluster-stack/blob/84851a626cb5914c0f4d95d1c6ac4b120a2788cd/environments/core/applicationsets/kube-prometheus-stack-applicationset.yaml#L20C1-L20C1)
    pointing to your branch.
+2. Sync core-config from ArgoCD at core cluster.
 3. Remove cluster's relevant application kube-prometheus-stack in ArgoCD (at core cluster). The tile will remain visible
    in the Out of sync state since ApplicationSet is still active but the application itself will be gone.
 4. Delete all kube-prometheus-stack CRDs using kubectl command line. List of CRDs you can
