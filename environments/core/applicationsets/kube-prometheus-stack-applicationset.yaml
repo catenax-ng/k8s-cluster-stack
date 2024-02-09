@@ -17,7 +17,7 @@ spec:
         targetRevision: HEAD
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
-        targetRevision: chore/devsecops_kube_upgrade
+        targetRevision: HEAD
       - cluster: stable
         cluster-name: stable
         targetRevision: HEAD
