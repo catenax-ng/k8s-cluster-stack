@@ -20,7 +20,7 @@ spec:
         targetRevision: HEAD
       - cluster: devsecops-testing
         cluster-name: devsecops-testing
-        targetRevision: HEAD
+        targetRevision: upgrade_certmanager_1.14.4
       - cluster: stable
         cluster-name: stable
         targetRevision: HEAD
