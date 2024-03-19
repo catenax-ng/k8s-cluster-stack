@@ -18,7 +18,7 @@ spec:
             path: 'apps/ingress-nginx'
           - cluster: devsecops-testing
             cluster-name: devsecops-testing
-            chartVersion: 4.8.3
+            chartVersion: 4.10.0
             targetRevision: HEAD
             path: 'apps/ingress-nginx'
           - cluster: int
