@@ -8,12 +8,12 @@ spec:
         elements:
           - cluster: core
             cluster-name: in-cluster
-            chartVersion: 4.7.1
+            chartVersion: 4.10.0
             targetRevision: HEAD
             path: 'apps/ingress-nginx'
           - cluster: dev
             cluster-name: dev
-            chartVersion: 4.7.1
+            chartVersion: 4.10.0
             targetRevision: HEAD
             path: 'apps/ingress-nginx'
           - cluster: devsecops-testing
@@ -23,17 +23,17 @@ spec:
             path: 'apps/ingress-nginx'
           - cluster: int
             cluster-name: hotel-budapest
-            chartVersion: 4.7.1
+            chartVersion: 4.10.0
             targetRevision: HEAD
             path: 'apps/ingress-nginx'
           - cluster: stable
             cluster-name: stable
-            chartVersion: 4.7.1
+            chartVersion: 4.10.0
             targetRevision: HEAD
             path: 'apps/ingress-nginx'
           - cluster: vault
             cluster-name: vault-cluster
-            chartVersion: 4.7.1
+            chartVersion: 4.10.0
             targetRevision: HEAD
             path: 'apps/ingress-nginx'
   template:
